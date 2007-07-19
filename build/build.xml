@@ -1,0 +1,95 @@
+
+<project name="JConvert" default="compile" basedir="../.">
+	<description>
+        JConvert build file
+    </description>
+	<property resource="build.properties" />
+
+	<target name="init" description="initializes build process">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${classes.dir}" />
+		<mkdir dir="${jdocSrc.dir}" />
+	</target>
+
+	<target name="compile" depends="init" description="compile the source">
+		<!-- Compile the java code  -->
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" debug="true" debuglevel="lines,vars,source" />
+
+		<!-- Copy resources to build destination  -->
+		<copy todir="${classes.dir}">
+			<fileset dir="${resource.dir}" />
+		</copy>
+
+		<!-- Compile the test package -->
+		<javac srcdir="${test.src.dir}" destdir="${classes.dir}" debug="${debug.flag}" debuglevel="${debug.level}">
+			<classpath>
+				<pathelement location="${classes.dir}" />
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+		</javac>
+	</target>
+
+	<target name="clean" description="clean up">
+		<!-- Delete build related trees -->
+		<delete dir="${classes.dir}" />
+		<delete dir="${jdocSrc.dir}" />
+	</target>
+
+	<target name="test" description="runs the test cases">
+		<junit printsummary="yes" haltonfailure="yes" showoutput="yes">
+			<formatter type="plain" />
+			<classpath>
+				<pathelement location="${classes.dir}" />
+				<pathelement path="${java.class.path}" />
+				<fileset dir="${lib.dir}">
+					<include name="**/*.jar" />
+				</fileset>
+			</classpath>
+			<test name="com.edsdev.jconvert.test.ConversionTestCase" />
+		</junit>
+	</target>
+	<target name="jar" depends="clean,compile,test" description="creates the jar for the jconvert project">
+		<jar basedir="${classes.dir}" destfile="${classes.dir}/jconvert.jar">
+			<exclude name="**/test/*" />
+			<exclude name="**/test/" />
+			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Main-class" value="com.edsdev.jconvert.presentation.MainFrame" />
+				<attribute name="Class-Path" value="." />
+				<!--		<section name="common">
+			<attribute name="Specification-Title" value="Example" />
+			<attribute name="Specification-Version" value="${version}" />
+			<attribute name="Specification-Vendor" value="Example Organization" />
+			<attribute name="Implementation-Title" value="common" />
+			<attribute name="Implementation-Version" value="${version} ${TODAY}" />
+			<attribute name="Implementation-Vendor" value="Example Corp." />
+		</section>
+		<section name="com/edsdev/jconvert/presentation/MainFrame.class">
+			<attribute name="Sealed" value="false" />
+		</section>
+		-->
+			</manifest>
+		</jar>
+	</target>
+	<target name="javadoc" description="creaates the javadoc for the project">
+		<delete dir="${jdocSrc.dir}"/>
+		<javadoc destdir="${jdocSrc.dir}" author="true" version="true" use="true" windowtitle="Test API">
+
+			<fileset dir="${src.dir}" defaultexcludes="yes">
+				<include name="com/**/*.java" />
+			</fileset>
+
+			<doctitle>
+				<![CDATA[<h1>JConvert</h1>]]>
+			</doctitle>
+		<bottom>
+			<![CDATA[<i>JConvert - opensource project by Ed Sarrazin</i>]]>
+			</bottom>
+</javadoc>
+</target>
+
+</project>
