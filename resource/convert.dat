@@ -67,93 +67,93 @@ Time,fortnight,,nanosecond,,1209600000000000,0
 Time,fortnight,,score,,7/3650,0
 Time,fortnight,,second,''',1209600,0
 Time,fortnight,,week,,2,0
-Time,fortnight,,year,,0.03835616438,0
-Time,hour,,century,,0.000001141552511,0
-Time,hour,,day,,0.04166666667,0
-Time,hour,,decade,,0.00001141552511,0
-Time,hour,,fortnight,,0.002976190476,0
-Time,hour,,leap-year,,0.0001138433515,0
-Time,hour,,millennium,,0.0000001141552511,0
+Time,fortnight,,year,,14/365,0
+Time,hour,,century,,1/876000,0
+Time,hour,,day,,1/24,0
+Time,hour,,decade,,1/87600,0
+Time,hour,,fortnight,,1/336,0
+Time,hour,,leap-year,,1/8784,0
+Time,hour,,millennium,,1/8760000,0
 Time,hour,,millisecond,,3600000,0
 Time,hour,,minute,',60,0
-Time,hour,,month (30 day),,0.001388888889,0
+Time,hour,,month (30 day),,1/720,0
 Time,hour,,nanosecond,,3600000000000,0
-Time,hour,,score,,0.000005707762555,0
+Time,hour,,score,,1/175200,0
 Time,hour,,second,''',3600,0
-Time,hour,,week,,0.005952380952,0
-Time,hour,,year,,0.0001141552511,0
-Time,leap-year,,century,,0.01002739726,0
+Time,hour,,week,,1/168,0
+Time,hour,,year,,1/8760,0
+Time,leap-year,,century,,183/18250,0
 Time,leap-year,,day,,366,0
-Time,leap-year,,decade,,0.1002739726,0
-Time,leap-year,,fortnight,,26.14285714,0
+Time,leap-year,,decade,,183/1825,0
+Time,leap-year,,fortnight,,366/14,0
 Time,leap-year,,hour,,8784,0
-Time,leap-year,,millennium,,0.001002739726,0
+Time,leap-year,,millennium,,183/182500,0
 Time,leap-year,,millisecond,,31622400000,0
 Time,leap-year,,minute,',527040,0
-Time,leap-year,,month (30 day),,12.2,0
+Time,leap-year,,month (30 day),,61/5,0
 Time,leap-year,,month,,12,0
 Time,leap-year,,nanosecond,,31622400000000000,0
-Time,leap-year,,score,,0.0501369863,0
+Time,leap-year,,score,,183/3650,0
 Time,leap-year,,second,''',31622400,0
-Time,leap-year,,week,,52.28571429,0
-Time,leap-year,,year,,1.002739726,0
+Time,leap-year,,week,,366/7,0
+Time,leap-year,,year,,366/365,0
 Time,millennium,,century,,10,0
 Time,millennium,,day,,365000,0
 Time,millennium,,decade,,100,0
-Time,millennium,,fortnight,,26071.42857,0
+Time,millennium,,fortnight,,182500/7,0
 Time,millennium,,hour,,8760000,0
-Time,millennium,,leap-year,,997.2677596,0
+Time,millennium,,leap-year,,182500/183,0
 Time,millennium,,millisecond,,31536000000000,0
 Time,millennium,,minute,',525600000,0
-Time,millennium,,month (30 day),,12166.66667,0
+Time,millennium,,month (30 day),,36500/3,0
 Time,millennium,,month,,12000,0
 Time,millennium,,nanosecond,,31536000000000000000,0
 Time,millennium,,score,,50,0
 Time,millennium,,second,''',31536000000,0
-Time,millennium,,week,,52142.85714,0
+Time,millennium,,week,,365000/7,0
 Time,millennium,,year,,1000,0
-Time,millisecond,,century,,3.170979198E-13,0
-Time,millisecond,,day,,0.00000001157407407,0
-Time,millisecond,,decade,,3.170979198E-12,0
-Time,millisecond,,fortnight,,0.0000000008267195767,0
-Time,millisecond,,hour,,0.0000002777777778,0
-Time,millisecond,,leap-year,,3.162315321E-11,0
-Time,millisecond,,millennium,,3.170979198E-14,0
-Time,millisecond,,minute,',0.00001666666667,0
-Time,millisecond,,month (30 day),,0.0000000003858024691,0
+Time,millisecond,,century,,1/3153600000000,0
+Time,millisecond,,day,,1/86400000,0
+Time,millisecond,,decade,,1/315360000000,0
+Time,millisecond,,fortnight,,1/1209600000,0
+Time,millisecond,,hour,,1/3600000,0
+Time,millisecond,,leap-year,,1/31622400000,0
+Time,millisecond,,millennium,,1/31536000000000,0
+Time,millisecond,,minute,',1/60000,0
+Time,millisecond,,month (30 day),,1/2592000000,0
 Time,millisecond,,nanosecond,,1000000,0
-Time,millisecond,,score,,1.585489599E-12,0
-Time,millisecond,,second,''',0.001,0
-Time,millisecond,,week,,0.000000001653439153,0
-Time,millisecond,,year,,3.170979198E-11,0
-Time,minute,,century,,0.00000001902587519,0
-Time,minute,,day,,0.0006944444444,0
-Time,minute,,decade,,0.0000001902587519,0
-Time,minute,,fortnight,,0.0000496031746,0
-Time,minute,,hour,,0.01666666667,0
-Time,minute,,leap-year,,0.000001897389192,0
-Time,minute,,millennium,,0.000000001902587519,0
+Time,millisecond,,score,,1/630720000000,0
+Time,millisecond,,second,''',1/1000,0
+Time,millisecond,,week,,1/604800000,0
+Time,millisecond,,year,,1/31536000000,0
+Time,minute,,century,,1/52560000,0
+Time,minute,,day,,1/1440,0
+Time,minute,,decade,,1/5256000,0
+Time,minute,,fortnight,,1/20160,0
+Time,minute,,hour,,1/60,0
+Time,minute,,leap-year,,1/527040,0
+Time,minute,,millennium,,1/525600000,0
 Time,minute,,millisecond,,60000,0
-Time,minute,,month (30 day),,0.00002314814815,0
+Time,minute,,month (30 day),,1/43200,0
 Time,minute,,nanosecond,,60000000000,0
-Time,minute,,score,,0.00000009512937595,0
+Time,minute,,score,,1/10512000,0
 Time,minute,,second,''',60,0
-Time,minute,,week,,0.00009920634921,0
-Time,minute,,year,,0.000001902587519,0
-Time,month (30 day),,century,,0.0008219178082,0
+Time,minute,,week,,1/10080,0
+Time,minute,,year,,1/525600,0
+Time,month (30 day),,century,,3/3650,0
 Time,month (30 day),,day,,30,0
-Time,month (30 day),,decade,,0.008219178082,0
-Time,month (30 day),,fortnight,,2.142857143,0
+Time,month (30 day),,decade,,3/365,0
+Time,month (30 day),,fortnight,,15/7,0
 Time,month (30 day),,hour,,720,0
-Time,month (30 day),,leap-year,,0.08196721311,0
-Time,month (30 day),,millennium,,0.00008219178082,0
+Time,month (30 day),,leap-year,,5/61,0
+Time,month (30 day),,millennium,,3/36500,0
 Time,month (30 day),,millisecond,,2592000000,0
 Time,month (30 day),,minute,',43200,0
 Time,month (30 day),,nanosecond,,2592000000000000,0
-Time,month (30 day),,score,,0.004109589041,0
+Time,month (30 day),,score,,3/730,0
 Time,month (30 day),,second,''',2592000,0
-Time,month (30 day),,week,,4.285714286,0
-Time,month (30 day),,year,,0.08219178082,0
+Time,month (30 day),,week,,30/7,0
+Time,month (30 day),,year,,6/73,0
 Time,month,,century,,0.000833333333333333,0
 Time,month,,decade,,0.00833333333333333,0
 Time,month,,leap-year,,0.0833333333333333,0
