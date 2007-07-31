@@ -4,6 +4,11 @@ import java.lang.reflect.Method;
 import java.util.Date;
 
 /**
+ * This logger is intended to interface with log4j if it can be found in the classpath. If it cannot, then we have our
+ * own formatting with using System.out. The whole purpose of this is to allow this jar to run independently on a user's
+ * machine without dependencies on anything else. This way there are no other complicated instructions for the average
+ * user.
+ * 
  * @author Ed Sarrazin Created on Jul 28, 2007 5:54:33 PM
  */
 public class Logger {
@@ -23,6 +28,16 @@ public class Logger {
     private static boolean searchedForLog4j = false;
 
     private static final String LOG4J_PATH = "org.apache.log4j.Logger";
+
+    private static final String DEBUG = "debug";
+
+    private static final String INFO = "info";
+
+    private static final String WARN = "warn";
+
+    private static final String ERROR = "error";
+
+    private static final String FATAL = "fatal";
 
     public static Logger getInstance(Class pClazz) {
         return new Logger(pClazz);
@@ -62,70 +77,50 @@ public class Logger {
         }
     }
 
-    public void debug(Object message) {
+    private void printMessage(String type, Object message, Throwable t) {
         if (log4jLogger == null) {
-            System.out.println(new Date() + " - DEBUG - " + clazz.getName() + " - " + message);
+            System.out.println(new Date() + " - " + type.toUpperCase() + " - " + clazz.getName() + " - " + message);
+            if (t != null) {
+                t.printStackTrace();
+            }
         } else {
-            invokeLoggerMethod("debug", message);
+            if (t == null) {
+                invokeLoggerMethod(type, message);
+            } else {
+                invokeLoggerMethod(type, message, t);
+            }
         }
+    }
+
+    public void debug(Object message) {
+        printMessage(DEBUG, message, null);
     }
 
     public void info(Object message) {
-        if (log4jLogger == null) {
-            System.out.println(new Date() + " - INFO - " + clazz.getName() + " - " + message);
-        } else {
-            invokeLoggerMethod("info", message);
-        }
+        printMessage(INFO, message, null);
     }
 
     public void warn(Object message) {
-        if (log4jLogger == null) {
-            System.out.println(new Date() + " - WARN - " + clazz.getName() + " - " + message);
-        } else {
-            invokeLoggerMethod("warn", message);
-        }
+        printMessage(WARN, message, null);
     }
 
     public void warn(Object message, Throwable t) {
-        if (log4jLogger == null) {
-            System.out.println(new Date() + " - WARN - " + clazz.getName() + " - " + message);
-            t.printStackTrace();
-        } else {
-            invokeLoggerMethod("warn", message, t);
-        }
+        printMessage(DEBUG, message, t);
     }
 
     public void error(Object message) {
-        if (log4jLogger == null) {
-            System.out.println(new Date() + " - ERROR - " + clazz.getName() + " - " + message);
-        } else {
-            invokeLoggerMethod("error", message);
-        }
+        printMessage(ERROR, message, null);
     }
 
     public void error(Object message, Throwable t) {
-        if (log4jLogger == null) {
-            System.out.println(new Date() + " - ERROR - " + clazz.getName() + " - " + message);
-            t.printStackTrace();
-        } else {
-            invokeLoggerMethod("error", message);
-        }
+        printMessage(ERROR, message, t);
     }
 
     public void fatal(Object message) {
-        if (log4jLogger == null) {
-            System.out.println(new Date() + " - FATAL - " + clazz.getName() + " - " + message);
-        } else {
-            invokeLoggerMethod("fatal", message);
-        }
+        printMessage(FATAL, message, null);
     }
 
     public void fatal(Object message, Throwable t) {
-        if (log4jLogger == null) {
-            System.out.println(new Date() + " - FATAL - " + clazz.getName() + " - " + message);
-            t.printStackTrace();
-        } else {
-            invokeLoggerMethod("fatal", message);
-        }
+        printMessage(DEBUG, message, t);
     }
 }
