@@ -7,20 +7,25 @@ import java.util.Date;
  * @author Ed Sarrazin Created on Jul 28, 2007 5:54:33 PM
  */
 public class Logger {
+    /**
+     * Class/category you will be logging for
+     */
     private Class clazz;
 
+    /**
+     * Handle to log4j logger if one is found
+     */
     private Object log4jLogger = null;
 
+    /**
+     * Have we attempted to find log4j. Allows us to look only once
+     */
     private static boolean searchedForLog4j = false;
+
+    private static final String LOG4J_PATH = "org.apache.log4j.Logger";
 
     public static Logger getInstance(Class pClazz) {
         return new Logger(pClazz);
-    }
-
-    public static void main(String[] args) {
-        Logger log = Logger.getInstance(Logger.class);
-        log.debug("This is a test");
-        log.error("This is an error");
     }
 
     public Logger(Class pClazz) {
@@ -28,13 +33,13 @@ public class Logger {
         if (!searchedForLog4j) {
             searchedForLog4j = true;
             try {
-                Class theClass = Class.forName("org.apache.log4j.Logger");
+                Class theClass = Class.forName(LOG4J_PATH);
                 Method meth = theClass.getMethod("getLogger", new Class[] { Class.class });
                 log4jLogger = meth.invoke(null, new Object[] { clazz });
             } catch (Exception e) {
                 System.out.println("Log4j not found in path, so using System.out.");
             }
-            
+
         }
     }
 
