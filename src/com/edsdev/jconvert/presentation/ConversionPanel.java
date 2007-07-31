@@ -1,6 +1,5 @@
 package com.edsdev.jconvert.presentation;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -115,15 +114,15 @@ public class ConversionPanel extends JPanel {
                 convert();
             }
         });
-        
+
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         JPanel listPanel = new JPanel();
         listPanel.setLayout(new BoxLayout(listPanel, BoxLayout.X_AXIS));
-        
+
         listPanel.add(scrollPanel);
         listPanel.add(Box.createHorizontalStrut(5));
         listPanel.add(scrollPanel2);
-        
+
         this.add(listPanel);
 
         JPanel conversionPanel = new JPanel();
