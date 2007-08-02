@@ -189,20 +189,20 @@ Time,score,,nanosecond,,630720000000000000,0
 Time,score,,second,''',630720000,0
 Time,score,,week,,1042.8571428,0
 Time,score,,year,,20,0
-Time,second,''',century,,0.0000000003170979198,0
-Time,second,''',day,,0.00001157407407,0
-Time,second,''',decade,,0.000000003170979198,0
-Time,second,''',fortnight,,0.0000008267195767,0
-Time,second,''',hour,,0.0002777777778,0
-Time,second,''',leap-year,,0.00000003162315321,0
-Time,second,''',millennium,,3.170979198E-11,0
+Time,second,''',century,,1/3153600000,0
+Time,second,''',day,,1/86400,0
+Time,second,''',decade,,1/315360000,0
+Time,second,''',fortnight,,1/1209600,0
+Time,second,''',hour,,1/3600,0
+Time,second,''',leap-year,,1/31622400,0
+Time,second,''',millennium,,31536000000,0
 Time,second,''',millisecond,,1000,0
-Time,second,''',minute,',0.01666666667,0
-Time,second,''',month (30 day),,0.0000003858024691,0
+Time,second,''',minute,',1/60,0
+Time,second,''',month (30 day),,1/2592000,0
 Time,second,''',nanosecond,,1000000000,0
-Time,second,''',score,,0.000000001585489599,0
-Time,second,''',week,,0.000001653439153,0
-Time,second,''',year,,0.00000003170979198,0
+Time,second,''',score,,1/630720000,0
+Time,second,''',week,,1/604800,0
+Time,second,''',year,,1/31536000,0
 Time,week,,century,,0.0001917808219,0
 Time,week,,day,,7,0
 Time,week,,decade,,0.001917808219,0
