@@ -50,6 +50,7 @@
 				</fileset>
 			</classpath>
 			<test name="com.edsdev.jconvert.test.ConversionTestCase" />
+			<test name="com.edsdev.jconvert.test.DataLoaderTestCase" />
 		</junit>
 	</target>
 	<target name="jar" depends="clean,compile,test" description="creates the jar for the jconvert project">
