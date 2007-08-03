@@ -5,7 +5,7 @@ package com.edsdev.jconvert.domain;
  * 
  * @author Ed Sarrazin Created on Jul 14, 2007 10:10:14 AM
  */
-public abstract class Conversion {
+public abstract class Conversion implements Comparable {
 
     private String fromUnit;
 
@@ -161,15 +161,15 @@ public abstract class Conversion {
             if (!areEqual(compare.getFromUnit(), fromUnit)) {
                 return false;
             }
-            if (!areEqual(compare.getFromUnitAbbr(), fromUnitAbbr)) {
-                return false;
-            }
+//            if (!areEqual(compare.getFromUnitAbbr(), fromUnitAbbr)) {
+//                return false;
+//            }
             if (!areEqual(compare.getToUnit(), toUnit)) {
                 return false;
             }
-            if (!areEqual(compare.getToUnitAbbr(), toUnitAbbr)) {
-                return false;
-            }
+//            if (!areEqual(compare.getToUnitAbbr(), toUnitAbbr)) {
+//                return false;
+//            }
             return true;
 
         }
@@ -360,6 +360,20 @@ public abstract class Conversion {
     public void setGenerationAge(int generationAge) {
         this.generationAge = generationAge;
     }
+    
+    public int compareTo(Object obj) {
+        if (obj instanceof Conversion) {
+            Conversion o = (Conversion)obj;
+            int rv =  this.getFromUnit().compareTo(o.getFromUnit());
+            if (rv == 0) {
+                return this.getToUnit().compareTo(o.getToUnit());
+            } else {
+                return rv;
+            }
+        }
+        return -1;
+    }
+    
 
     public abstract long getFromToBottomFactor();
 
