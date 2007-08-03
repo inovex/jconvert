@@ -17,13 +17,15 @@ import javax.swing.ImageIcon;
  *         Generation - Code and Comments
  */
 public class ResourceManager {
+    private static Logger log = Logger.getInstance(ResourceManager.class);
+
     public static Image getImage(String imageRelativeURL) {
         Image image = null;
         try {
             ClassLoader cl = ResourceManager.class.getClassLoader();
             image = Toolkit.getDefaultToolkit().getImage(cl.getResource(imageRelativeURL));
         } catch (Exception exp) {
-            exp.printStackTrace();
+            log.error("Failed to get Image " + imageRelativeURL, exp);
         }
         return image;
     }
@@ -69,8 +71,7 @@ public class ResourceManager {
                 props.load(Istream);
                 Istream.close();
             } catch (IOException e) {
-                System.err.println("Can't load properties for Input stream");
-                e.printStackTrace();
+                log.error("Can't load properties for Input stream", e);
                 throw e;
             }
         }
@@ -84,8 +85,7 @@ public class ResourceManager {
             ClassLoader cl = ResourceManager.class.getClassLoader();
             icon = new ImageIcon(cl.getResource(imageRelativeURL));
         } catch (Exception exp) {
-            System.out.println("Could not load image " + imageRelativeURL);
-            exp.printStackTrace();
+            log.error("Could not load image " + imageRelativeURL, exp);
         }
         return icon;
     }
