@@ -5,8 +5,11 @@ import java.util.Iterator;
 import com.edsdev.jconvert.domain.Conversion;
 import com.edsdev.jconvert.domain.ConversionType;
 import com.edsdev.jconvert.presentation.ConversionTypeData;
+import com.edsdev.jconvert.util.Logger;
 
 public class ConversionGapBuilder {
+
+    private static Logger log = Logger.getInstance(ConversionGapBuilder.class);
 
     /**
      * @param args
@@ -34,20 +37,49 @@ public class ConversionGapBuilder {
         Iterator iter = ct.getConversions().iterator();
         while (iter.hasNext()) {
             Conversion c = (Conversion) iter.next();
-            System.out.println("[Age=" + c.getGenerationAge() + "] Convert 50 in " + c.getFromUnit() + " to "
-                    + c.getToUnit() + " = " + c.convertValue(50.0, c.getFromUnit()));
+            log.debug("[Age=" + c.getGenerationAge() + "] Convert 50 in " + c.getFromUnit() + " to " + c.getToUnit()
+                    + " = " + c.convertValue(50.0, c.getFromUnit()));
         }
 
         ConversionTypeData ctd = new ConversionTypeData();
         ctd.setType(ct);
-        System.out.println(ctd.getAllFromUnits());
-        System.out.println(ctd.getToUnits("day"));
-        System.out.println(ctd.convert(50, "day", "year"));
-        System.out.println(ctd.convert(50, "day", "seconds"));
+        log.debug(ctd.getAllFromUnits());
+        log.debug(ctd.getToUnits("day"));
+        log.debug(ctd.convert(50, "day", "year") + "");
+        log.debug(ctd.convert(50, "day", "seconds") + "");
 
         // Celsius,Fahrenheit,1.8,32
         // Fahrenheit,Kelvin,0.5555555555555555555,255.3722222222222222222222222223
         // Celsius,Kelvin,2,273.15
+    }
+
+    /**
+     * This method is responsible for creating the one-to-one conversions. All these are are the conversions that
+     * convert the same unit of measure to itself. These are boring calculations that no-one really wants to enter in
+     * their conversion tables. But it makes the GUI nice when selecting around and the To lists do not keep shifting
+     * around
+     * 
+     * @param ct ConversionType that you want to create the one-to-one conversions in.
+     */
+    public static void createOneToOneConversions(ConversionType ct) {
+        if (ct.getConversions().size() <= 1) {
+            return;
+        }
+        Object[] list = ct.getConversions().toArray();
+        for (int i = 0; i < list.length; i++) {
+            Conversion conv = (Conversion) list[i];
+            Conversion newC = Conversion.createInstance(conv.getFromUnit(), conv.getFromUnitAbbr(), conv.getFromUnit(),
+                conv.getFromUnitAbbr(), "1", 0);
+            if (!ct.getConversions().contains(newC)) {
+                ct.addConversion(newC);
+            }
+            newC = Conversion.createInstance(conv.getToUnit(), conv.getToUnitAbbr(), conv.getToUnit(),
+                conv.getToUnitAbbr(), "1", 0);
+            if (!ct.getConversions().contains(newC)) {
+                ct.addConversion(newC);
+            }
+        }
+
     }
 
     /**
@@ -86,7 +118,7 @@ public class ConversionGapBuilder {
                                 newC.setGenerationAge(outer.getGenerationAge() + inner.getGenerationAge() + 1);
                                 ct.addConversion(newC);
                                 added = true;
-                                // System.out.println(newC);
+                                // log.debug(newC);
                             }
                         }
                     } else if (outer.getToUnit().equals(inner.getToUnit())) {
@@ -101,7 +133,7 @@ public class ConversionGapBuilder {
                                 newC.setGenerationAge(outer.getGenerationAge() + inner.getGenerationAge() + 1);
                                 ct.addConversion(newC);
                                 added = true;
-                                // System.out.println(newC);
+                                // log.debug(newC);
                             }
                         }
                     } else if (outer.getFromUnit().equals(inner.getFromUnit())) {
@@ -116,7 +148,7 @@ public class ConversionGapBuilder {
                                 newC.setGenerationAge(outer.getGenerationAge() + inner.getGenerationAge() + 1);
                                 ct.addConversion(newC);
                                 added = true;
-                                // System.out.println(newC);
+                                // log.debug(newC);
                             }
                         }
                     }
