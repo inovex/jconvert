@@ -1,0 +1,68 @@
+body
+{ background: #636363;
+  color: #67705A;
+}
+
+blockquote{border-color: #D7D7D7;}
+
+#main
+{ background: #FFF url(main.png) repeat-y;
+  color: #67705A;
+}
+
+#links, #footer, #menu, #menu li a
+{ background: #FFF url(menu.png);
+  color: #DBE1D1;
+  border-color: #D7D7D7;
+}
+
+#links a, #footer a, #links a:hover, #footer a:hover
+{ background: transparent;
+  color: #DBE1D1;
+}
+
+#logo
+{ background: #FFF url(site_logo.jpg) no-repeat;
+  color: #67705A;
+}
+
+h1
+{ background: transparent;
+  color: #7C9D49;
+  border-color: #B5CA91;
+}
+
+#menu li a:hover, #menu li a#selected, #menu li a#selected:hover
+{ background: #FFF url(green_menu.png);
+  color: #67705A;
+} 
+
+#content, #column2 a, #column2 a:hover
+{ background: transparent;
+  color: #67705A;
+}
+
+.sidebaritem, .sidebaritem a, .sidebaritem a:hover
+{ background: transparent;
+  color: #DBD7DB;
+} 
+
+.sbihead
+{ background: #FFF url(green_sbi.png);
+  color: #67705A;
+}
+
+.sbihead h1
+{ background: transparent;
+  color: #67705A;
+}
+
+.sbilinks li a
+{ background: #FFF url(link.png);
+  color: #DBD7DB;
+} 
+
+.sbilinks li a:hover
+{ background: #B7B7B7;
+  color: #5B7236;
+} 

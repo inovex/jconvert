@@ -1,0 +1,125 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+  <title>JConvert How To</title>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+  <!-- **** layout stylesheet **** -->
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+
+  <!-- **** colour scheme stylesheet **** -->
+  <link rel="stylesheet" type="text/css" href="style/blue.css" />
+
+</head>
+
+<body>
+  <div id="main">
+    <div id="links">
+      <!-- **** INSERT LINKS HERE **** -->
+      <a href="https://sourceforge.net/projects/jconvert/">JConvert Project</a> | <a href="https://sourceforge.net/project/showfiles.php?group_id=201265">Downloads</a>
+    </div>
+    <div id="logo"><h1>JConvert</h1></div>
+    <div id="menu">
+      <ul>
+        <li><a id="selected" href="https://sourceforge.net/projects/jconvert/">JConvert Home</a></li>
+        <li><a href="https://sourceforge.net/project/showfiles.php?group_id=201265">Downloads</a></li>
+        <li><a href="index.html">Main website</a></li>
+        <li><a href="javadoc/index.html">Java API</a></li>
+        <li><a href="https://sourceforge.net/news/?group_id=201265">News</a></li>
+        <li><a href="https://sourceforge.net/sendmessage.php?touser=1841283">Contact</a></li>
+      </ul>
+    </div>
+    <div id="content">
+      <div id="column1">
+        <div class="sidebaritem">
+          <div class="sbihead">
+            <h1>sceenshots</h1>
+          </div>
+          <div class="sbicontent">
+			<a href="http://sourceforge.net/project/screenshots.php?group_id=201265">
+				<img src="http://sourceforge.net/dbimage.php?id=132606"
+				alt="Example of converting three days into minutes." height="120" width="180" align="right" /></a>
+          </div>
+        </div>
+        <div class="sidebaritem">
+          <div class="sbihead">
+            <h1>And of Course</h1>
+          </div>
+          <div class="sbicontent">
+            <!-- **** INSERT OTHER INFORMATION HERE **** -->
+            <a href="http://sourceforge.net">
+            	<img src="http://sflogo.sourceforge.net/sflogo.php?group_id=201265&amp;type=4"
+            	width="125" height="37" border="0" alt="SourceForge.net Logo" /></a>
+          </div>
+        </div>
+      </div>
+      <div id="column2">
+        <h1>How to summary</h1>
+        <!-- **** INSERT PAGE CONTENT HERE **** -->
+        <p>
+        Below I will explain how to use JConvert with windows XP.  All versions of windows should be similar to this
+        explanation.  This is platform independent and should work on any os that has Java version 1.4 and higer.
+        </p>
+        <p>
+          Download and execute the jconvert jar file from sourceforge.net.  Depending on your installation of Java on your OS, this
+          can simply mean executing it on download or saving it somewhere and double clicking on the jar file.
+
+        </p>
+        <img src="images/download.jpg"/>
+        <p>
+          If your operating system does not have this file associated, you
+          can execute it using the command line.  By pressing the start menu, and choosing run, type in "cmd" and press enter.
+          As a quick check type in <i>java -version</i> and make sure that you have java version 1.4 or higher.  Run jconvert
+          by typing <i>java -jar jconvert.jar</i> - please note that your jar file name may vary depending on the release version.
+        </p>
+        <img src="images/doswindow.jpg"/>
+        <h1>Modifying or adding your own conversions</h1>
+        <p>
+        Very simply create a file named conver_custom.dat and place it in the same directory as the jconvert.jar download.  Below
+        is an example of this file.
+        </p>
+        <p>
+        <code>
+        #Category/Type,From,From abbrev,To,To Abbr,Conversion Factor,offset
+        Time,century,,doubleCentury,,1/2,0<br/>
+		Time,century,,year,,15,0<br/>
+		<br/>
+		TestType,Ed,,Billy,,2,0<br/>
+		TestType,Ed,,Sarah,,4,0<br/>
+		TestType,Ed,,Tom,,1/2,0<br/>
+		<br/>
+		Punishment,OutLate,,Spanking,,3,0<br/>
+		Punishment,Stealing,,Talking Back,,15,0<br/>
+		Punishment,Stealing,,Spanking,,15,0<br/>
+		Punishment,OutLate,,Fight,,3/10,0<br/>
+        </code>
+        </p>
+        <p>
+        Note the fist line that describes what value goes between each comma.  This is a comma separated file.  You must have exactly
+        six commas per line.  Please follow the format in the example.  Abbreviations can be provided for each conversion unit.
+        In the first conversion we are creating a conversion of centuries to double centuries.  To convert to a double century, you
+        must multiply by one half (one century times 1/2 equals .5 double centuries).  The second conversion overwrites the build in
+        conversion of centuries to years.  Instead of it being 100, we mad it 15 just for fun.  This is just to show you that you
+        can create more accurate (although not in this example) conversions to meet your needs.  That way if you disagree, think they
+        are wrong, or want more accuracy, you can override the conversions built into jconvert.  The rest of the conversions in this
+        example should speak for themselves.  Please note that you can enter in a fraction or a decimal number for a conversion.
+        Fractional conversions are always more accurate, so if you know the fraction (or it exists), please use it.
+        </p>
+        <p>
+        If you feel that there are some conversions in jconvert are inaccurate, please leave feedback.  AND if you have a custom
+        conversion file, you can submit it to us and we will evaluate it and incoporate if necessary.  Also we will include additional
+        conversions if they are not too off the wall (like some of my examples).
+        </p>
+        <h1>once more</h1>
+			<a href="http://sourceforge.net">
+			<img src="http://sflogo.sourceforge.net/sflogo.php?group_id=201265&amp;type=6"
+			width="210" height="62" border="0" alt="SourceForge.net Logo" /></a>
+      </div>
+    </div>
+    <div id="footer">
+      <a href="edsdev@users">email@emailaddress</a> | <a href="http://validator.w3.org/check?uri=referer">XHTML 1.1</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.dcarter.co.uk">design by dcarter</a>
+    </div>
+  </div>
+</body>
+</html>
