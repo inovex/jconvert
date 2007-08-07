@@ -76,12 +76,12 @@
         <img src="images/doswindow.jpg"/>
         <h1>Modifying or adding your own conversions</h1>
         <p>
-        Very simply create a file named conver_custom.dat and place it in the same directory as the jconvert.jar download.  Below
+        Very simply create a file named convert_custom.dat and place it in the same directory as the jconvert.jar download.  Below
         is an example of this file.
         </p>
         <p>
         <code>
-        #Category/Type,From,From abbrev,To,To Abbr,Conversion Factor,offset
+        #Category/Type,From,From_abbrev,To,To_Abbr,Conversion_Factor,offset
         Time,century,,doubleCentury,,1/2,0<br/>
 		Time,century,,year,,15,0<br/>
 		<br/>
@@ -99,8 +99,8 @@
         Note the fist line that describes what value goes between each comma.  This is a comma separated file.  You must have exactly
         six commas per line.  Please follow the format in the example.  Abbreviations can be provided for each conversion unit.
         In the first conversion we are creating a conversion of centuries to double centuries.  To convert to a double century, you
-        must multiply by one half (one century times 1/2 equals .5 double centuries).  The second conversion overwrites the build in
-        conversion of centuries to years.  Instead of it being 100, we mad it 15 just for fun.  This is just to show you that you
+        must multiply by one half (one century times 1/2 equals .5 double centuries).  The second conversion overwrites the built in
+        conversion of centuries to years.  Instead of it being 100, we made it 15 just for fun.  This is just to show you that you
         can create more accurate (although not in this example) conversions to meet your needs.  That way if you disagree, think they
         are wrong, or want more accuracy, you can override the conversions built into jconvert.  The rest of the conversions in this
         example should speak for themselves.  Please note that you can enter in a fraction or a decimal number for a conversion.
