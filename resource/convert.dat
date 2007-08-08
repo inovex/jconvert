@@ -265,49 +265,77 @@ Acceleration,millimeter/sec²,mm/s²,foot/sec²,ft/s²,0.0032808,0
 Acceleration,millimeter/sec²,mm/s²,centimeter/sec²,cm/s²,0.1,0
 
 Angle,revolution,r,right angle,,4,0
-Angle,revolution,r,radian,rad,6.283184,0
+Angle,revolution,r,radian,rad,6.2831853071796,0
 Angle,revolution,r,degree,°,360,0
 Angle,revolution,r,grad,g,400,0
-Angle,revolution,r,milliradian,mrad,6283.184,0
+Angle,revolution,r,milliradian,mrad,6283.1853071796,0
 Angle,revolution,r,minute,',21600,0
 Angle,revolution,r,second,''',1296000,0
-Angle,revolution,r,microradian,µrad,6283184,0
-Angle,right angle,,revolution,r,0.25,0
-Angle,right angle,,radian,rad,1.5708,0
+Angle,revolution,r,microradian,µrad,6283185.3071796,0
+Angle,right angle,,revolution,r,1/4,0
+Angle,right angle,,radian,rad,1.5707963267949,0
 Angle,right angle,,degree,°,90,0
 Angle,right angle,,grad,g,100,0
-Angle,right angle,,milliradian,mrad,1570.8,0
+Angle,right angle,,milliradian,mrad,1570.7963267949,0
 Angle,right angle,,minute,',5400,0
 Angle,right angle,,second,''',324000,0
-Angle,right angle,,microradian,µrad,1570800,0
-Angle,radian,rad,revolution,r,0.159154976,0
-Angle,radian,rad,right angle,,0.636618283,0
-Angle,radian,rad,degree,°,57.2958,0
-Angle,radian,rad,grad,g,63.661936338,0
+Angle,right angle,,microradian,µrad,1570796.3267949,0
+Angle,radian,rad,revolution,r,0.1591549430919,0
+Angle,radian,rad,right angle,,0.63661977236758,0
+Angle,radian,rad,degree,°,57.295779513082,0
+Angle,radian,rad,grad,g,63.661977236758,0
 Angle,radian,rad,milliradian,mrad,1000,0
-Angle,radian,rad,minute,',3437.75,0
-Angle,radian,rad,second,''',206265,0
-Angle,radian,rad,microradian,µrad,3437750,0
-Angle,degree,°,radian,rad,0.0174532862792735,0
-Angle,degree,°,grad,g,1.111111111,0
+Angle,radian,rad,minute,',3437.7467707849,0
+Angle,radian,rad,second,''',206264.8062471,0
+Angle,radian,rad,microradian,µrad,1000000,0
+Angle,degree,°,radian,rad,0.0174532925199432957629369077,0
+Angle,degree,°,grad,g,10/9,0
 Angle,degree,°,minute,',60,0
 Angle,degree,°,second,''',3600,0
-Angle,degree,°,revolution,r,0.00277777028890907,0
-Angle,grad,g,degree,°,0.9000009000009,0
-Angle,grad,g,radian,rad,0.0157079733593195,0
+Angle,degree,°,revolution,r,1/360,0
+Angle,degree,°,microradian,µrad,17453.292519943295762936907685,0
+Angle,degree,°,milliradian,mrad,17.453292519943295762936907685,0
+Angle,degree,°,right angle,,1/90,0
+Angle,grad,g,degree,°,9/10,0
+Angle,grad,g,radian,rad,0.015707963267949,0
 Angle,grad,g,minute,',54,0
 Angle,grad,g,second,''',3240,0
-Angle,grad,g,revolution,r,0.00249999576001393,0
-Angle,minute,',degree,°,0.0166666666666666,0
-Angle,minute,',radian,rad,0.000290888104654558,0
-Angle,minute,',grad,g,0.0185185,0
+Angle,grad,g,revolution,r,5/2000,0
+Angle,grad,g,microradian,µrad,15707.963267949,0
+Angle,grad,g,milliradian,mrad,15.707963267949,0
+Angle,grad,g,right angle,,1/100,0
+Angle,minute,',degree,°,1/60,0
+Angle,minute,',radian,rad,0.000290888208666,0
+Angle,minute,',grad,g,1/54,0
 Angle,minute,',second,''',60,0
-Angle,minute,',revolution,r,0.0000462961714818179,0
-Angle,second,''',degree,°,0.000277777777777777,0
-Angle,second,''',radian,rad,4.84813507757597E-06,0
+Angle,minute,',revolution,r,1/21600,0
+Angle,minute,',microradian,µrad,290.888208666,0
+Angle,minute,',milliradian,mrad,0.290888208666,0
+Angle,minute,',right angle,,1/5400,0
+Angle,second,''',degree,°,1/3600,0
+Angle,second,''',radian,rad,0.000004848136811,0
 Angle,second,''',grad,g,0.00030864096365215,0
-Angle,second,''',minute,',0.0166666666666666,0
-Angle,second,''',revolution,r,7.71602858030299E-07,0
+Angle,second,''',minute,',1/60,0
+Angle,second,''',revolution,r,1/1296000,0
+Angle,second,''',microradian,µrad,4.848136811,0
+Angle,second,''',milliradian,mrad,0.004848136811,0
+Angle,second,''',right angle,,1/324000,0
+Angle,microradian,µrad,revolution,r,0.0000001591549430919,0
+Angle,microradian,µrad,right angle,,0.00000063661977236758,0
+Angle,microradian,µrad,degree,°,0.000057295779513082,0
+Angle,microradian,µrad,grad,g,0.000063661977236758,0
+Angle,microradian,µrad,milliradian,mrad,0.001,0
+Angle,microradian,µrad,minute,',0.0034377467707849,0
+Angle,microradian,µrad,second,''',0.2062648062471,0
+Angle,microradian,µrad,radian,rad,0.000001,0
+Angle,milliradian,mrad,revolution,r,0.0001591549430919,0
+Angle,milliradian,mrad,right angle,,0.00063661977236758,0
+Angle,milliradian,mrad,degree,°,0.057295779513082,0
+Angle,milliradian,mrad,grad,g,0.063661977236758,0
+Angle,milliradian,mrad,microradian,µrad,1000,0
+Angle,milliradian,mrad,minute,',3.4377467707849,0
+Angle,milliradian,mrad,second,''',206.2648062471,0
+Angle,milliradian,mrad,radian,rad,0.001,0
 
 Area,kilometer²,km²,meter²,,1000000,0
 Area,kilometer²,km²,centimeter²,,10000000000,0
