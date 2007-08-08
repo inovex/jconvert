@@ -81,7 +81,8 @@
 	</target>
 	<target name="release" depends="jar,javadoc" description="creates a release">
 		<zip destfile="${deploy.dir}/jconvert.zip"> 
-			<zipfileset dir="${jdocSrc.dir}"/>
+			<zipfileset dir="${jdocSrc.dir}" prefix="doc/javadoc"/>
+			<zipfileset dir="${website.dir}" prefix="doc"/>
 			<zipfileset dir="${deploy.dir}" includes="jconvert.jar"/>
 		</zip>
 	</target>
