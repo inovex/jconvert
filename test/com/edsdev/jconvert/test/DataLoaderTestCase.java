@@ -101,7 +101,7 @@ public class DataLoaderTestCase extends TestCase {
     }
 
     private void checkPunishment(ConversionTypeData ctd) {
-        //verify that TestType has 16 entries
+        //verify that TestType has 25 entries
         assertTrue("Punishment should have 25 entries. (" + ctd.getType().getConversions().size() + ")",
             ctd.getType().getConversions().size() == 25);
     }
@@ -113,8 +113,9 @@ public class DataLoaderTestCase extends TestCase {
     }
 
     private void checkTime(ConversionTypeData ctd) {
-        //verify that time has 289 entries
-        assertTrue("Time should have 289 entries. (" + ctd.getType().getConversions().size() + ")",
-            ctd.getType().getConversions().size() == 289);
+        //verify that time has 256 entries
+        log.debug("Size of time " + ctd.getType().getConversions().size());
+        assertTrue("Time should have 256 entries. (" + ctd.getType().getConversions().size() + ")",
+            ctd.getType().getConversions().size() == 256);
     }
 }
