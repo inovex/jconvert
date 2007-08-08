@@ -79,7 +79,7 @@ Time,hour,,millennium,,1/8760000,0
 Time,hour,,millisecond,,3600000,0
 Time,hour,,minute,',60,0
 Time,hour,,month (30 day),,1/720,0
-Time,hour,,month (30 day),,3/2190,0
+Time,hour,,month,,3/2190,0
 Time,hour,,nanosecond,,3600000000000,0
 Time,hour,,score,,1/175200,0
 Time,hour,,second,''',3600,0
