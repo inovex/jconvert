@@ -193,7 +193,7 @@ public abstract class Conversion implements Comparable {
      * Converts a value for you are returns the answer.
      * 
      * @param value double value you want to convert
-     * @param fromUnit Unit that you want to convert from
+     * @param pFromUnit Unit that you want to convert from
      * @return answer If the fromUnit does not match the classes from unit, then it is assumed that you are converting
      *         the other way ex. System.out.println(conversion.convertValue(17, conversion.getFromUnit()));
      */
@@ -348,7 +348,7 @@ public abstract class Conversion implements Comparable {
     /**
      * This represents the general age for a conversion. Targeted to be used to help with significant digits.
      * 
-     * @return
+     * @return int value representing the age of this conversion.
      */
     public int getGenerationAge() {
         return generationAge;

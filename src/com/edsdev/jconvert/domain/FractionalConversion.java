@@ -19,7 +19,7 @@ public class FractionalConversion extends Conversion {
     /**
      * @param value
      *            double value you want to convert
-     * @param fromUnit
+     * @param pFromUnit
      *            Unit that you want to convert from
      * @return answer
      * 
