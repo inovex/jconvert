@@ -19,7 +19,9 @@
 
 		<!-- Copy resources to build destination  -->
 		<copy todir="${classes.dir}">
-			<fileset dir="${resource.dir}" />
+			<fileset dir="${resource.dir}">
+				<exclude name="convert_custom.dat"/>
+			</fileset>
 		</copy>
 
 		<!-- Compile the test package -->
