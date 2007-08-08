@@ -34,6 +34,7 @@ Time,day,,millennium,,1/365000,0
 Time,day,,millisecond,,86400000,0
 Time,day,,minute,',1440,0
 Time,day,,month (30 day),,1/30,0
+Time,day,,month,,12/365,0
 Time,day,,nanosecond,,86400000000000,0
 Time,day,,score,,1/7300,0
 Time,day,,second,,86400,0
@@ -63,6 +64,7 @@ Time,fortnight,,millennium,,7/182500,0
 Time,fortnight,,millisecond,,1209600000,0
 Time,fortnight,,minute,',20160,0
 Time,fortnight,,month (30 day),,14/30,0
+Time,fortnight,,month,,168/365,0
 Time,fortnight,,nanosecond,,1209600000000000,0
 Time,fortnight,,score,,7/3650,0
 Time,fortnight,,second,''',1209600,0
@@ -77,6 +79,7 @@ Time,hour,,millennium,,1/8760000,0
 Time,hour,,millisecond,,3600000,0
 Time,hour,,minute,',60,0
 Time,hour,,month (30 day),,1/720,0
+Time,hour,,month (30 day),,3/2190,0
 Time,hour,,nanosecond,,3600000000000,0
 Time,hour,,score,,1/175200,0
 Time,hour,,second,''',3600,0
@@ -121,6 +124,7 @@ Time,millisecond,,leap-year,,1/31622400000,0
 Time,millisecond,,millennium,,1/31536000000000,0
 Time,millisecond,,minute,',1/60000,0
 Time,millisecond,,month (30 day),,1/2592000000,0
+Time,millisecond,,month,,3/7884000000,0
 Time,millisecond,,nanosecond,,1000000,0
 Time,millisecond,,score,,1/630720000000,0
 Time,millisecond,,second,''',1/1000,0
@@ -135,6 +139,7 @@ Time,minute,,leap-year,,1/527040,0
 Time,minute,,millennium,,1/525600000,0
 Time,minute,,millisecond,,60000,0
 Time,minute,,month (30 day),,1/43200,0
+Time,minute,,month,,3/131400,0
 Time,minute,,nanosecond,,60000000000,0
 Time,minute,,score,,1/10512000,0
 Time,minute,,second,''',60,0
@@ -149,16 +154,26 @@ Time,month (30 day),,leap-year,,5/61,0
 Time,month (30 day),,millennium,,3/36500,0
 Time,month (30 day),,millisecond,,2592000000,0
 Time,month (30 day),,minute,',43200,0
+Time,month (30 day),,month,,90/89,0
 Time,month (30 day),,nanosecond,,2592000000000000,0
 Time,month (30 day),,score,,3/730,0
 Time,month (30 day),,second,''',2592000,0
 Time,month (30 day),,week,,30/7,0
 Time,month (30 day),,year,,6/73,0
 Time,month,,century,,0.000833333333333333,0
+Time,month,,day,,356/12,0
 Time,month,,decade,,0.00833333333333333,0
+Time,month,,fortnight,,365/168,0
+Time,month,,hour,,730,0
 Time,month,,leap-year,,0.0833333333333333,0
+Time,month,,millisecond,,7884000000/3,0
 Time,month,,millennium,,0.0000833333333333333,0
+Time,month,,minute,',131400/3,0
+Time,month,,month (30 day),,89/90,0
+Time,month,,nanosecond,,7884000000000000/3,0
 Time,month,,score,,0.00416666666666666,0
+Time,month,,second,''',7884000/3,0
+Time,month,,week,,365/84,0
 Time,month,,year,,0.0833333333333333,0
 Time,nanosecond,,century,,3.170979198E-19,0
 Time,nanosecond,,day,,1.157407407E-14,0
@@ -170,6 +185,7 @@ Time,nanosecond,,millennium,,3.170979198E-20,0
 Time,nanosecond,,millisecond,,0.000001,0
 Time,nanosecond,,minute,',1.666666667E-11,0
 Time,nanosecond,,month (30 day),,3.858024691E-16,0
+Time,nanosecond,,month,,3/7884000000000000,0
 Time,nanosecond,,score,,1.585489599E-18,0
 Time,nanosecond,,second,''',0.000000001,0
 Time,nanosecond,,week,,1.653439153E-16,0
@@ -199,6 +215,7 @@ Time,second,''',millennium,,31536000000,0
 Time,second,''',millisecond,,1000,0
 Time,second,''',minute,',1/60,0
 Time,second,''',month (30 day),,1/2592000,0
+Time,second,''',month,,3/7884000,0
 Time,second,''',nanosecond,,1000000000,0
 Time,second,''',score,,1/630720000,0
 Time,second,''',week,,1/604800,0
@@ -213,6 +230,7 @@ Time,week,,millennium,,0.00001917808219,0
 Time,week,,millisecond,,604800000,0
 Time,week,,minute,',10080,0
 Time,week,,month (30 day),,0.2333333333,0
+Time,week,,month,,84/365,0
 Time,week,,nanosecond,,604800000000000,0
 Time,week,,score,,0.0009589041095,0
 Time,week,,second,''',604800,0
