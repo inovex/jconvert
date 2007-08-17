@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.Box;
@@ -16,6 +17,8 @@ import javax.swing.JTextField;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+import com.edsdev.jconvert.presentation.component.ConvertListCellRenderer;
+import com.edsdev.jconvert.presentation.component.ConvertListModel;
 import com.edsdev.jconvert.presentation.component.NumericalTextField;
 
 public class ConversionPanel extends JPanel {
@@ -38,8 +41,8 @@ public class ConversionPanel extends JPanel {
 
     public void setConversionTypeData(ConversionTypeData newData) {
         ctd = newData;
-        list.setListData(ctd.getAllFromUnits().toArray());
-        list2.setListData(new Object[0]);
+        list.setModel(new ConvertListModel(ctd.getAllFromUnits()));
+        list2.setModel(new ConvertListModel(new ArrayList()));
 
         setDefaultSelections();
     }
@@ -54,7 +57,19 @@ public class ConversionPanel extends JPanel {
         if (value == null) {
             return null;
         }
+        if (value instanceof ConversionUnitData) {
+            return ((ConversionUnitData) value).getUnit();
+        }
         return value.toString();
+    }
+
+    private int getGenerationAge(JList theList) {
+        Object value = theList.getSelectedValue();
+
+        if (value instanceof ConversionUnitData) {
+            return ((ConversionUnitData) value).getGenerationAge();
+        }
+        return 0;
     }
 
     private void convert() {
@@ -74,11 +89,16 @@ public class ConversionPanel extends JPanel {
     private void init() {
         Dimension scrollPaneSize = new Dimension(280, 220);
 
-        list = new JList(ctd.getAllFromUnits().toArray());
+        list = new JList();
+        list.setCellRenderer(new ConvertListCellRenderer());
+        list.setModel(new ConvertListModel(ctd.getAllFromUnits()));
         JScrollPane scrollPanel = new JScrollPane(list);
         scrollPanel.setPreferredSize(scrollPaneSize);
 
         list2 = new JList();
+        list2.setModel(new ConvertListModel(new ArrayList()));
+        list2.setCellRenderer(new ConvertListCellRenderer());
+
         JScrollPane scrollPanel2 = new JScrollPane(list2);
         scrollPanel2.setPreferredSize(scrollPaneSize);
 
@@ -90,13 +110,14 @@ public class ConversionPanel extends JPanel {
 
                 String list2Val = getSelectedValue(list2);
 
-                list2.setListData(results.toArray());
+                list2.setModel(new ConvertListModel(results));
                 labelFromUnit.setText(selectedValue);
 
                 if (list2Val != null) {
                     int i = 0;
                     for (int row = 0; row < list2.getModel().getSize(); row++) {
-                        if (list2.getModel().getElementAt(row).equals(list2Val)) {
+                        ConversionUnitData cud = (ConversionUnitData) list2.getModel().getElementAt(row);
+                        if (cud.getUnit().equals(list2Val)) {
                             i = row;
                             break;
                         }
@@ -110,7 +131,12 @@ public class ConversionPanel extends JPanel {
             public void valueChanged(ListSelectionEvent e) {
                 // For now assume one tab
                 String selectedValue = getSelectedValue((JList) e.getSource());
-                labelToUnit.setText(selectedValue);
+                int genAge = getGenerationAge((JList) e.getSource());
+                if (genAge >= 2) {
+                    labelToUnit.setText(selectedValue + " (***-generated conversion(" + genAge + "))");
+                } else {
+                    labelToUnit.setText(selectedValue);
+                }
                 convert();
             }
         });
@@ -135,9 +161,9 @@ public class ConversionPanel extends JPanel {
         JLabel labelTo = new JLabel("Conversion To");
         labelTo.setBounds(5, 30, 100, 22);
         labelFromUnit = new JLabel("xxx");
-        labelFromUnit.setBounds(330, 5, 90, 22);
+        labelFromUnit.setBounds(330, 5, 400, 22);
         labelToUnit = new JLabel("yyy");
-        labelToUnit.setBounds(330, 30, 90, 22);
+        labelToUnit.setBounds(330, 30, 400, 22);
 
         txtFrom = new NumericalTextField();
         txtFrom.setText("1");
