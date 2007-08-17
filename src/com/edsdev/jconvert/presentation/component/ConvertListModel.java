@@ -15,6 +15,10 @@ public class ConvertListModel implements ListModel {
 	public ConvertListModel(List pItems) {
 		items = pItems;
 	}
+	
+	public void setList(List pItems) {
+	    items = pItems;
+	}
 
 	public void addListDataListener(ListDataListener l) {
 		if (listeners == null) {
