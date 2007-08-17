@@ -1,6 +1,7 @@
 package com.edsdev.jconvert.presentation;
 
 /**
+ * This class is used for creating presentation views of the data.
  * @author Ed S Created on Aug 14, 2007 4:46:03 PM
  */
 public class ConversionUnitData implements Comparable {
