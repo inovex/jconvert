@@ -161,15 +161,9 @@ public abstract class Conversion implements Comparable {
             if (!areEqual(compare.getFromUnit(), fromUnit)) {
                 return false;
             }
-//            if (!areEqual(compare.getFromUnitAbbr(), fromUnitAbbr)) {
-//                return false;
-//            }
             if (!areEqual(compare.getToUnit(), toUnit)) {
                 return false;
             }
-//            if (!areEqual(compare.getToUnitAbbr(), toUnitAbbr)) {
-//                return false;
-//            }
             return true;
 
         }
@@ -240,6 +234,23 @@ public abstract class Conversion implements Comparable {
             return this.getToUnit();
         } else if (this.getToUnit().equals(unit)) {
             return this.getFromUnit();
+        }
+        return null;
+    }
+
+    /**
+     * Returns the "Partner" conversion unit abbreviation. If this converstion converts from a to b, and you pass in b,
+     * then you will get a. Likewise if you pass in a, you will get b
+     * 
+     * @param unit String unit whose partner you are looking for. Do not pass in an abbreviation, this is still looking
+     *        to start with a unit
+     * @return String:partner abbreviation
+     */
+    public String getConversionPartnerAbbrev(String unit) {
+        if (this.getFromUnit().equals(unit)) {
+            return this.getToUnitAbbr();
+        } else if (this.getToUnit().equals(unit)) {
+            return this.getFromUnitAbbr();
         }
         return null;
     }
@@ -360,11 +371,11 @@ public abstract class Conversion implements Comparable {
     public void setGenerationAge(int generationAge) {
         this.generationAge = generationAge;
     }
-    
+
     public int compareTo(Object obj) {
         if (obj instanceof Conversion) {
-            Conversion o = (Conversion)obj;
-            int rv =  this.getFromUnit().compareTo(o.getFromUnit());
+            Conversion o = (Conversion) obj;
+            int rv = this.getFromUnit().compareTo(o.getFromUnit());
             if (rv == 0) {
                 return this.getToUnit().compareTo(o.getToUnit());
             } else {
@@ -373,7 +384,6 @@ public abstract class Conversion implements Comparable {
         }
         return -1;
     }
-    
 
     public abstract long getFromToBottomFactor();
 
