@@ -7,6 +7,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
@@ -94,6 +95,7 @@ public class ConversionPanel extends JPanel {
         list.setModel(new ConvertListModel(ctd.getAllFromUnits()));
         JScrollPane scrollPanel = new JScrollPane(list);
         scrollPanel.setPreferredSize(scrollPaneSize);
+        scrollPanel.setBorder(BorderFactory.createTitledBorder("From Unit"));
 
         list2 = new JList();
         list2.setModel(new ConvertListModel(new ArrayList()));
@@ -101,6 +103,7 @@ public class ConversionPanel extends JPanel {
 
         JScrollPane scrollPanel2 = new JScrollPane(list2);
         scrollPanel2.setPreferredSize(scrollPaneSize);
+        scrollPanel2.setBorder(BorderFactory.createTitledBorder("To Unit"));
 
         list.addListSelectionListener(new ListSelectionListener() {
             public void valueChanged(ListSelectionEvent e) {
