@@ -57,6 +57,8 @@
 		</junit>
 	</target>
 	<target name="jar" depends="clean,compile,test" description="creates the jar for the jconvert project">
+		<!-- Update the jconvert.properties file -->
+		
 		<jar basedir="${classes.dir}" destfile="${deploy.dir}/jconvert.jar">
 			<exclude name="**/test/*" />
 			<exclude name="**/test/" />
@@ -83,7 +85,7 @@
 		<zip destfile="${deploy.dir}/jconvert.zip"> 
 			<zipfileset dir="${jdocSrc.dir}" prefix="doc/javadoc"/>
 			<zipfileset dir="${website.dir}" prefix="doc"/>
-			<zipfileset dir="${deploy.dir}" includes="jconvert.jar"/>
+			<zipfileset dir="${deploy.dir}" includes="*.jar"/>
 		</zip>
 	</target>
 	<target name="javadoc" description="creaates the javadoc for the project">
