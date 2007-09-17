@@ -20,7 +20,7 @@
 		<!-- Copy resources to build destination  -->
 		<copy todir="${classes.dir}">
 			<fileset dir="${resource.dir}">
-				<exclude name="convert_custom.dat"/>
+				<exclude name="convert_custom.dat" />
 			</fileset>
 		</copy>
 
@@ -56,10 +56,21 @@
 			<test name="com.edsdev.jconvert.test.DataLoaderTestCase" />
 		</junit>
 	</target>
-	<target name="jar" depends="clean,compile,test" description="creates the jar for the jconvert project">
-		<!-- Update the jconvert.properties file -->
-		
-		<jar basedir="${classes.dir}" destfile="${deploy.dir}/jconvert.jar">
+	<target name="updateBuildProperties" description="Updates the build properties with version and build info">
+		<propertyfile file="resource/jconvert.properties">
+			<entry key="MiniVersion" type="int" operation="+" value="1" />
+			<entry key="BuildDate" type="date" default="now" value="now" />
+			<!-- pattern="mm/dd/yyyy HH:MM:ss"/> -->
+		</propertyfile>
+		<copy todir="${classes.dir}">
+			<fileset dir="${resource.dir}" >
+				<include name="jconvert.properties" />
+			</fileset>
+		</copy>
+	</target>
+	<target name="jar" depends="clean,compile,test,updateBuildProperties" description="creates the jar for the jconvert project">
+		<property file="resource/jconvert.properties" />
+		<jar basedir="${classes.dir}" destfile="${deploy.dir}/jconvert.${MajorVersion}.${MinorVersion}_${MiniVersion}.jar">
 			<exclude name="**/test/*" />
 			<exclude name="**/test/" />
 			<manifest>
@@ -82,14 +93,15 @@
 		</jar>
 	</target>
 	<target name="release" depends="jar,javadoc" description="creates a release">
-		<zip destfile="${deploy.dir}/jconvert.zip"> 
-			<zipfileset dir="${jdocSrc.dir}" prefix="doc/javadoc"/>
-			<zipfileset dir="${website.dir}" prefix="doc"/>
-			<zipfileset dir="${deploy.dir}" includes="*.jar"/>
+		<property file="resource/jconvert.properties" />
+		<zip destfile="${deploy.dir}/jconvert.${MajorVersion}.${MinorVersion}_${MiniVersion}.zip">
+			<zipfileset dir="${jdocSrc.dir}" prefix="doc/javadoc" />
+			<zipfileset dir="${website.dir}" prefix="doc" />
+			<zipfileset dir="${deploy.dir}" includes="*.jar" />
 		</zip>
 	</target>
 	<target name="javadoc" description="creaates the javadoc for the project">
-		<delete dir="${jdocSrc.dir}"/>
+		<delete dir="${jdocSrc.dir}" />
 		<javadoc destdir="${jdocSrc.dir}" author="true" version="true" use="true" windowtitle="Test API">
 
 			<fileset dir="${src.dir}" defaultexcludes="yes">
