@@ -58,7 +58,7 @@
 	</target>
 	<target name="updateBuildProperties" description="Updates the build properties with version and build info">
 		<propertyfile file="resource/jconvert.properties">
-			<entry key="MiniVersion" type="int" operation="+" value="1" />
+			<entry key="Revision" type="int" operation="+" value="1" />
 			<entry key="BuildDate" type="date" default="now" value="now" />
 			<!-- pattern="mm/dd/yyyy HH:MM:ss"/> -->
 		</propertyfile>
@@ -70,7 +70,7 @@
 	</target>
 	<target name="jar" depends="clean,compile,test,updateBuildProperties" description="creates the jar for the jconvert project">
 		<property file="resource/jconvert.properties" />
-		<jar basedir="${classes.dir}" destfile="${deploy.dir}/jconvert.${MajorVersion}.${MinorVersion}_${MiniVersion}.jar">
+		<jar basedir="${classes.dir}" destfile="${deploy.dir}/jconvert-${MajorVersion}.${MinorVersion}.${Revision}.jar">
 			<exclude name="**/test/*" />
 			<exclude name="**/test/" />
 			<manifest>
@@ -94,7 +94,7 @@
 	</target>
 	<target name="release" depends="jar,javadoc" description="creates a release">
 		<property file="resource/jconvert.properties" />
-		<zip destfile="${deploy.dir}/jconvert.${MajorVersion}.${MinorVersion}_${MiniVersion}.zip">
+		<zip destfile="${deploy.dir}/jconvert-${MajorVersion}.${MinorVersion}.${Revision}.zip">
 			<zipfileset dir="${jdocSrc.dir}" prefix="doc/javadoc" />
 			<zipfileset dir="${website.dir}" prefix="doc" />
 			<zipfileset dir="${deploy.dir}" includes="*.jar" />
