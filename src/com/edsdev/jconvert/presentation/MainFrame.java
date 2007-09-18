@@ -19,10 +19,10 @@ import com.edsdev.jconvert.domain.ConversionType;
 import com.edsdev.jconvert.persistence.DataLoader;
 import com.edsdev.jconvert.util.ResourceManager;
 
-public class MainFrame extends JFrame {
+public class MainFrame extends JFrame implements ConversionsChangedListener {
 
     private static final long serialVersionUID = 1L;
-    
+
     private AboutDialog aboutDlg = null;
 
     private List data;
@@ -51,6 +51,13 @@ public class MainFrame extends JFrame {
         this.setTitle("JConvert");
         this.setJMenuBar(getMenu());
 
+        setContent();
+
+    }
+
+    private void setContent() {
+        this.getContentPane().removeAll();
+
         JTabbedPane tabbedPane = new JTabbedPane();
         // tabbedPane.addChangeListener(new ChangeListener() {
         // public void stateChanged(ChangeEvent e) {
@@ -66,6 +73,7 @@ public class MainFrame extends JFrame {
             JPanel panel = getNewPanel(ctd);
             tabbedPane.addTab(ctd.getTypeName(), panel);
         }
+
     }
 
     private JPanel getNewPanel(ConversionTypeData ctd) {
@@ -78,6 +86,16 @@ public class MainFrame extends JFrame {
         JMenu fileMenu = new JMenu("File");
         fileMenu.setMnemonic('F');
 
+        JMenuItem fileMenuCustom = new JMenuItem("Add custom conversion");
+        fileMenuCustom.setMnemonic('A');
+        fileMenuCustom.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                AddCustomConversionDlg dlg = new AddCustomConversionDlg(MainFrame.this);
+                dlg.addConversionsChangedListener(MainFrame.this);
+                dlg.show();
+            }
+        });
+
         JMenuItem fileMenuExit = new JMenuItem("Exit");
         fileMenuExit.setMnemonic('X');
         fileMenuExit.addActionListener(new ActionListener() {
@@ -86,6 +104,8 @@ public class MainFrame extends JFrame {
             }
         });
 
+        fileMenu.add(fileMenuCustom);
+        fileMenu.addSeparator();
         fileMenu.add(fileMenuExit);
 
         JMenu helpMenu = new JMenu("Help");
@@ -105,6 +125,7 @@ public class MainFrame extends JFrame {
 
         return bar;
     }
+
     private void displayAboutDialog() {
         if (aboutDlg == null) {
             aboutDlg = new AboutDialog(MainFrame.this);
@@ -126,5 +147,14 @@ public class MainFrame extends JFrame {
         }
 
         return rv;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.edsdev.jconvert.presentation.ConversionsChangedListener#conversionsUpdated()
+     */
+    public void conversionsUpdated() {
+        setContent();
     }
 }
