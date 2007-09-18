@@ -111,6 +111,10 @@ public class ConversionGapBuilder {
                             String newFactor = outer.multiply(inner);
                             Conversion newC = Conversion.createEmptyInstance(outer.getFromUnit(),
                                 outer.getFromUnitAbbr(), inner.getToUnit(), inner.getToUnitAbbr());
+                            
+                            //TODO  - get a generation age for this new conversion.  Add a helper method to compare which conversion
+                            //is younger and use that instead of the if below.  will also need to use this on all ifs below.  Would also like to 
+                            //clean this code up so that it is more maintainable and readable.
                             if (!ct.getConversions().contains(newC)) {
                                 newC = Conversion.createInstance(outer.getFromUnit(), outer.getFromUnitAbbr(),
                                     inner.getToUnit(), inner.getToUnitAbbr(), newFactor, 0);
