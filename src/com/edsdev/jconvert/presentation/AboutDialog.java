@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
 import java.util.Properties;
 
 import javax.swing.JButton;
@@ -34,7 +35,7 @@ public class AboutDialog extends JDialog implements HyperlinkListener {
 
     private final String MINOR_VERSION = "MinorVersion";
 
-    private final String MINI_VERSION = "MiniVersion";
+    private final String MINI_VERSION = "Revision";
 
     private final String BUILD_DATE = "BuildDate";
 
@@ -82,19 +83,24 @@ public class AboutDialog extends JDialog implements HyperlinkListener {
         try {
             Properties props = new Properties();
             props.load(ResourceManager.getResourceAsStream(PROP_FILE));
-            versionNumber = props.getProperty(MAJOR_VERSION) + "." + props.getProperty(MINOR_VERSION) + "_"
+            versionNumber = props.getProperty(MAJOR_VERSION) + "." + props.getProperty(MINOR_VERSION) + "."
                     + props.getProperty(MINI_VERSION);
+            
             buildDate = props.getProperty(BUILD_DATE);
+            SimpleDateFormat from = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+            SimpleDateFormat to = new SimpleDateFormat("MMM dd,yyyy hh:mm a");
+            buildDate = to.format(from.parse(buildDate));
         } catch (Exception e) {
             log.error("Unable to load " + PROP_FILE + ".", e);
         }
 
         return "<html><body>" + "<H3>About JConvert</H3><BR><font face='ariel' size='2'>" + "Version: " + versionNumber
                 + "<BR>" + "Build Date:" + buildDate + "<BR>developed by Ed Sarrazin<BR><BR>"
-                + "For additional resources see the <a href='http://jconvert.sourceforge.net/howto.html'>How To</a>, "
-                + "<a href=\"https://sourceforge.net/project/showfiles.php?group_id='201265'\">Downloads</a>, "
-                + "and <a href='http://jconvert.sourceforge.net/javadoc/index.html'>Java API</a><BR><BR>"
-                + "</font></body></html>";
+                + "This is an open source project that can be found at "
+                + "<a href='http://jconvert.sourceforge.net'>http://jconvert.sourceforge.net</a>"
+                + "<BR><BR>Here are usefull links to<a href='http://jconvert.sourceforge.net'>downloads</a>"
+                + " ,<a href='http://jconvert.sourceforge.net'>how to</a>,"
+                + " and the <a href='http://jconvert.sourceforge.net'>java api</a>" + "</font></body></html>";
     }
 
     public void hyperlinkUpdate(HyperlinkEvent event) {
