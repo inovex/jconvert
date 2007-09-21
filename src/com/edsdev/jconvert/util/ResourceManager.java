@@ -121,9 +121,7 @@ public class ResourceManager {
      */
     public static Properties loadProperties(InputStream Istream) throws java.io.IOException {
         if (Istream == null) {
-            System.err.println("Can't load properties file from the inputstream  --  NO resource with the specified name was found");
-            throw new IOException(
-                "Can't load properties file from the inputstream  --  NO resource with the specified name was found");
+            throw new IOException("Can't load properties file from the inputstream - it is null");
         }
 
         Properties props = null;
