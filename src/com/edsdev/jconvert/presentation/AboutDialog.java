@@ -6,7 +6,6 @@ import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
-import java.util.Properties;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -17,8 +16,8 @@ import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 
 import com.edsdev.jconvert.util.Browser;
+import com.edsdev.jconvert.util.JConvertProperties;
 import com.edsdev.jconvert.util.Logger;
-import com.edsdev.jconvert.util.ResourceManager;
 
 /**
  * @author Ed S Created on Sep 10, 2007 8:34:25 PM
@@ -30,16 +29,6 @@ public class AboutDialog extends JDialog implements HyperlinkListener {
     private static final Logger log = Logger.getInstance(AboutDialog.class);
 
     private final String UNKNOWN = "Unknown";
-
-    private final String MAJOR_VERSION = "MajorVersion";
-
-    private final String MINOR_VERSION = "MinorVersion";
-
-    private final String MINI_VERSION = "Revision";
-
-    private final String BUILD_DATE = "BuildDate";
-
-    private final String PROP_FILE = "jconvert.properties";
 
     public static void main(String[] args) {
         new AboutDialog(null).setVisible(true);
@@ -80,20 +69,20 @@ public class AboutDialog extends JDialog implements HyperlinkListener {
     private String getContent() {
         String versionNumber = UNKNOWN;
         String buildDate = UNKNOWN;
-        try {
-            Properties props = new Properties();
-            props.load(ResourceManager.getResourceAsStream(PROP_FILE));
-            versionNumber = props.getProperty(MAJOR_VERSION) + "." + props.getProperty(MINOR_VERSION) + "."
-                    + props.getProperty(MINI_VERSION);
-            
-            buildDate = props.getProperty(BUILD_DATE);
+
+        if (JConvertProperties.getMajorVersion() != null) {
+            versionNumber = JConvertProperties.getMajorVersion() + "." + JConvertProperties.getMinorVersion() + "."
+                    + JConvertProperties.getRevision();
+
+            buildDate = JConvertProperties.getBuildDate();
             SimpleDateFormat from = new SimpleDateFormat("yyyy/MM/dd HH:mm");
             SimpleDateFormat to = new SimpleDateFormat("MMM dd,yyyy hh:mm a");
-            buildDate = to.format(from.parse(buildDate));
-        } catch (Exception e) {
-            log.error("Unable to load " + PROP_FILE + ".", e);
+            try {
+                buildDate = to.format(from.parse(buildDate));
+            } catch (Exception e) {
+                log.error("Failed to parse the buildDate.");
+            }
         }
-
         return "<html><body>" + "<H3>About JConvert</H3><BR><font face='ariel' size='2'>" + "Version: " + versionNumber
                 + "<BR>" + "Build Date:" + buildDate + "<BR>developed by Ed Sarrazin<BR><BR>"
                 + "This is an open source project that can be found at "
