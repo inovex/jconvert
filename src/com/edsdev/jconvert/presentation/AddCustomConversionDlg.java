@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
@@ -25,6 +27,7 @@ import javax.swing.text.JTextComponent;
 
 import com.edsdev.jconvert.domain.Conversion;
 import com.edsdev.jconvert.util.Logger;
+import com.edsdev.jconvert.util.ResourceManager;
 
 /**
  * @author Ed S Created on Sep 13, 2007 5:14:10 PM
@@ -58,8 +61,6 @@ public class AddCustomConversionDlg extends JDialog {
     private JButton okButton = new JButton("Add");
 
     private JButton cancelButton = new JButton("Close");
-
-    private boolean addedData = false;
 
     private ArrayList listeners = new ArrayList();
 
@@ -95,6 +96,12 @@ public class AddCustomConversionDlg extends JDialog {
         }
 
         init();
+
+        this.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                saveData();
+            }
+        });
     }
 
     private void init() {
@@ -143,7 +150,6 @@ public class AddCustomConversionDlg extends JDialog {
         scrollData.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         addComponent(scrollData, 5, 210, 380, 200);
         initializeData();
-
     }
 
     private void addKeyListenerToTextField(Component c) {
@@ -172,18 +178,25 @@ public class AddCustomConversionDlg extends JDialog {
                 + " = " + result + " " + txtTo.getText());
     }
 
+    private String getFilePath() {
+        String jarPath = ResourceManager.getJarPath();
+        log.debug("Here is the jar path: " + jarPath);
+        return jarPath + FILE_NAME;
+    }
+
     private void initializeData() {
+
         StringBuffer buf = new StringBuffer();
         BufferedReader reader = null;
         try {
-            reader = new BufferedReader(new FileReader(FILE_NAME));
+            reader = new BufferedReader(new FileReader(getFilePath()));
             String line = reader.readLine();
             while (line != null) {
                 buf.append(line + "\n");
                 line = reader.readLine();
             }
         } catch (Exception e) {
-            log.error("Failed to open datafile for reading", e);
+            log.warn("No custom data file found here:" + getFilePath());
         } finally {
             try {
                 if (reader != null) {
@@ -198,10 +211,10 @@ public class AddCustomConversionDlg extends JDialog {
         scrollData.scrollRectToVisible(new Rectangle(0, txtData.getHeight()));
     }
 
-    private void closeDialog() {
+    private void saveData() {
         BufferedWriter writer = null;
         try {
-            writer = new BufferedWriter(new FileWriter(FILE_NAME, false));
+            writer = new BufferedWriter(new FileWriter(getFilePath(), false));
             writer.write(txtData.getText());
             writer.flush();
         } catch (Exception e) {
@@ -217,8 +230,11 @@ public class AddCustomConversionDlg extends JDialog {
         }
 
         fireConversionsChanged();
+    }
 
-        AddCustomConversionDlg.this.dispose();
+    private void closeDialog() {
+        saveData();
+        dispose();
     }
 
     public void addConversionsChangedListener(ConversionsChangedListener listener) {
@@ -279,7 +295,6 @@ public class AddCustomConversionDlg extends JDialog {
             txtFromAbbrev.getText()).append(",").append(txtTo.getText()).append(",").append(txtToAbbrev.getText()).append(
             ",").append(txtFactor.getText()).append(",").append(txtOffset.getText());
         txtData.setText(txtData.getText() + buf.toString());
-        addedData = true;
 
         scrollData.scrollRectToVisible(new Rectangle(0, txtData.getHeight()));
     }
