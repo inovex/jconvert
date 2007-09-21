@@ -2,6 +2,8 @@ package com.edsdev.jconvert.presentation;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -17,6 +19,7 @@ import javax.swing.UIManager;
 
 import com.edsdev.jconvert.domain.ConversionType;
 import com.edsdev.jconvert.persistence.DataLoader;
+import com.edsdev.jconvert.util.JConvertSettingsProperties;
 import com.edsdev.jconvert.util.ResourceManager;
 
 public class MainFrame extends JFrame implements ConversionsChangedListener {
@@ -24,6 +27,8 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
     private static final long serialVersionUID = 1L;
 
     private AboutDialog aboutDlg = null;
+
+    private JTabbedPane tabbedPane = null;
 
     private List data;
 
@@ -46,19 +51,71 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
     }
 
     private void init() {
-        this.setSize(600, 400);
 
         this.setTitle("JConvert");
         this.setJMenuBar(getMenu());
 
         setContent();
+        this.addWindowListener(new WindowAdapter() {
 
+            public void windowClosing(WindowEvent e) {
+                saveSettings();
+            }
+        });
+        loadSettings();
+    }
+
+    private void setPos(int x, int y) {
+        //verify that x and y are not off the screen
+        this.setLocation(x, y);
+    }
+    
+    private void loadSettings() {
+        this.setSize(600, 400);
+        try {
+            String temp = JConvertSettingsProperties.getAppWidth();
+            //assume that if the width is in the properties file, then everything else is. This file is written by the
+            // application and thus we should be able to assume this.
+            if (temp != null) {
+                this.setSize(new Integer(temp).intValue(),
+                    new Integer(JConvertSettingsProperties.getAppHeight()).intValue());
+                setPos(new Integer(JConvertSettingsProperties.getAppX()).intValue(), new Integer(
+                    JConvertSettingsProperties.getAppY()).intValue());
+                restorLastTab();
+            }
+        } catch (Exception e) {
+            //do nothing
+        }
+
+    }
+
+    public void restorLastTab() {
+        String lastTab = JConvertSettingsProperties.getLastTab();
+        for (int i = 0; i < tabbedPane.getTabCount(); i++) {
+            if (tabbedPane.getTitleAt(i).equals(lastTab)) {
+                tabbedPane.setSelectedIndex(i);
+            }
+        }
+    }
+
+    public void recordCurrentTab() {
+        JConvertSettingsProperties.setLastTab(tabbedPane.getTitleAt(tabbedPane.getSelectedIndex()));
+    }
+
+    private void saveSettings() {
+        JConvertSettingsProperties.setAppWidth(this.getWidth() + "");
+        JConvertSettingsProperties.setAppHeight(this.getHeight() + "");
+        JConvertSettingsProperties.setAppX(this.getX() + "");
+        JConvertSettingsProperties.setAppY(this.getY() + "");
+        JConvertSettingsProperties.setHiddenTabs("");
+        recordCurrentTab();
+        JConvertSettingsProperties.persist();
     }
 
     private void setContent() {
         this.getContentPane().removeAll();
 
-        JTabbedPane tabbedPane = new JTabbedPane();
+        tabbedPane = new JTabbedPane();
         // tabbedPane.addChangeListener(new ChangeListener() {
         // public void stateChanged(ChangeEvent e) {
         // System.out.println(e.getSource());
