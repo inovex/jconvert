@@ -74,15 +74,27 @@ public class ConversionPanel extends JPanel {
     }
 
     private void convert() {
+        convert(false);
+    }
+
+    private void convert(boolean reverse) {
         String fromUnit = getSelectedValue(list);
         String toUnit = getSelectedValue(list2);
         if (fromUnit != null && toUnit != null) {
-            if (txtFrom.getText() != null && !txtFrom.getText().trim().equals("")) {
-                double startValue = new Double(txtFrom.getText()).doubleValue();
-                Double value = new Double(ctd.convert(startValue, fromUnit, toUnit));
-                DecimalFormat fmt = new DecimalFormat(
-                    "#.######################################################################################################");
-                txtTo.setText(fmt.format(value));
+            DecimalFormat fmt = new DecimalFormat(
+                "#.######################################################################################################");
+            if (reverse) {
+                if (txtTo.getText() != null && !txtTo.getText().trim().equals("")) {
+                    double startValue = new Double(txtTo.getText()).doubleValue();
+                    Double value = new Double(ctd.convert(startValue, toUnit, fromUnit));
+                    txtFrom.setText(fmt.format(value));
+                }
+            } else {
+                if (txtFrom.getText() != null && !txtFrom.getText().trim().equals("")) {
+                    double startValue = new Double(txtFrom.getText()).doubleValue();
+                    Double value = new Double(ctd.convert(startValue, fromUnit, toUnit));
+                    txtTo.setText(fmt.format(value));
+                }
             }
         }
     }
@@ -180,7 +192,12 @@ public class ConversionPanel extends JPanel {
 
         txtTo = new JTextField();
         txtTo.setBounds(110, 30, 200, 22);
-        txtTo.setEditable(false);
+//        txtTo.setEditable(false);
+        txtTo.addKeyListener(new KeyAdapter() {
+            public void keyReleased(KeyEvent e) {
+                convert(true);
+            }
+        });
 
         conversionPanel.setLayout(null);
         conversionPanel.add(labelFrom);
@@ -189,6 +206,11 @@ public class ConversionPanel extends JPanel {
         conversionPanel.add(labelToUnit);
         conversionPanel.add(txtFrom);
         conversionPanel.add(txtTo);
+
+        Dimension dim = new Dimension(600, 57);
+        conversionPanel.setPreferredSize(dim);
+        conversionPanel.setMinimumSize(dim);
+        conversionPanel.setMaximumSize(new Dimension(1200, 57));
 
         setDefaultSelections();
 
