@@ -32,7 +32,7 @@ public class JConvertSettingsProperties {
         try {
             props = ResourceManager.loadProperties(FILE_NAME);
         } catch (Exception e) {
-            log.error("Failed to load the jconvert settings. - " + FILE_NAME, e);
+            log.warn("Cannot load settings: " + FILE_NAME + " not found.");
             props = new Properties();
         }
     }
