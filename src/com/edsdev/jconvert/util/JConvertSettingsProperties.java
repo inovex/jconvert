@@ -27,6 +27,12 @@ public class JConvertSettingsProperties {
 
     public static final String LAST_TAB = "LastTab";
 
+    public static final String LAST_VALUE = "LastValue";
+
+    public static final String LAST_FROM = "LastFrom";
+
+    public static final String LAST_TO = "LastTo";
+
     /** Static initializer - lets do this once */
     static {
         try {
@@ -105,5 +111,29 @@ public class JConvertSettingsProperties {
 
     public static void setLastTab(String val) {
         props.setProperty(LAST_TAB, val);
+    }
+
+    public static String getLastValue() {
+        return props.getProperty(LAST_VALUE);
+    }
+
+    public static void setLastValue(String val) {
+        props.setProperty(LAST_VALUE, val);
+    }
+
+    public static String getLastFrom() {
+        return props.getProperty(LAST_FROM);
+    }
+
+    public static void setLastFrom(String val) {
+        props.setProperty(LAST_FROM, val);
+    }
+
+    public static String getLastTo() {
+        return props.getProperty(LAST_TO);
+    }
+
+    public static void setLastTo(String val) {
+        props.setProperty(LAST_TO, val);
     }
 }
