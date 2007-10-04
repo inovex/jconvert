@@ -130,21 +130,21 @@ Time,millisecond,,score,,1/630720000000,0
 Time,millisecond,,second,''',1/1000,0
 Time,millisecond,,week,,1/604800000,0
 Time,millisecond,,year,,1/31536000000,0
-Time,minute,,century,,1/52560000,0
-Time,minute,,day,,1/1440,0
-Time,minute,,decade,,1/5256000,0
-Time,minute,,fortnight,,1/20160,0
-Time,minute,,hour,,1/60,0
-Time,minute,,leap-year,,1/527040,0
-Time,minute,,millennium,,1/525600000,0
-Time,minute,,millisecond,,60000,0
-Time,minute,,month (30 day),,1/43200,0
-Time,minute,,month,,3/131400,0
-Time,minute,,nanosecond,,60000000000,0
-Time,minute,,score,,1/10512000,0
-Time,minute,,second,''',60,0
-Time,minute,,week,,1/10080,0
-Time,minute,,year,,1/525600,0
+Time,minute,',century,,1/52560000,0
+Time,minute,',day,,1/1440,0
+Time,minute,',decade,,1/5256000,0
+Time,minute,',fortnight,,1/20160,0
+Time,minute,',hour,,1/60,0
+Time,minute,',leap-year,,1/527040,0
+Time,minute,',millennium,,1/525600000,0
+Time,minute,',millisecond,,60000,0
+Time,minute,',month (30 day),,1/43200,0
+Time,minute,',month,,3/131400,0
+Time,minute,',nanosecond,,60000000000,0
+Time,minute,',score,,1/10512000,0
+Time,minute,',second,''',60,0
+Time,minute,',week,,1/10080,0
+Time,minute,',year,,1/525600,0
 Time,month (30 day),,century,,3/3650,0
 Time,month (30 day),,day,,30,0
 Time,month (30 day),,decade,,3/365,0
@@ -264,7 +264,7 @@ Acceleration,meter/sec²,m/s²,foot/sec²,ft/s²,3.2808527,0
 Acceleration,meter/sec²,m/s²,centimeter/sec²,cm/s²,100.00039,0
 Acceleration,meter/sec²,m/s²,millimeter/sec²,mm/s²,1000.0039,0
 Acceleration,mile/hour second,mi/(h·s),free fall,g,0.0455853,0
-Acceleration,mile/hour second,mi/(h·s),meter/sec²,(m/s²),0.4470392,0
+Acceleration,mile/hour second,mi/(h·s),meter/sec²,m/s²,0.4470392,0
 Acceleration,mile/hour second,mi/(h·s),mile/sec²,mi/s²,1/3600,0
 Acceleration,mile/hour second,mi/(h·s),foot/sec²,ft/s²,1.46667,0
 Acceleration,mile/hour second,mi/(h·s),centimeter/sec²,cm/s²,44.704101,0
