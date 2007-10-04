@@ -1,7 +1,6 @@
 package com.edsdev.jconvert.util;
 
 import java.text.MessageFormat;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 /**
@@ -13,7 +12,6 @@ public class Messages {
     private static ResourceBundle bundle = null;
 
     static {
-        Locale.setDefault(new Locale("xy", "XY"));
         bundle = ResourceBundle.getBundle("jcMessages");
     }
 
@@ -36,7 +34,7 @@ public class Messages {
      */
     public static String getResource(String key, String replacementValue) {
         String rv = bundle.getString(key);
-        MessageFormat.format(key, new Object[] { replacementValue });
+        rv = MessageFormat.format(rv, new Object[] { replacementValue });
         return rv;
     }
 
@@ -51,7 +49,21 @@ public class Messages {
      */
     public static String getResource(String key, String value1, String value2) {
         String rv = bundle.getString(key);
-        MessageFormat.format(key, new Object[] { value1, value2 });
+        rv = MessageFormat.format(rv, new Object[] { value1, value2 });
+        return rv;
+    }
+
+    /**
+     * Gets the resource specific to the specified key, replacing the parmeters in the string with the values passed in
+     * 
+     * @param key
+     * @param value1
+     * @param values
+     * @return
+     */
+    public static String getResource(String key, Object[] values) {
+        String rv = bundle.getString(key);
+        rv = MessageFormat.format(rv, values);
         return rv;
     }
 
