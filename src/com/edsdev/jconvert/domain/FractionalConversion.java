@@ -54,7 +54,7 @@ public class FractionalConversion extends Conversion {
             rv = (this.getFromToTopFactor() * fc.getFromToBottomFactor()) + "/"
                     + (this.getFromToBottomFactor() * fc.getFromToTopFactor());
         } else {
-            rv = (this.getFromToBottomFactor() * byConversion.getFromToFactor()) / this.getFromToTopFactor() + "";
+            rv = this.getFromToTopFactor() / (this.getFromToBottomFactor() * byConversion.getFromToFactor())  + "";
         }
         return rv;
     }
