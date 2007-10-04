@@ -1,0 +1,24 @@
+1.0.3
+-Internationalized the application allowing support for different languages.
+-Fixed bug with generation of custom conversions.
+-Fixed gui problem with To units expanding when selecting from units.
+-Prioritized generated conversions to favor less significant digit loss.
+-Saves more information about your previous session so that when JConvert opens up next time, you can pick up where you left off.
+-You no longer loose your place when adding a new custom conversion.
+-Consistency with abbreviations in conversions.
+
+--Non-visible changes
+-Updated the unit test cases after changes to conversion generations were made.
+-cleaned up code in the ConversionGapBuilder.
+
+1.0.2
+- Fixed problem with finding properties when launching from browser 
+- Made screen resizing more friendly 
+- Update so custom properties edit page can do more than add 
+- User properties to remember screen sizes, etc. 
+- Quick way to reverse calculation by filling in To value.
+
+1.0.1
+-Easily add new conversions from within the application. 
+-More conversions have been converted to fractions. 
+-New help about dialog box with quick links to important pages.
