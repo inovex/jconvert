@@ -27,6 +27,7 @@ import javax.swing.text.JTextComponent;
 
 import com.edsdev.jconvert.domain.Conversion;
 import com.edsdev.jconvert.util.Logger;
+import com.edsdev.jconvert.util.Messages;
 import com.edsdev.jconvert.util.ResourceManager;
 
 /**
@@ -54,13 +55,13 @@ public class AddCustomConversionDlg extends JDialog {
 
     private JTextField txtOffset = new JTextField();
 
-    private JLabel lblFormula = new JLabel("([From] * [Factor]) + [Offset] = [To]");
+    private JLabel lblFormula = new JLabel(Messages.getResource("conversionFormula"));
 
     private JLabel lblExample = new JLabel();
 
-    private JButton okButton = new JButton("Add");
+    private JButton okButton = new JButton(Messages.getResource("addButton"));
 
-    private JButton cancelButton = new JButton("Close");
+    private JButton cancelButton = new JButton(Messages.getResource("closeButton"));
 
     private ArrayList listeners = new ArrayList();
 
@@ -77,7 +78,7 @@ public class AddCustomConversionDlg extends JDialog {
 
     public AddCustomConversionDlg(Frame parent) {
         super(parent);
-        this.setTitle("Add Custom Conversion");
+        this.setTitle(Messages.getResource("addCustomTitle"));
 
         if (parent != null) {
             int x = parent.getX() + (parent.getWidth() - WIDTH) / 2;
@@ -106,24 +107,24 @@ public class AddCustomConversionDlg extends JDialog {
 
     private void init() {
         this.getContentPane().setLayout(null);
-        addLabel("Conversion type", 5, 5, 100, 22);
+        addLabel(Messages.getResource("conversionTypeLabel"), 5, 5, 100, 22);
         addComponent(txtConversionType, 110, 5, 200, 22);
         this.getContentPane().add(txtConversionType);
 
-        addLabel("From Unit", 5, 30, 100, 22);
+        addLabel(Messages.getResource("fromUnitLabel"), 5, 30, 100, 22);
         addComponent(txtFrom, 110, 30, 150, 22);
-        addLabel("Abbrev", 270, 30, 50, 22);
+        addLabel(Messages.getResource("abbrevLabel"), 270, 30, 50, 22);
         addComponent(txtFromAbbrev, 330, 30, 50, 22);
 
-        addLabel("To Unit", 5, 55, 100, 22);
+        addLabel(Messages.getResource("toUnitLabel"), 5, 55, 100, 22);
         addComponent(txtTo, 110, 55, 150, 22);
-        addLabel("Abbrev", 270, 55, 50, 22);
+        addLabel(Messages.getResource("abbrevLabel"), 270, 55, 50, 22);
         addComponent(txtToAbbrev, 330, 55, 50, 22);
 
-        addLabel("Factor", 5, 80, 100, 22);
+        addLabel(Messages.getResource("factorLabel"), 5, 80, 100, 22);
         addComponent(txtFactor, 110, 80, 150, 22);
 
-        addLabel("Offset", 5, 105, 100, 22);
+        addLabel(Messages.getResource("offsetLabel"), 5, 105, 100, 22);
         addComponent(txtOffset, 110, 105, 150, 22);
         txtOffset.setText("0");
 
@@ -164,7 +165,7 @@ public class AddCustomConversionDlg extends JDialog {
     }
 
     private void updateExample() {
-        String result = "?";
+        String result = Messages.getResource("questionMark");
         double offset = 0;
         try {
             offset = new Double(txtOffset.getText()).doubleValue();
@@ -174,8 +175,9 @@ public class AddCustomConversionDlg extends JDialog {
         } catch (Exception e) {
             //throw away, we are just trying all the time.
         }
-        lblExample.setText("10 " + txtFrom.getText() + " * " + txtFactor.getText() + " + " + txtOffset.getText()
-                + " = " + result + " " + txtTo.getText());
+        lblExample.setText("10 " + txtFrom.getText() + " " + Messages.getResource("multiplySymbol") + " "
+                + txtFactor.getText() + " " + Messages.getResource("plusSign") + " " + txtOffset.getText()
+                + " " + Messages.getResource("equalsSign") + " " + result + " " + txtTo.getText());
     }
 
     private String getFilePath() {
@@ -259,8 +261,8 @@ public class AddCustomConversionDlg extends JDialog {
     }
 
     private void displayRequiredError(String field) {
-        JOptionPane.showConfirmDialog(this, "The " + field + " field is required", "Required Field",
-            JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
+        JOptionPane.showConfirmDialog(this, Messages.getResource("fieldIsRequired", field),
+            Messages.getResource("fieldRequiredTitle"), JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
     }
 
     private boolean validComponent(JTextComponent c, String name) {
@@ -274,19 +276,19 @@ public class AddCustomConversionDlg extends JDialog {
 
     private void addConversion() {
         //validate required fields
-        if (!validComponent(txtConversionType, "Conversion Type")) {
+        if (!validComponent(txtConversionType, Messages.getResource("conversionTypeLabel"))) {
             return;
         }
-        if (!validComponent(txtFrom, "From Unit")) {
+        if (!validComponent(txtFrom,  Messages.getResource("fromUnitLabel"))) {
             return;
         }
-        if (!validComponent(txtTo, "To Unit")) {
+        if (!validComponent(txtTo, Messages.getResource("toUnitLabel"))) {
             return;
         }
-        if (!validComponent(txtFactor, "Factor")) {
+        if (!validComponent(txtFactor, Messages.getResource("factorLabel"))) {
             return;
         }
-        if (!validComponent(txtOffset, "Offset")) {
+        if (!validComponent(txtOffset, Messages.getResource("offsetLabel"))) {
             return;
         }
 
