@@ -33,6 +33,12 @@ public class JConvertSettingsProperties {
 
     public static final String LAST_TO = "LastTo";
 
+    public static final String LOCALE_LANGUAGE = "LocaleLanguage";
+
+    public static final String LOCALE_COUNTRY = "LocaleCountry";
+
+    public static final String LOCALE_VARIANT = "LocaleVariant";
+
     /** Static initializer - lets do this once */
     static {
         try {
@@ -136,4 +142,29 @@ public class JConvertSettingsProperties {
     public static void setLastTo(String val) {
         props.setProperty(LAST_TO, val);
     }
+
+    public static String getLocaleLanguage() {
+        return props.getProperty(LOCALE_LANGUAGE);
+    }
+
+    public static void setLocaleLanguage(String val) {
+        props.setProperty(LOCALE_LANGUAGE, val);
+    }
+
+    public static String getLocaleCountry() {
+        return props.getProperty(LOCALE_COUNTRY);
+    }
+
+    public static void setLocaleCountry(String val) {
+        props.setProperty(LOCALE_COUNTRY, val);
+    }
+
+    public static String getLocaleVariant() {
+        return props.getProperty(LOCALE_VARIANT);
+    }
+
+    public static void setLocaleVariant(String val) {
+        props.setProperty(LOCALE_VARIANT, val);
+    }
+
 }
