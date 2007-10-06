@@ -20,6 +20,7 @@ public class ConversionTestCase extends TestCase {
         assertTrue("62.6 Fahrenheit is 17.0 Celsius",
             conversion.convertValue(62.6, "Fahrenheit", "Celsius").doubleValue() == 17.0);
     }
+
     public void testWholeNumbers() throws Exception {
         Conversion c1 = Conversion.createInstance("a", "", "b", "", "345", 0);
         Conversion c2 = Conversion.createInstance("a", "", "c", "", "345.", 0);
@@ -50,6 +51,7 @@ public class ConversionTestCase extends TestCase {
         ct.addConversion(c2);
         ct.addConversion(c3);
 
+        ConversionGapBuilder.createOneToOneConversions(ct);
         ConversionGapBuilder.createMissingConversions(ct);
         ConversionTypeData ctd = new ConversionTypeData();
         ctd.setType(ct);
@@ -96,9 +98,10 @@ public class ConversionTestCase extends TestCase {
         ct.addConversion(c5);
         ct.addConversion(c6);
 
+        ConversionGapBuilder.createOneToOneConversions(ct);
         ConversionGapBuilder.createMissingConversions(ct);
         Iterator iter = ct.getConversions().iterator();
-        assertTrue(ct.getConversions().size() == 35);
+        assertTrue(ct.getConversions().size() == 49);
         while (iter.hasNext()) {
             Conversion c = (Conversion) iter.next();
             System.out.println("[Age=" + c.getGenerationAge() + "] Convert 50 in " + c.getFromUnit() + " to "
