@@ -6,6 +6,7 @@ import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -18,6 +19,7 @@ import javax.swing.event.HyperlinkListener;
 import com.edsdev.jconvert.util.Browser;
 import com.edsdev.jconvert.util.JConvertProperties;
 import com.edsdev.jconvert.util.Logger;
+import com.edsdev.jconvert.util.Messages;
 
 /**
  * @author Ed S Created on Sep 10, 2007 8:34:25 PM
@@ -28,7 +30,7 @@ public class AboutDialog extends JDialog implements HyperlinkListener {
 
     private static final Logger log = Logger.getInstance(AboutDialog.class);
 
-    private final String UNKNOWN = "Unknown";
+    private final String UNKNOWN = Messages.getResource("unknown");
 
     public static void main(String[] args) {
         new AboutDialog(null).setVisible(true);
@@ -36,7 +38,7 @@ public class AboutDialog extends JDialog implements HyperlinkListener {
 
     public AboutDialog(Frame parent) {
         super(parent);
-        this.setTitle("About JConvert");
+        this.setTitle(Messages.getResource("aboutTitle"));
 
         htmlPane = new JEditorPane("text/html", getContent());
         htmlPane.setEditable(false);
@@ -55,7 +57,7 @@ public class AboutDialog extends JDialog implements HyperlinkListener {
     private JPanel getButtonPanel() {
         JPanel panel = new JPanel();
         panel.setPreferredSize(new Dimension(250, 30));
-        JButton btn = new JButton("OK");
+        JButton btn = new JButton(Messages.getResource("okButton"));
         btn.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 AboutDialog.this.setVisible(false);
@@ -76,6 +78,8 @@ public class AboutDialog extends JDialog implements HyperlinkListener {
 
             buildDate = JConvertProperties.getBuildDate();
             SimpleDateFormat from = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+
+            //TODO - need to verify if this is appropriate for other locales
             SimpleDateFormat to = new SimpleDateFormat("MMM dd,yyyy hh:mm a");
             try {
                 buildDate = to.format(from.parse(buildDate));
@@ -83,13 +87,23 @@ public class AboutDialog extends JDialog implements HyperlinkListener {
                 log.error("Failed to parse the buildDate.");
             }
         }
-        return "<html><body>" + "<H3>About JConvert</H3><BR><font face='ariel' size='2'>" + "Version: " + versionNumber
-                + "<BR>" + "Build Date:" + buildDate + "<BR>developed by Ed Sarrazin<BR><BR>"
-                + "This is an open source project that can be found at "
-                + "<a href='http://jconvert.sourceforge.net'>http://jconvert.sourceforge.net</a>"
-                + "<BR><BR>Here are usefull links to<a href='http://jconvert.sourceforge.net'>downloads</a>"
-                + " ,<a href='http://jconvert.sourceforge.net'>how to</a>,"
-                + " and the <a href='http://jconvert.sourceforge.net'>java api</a>" + "</font></body></html>";
+        String localeAbbrev = Locale.getDefault().getLanguage();
+        if (!Locale.getDefault().getCountry().equals("")) {
+            localeAbbrev += "_" + Locale.getDefault().getCountry();
+        }
+        if (!Locale.getDefault().getVariant().equals("")) {
+            localeAbbrev += "_" + Locale.getDefault().getVariant();
+        }
+
+        String projectLink = Messages.getResource("projectLink");
+        String downloadsLink = Messages.getResource("downloadsLink");
+        String howtoLink = Messages.getResource("howtoLink");
+        String javaAPILink = Messages.getResource("javaAPILink");
+
+        Object[] parameters = new Object[] { versionNumber, buildDate, Locale.getDefault().getDisplayName(),
+                localeAbbrev, projectLink, downloadsLink, howtoLink, javaAPILink };
+
+        return Messages.getResource("aboutText", parameters);
     }
 
     public void hyperlinkUpdate(HyperlinkEvent event) {
