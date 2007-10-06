@@ -6,6 +6,7 @@
 -Saves more information about your previous session so that when JConvert opens up next time, you can pick up where you left off.
 -You no longer loose your place when adding a new custom conversion.
 -Consistency with abbreviations in conversions.
+-Allow negative numbers to be entered - makes most sense for temperature.
 
 --Non-visible changes
 -Updated the unit test cases after changes to conversion generations were made.
