@@ -1,5 +1,6 @@
 package com.edsdev.jconvert.logic;
 
+import java.util.HashMap;
 import java.util.Iterator;
 
 import com.edsdev.jconvert.domain.Conversion;
@@ -10,6 +11,8 @@ import com.edsdev.jconvert.util.Logger;
 public class ConversionGapBuilder {
 
     private static Logger log = Logger.getInstance(ConversionGapBuilder.class);
+
+    private static HashMap ageMap;
 
     /**
      * @param args
@@ -97,6 +100,7 @@ public class ConversionGapBuilder {
         if (ct.getConversions().size() <= 1) {
             return;
         }
+        ageMap = new HashMap();
         boolean added = true;
         while (added) {
             added = false;
@@ -106,59 +110,55 @@ public class ConversionGapBuilder {
                 Object[] innerArray = ct.getConversions().toArray();
                 for (int j = 0; j < innerArray.length; j++) {
                     Conversion inner = (Conversion) innerArray[j];
-                    if (outer.getToUnit().equals(inner.getFromUnit())) {
-                        if (outer.getFromToOffset() == 0 && inner.getFromToOffset() == 0) {
+                    if (outer.getFromToOffset() == 0 && inner.getFromToOffset() == 0) {
+                        if (outer.getToUnit().equals(inner.getFromUnit())) {
                             String newFactor = outer.multiply(inner);
-                            Conversion newC = Conversion.createEmptyInstance(outer.getFromUnit(),
-                                outer.getFromUnitAbbr(), inner.getToUnit(), inner.getToUnitAbbr());
-                            
-                            //TODO  - get a generation age for this new conversion.  Add a helper method to compare which conversion
-                            //is younger and use that instead of the if below.  will also need to use this on all ifs below.  Would also like to 
-                            //clean this code up so that it is more maintainable and readable.
-                            if (!ct.getConversions().contains(newC)) {
-                                newC = Conversion.createInstance(outer.getFromUnit(), outer.getFromUnitAbbr(),
-                                    inner.getToUnit(), inner.getToUnitAbbr(), newFactor, 0);
-                                setFactorToOneIfUnitsEqual(newC);
-                                newC.setGenerationAge(outer.getGenerationAge() + inner.getGenerationAge() + 1);
-                                ct.addConversion(newC);
+                            if (checkAdd(ct, outer.getFromUnit(), outer.getFromUnitAbbr(), inner.getToUnit(),
+                                inner.getToUnitAbbr(), outer.getGenerationAge(), inner.getGenerationAge(), newFactor)) {
                                 added = true;
-                                // log.debug(newC);
                             }
-                        }
-                    } else if (outer.getToUnit().equals(inner.getToUnit())) {
-                        if (outer.getFromToOffset() == 0 && inner.getFromToOffset() == 0) {
+                        } else if (outer.getToUnit().equals(inner.getToUnit())) {
                             String newFactor = outer.divide(inner);
-                            Conversion newC = Conversion.createEmptyInstance(outer.getFromUnit(),
-                                outer.getFromUnitAbbr(), inner.getToUnit(), inner.getToUnitAbbr());
-                            if (!ct.getConversions().contains(newC)) {
-                                newC = Conversion.createInstance(outer.getFromUnit(), outer.getFromUnitAbbr(),
-                                    inner.getToUnit(), inner.getToUnitAbbr(), newFactor, 0);
-                                setFactorToOneIfUnitsEqual(newC);
-                                newC.setGenerationAge(outer.getGenerationAge() + inner.getGenerationAge() + 1);
-                                ct.addConversion(newC);
+                            if (checkAdd(ct, outer.getFromUnit(), outer.getFromUnitAbbr(), inner.getFromUnit(),
+                                inner.getFromUnitAbbr(), outer.getGenerationAge(), inner.getGenerationAge(), newFactor)) {
                                 added = true;
-                                // log.debug(newC);
                             }
-                        }
-                    } else if (outer.getFromUnit().equals(inner.getFromUnit())) {
-                        if (outer.getFromToOffset() == 0 && inner.getFromToOffset() == 0) {
+                        } else if (outer.getFromUnit().equals(inner.getFromUnit())) {
                             String newFactor = inner.divide(outer);
-                            Conversion newC = Conversion.createEmptyInstance(outer.getToUnit(), outer.getToUnitAbbr(),
-                                inner.getToUnit(), inner.getToUnitAbbr());
-                            if (!ct.getConversions().contains(newC)) {
-                                newC = Conversion.createInstance(outer.getToUnit(), outer.getToUnitAbbr(),
-                                    inner.getToUnit(), inner.getToUnitAbbr(), newFactor, 0);
-                                setFactorToOneIfUnitsEqual(newC);
-                                newC.setGenerationAge(outer.getGenerationAge() + inner.getGenerationAge() + 1);
-                                ct.addConversion(newC);
+                            if (checkAdd(ct, outer.getToUnit(), outer.getToUnitAbbr(), inner.getToUnit(),
+                                inner.getToUnitAbbr(), outer.getGenerationAge(), inner.getGenerationAge(), newFactor)) {
                                 added = true;
-                                // log.debug(newC);
                             }
                         }
                     }
                 }
             }
         }
+        ageMap = null;
+    }
+
+    private static boolean checkAdd(ConversionType ct, String from, String fromAbbr, String to, String toAbbr,
+            int fromAge, int toAge, String newFactor) {
+        //TODO - get a generation age for this new conversion. Add a helper method to compare which conversion
+        //is younger and use that instead of the if below. will also need to use this on all ifs below.
+
+        //below I have used the hashcode for the Conversion. Unfortunately, the hashcode
+        //was designed to handle... get back to this comment
+        Conversion newC = Conversion.createEmptyInstance(from, fromAbbr, to, toAbbr);
+        Object lastAge = ageMap.get(newC.getFromUnit() + newC.getToUnit());
+        if (!ct.getConversions().contains(newC) || lastAge != null) {
+            //      if (!ct.getConversions().contains(newC)) {
+            newC = Conversion.createInstance(from, fromAbbr, to, toAbbr, newFactor, 0);
+            setFactorToOneIfUnitsEqual(newC);
+            newC.setGenerationAge(fromAge + toAge + 1);
+            if (lastAge == null || ((Integer) lastAge).intValue() > newC.getGenerationAge()) {
+                ct.getConversions().remove(newC);
+                ct.addConversion(newC);
+                ageMap.put(newC.getFromUnit() + newC.getToUnit(), new Integer(newC.getGenerationAge()));
+                return true;
+            }
+        }
+        return false;
 
     }
 
