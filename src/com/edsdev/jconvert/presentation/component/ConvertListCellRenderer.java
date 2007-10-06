@@ -7,31 +7,27 @@ import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.ListCellRenderer;
 import javax.swing.UIManager;
-import javax.swing.border.Border;
-import javax.swing.border.EmptyBorder;
 
 import com.edsdev.jconvert.presentation.ConversionUnitData;
 
 public class ConvertListCellRenderer extends JLabel implements ListCellRenderer {
 
-    protected static Border noFocusBorder = new EmptyBorder(1, 1, 1, 1);
-
     public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected,
             boolean cellHasFocus) {
-        
+
         ConversionUnitData cud = (ConversionUnitData) value;
 
         String text = "";
         if (cud.getGenerationAge() >= 2) {
             text = "*** ";
         }
-        text += cud.getUnit();
-        if (cud.getUnitAbbrev() != null && !cud.getUnitAbbrev().trim().equals("")) {
-            text += " - " + cud.getUnitAbbrev();
+        text += cud.getTranslatedUnit();
+        if (cud.getTranslatedUnitAbbrev() != null && !cud.getTranslatedUnitAbbrev().trim().equals("")) {
+            text += " - " + cud.getTranslatedUnitAbbrev();
         }
         this.setText(text);
         this.setOpaque(true);
-        
+
         if (isSelected) {
             if (cud.getGenerationAge() >= 2) {
                 this.setBackground(Color.YELLOW);
