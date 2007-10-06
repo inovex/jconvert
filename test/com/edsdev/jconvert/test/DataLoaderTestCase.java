@@ -115,6 +115,10 @@ public class DataLoaderTestCase extends TestCase {
     private void checkTime(ConversionTypeData ctd) {
         //verify that time has 256 entries
         log.debug("Size of time " + ctd.getType().getConversions().size());
+        //there are 16 entries in the base data and 1 in the custom = 17*17=289
+        //but the build does not copy the custom out (dont want it in the jar), so it is
+        //only 16 - 16 * 16 = 256 - running this test through eclipse can
+        //result in a differnt number if you have custom conversions for time
         assertTrue("Time should have 256 entries. (" + ctd.getType().getConversions().size() + ")",
             ctd.getType().getConversions().size() == 256);
     }
