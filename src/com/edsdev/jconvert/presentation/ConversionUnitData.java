@@ -1,13 +1,36 @@
 package com.edsdev.jconvert.presentation;
 
+import com.edsdev.jconvert.util.Messages;
+
 /**
  * This class is used for creating presentation views of the data.
+ * 
  * @author Ed S Created on Aug 14, 2007 4:46:03 PM
  */
 public class ConversionUnitData implements Comparable {
+    public String getTranslatedUnit() {
+        return translatedUnit;
+    }
+
+    public void setTranslatedUnit(String translatedUnit) {
+        this.translatedUnit = translatedUnit;
+    }
+
+    public String getTranslatedUnitAbbrev() {
+        return translatedUnitAbbrev;
+    }
+
+    public void setTranslatedUnitAbbrev(String translatedUnitAbbrev) {
+        this.translatedUnitAbbrev = translatedUnitAbbrev;
+    }
+
     private String unit;
 
+    private String translatedUnit;
+
     private String unitAbbrev;
+
+    private String translatedUnitAbbrev;
 
     private int generationAge = 0;
 
@@ -21,6 +44,9 @@ public class ConversionUnitData implements Comparable {
         this.unit = unit;
         this.unitAbbrev = unitAbbrev;
         this.generationAge = generationAge;
+
+        this.translatedUnit = Messages.getUnitTranslation(unit);
+        this.translatedUnitAbbrev = Messages.getUnitTranslation(unitAbbrev);
     }
 
     public int getGenerationAge() {
@@ -73,7 +99,7 @@ public class ConversionUnitData implements Comparable {
             return this.getUnit() + " " + this.getUnitAbbrev();
         }
     }
-    
+
     public int hashCode() {
         return this.getUnit().hashCode();
     }
