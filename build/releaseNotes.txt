@@ -1,3 +1,14 @@
+1.0.4
+-Updated the conversion data to have all league (Distance) conversions.
+-Updated the conversion data to remove minutes latitude (Distance).
+-Updated and corrected the conversion data to have all lightyear (Distance) conversions.
+-Completed Pressure conversions.
+-Added Spanish (first pass) internationalization conversion.
+-Added French (first pass) internationalization conversion.
+
+--Non-visible changes
+-Cleaned up System.outs in MainFrame.  We were printing all locales as well as all fonts we were looking at to render the language.
+
 1.0.3
 -Internationalized the application allowing support for different languages.
 -Fixed bug with generation of custom conversions.
