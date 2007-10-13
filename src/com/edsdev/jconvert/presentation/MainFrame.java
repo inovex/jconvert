@@ -26,6 +26,7 @@ import javax.swing.plaf.FontUIResource;
 import com.edsdev.jconvert.domain.ConversionType;
 import com.edsdev.jconvert.persistence.DataLoader;
 import com.edsdev.jconvert.util.JConvertSettingsProperties;
+import com.edsdev.jconvert.util.Logger;
 import com.edsdev.jconvert.util.Messages;
 import com.edsdev.jconvert.util.ResourceManager;
 
@@ -39,6 +40,8 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
 
     private List data;
 
+    private static final Logger log = Logger.getInstance(MainFrame.class);
+
     public static void main(String[] args) {
         initializeLocale();
         MainFrame frame = new MainFrame();
@@ -47,13 +50,10 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
     }
 
     private static void initializeLocale() {
-        //      Locale.setDefault(new Locale("es",""));
-        //      Locale.setDefault(Locale.CHINESE);
-        //        Locale.setDefault(new Locale("xy", "XY"));
-        Locale[] locales = Locale.getAvailableLocales();
-        for (int i = 0;i < locales.length;i++) {
-            System.out.println(locales[i].getLanguage() + "_" + locales[i].getCountry() + "   " + locales[i].getDisplayName());
-        }
+        //        Locale[] locales = Locale.getAvailableLocales();
+        //        for (int i = 0;i < locales.length;i++) {
+        //            log.debug(locales[i].getLanguage() + "_" + locales[i].getCountry() + " " + locales[i].getDisplayName());
+        //        }
         String language = JConvertSettingsProperties.getLocaleLanguage();
         if (language != null) {
             String country = JConvertSettingsProperties.getLocaleCountry();
@@ -164,7 +164,7 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
         tabbedPane = new JTabbedPane();
         // tabbedPane.addChangeListener(new ChangeListener() {
         // public void stateChanged(ChangeEvent e) {
-        // System.out.println(e.getSource());
+        // log.debug(e.getSource());
         // }
         // });
         this.getContentPane().add(tabbedPane);
@@ -287,16 +287,15 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
 
         JLabel lbl = new JLabel();
         if (lbl.getFont().canDisplayUpTo(test) == -1) {
-            System.out.println("Using font:" + lbl.getFont().getName());
+            log.debug("Using font:" + lbl.getFont().getName());
             return;
         }
 
         // Determine which fonts support this text
         Font[] allfonts = GraphicsEnvironment.getLocalGraphicsEnvironment().getAllFonts();
         for (int j = 0; j < allfonts.length; j++) {
-            System.out.println("Looking at font: " + allfonts[j].getFontName());
             if (allfonts[j].canDisplayUpTo(test) == -1) {
-                System.out.println("Using font:" + allfonts[j].getFontName());
+                log.debug("Using font:" + allfonts[j].getFontName());
                 setUIFont(new FontUIResource(allfonts[j].getFontName(), Font.PLAIN, 10));
                 return;
             }
