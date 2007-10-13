@@ -472,6 +472,7 @@ Distance,kilometer,km,foot,ft,1250000/381,0
 Distance,kilometer,km,inch,in,5000000/127,0
 Distance,kilometer,km,mil,mil,39369960,0
 Distance,kilometer,km,parsec,pc,3.240782847E-14,0
+Distance,kilometer,km,league,,15625/75438,0
 Distance,kilometer,km,lightyear,,1/9460528000000,0
 Distance,kilometer,km,nautical mile,M,0.539955464,0
 Distance,kilometer,km,nanometer,nm,1000000000000,0
@@ -489,6 +490,7 @@ Distance,hectometer,hm,foot,ft,125000/381,0
 Distance,hectometer,hm,inch,in,500000/127,0
 Distance,hectometer,hm,mil,mil,3936996,0
 Distance,hectometer,hm,parsec,pc,3.240782847E-15,0
+Distance,hectometer,hm,league,,3125/150876,0
 Distance,hectometer,hm,lightyear,,5/473026420242259,0
 Distance,hectometer,hm,nautical mile,M,0.05399568035,0
 Distance,hectometer,hm,nanometer,nm,100000000000,0
@@ -507,6 +509,7 @@ Distance,dekameter,dm,foot,ft,12500/381,0
 Distance,dekameter,dm,inch,in,50000/127,0
 Distance,dekameter,dm,mil,mil,393699.6,0
 Distance,dekameter,dm,parsec,pc,3.240782847E-16,0
+Distance,dekameter,dm,league,,625/301752,0
 Distance,dekameter,dm,lightyear,,1/946052840500000,0
 Distance,dekameter,dm,nautical mile,M,0.005399554646,0
 Distance,meter,m,kilometer,km,0.001,0
@@ -523,6 +526,7 @@ Distance,meter,m,foot,ft,1250/381,0
 Distance,meter,m,inch,in,5000/127,0
 Distance,meter,m,mil,mil,39370.1,0
 Distance,meter,m,lightyear,,1/9460528000000000,0
+Distance,meter,m,league,,125/603504,0
 Distance,meter,m,parsec,pc,3.240782847E-17,0
 Distance,meter,m,nautical mile,M,0.0005399568035,0
 Distance,meter,m,nanometer,nm,1000000000,0
@@ -541,6 +545,7 @@ Distance,centimeter,cm,inch,in,50/127,0
 Distance,centimeter,cm,mil,mil,393.701,0
 Distance,centimeter,cm,parsec,pc,3.240782847E-19,0
 Distance,centimeter,cm,lightyear,,1.057023456E-18,0
+Distance,centimeter,cm,league,,5/2414016,0
 Distance,centimeter,cm,nautical mile,M,0.000005399568035,0
 Distance,centimeter,cm,nanometer,nm,10000000,0
 Distance,millimeter,mm,kilometer,km,0.000001,0
@@ -558,6 +563,7 @@ Distance,millimeter,mm,inch,in,5/127,0
 Distance,millimeter,mm,mil,mil,39.3701,0
 Distance,millimeter,mm,parsec,pc,3.240782847E-20,0
 Distance,millimeter,mm,lightyear,,1.057023456E-19,0
+Distance,millimeter,mm,league,,1/4828032,0
 Distance,millimeter,mm,nautical mile,M,0.0000005399568035,0
 Distance,millimeter,mm,nanometer,nm,1000000,0
 Distance,micrometer,µm,kilometer,km,1/1000000000,0
@@ -575,6 +581,7 @@ Distance,micrometer,µm,inch,in,5/127000,0
 Distance,micrometer,µm,mil,mil,0.039370078,0
 Distance,micrometer,µm,parsec,pc,3.240782847E-23,0
 Distance,micrometer,µm,lightyear,,1.057023456E-22,0
+Distance,micrometer,µm,league,,1/4828032000,0
 Distance,micrometer,µm,nautical mile,M,0.0000000005399568035,0
 Distance,micrometer,µm,nanometer,nm,1000,0
 Distance,mile,mi,kilometer,km25146/15625,0
@@ -591,7 +598,8 @@ Distance,mile,mi,foot,ft,5280,0
 Distance,mile,mi,inch,in,63360,0
 Distance,mile,mi,mil,mil,63360000,0
 Distance,mile,mi,parsec,pc,5.21553443E-14,0
-Distance,mile,mi,lightyear,,1/5878499563000,0
+Distance,mile,mi,lightyear,,1.7010779502325e-13,0
+Distance,mile,mi,league,,1/3,0
 Distance,mile,mi,nautical mile,M,0.868974087,0
 Distance,mile,mi,nanometer,nm,1609344000000,0
 Distance,furlong,,kilometer,km,12573/62500,0
@@ -609,6 +617,7 @@ Distance,furlong,,inch,in,7920,0
 Distance,furlong,,mil,mil,7920000,0
 Distance,furlong,,parsec,pc,6.519417432E-15,0
 Distance,furlong,,lightyear,,1/47028000870000,0
+Distance,furlong,,league,,1/24,0
 Distance,furlong,,nautical mile,M,0.10862176,0
 Distance,furlong,,nanometer,nm,201167981300,0
 Distance,yard,yd,kilometer,km,1143/1250000,0
@@ -626,6 +635,7 @@ Distance,yard,yd,inch,in,36,0
 Distance,yard,yd,mil,mil,36000,0
 Distance,yard,yd,parsec,pc,2.963380773E-17,0
 Distance,yard,yd,lightyear,,1/10346160190000000,0
+Distance,yard,yd,league,,1/5280,0
 Distance,yard,yd,nautical mile,M,0.0004937379902,0
 Distance,yard,yd,nanometer,nm,914400000,0
 Distance,foot,ft,kilometer,km,381/1250000,0
@@ -643,6 +653,7 @@ Distance,foot,ft,inch,in,12,0
 Distance,foot,ft,mil,mil,12000,0
 Distance,foot,ft,parsec,pc,9.87793591E-18,0
 Distance,foot,ft,lightyear,,3.22181721E-17,0
+Distance,foot,ft,league,,1/15840,0
 Distance,foot,ft,nautical mile,M,0.0001645784256,0
 Distance,foot,ft,nanometer,nm,304800000,0
 Distance,inch,in,kilometer,km,127/5000000,0
@@ -660,6 +671,7 @@ Distance,inch,in,foot,ft,1/12,0
 Distance,inch,in,mil,mil,1000,0
 Distance,inch,in,parsec,pc,8.231588432E-19,0
 Distance,inch,in,lightyear,,2.684839578E-18,0
+Distance,inch,in,league,,1/190080,0
 Distance,inch,in,nautical mile,M,0.0000137148688,0
 Distance,inch,in,nanometer,nm,25400000,0
 Distance,mil,mil,kilometer,km,127/5000000000,0
@@ -677,6 +689,7 @@ Distance,mil,mil,foot,ft,1/12000,0
 Distance,mil,mil,inch,in,1/1000,0
 Distance,mil,mil,parsec,pc,8.231588432E-22,0
 Distance,mil,mil,lightyear,,2.684839578E-21,0
+Distance,mil,mil,league,,1/190080000,0
 Distance,mil,mil,nautical mile,M,0.00000001371490281,0
 Distance,mil,mil,nanometer,nm,25400,0
 Distance,parsec,pc,kilometer,km,30856741940000,0
@@ -694,24 +707,43 @@ Distance,parsec,pc,foot,ft,101235724700000000,0
 Distance,parsec,pc,inch,in,1214828696000000000,0
 Distance,parsec,pc,mil,mil,1.214828696E+21,0
 Distance,parsec,pc,lightyear,,3.26163,0
+Distance,parsec,pc,league,,6.3911705251332e+12,0
 Distance,parsec,pc,nautical mile,M,16661307740000,0
 Distance,parsec,pc,nanometer,nm,3.085678186E+25,0
-Distance,lightyear,,kilometer,km,9460528000000,0
-Distance,lightyear,,hectometer,hm,473026420242259/5,0
-Distance,lightyear,,dekameter,dm,946052840500000,0
-Distance,lightyear,,meter,m,9460528000000000,0
-Distance,lightyear,,decimeter,,94605284050000000,0
-Distance,lightyear,,centimeter,cm,946052800000000000,0
-Distance,lightyear,,millimeter,mm,9460528000000000000,0
-Distance,lightyear,,micrometer,µm,9.460528E+21,0
-Distance,lightyear,,mile,mi,5878499563000,0
-Distance,lightyear,,furlong,,47028000870000,0
-Distance,lightyear,,yard,yd,10346160190000000,0
+Distance,league,,kilometer,km,75438/15625,0
+Distance,league,,hectometer,hm,150876/3125,0
+Distance,league,,dekameter,dm,301752/625,0
+Distance,league,,meter,m,603504/125,0
+Distance,league,,decimeter,,1207008/25,0
+Distance,league,,centimeter,cm,2414016/5,0
+Distance,league,,millimeter,mm,4828032,0
+Distance,league,,micrometer,µm,4828032000,0
+Distance,league,,mile,mi,3,0
+Distance,league,,furlong,,24,0
+Distance,league,,yard,yd,5280,0
+Distance,league,,foot,ft,15840,0
+Distance,league,,inch,in,190080,0
+Distance,league,,mil,mil,190080000,0
+Distance,league,,parsec,pc,1.5646586115446e-13,0
+Distance,league,,lightyear,,3/5878499563000,0
+Distance,league,,nautical mile,M,2.6069287257019,0
+Distance,league,,nanometer,nm,4.828032e+12,0
+Distance,lightyear,,kilometer,km,9460730472580,0
+Distance,lightyear,,hectometer,hm,946073047258,0
+Distance,lightyear,,dekameter,dm,473036523629/5,0
+Distance,lightyear,,meter,m,473036523629/50,0
+Distance,lightyear,,decimeter,,473036523629/500,0
+Distance,lightyear,,centimeter,cm,473036523629/5000,0
+Distance,lightyear,,millimeter,mm,473036523629/50000,0
+Distance,lightyear,,micrometer,µm,473036523629/5000000,0
+Distance,lightyear,,mile,mi,5878625373183.61,0
+Distance,lightyear,,furlong,,47029002985468.88,0
+Distance,lightyear,,yard,yd,10346380656803153.6,0
 Distance,lightyear,,foot,ft,31038480580000000,0
-Distance,lightyear,,inch,in,372461766900000000,0
-Distance,lightyear,,mil,mil,372461766900000000000,0
-Distance,lightyear,,parsec,pc,0.306595168,0
-Distance,lightyear,,nautical mile,M,5108276458000,0
+Distance,lightyear,,inch,in,372469703644913529.6,0
+Distance,lightyear,,mil,mil,372469703644913529600,0
+Distance,lightyear,,parsec,pc,0.30660139380653,0
+Distance,lightyear,,nautical mile,M,5108385784330.5,0
 Distance,lightyear,,nanometer,nm,9.460528E+24,0
 Distance,nautical mile,M,kilometer,km,463/250,0
 Distance,nautical mile,M,hectometer,hm,463/25,0
@@ -729,8 +761,8 @@ Distance,nautical mile,M,inch,in,9260000/127,0
 Distance,nautical mile,M,mil,mil,72913566.65,0
 Distance,nautical mile,M,parsec,pc,6.001929833E-14,0
 Distance,nautical mile,M,lightyear,,1/5108276458000,0
+Distance,nautical mile,M,league,,0.38359314934118,0
 Distance,nautical mile,M,nanometer,nm,1852000000000,0
-Distance,nautical mile,M,minute lattitude ,,1,0
 Distance,nautical mile,M,league ,,1/3,0
 Distance,nanometer,nm,kilometer,km,1/1000000000000,0
 Distance,nanometer,nm,hectometer,hm,1/100000000000,0
@@ -748,6 +780,7 @@ Distance,nanometer,nm,inch,in,0.00000003937007874,0
 Distance,nanometer,nm,mil,mil,0.00003937007874,0
 Distance,nanometer,nm,parsec,pc,3.240782848E-26,0
 Distance,nanometer,nm,lightyear,,1.057023456E-25,0
+Distance,nanometer,nm,league,,2.0712373074578e-13,0
 Distance,nanometer,nm,nautical mile,M,5.399568035E-13,0
 
 Volume Dry,barrel,,liter,,115.6271292,0
@@ -781,25 +814,447 @@ Volume Dry,bushel,,pint,pt,64,0
 Volume Dry,bushel,,quart,,32,0
 Volume Dry,bushel,,peck,,4,0
 
-#Pressure is incomplete
+Pressure,atmosphere,,atmosphere,,1,0
 Pressure,atmosphere,,bar,,1.01325,0
-Pressure,atmosphere,,centimeters of mercury,,76,0
+Pressure,atmosphere,,centimeters of mercury,,76.0002100179,0
 Pressure,atmosphere,,dyne/centimeter²,,1013250,0
-Pressure,atmosphere,,inches of mercury,,29.92126,0
-Pressure,atmosphere,,kilogram/centimeter²,,1.033227,0
-Pressure,atmosphere,,kilogram/meter²,,10332.27,0
+Pressure,atmosphere,,inches of mercury,,29.9213319238,0
+Pressure,atmosphere,,kilogram/centimeter²,,1.0332274528,0
+Pressure,atmosphere,,kilogram/meter²,,10332.274528,0
 Pressure,atmosphere,,kilopascal,,101.325,0
+Pressure,atmosphere,,ksi,,0.0146959487755,0
 Pressure,atmosphere,,megapascal,,0.101325,0
 Pressure,atmosphere,,microbar,,1013250,0
-Pressure,atmosphere,,millobar,,1013.25,0
-Pressure,atmosphere,,millimeters of mercury,,760,0
+Pressure,atmosphere,,millibar,,1013.25,0
+Pressure,atmosphere,,millimeters of mercury,,760.002100179,0
 Pressure,atmosphere,,pascal,,101325,0
-Pressure,atmosphere,,pound/foot²,,2116.217,0
-Pressure,atmosphere,,pound/Inch²,,14.69595,0
-Pressure,atmosphere,,PSI,,14.69595,0
-Pressure,atmosphere,,ton/foot²,,1.058108,0
-Pressure,atmosphere,,ton/Inch²,,0.007347974,0
+Pressure,atmosphere,,pound/foot²,,2116.21662367,0
+Pressure,atmosphere,,pound/inch²,,14.6959487755,0
+Pressure,atmosphere,,poundal/foot²,,68087.2564060,0
+Pressure,atmosphere,,PSI,,14.6959487755,0
+Pressure,atmosphere,,ton/foot²,,1.05810831184,0
+Pressure,atmosphere,,ton/inch²,,0.0073479743878,0
 Pressure,atmosphere,,torr,,760,0
+Pressure,bar,,atmosphere,,0.986923266716,0
+Pressure,bar,,bar,,1,0
+Pressure,bar,,centimeters of mercury,,75.0063755419,0
+Pressure,bar,,dyne/centimeter²,,1000000,0
+Pressure,bar,,inches of mercury,,29.5300586467,0
+Pressure,bar,,kilogram/centimeter²,,1.019716212978,0
+Pressure,bar,,kilogram/meter²,,10197.1621298,0
+Pressure,bar,,kilopascal,,100,0
+Pressure,bar,,ksi,,0.014503773773,0
+Pressure,bar,,megapascal,,0.1,0
+Pressure,bar,,microbar,,1000000,0
+Pressure,bar,,millibar,,1000,0
+Pressure,bar,,millimeters of mercury,,750.063755419,0
+Pressure,bar,,pascal,,100000,0
+Pressure,bar,,pound/foot²,,2088.54342331,0
+Pressure,bar,,pound/inch²,,14.503773773,0
+Pressure,bar,,poundal/foot²,,67196.897514,0
+Pressure,bar,,PSI,,14.503773773,0
+Pressure,bar,,ton/foot²,,1.04427171166,0
+Pressure,bar,,ton/inch²,,0.00725188688651,0
+Pressure,bar,,torr,,750.061682704,0
+Pressure,centimeters of mercury,,atmosphere,,0.0131578583765,0
+Pressure,centimeters of mercury,,bar,,0.0133322,0
+Pressure,centimeters of mercury,,centimeters of mercury,,1,0
+Pressure,centimeters of mercury,,dyne/centimeter²,,13332.2,0
+Pressure,centimeters of mercury,,inches of mercury,,0.393700647889,0
+Pressure,centimeters of mercury,,kilogram/centimeter²,,0.0135950604947,0
+Pressure,centimeters of mercury,,kilogram/meter²,,135.950604947,0
+Pressure,centimeters of mercury,,kilopascal,,1.33322,0
+Pressure,centimeters of mercury,,ksi,,0.000193367212696,0
+Pressure,centimeters of mercury,,megapascal,,0.00133322,0
+Pressure,centimeters of mercury,,microbar,,13332.2,0
+Pressure,centimeters of mercury,,millibar,,13.3322,0
+Pressure,centimeters of mercury,,millimeters of mercury,,10,0
+Pressure,centimeters of mercury,,pascal,,1333.22,0
+Pressure,centimeters of mercury,,pound/foot²,,27.8448786283,0
+Pressure,centimeters of mercury,,pound/inch²,,0.193367212696,0
+Pressure,centimeters of mercury,,poundal/foot²,,895.882477035,0
+Pressure,centimeters of mercury,,PSI,,0.193367212696,0
+Pressure,centimeters of mercury,,ton/foot²,,0.0139224393142,0
+Pressure,centimeters of mercury,,ton/inch²,,9.66836063483E-05,0
+Pressure,centimeters of mercury,,torr,,9.99997236615,0
+Pressure,dyne/centimeter²,,atmosphere,,9.86923266716E-07,0
+Pressure,dyne/centimeter²,,bar,,0.000001,0
+Pressure,dyne/centimeter²,,centimeters of mercury,,7.50063755419E-05,0
+Pressure,dyne/centimeter²,,dyne/centimeter²,,1,0
+Pressure,dyne/centimeter²,,inches of mercury,,2.95300586467E-05,0
+Pressure,dyne/centimeter²,,kilogram/centimeter²,,1.01971621298E-06,0
+Pressure,dyne/centimeter²,,kilogram/meter²,,0.0101971621298,0
+Pressure,dyne/centimeter²,,kilopascal,,0.0001,0
+Pressure,dyne/centimeter²,,ksi,,0.000000014503773773,0
+Pressure,dyne/centimeter²,,megapascal,,0.0000001,0
+Pressure,dyne/centimeter²,,microbar,,1,0
+Pressure,dyne/centimeter²,,millibar,,0.001,0
+Pressure,dyne/centimeter²,,millimeters of mercury,,0.000750063755419,0
+Pressure,dyne/centimeter²,,pascal,,0.1,0
+Pressure,dyne/centimeter²,,pound/foot²,,0.00208854342331,0
+Pressure,dyne/centimeter²,,pound/inch²,,0.000014503773773,0
+Pressure,dyne/centimeter²,,poundal/foot²,,0.067196897514,0
+Pressure,dyne/centimeter²,,PSI,,0.000014503773773,0
+Pressure,dyne/centimeter²,,ton/foot²,,1.04427171166E-06,0
+Pressure,dyne/centimeter²,,ton/inch²,,7.25188688651E-09,0
+Pressure,dyne/centimeter²,,torr,,0.000750061682704,0
+Pressure,inches of mercury,,atmosphere,,0.0334209721194,0
+Pressure,inches of mercury,,bar,,0.0338638,0
+Pressure,inches of mercury,,centimeters of mercury,,2.54000090008,0
+Pressure,inches of mercury,,dyne/centimeter²,,33863.8,0
+Pressure,inches of mercury,,inches of mercury,,1,0
+Pressure,inches of mercury,,kilogram/centimeter²,,0.0345314658930,0
+Pressure,inches of mercury,,kilogram/meter²,,345.314658930,0
+Pressure,inches of mercury,,kilopascal,,3.38638,0
+Pressure,inches of mercury,,ksi,,0.000491152894294,0
+Pressure,inches of mercury,,megapascal,,0.00338638,0
+Pressure,inches of mercury,,microbar,,33863.8,0
+Pressure,inches of mercury,,millibar,,33.8638,0
+Pressure,inches of mercury,,millimeters of mercury,,25.4000090008,0
+Pressure,inches of mercury,,pascal,,3386.38,0
+Pressure,inches of mercury,,pound/foot²,,70.7260167784,0
+Pressure,inches of mercury,,pound/inch²,,0.491152894294,0
+Pressure,inches of mercury,,poundal/foot²,,2275.54229803,0
+Pressure,inches of mercury,,PSI,,0.491152894294,0
+Pressure,inches of mercury,,ton/foot²,,0.0353630083892,0
+Pressure,inches of mercury,,ton/inch²,,0.000245576447147,0
+Pressure,inches of mercury,,torr,,25.3999388108,0
+Pressure,kilogram/centimeter²,,atmosphere,,0.967841105354,0
+Pressure,kilogram/centimeter²,,bar,,0.980665,0
+Pressure,kilogram/centimeter²,,centimeters of mercury,,73.5561272708,0
+Pressure,kilogram/centimeter²,,dyne/centimeter²,,980665,0
+Pressure,kilogram/centimeter²,,inches of mercury,,28.9590949628,0
+Pressure,kilogram/centimeter²,,kilogram/centimeter²,,1,0
+Pressure,kilogram/centimeter²,,kilogram/meter²,,10000,0
+Pressure,kilogram/centimeter²,,kilopascal,,98.0665,0
+Pressure,kilogram/centimeter²,,ksi,,0.0142233433071,0
+Pressure,kilogram/centimeter²,,megapascal,,0.0980665,0
+Pressure,kilogram/centimeter²,,microbar,,980665,0
+Pressure,kilogram/centimeter²,,millibar,,980.665,0
+Pressure,kilogram/centimeter²,,millimeters of mercury,,735.561272708,0
+Pressure,kilogram/centimeter²,,pascal,,98066.5,0
+Pressure,kilogram/centimeter²,,pound/foot²,,2048.16143622,0
+Pressure,kilogram/centimeter²,,pound/inch²,,14.2233433071,0
+Pressure,kilogram/centimeter²,,poundal/foot²,,65897.6455005,0
+Pressure,kilogram/centimeter²,,PSI,,14.2233433071,0
+Pressure,kilogram/centimeter²,,ton/foot²,,1.02408071811,0
+Pressure,kilogram/centimeter²,,ton/inch²,,0.00711167165356,0
+Pressure,kilogram/centimeter²,,torr,,735.559240069,0
+Pressure,kilogram/meter²,,atmosphere,,9.67841105354E-05,0
+Pressure,kilogram/meter²,,bar,,9.80665E-05,0
+Pressure,kilogram/meter²,,centimeters of mercury,,0.00735561272708,0
+Pressure,kilogram/meter²,,dyne/centimeter²,,98.0665,0
+Pressure,kilogram/meter²,,inches of mercury,,0.00289590949628,0
+Pressure,kilogram/meter²,,kilogram/centimeter²,,0.0001,0
+Pressure,kilogram/meter²,,kilogram/meter²,,1,0
+Pressure,kilogram/meter²,,kilopascal,,0.00980665,0
+Pressure,kilogram/meter²,,ksi,,1.42233433071E-06,0
+Pressure,kilogram/meter²,,megapascal,,9.80665E-06,0
+Pressure,kilogram/meter²,,microbar,,98.0665,0
+Pressure,kilogram/meter²,,millibar,,0.0980665,0
+Pressure,kilogram/meter²,,millimeters of mercury,,0.0735561272708,0
+Pressure,kilogram/meter²,,pascal,,9.80665,0
+Pressure,kilogram/meter²,,pound/foot²,,0.204816143622,0
+Pressure,kilogram/meter²,,pound/inch²,,0.00142233433071,0
+Pressure,kilogram/meter²,,poundal/foot²,,6.58976455005,0
+Pressure,kilogram/meter²,,PSI,,0.00142233433071,0
+Pressure,kilogram/meter²,,ton/foot²,,0.000102408071811,0
+Pressure,kilogram/meter²,,ton/inch²,,7.11167165356E-07,0
+Pressure,kilogram/meter²,,torr,,0.0735559240069,0
+Pressure,kilopascal,,atmosphere,,0.00986923266716,0
+Pressure,kilopascal,,bar,,0.01,0
+Pressure,kilopascal,,centimeters of mercury,,0.750063755419,0
+Pressure,kilopascal,,dyne/centimeter²,,10000,0
+Pressure,kilopascal,,inches of mercury,,0.295300586467,0
+Pressure,kilopascal,,kilogram/centimeter²,,0.0101971621298,0
+Pressure,kilopascal,,kilogram/meter²,,101.971621298,0
+Pressure,kilopascal,,kilopascal,,1,0
+Pressure,kilopascal,,ksi,,0.00014503773773,0
+Pressure,kilopascal,,megapascal,,0.001,0
+Pressure,kilopascal,,microbar,,10000,0
+Pressure,kilopascal,,millibar,,10,0
+Pressure,kilopascal,,millimeters of mercury,,7.50063755419,0
+Pressure,kilopascal,,pascal,,1000,0
+Pressure,kilopascal,,pound/foot²,,20.8854342331,0
+Pressure,kilopascal,,pound/inch²,,0.14503773773,0
+Pressure,kilopascal,,poundal/foot²,,671.96897514,0
+Pressure,kilopascal,,PSI,,0.14503773773,0
+Pressure,kilopascal,,ton/foot²,,0.0104427171166,0
+Pressure,kilopascal,,ton/inch²,,0.0000725188688651,0
+Pressure,kilopascal,,torr,,7.50061682704,0
+Pressure,ksi,,atmosphere,,68.04596391,0
+Pressure,ksi,,bar,,68.9475729318,0
+Pressure,ksi,,centimeters of mercury,,5171.50754803,0
+Pressure,ksi,,dyne/centimeter²,,68947572.9318,0
+Pressure,ksi,,inches of mercury,,2036.02587222,0
+Pressure,ksi,,kilogram/centimeter²,,70.3069579640,0
+Pressure,ksi,,kilogram/meter²,,703069.579640,0
+Pressure,ksi,,kilopascal,,6894.75729318,0
+Pressure,ksi,,ksi,,1,0
+Pressure,ksi,,megapascal,,6.89475729318,0
+Pressure,ksi,,microbar,,68947572.9318,0
+Pressure,ksi,,millibar,,68947.5729318,0
+Pressure,ksi,,millimeters of mercury,,51715.0754803,0
+Pressure,ksi,,pascal,,6894757.29318,0
+Pressure,ksi,,pound/foot²,,144000,0
+Pressure,ksi,,pound/inch²,,1000,0
+Pressure,ksi,,poundal/foot²,,4633062.99213,0
+Pressure,ksi,,PSI,,1000,0
+Pressure,ksi,,ton/foot²,,72,0
+Pressure,ksi,,ton/inch²,,1/2,0
+Pressure,ksi,,torr,,51714.9325716,0
+Pressure,megapascal,,atmosphere,,9.86923266716,0
+Pressure,megapascal,,bar,,10,0
+Pressure,megapascal,,centimeters of mercury,,750.063755419,0
+Pressure,megapascal,,dyne/centimeter²,,10000000,0
+Pressure,megapascal,,inches of mercury,,295.300586467,0
+Pressure,megapascal,,kilogram/centimeter²,,10.1971621298,0
+Pressure,megapascal,,kilogram/meter²,,101971.621298,0
+Pressure,megapascal,,kilopascal,,1000,0
+Pressure,megapascal,,ksi,,0.14503773773,0
+Pressure,megapascal,,megapascal,,1,0
+Pressure,megapascal,,microbar,,10000000,0
+Pressure,megapascal,,millibar,,10000,0
+Pressure,megapascal,,millimeters of mercury,,7500.63755419,0
+Pressure,megapascal,,pascal,,1000000,0
+Pressure,megapascal,,pound/foot²,,20885.43423312,0
+Pressure,megapascal,,pound/inch²,,145.03773773,0
+Pressure,megapascal,,poundal/foot²,,671968.97514,0
+Pressure,megapascal,,PSI,,145.03773773,0
+Pressure,megapascal,,ton/foot²,,10.4427171166,0
+Pressure,megapascal,,ton/inch²,,0.0725188688651,0
+Pressure,megapascal,,torr,,7500.61682704,0
+Pressure,microbar,,atmosphere,,9.86923266716E-07,0
+Pressure,microbar,,bar,,0.000001,0
+Pressure,microbar,,centimeters of mercury,,7.50063755419E-05,0
+Pressure,microbar,,dyne/centimeter²,,1,0
+Pressure,microbar,,inches of mercury,,2.95300586467E-05,0
+Pressure,microbar,,kilogram/centimeter²,,1.01971621298E-06,0
+Pressure,microbar,,kilogram/meter²,,0.0101971621298,0
+Pressure,microbar,,kilopascal,,0.0001,0
+Pressure,microbar,,ksi,,0.000000014503773773,0
+Pressure,microbar,,megapascal,,0.0000001,0
+Pressure,microbar,,microbar,,1,0
+Pressure,microbar,,millibar,,0.001,0
+Pressure,microbar,,millimeters of mercury,,0.000750063755419,0
+Pressure,microbar,,pascal,,0.1,0
+Pressure,microbar,,pound/foot²,,0.00208854342331,0
+Pressure,microbar,,pound/inch²,,0.000014503773773,0
+Pressure,microbar,,poundal/foot²,,0.067196897514,0
+Pressure,microbar,,PSI,,0.000014503773773,0
+Pressure,microbar,,ton/foot²,,1.04427171166E-06,0
+Pressure,microbar,,ton/inch²,,7.25188688651E-09,0
+Pressure,microbar,,torr,,0.000750061682704,0
+Pressure,millibar,,atmosphere,,0.000986923266716,0
+Pressure,millibar,,bar,,0.001,0
+Pressure,millibar,,centimeters of mercury,,0.0750063755419,0
+Pressure,millibar,,dyne/centimeter²,,1000,0
+Pressure,millibar,,inches of mercury,,0.0295300586467,0
+Pressure,millibar,,kilogram/centimeter²,,0.00101971621298,0
+Pressure,millibar,,kilogram/meter²,,10.1971621298,0
+Pressure,millibar,,kilopascal,,0.1,0
+Pressure,millibar,,ksi,,0.000014503773773,0
+Pressure,millibar,,megapascal,,0.0001,0
+Pressure,millibar,,microbar,,1000,0
+Pressure,millibar,,millibar,,1,0
+Pressure,millibar,,millimeters of mercury,,0.750063755419,0
+Pressure,millibar,,pascal,,100,0
+Pressure,millibar,,pound/foot²,,2.08854342331,0
+Pressure,millibar,,pound/inch²,,0.014503773773,0
+Pressure,millibar,,poundal/foot²,,67.196897514,0
+Pressure,millibar,,PSI,,0.014503773773,0
+Pressure,millibar,,ton/foot²,,0.00104427171166,0
+Pressure,millibar,,ton/inch²,,0.00000725188688651,0
+Pressure,millibar,,torr,,0.750061682704,0
+Pressure,millimeters of mercury,,atmosphere,,0.00131578583765,0
+Pressure,millimeters of mercury,,bar,,0.00133322,0
+Pressure,millimeters of mercury,,centimeters of mercury,,0.1,0
+Pressure,millimeters of mercury,,dyne/centimeter²,,1333.22,0
+Pressure,millimeters of mercury,,inches of mercury,,0.0393700647889,0
+Pressure,millimeters of mercury,,kilogram/centimeter²,,0.001359506049466,0
+Pressure,millimeters of mercury,,kilogram/meter²,,13.5950604947,0
+Pressure,millimeters of mercury,,kilopascal,,0.133322,0
+Pressure,millimeters of mercury,,ksi,,0.0000193367212696,0
+Pressure,millimeters of mercury,,megapascal,,0.000133322,0
+Pressure,millimeters of mercury,,microbar,,1333.22,0
+Pressure,millimeters of mercury,,millibar,,1.33322,0
+Pressure,millimeters of mercury,,millimeters of mercury,,1,0
+Pressure,millimeters of mercury,,pascal,,133.322,0
+Pressure,millimeters of mercury,,pound/foot²,,2.78448786283,0
+Pressure,millimeters of mercury,,pound/inch²,,0.0193367212696,0
+Pressure,millimeters of mercury,,poundal/foot²,,89.5882477035,0
+Pressure,millimeters of mercury,,PSI,,0.0193367212696,0
+Pressure,millimeters of mercury,,ton/foot²,,0.00139224393142,0
+Pressure,millimeters of mercury,,ton/inch²,,9.66836063483E-06,0
+Pressure,millimeters of mercury,,torr,,0.999997236615,0
+Pressure,pascal,,atmosphere,,9.86923266716E-06,0
+Pressure,pascal,,bar,,0.00001,0
+Pressure,pascal,,centimeters of mercury,,0.000750063755419,0
+Pressure,pascal,,dyne/centimeter²,,10,0
+Pressure,pascal,,inches of mercury,,0.000295300586467,0
+Pressure,pascal,,kilogram/centimeter²,,1.01971621298E-05,0
+Pressure,pascal,,kilogram/meter²,,0.101971621298,0
+Pressure,pascal,,kilopascal,,0.001,0
+Pressure,pascal,,ksi,,0.00000014503773773,0
+Pressure,pascal,,megapascal,,0.000001,0
+Pressure,pascal,,microbar,,10,0
+Pressure,pascal,,millibar,,0.01,0
+Pressure,pascal,,millimeters of mercury,,0.00750063755419,0
+Pressure,pascal,,pascal,,1,0
+Pressure,pascal,,pound/foot²,,0.0208854342331,0
+Pressure,pascal,,pound/inch²,,0.00014503773773,0
+Pressure,pascal,,poundal/foot²,,0.67196897514,0
+Pressure,pascal,,PSI,,0.00014503773773,0
+Pressure,pascal,,ton/foot²,,1.04427171166E-05,0
+Pressure,pascal,,ton/inch²,,7.25188688651E-08,0
+Pressure,pascal,,torr,,0.00750061682704,0
+Pressure,pound/foot²,,atmosphere,,0.000472541416041,0
+Pressure,pound/foot²,,bar,,0.000478802589804,0
+Pressure,pound/foot²,,centimeters of mercury,,0.0359132468613,0
+Pressure,pound/foot²,,dyne/centimeter²,,478.802589804,0
+Pressure,pound/foot²,,inches of mercury,,0.0141390685571,0
+Pressure,pound/foot²,,kilogram/centimeter²,,0.000488242763639,0
+Pressure,pound/foot²,,kilogram/meter²,,4.88242763639,0
+Pressure,pound/foot²,,kilopascal,,0.0478802589804,0
+Pressure,pound/foot²,,ksi,,6.944444444444E-06,0
+Pressure,pound/foot²,,megapascal,,4.78802589804E-05,0
+Pressure,pound/foot²,,microbar,,478.802589804,0
+Pressure,pound/foot²,,millibar,,0.478802589804,0
+Pressure,pound/foot²,,millimeters of mercury,,0.359132468613,0
+Pressure,pound/foot²,,pascal,,47.8802589804,0
+Pressure,pound/foot²,,pound/foot²,,1,0
+Pressure,pound/foot²,,pound/inch²,,0.00694444444444,0
+Pressure,pound/foot²,,poundal/foot²,,32.1740485565,0
+Pressure,pound/foot²,,PSI,,0.00694444444444,0
+Pressure,pound/foot²,,ton/foot²,,1/2000,0
+Pressure,pound/foot²,,ton/inch²,,3.47222222223E-06,0
+Pressure,pound/foot²,,torr,,0.359131476191,0
+Pressure,pound/inch²,,atmosphere,,0.06804596391,0
+Pressure,pound/inch²,,bar,,0.0689475729318,0
+Pressure,pound/inch²,,centimeters of mercury,,5.17150754803,0
+Pressure,pound/inch²,,dyne/centimeter²,,68947.5729318,0
+Pressure,pound/inch²,,inches of mercury,,2.03602587222,0
+Pressure,pound/inch²,,kilogram/centimeter²,,0.0703069579640,0
+Pressure,pound/inch²,,kilogram/meter²,,703.069579640,0
+Pressure,pound/inch²,,kilopascal,,6.89475729318,0
+Pressure,pound/inch²,,ksi,,0.001,0
+Pressure,pound/inch²,,megapascal,,0.00689475729318,0
+Pressure,pound/inch²,,microbar,,68947.5729318,0
+Pressure,pound/inch²,,millibar,,68.9475729318,0
+Pressure,pound/inch²,,millimeters of mercury,,51.7150754803,0
+Pressure,pound/inch²,,pascal,,6894.75729318,0
+Pressure,pound/inch²,,pound/foot²,,144,0
+Pressure,pound/inch²,,pound/inch²,,1,0
+Pressure,pound/inch²,,poundal/foot²,,4633.06299213,0
+Pressure,pound/inch²,,PSI,,1,0
+Pressure,pound/inch²,,ton/foot²,,36/500,0
+Pressure,pound/inch²,,ton/inch²,,1/2000,0
+Pressure,pound/inch²,,torr,,51.7149325716,0
+Pressure,poundal/foot²,,atmosphere,,1.4687036206E-05,0
+Pressure,poundal/foot²,,bar,,1.48816394357E-05,0
+Pressure,poundal/foot²,,centimeters of mercury,,0.00111621783619,0
+Pressure,poundal/foot²,,dyne/centimeter²,,14.8816394357,0
+Pressure,poundal/foot²,,inches of mercury,,0.000439455685295,0
+Pressure,poundal/foot²,,kilogram/centimeter²,,1.51750490083E-05,0
+Pressure,poundal/foot²,,kilogram/meter²,,0.151750490083,0
+Pressure,poundal/foot²,,kilopascal,,0.00148816394357,0
+Pressure,poundal/foot²,,ksi,,2.15839931747E-07,0
+Pressure,poundal/foot²,,megapascal,,1.48816394357E-06,0
+Pressure,poundal/foot²,,microbar,,14.8816394357,0
+Pressure,poundal/foot²,,millibar,,0.0148816394357,0
+Pressure,poundal/foot²,,millimeters of mercury,,0.0111621783619,0
+Pressure,poundal/foot²,,pascal,,1.48816394357,0
+Pressure,poundal/foot²,,pound/foot²,,0.0310809501715,0
+Pressure,poundal/foot²,,pound/inch²,,0.000215839931747,0
+Pressure,poundal/foot²,,poundal/foot²,,1,0
+Pressure,poundal/foot²,,PSI,,0.000215839931747,0
+Pressure,poundal/foot²,,ton/foot²,,1.55404750858E-05,0
+Pressure,poundal/foot²,,ton/inch²,,1.07919965873E-07,0
+Pressure,poundal/foot²,,torr,,0.0111621475165,0
+Pressure,PSI,,atmosphere,,0.06804596391,0
+Pressure,PSI,,bar,,0.0689475729318,0
+Pressure,PSI,,centimeters of mercury,,5.17150754803,0
+Pressure,PSI,,dyne/centimeter²,,68947.5729318,0
+Pressure,PSI,,inches of mercury,,2.03602587222,0
+Pressure,PSI,,kilogram/centimeter²,,0.0703069579640,0
+Pressure,PSI,,kilogram/meter²,,703.069579640,0
+Pressure,PSI,,kilopascal,,6.89475729318,0
+Pressure,PSI,,ksi,,0.001,0
+Pressure,PSI,,megapascal,,0.00689475729318,0
+Pressure,PSI,,microbar,,68947.5729318,0
+Pressure,PSI,,millibar,,68.9475729318,0
+Pressure,PSI,,millimeters of mercury,,51.7150754803,0
+Pressure,PSI,,pascal,,6894.75729318,0
+Pressure,PSI,,pound/foot²,,144,0
+Pressure,PSI,,pound/inch²,,1,0
+Pressure,PSI,,poundal/foot²,,4633.06299213,0
+Pressure,PSI,,PSI,,1,0
+Pressure,PSI,,ton/foot²,,18/250,0
+Pressure,PSI,,ton/inch²,,1/2000,0
+Pressure,PSI,,torr,,51.7149325716,0
+Pressure,ton/foot²,,atmosphere,,0.945082832082,0
+Pressure,ton/foot²,,bar,,0.957605179607,0
+Pressure,ton/foot²,,centimeters of mercury,,71.8264937225,0
+Pressure,ton/foot²,,dyne/centimeter²,,957605.179607,0
+Pressure,ton/foot²,,inches of mercury,,28.2781371142,0
+Pressure,ton/foot²,,kilogram/centimeter²,,0.976485527277,0
+Pressure,ton/foot²,,kilogram/meter²,,9764.85527277,0
+Pressure,ton/foot²,,kilopascal,,95.7605179607,0
+Pressure,ton/foot²,,ksi,,0.0138888888889,0
+Pressure,ton/foot²,,megapascal,,0.0957605179607,0
+Pressure,ton/foot²,,microbar,,957605.179607,0
+Pressure,ton/foot²,,millibar,,957.605179607,0
+Pressure,ton/foot²,,millimeters of mercury,,718.264937225,0
+Pressure,ton/foot²,,pascal,,95760.5179607,0
+Pressure,ton/foot²,,pound/foot²,,2000,0
+Pressure,ton/foot²,,pound/inch²,,13.8888888889,0
+Pressure,ton/foot²,,poundal/foot²,,64348.0971129,0
+Pressure,ton/foot²,,PSI,,13.8888888889,0
+Pressure,ton/foot²,,ton/foot²,,1,0
+Pressure,ton/foot²,,ton/inch²,,0.00694444444444,0
+Pressure,ton/foot²,,torr,,718.262952382,0
+Pressure,ton/inch²,,atmosphere,,136.09192782,0
+Pressure,ton/inch²,,bar,,137.895145863,0
+Pressure,ton/inch²,,centimeters of mercury,,10343.0150960,0
+Pressure,ton/inch²,,dyne/centimeter²,,137895145.863,0
+Pressure,ton/inch²,,inches of mercury,,4072.05174444,0
+Pressure,ton/inch²,,kilogram/centimeter²,,140.613915928,0
+Pressure,ton/inch²,,kilogram/meter²,,1406139.15928,0
+Pressure,ton/inch²,,kilopascal,,13789.5145863,0
+Pressure,ton/inch²,,ksi,,2,0
+Pressure,ton/inch²,,megapascal,,13.7895145863,0
+Pressure,ton/inch²,,microbar,,137895145.863,0
+Pressure,ton/inch²,,millibar,,137895.145863,0
+Pressure,ton/inch²,,millimeters of mercury,,103430.150960,0
+Pressure,ton/inch²,,pascal,,13789514.5863,0
+Pressure,ton/inch²,,pound/foot²,,288000,0
+Pressure,ton/inch²,,pound/inch²,,2000,0
+Pressure,ton/inch²,,poundal/foot²,,9266125.98425,0
+Pressure,ton/inch²,,PSI,,2000,0
+Pressure,ton/inch²,,ton/foot²,,144,0
+Pressure,ton/inch²,,ton/inch²,,1,0
+Pressure,ton/inch²,,torr,,103429.865143,0
+Pressure,torr,,atmosphere,,0.00131578947368,0
+Pressure,torr,,bar,,0.00133322368421,0
+Pressure,torr,,centimeters of mercury,,0.100000276339,0
+Pressure,torr,,dyne/centimeter²,,1333.22368421,0
+Pressure,torr,,inches of mercury,,0.0393701735839,0
+Pressure,torr,,kilogram/centimeter²,,0.00135950980632,0
+Pressure,torr,,kilogram/meter²,,13.5950980632,0
+Pressure,torr,,kilopascal,,0.133322368421,0
+Pressure,torr,,ksi,,1.93367747046E-05,0
+Pressure,torr,,megapascal,,0.000133322368421,0
+Pressure,torr,,microbar,,1333.22368421,0
+Pressure,torr,,millibar,,1.33322368421,0
+Pressure,torr,,millimeters of mercury,,1.00000276339,0
+Pressure,torr,,pascal,,133.322368421,0
+Pressure,torr,,pound/foot²,,2.78449555746,0
+Pressure,torr,,pound/inch²,,0.0193367747046,0
+Pressure,torr,,poundal/foot²,,89.5884952711,0
+Pressure,torr,,PSI,,0.0193367747046,0
+Pressure,torr,,ton/foot²,,0.00139224777873,0
+Pressure,torr,,ton/inch²,,9.66838735231E-06,0
+Pressure,torr,,torr,,1,0
 
 Density,gram/centimeter³,,gram/meter³,,1000000,0
 Density,gram/centimeter³,,kilogram/meter³,,1000,0
