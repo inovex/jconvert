@@ -283,7 +283,9 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
     }
 
     private void initFonts() {
-        String test = Messages.getResource("Acceleration");
+        //Also added a squared to the retrieval and font test because early tests on a mac resulted
+        //in improper fonts with squared.
+        String test = Messages.getResource("Acceleration") + Messages.getResource("meter/sec²");
 
         JLabel lbl = new JLabel();
         if (lbl.getFont().canDisplayUpTo(test) == -1) {
@@ -300,9 +302,12 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
                 return;
             }
         }
+        
+        log.error("Unable to determine a proper font for the language " + Locale.getDefault().getDisplayName() + ".");
+        log.error("This will most likely result in poor rendering of JConvert.");
     }
 
-    public static void setUIFont(javax.swing.plaf.FontUIResource f) {
+    private void setUIFont(javax.swing.plaf.FontUIResource f) {
         java.util.Enumeration keys = UIManager.getDefaults().keys();
         while (keys.hasMoreElements()) {
             Object key = keys.nextElement();
