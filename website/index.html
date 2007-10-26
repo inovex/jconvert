@@ -2,8 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
-  <title>JConvert Home</title>
+  <title>JConvert Home - Free unit conversion software</title>
   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="JConvert opensource/free unit conversion software written in Java" />
+  <meta name="keywords" content="JConvert, free unit conversion, opensource unit conversion, software, java" />
 
   <!-- **** layout stylesheet **** -->
   <link rel="stylesheet" type="text/css" href="style/style.css" />
@@ -22,12 +24,13 @@
     <div id="logo"><h1>JConvert</h1></div>
     <div id="menu">
       <ul>
-        <li><a id="selected" href="https://sourceforge.net/projects/jconvert/">JConvert Home</a></li>
-        <li><a href="https://sourceforge.net/project/showfiles.php?group_id=201265">Downloads</a></li>
+        <li><a id="selected" href="index.html">JConvert Home</a></li>
+        <li><a href="https//sourceforge.net/projects/jconvert/">Project Home</a></li>
+        <li><a href="https//sourceforge.net/project/showfiles.php?group_id=201265">Downloads</a></li>
         <li><a href="howto.html">How To</a></li>
         <li><a href="javadoc/index.html">Java API</a></li>
-        <li><a href="https://sourceforge.net/news/?group_id=201265">News</a></li>
-        <li><a href="https://sourceforge.net/sendmessage.php?touser=1841283">Contact</a></li>
+        <li><a href="http://sourceforge.net/news/?group_id=201265">News</a></li>
+        <li><a href="http://sourceforge.net/sendmessage.php?touser=1841283">Contact</a></li>
       </ul>
     </div>
     <div id="content">
@@ -87,6 +90,7 @@
         <!-- **** INSERT PAGE CONTENT HERE **** -->
         <p>
           JConvert is an opensource project developed in Java that converts various units of measure.
+          JConvert is free software that you are free to download and use.
           JConvert has two interfaces.  The first is a friendly user gui that will allow you to select
           from a series of conversion categories.  Within these categories, there are individual units
           where you can select the unit you wish to convert from and to.  At the bottom of the screen
@@ -95,10 +99,14 @@
           when it is double clicked on, it will automatically open.  If you are running windows, there
           will be no installation procedures, no registry entries, no additional files other than the
           one you download.  If you delete it, it is gone.  So why not try it out!
+          <br><b>Note:</b>While I do not think this impacts the simplicity of "uninstalling" JConvert, please 
+          note that newer versions of JConvert will create the following files in the same directory you are
+          running from: jconvert_settings.properties and convert_custom.dat.  These files are used to store
+          custom settings on your computer so that the next time you open JConvert, your settings are restored. 
         </p>
         <p>
           The second "interface" is basically the aplication programing interface or API.  For Java
-          developers, you know what I am talking about.  Simply place this 80k jar in your classpath and
+          developers, you know what I am talking about.  Simply place this ~100k jar in your classpath and
           voila, you have access to the api.  While this jar does not depend on log4j, if you have log4j
           in your classpath, it will use it.  Just make sure that you have defined your log4j.properties file
           in the classpath.

@@ -2,8 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
-  <title>JConvert How To</title>
+  <title>JConvert How To - Free unit conversion software</title>
   <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+  <meta name="description" content="How to use JConvert opensource/free unit conversion software written in Java" />
+  <meta name="keywords" content="how to, JConvert, free unit conversion, opensource unit conversion, software, java, language, custom conversions" />
 
   <!-- **** layout stylesheet **** -->
   <link rel="stylesheet" type="text/css" href="style/style.css" />
@@ -22,12 +24,13 @@
     <div id="logo"><h1>JConvert</h1></div>
     <div id="menu">
       <ul>
-        <li><a id="selected" href="https://sourceforge.net/projects/jconvert/">JConvert Home</a></li>
-        <li><a href="https://sourceforge.net/project/showfiles.php?group_id=201265">Downloads</a></li>
-        <li><a href="index.html">Main website</a></li>
+        <li><a href="index.html">JConvert Home</a></li>
+        <li><a href="https//sourceforge.net/projects/jconvert/">Project Home</a></li>
+        <li><a href="https//sourceforge.net/project/showfiles.php?group_id=201265">Downloads</a></li>
+        <li><a id="selected" href="howto.html">How To</a></li>
         <li><a href="javadoc/index.html">Java API</a></li>
-        <li><a href="https://sourceforge.net/news/?group_id=201265">News</a></li>
-        <li><a href="https://sourceforge.net/sendmessage.php?touser=1841283">Contact</a></li>
+        <li><a href="http://sourceforge.net/news/?group_id=201265">News</a></li>
+        <li><a href="http://sourceforge.net/sendmessage.php?touser=1841283">Contact</a></li>
       </ul>
     </div>
     <div id="content">
@@ -123,12 +126,17 @@
         <p>
         JConvert at this time does not allow you to <u>choose</u> your own language, it uses the Locale of your computer.  Based on 
         the locale of your computer, it will look for a resource file on your computer that matches your language and region.  
-        For example you live in the US and speak english, then your computers locale is set to english and US.  So JConvert will 
+        For example you live in the US and speak english, then your computer's locale is set to english and US.  So JConvert will 
         look for the file jcMessages_en_US.properties.  If this file is not found, it will choose the default, which is english 
-        since that is what is the default for JConvert.  At the time of writing this, JConvert does not contain any resources other
-        than english, but you can check the downloads area to see if there is a resource for your language.  I am always looking for
-        anyone to translate resources for me.  If you find a file that supports your language or create your own, you can place the 
-        file in the same directory as the Jconver jar file and JConvert will find it.
+        since that is what is the default for JConvert.  Currently JConvert only supports Spanish, French, and Russian.  These translations
+        were done by me using google and have not been reviewed by a native speaker.  I am always looking for anyone to translate, verify
+        , or update resources for me.  If you find a file that supports your language or create your own, you can place the 
+        file in the same directory as the JConvert jar file and JConvert will find it.
+        <P>
+        Note: there is one way to change your language in JConvert without changing the language of your computer.  After running JConvert
+        at least one time, there will be a file created in the directory with JConvert named, "jconvert_settings.properties."  You can 
+        modify the property "LocaleLanguage" to reflect the language of your choosing, for example "en" is english and "es" is spanish.
+        These are standard values and you can get a list of them by searching for Locales.
         </p>
         <h1>once more</h1>
 			<a href="http://sourceforge.net">
