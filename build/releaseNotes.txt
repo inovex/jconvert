@@ -1,3 +1,6 @@
+1.0.5
+-Fixed superset numbers on Mac to render squared and cubed properly.
+
 1.0.4
 -Updated the conversion data to have all league (Distance) conversions.
 -Updated the conversion data to remove minutes latitude (Distance).
