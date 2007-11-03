@@ -43,6 +43,7 @@ public class UpgradeVersionChecker {
 
     public void checkForUpdates(Frame parent) {
         if (isNewerVersionAvailable()) {
+            log.debug("Newer version of JConvert found.");
             String msg = "A newer version (" + webVersion + ") of JConvert is available.\r\nYour current version is "
                     + currentVersion + ".\nDo you want to download the latest from the web?";
             dlg = new JDialog(parent, "Newer Version Available", true);
@@ -90,6 +91,8 @@ public class UpgradeVersionChecker {
             dlg.getContentPane().add(dontAskBtn);
 
             dlg.show();
+        } else {
+            log.debug("Newer version of JConvert not found.");
         }
     }
 
@@ -102,7 +105,7 @@ public class UpgradeVersionChecker {
     }
 
     private void openLinkToWeb() {
-        Browser.openURL("http://sourceforge.net/jconvert/downloads");
+        Browser.openURL("http://sourceforge.net/project/platformdownload.php?group_id=201265");
     }
 
     private boolean isNewerVersionAvailable() {
@@ -110,12 +113,12 @@ public class UpgradeVersionChecker {
             return false;
         }
         currentVersion = JConvertProperties.getBuidVersion();
-
+        Properties props = null;
         StringBuffer loadedUpdate = null;
         try {
             URLConnection uc = Http.getPage("http://jconvert.sourceforge.net/jconvert.properties");
             loadedUpdate = Http.receivePage(uc, "UTF-8");
-            Properties props = new Properties();
+            props = new Properties();
             props.load(new ByteArrayInputStream(loadedUpdate.toString().getBytes("UTF-8")));
             webVersion = props.getProperty("MajorVersion") + "." + props.getProperty("MinorVersion") + "."
                     + props.getProperty("Revision");
@@ -124,7 +127,30 @@ public class UpgradeVersionChecker {
             return false;
         }
 
-        return currentVersion.compareTo(webVersion) < 0;
+        Boolean val = compare(props.getProperty("MajorVersion"), JConvertProperties.getMajorVersion());
+        if (val != null) {
+            return val.booleanValue();
+        } 
+        val = compare(props.getProperty("MinorVersion"), JConvertProperties.getMinorVersion());
+        if (val != null) {
+            return val.booleanValue();
+        } 
+        val = compare(props.getProperty("Revision"), JConvertProperties.getRevision());
+        if (val != null) {
+            return val.booleanValue();
+        } 
+        return false;
+    }
+    private Boolean compare(String first, String second) {
+        int intFirst = new Integer(first).intValue();
+        int intSecond = new Integer(second).intValue();
+        if (intFirst > intSecond) {
+            return Boolean.TRUE;
+        } else if (intFirst < intSecond) {
+            return Boolean.FALSE;
+        }
+            
+        return null;
     }
 
 }
