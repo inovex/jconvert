@@ -1,5 +1,6 @@
 package com.edsdev.jconvert.presentation;
 
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -23,6 +24,11 @@ import com.edsdev.jconvert.presentation.component.ConvertListModel;
 import com.edsdev.jconvert.presentation.component.NumericalTextField;
 import com.edsdev.jconvert.util.Messages;
 
+/**
+ * Basic panel that displays conversions of one type
+ * 
+ * @author Ed Sarrazin Created on Nov 2, 2007 8:00:49 PM
+ */
 public class ConversionPanel extends JPanel {
 
     private static final long serialVersionUID = 1L;
@@ -43,8 +49,9 @@ public class ConversionPanel extends JPanel {
 
     public void setConversionTypeData(ConversionTypeData newData) {
         ctd = newData;
-        list.setModel(new ConvertListModel(ctd.getAllFromUnits()));
+
         list2.setModel(new ConvertListModel(new ArrayList()));
+        list.setModel(new ConvertListModel(ctd.getAllFromUnits()));
 
         setDefaultSelections();
     }
@@ -212,6 +219,11 @@ public class ConversionPanel extends JPanel {
         listPanel.add(Box.createHorizontalStrut(5));
         listPanel.add(scrollPanel2);
 
+        Component topComponent = getTopComponent();
+        if (topComponent != null) {
+            this.add(topComponent);
+        }
+
         this.add(listPanel);
 
         JPanel conversionPanel = new JPanel();
@@ -263,6 +275,10 @@ public class ConversionPanel extends JPanel {
         setDefaultSelections();
 
         this.add(conversionPanel);
+    }
+
+    protected Component getTopComponent() {
+        return null;
     }
 
     private void setDefaultSelections() {
