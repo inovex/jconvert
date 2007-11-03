@@ -59,4 +59,8 @@ public class JConvertProperties {
     public static String getProp(String propName) {
         return props.getProperty(propName);
     }
+
+    public static String getBuidVersion() {
+        return getMajorVersion() + "." + getMinorVersion() + "." + getRevision();
+    }
 }
