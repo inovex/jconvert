@@ -47,6 +47,8 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
         MainFrame frame = new MainFrame();
         frame.setIconImage(ResourceManager.getImage("icon.jpg"));
         frame.setVisible(true);
+        UpgradeVersionChecker checker = new UpgradeVersionChecker();
+        checker.checkForUpdates(frame);
     }
 
     private static void initializeLocale() {
@@ -84,7 +86,6 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
     }
 
     private void init() {
-
         this.setTitle("JConvert");
         this.setJMenuBar(getMenu());
 
@@ -148,7 +149,6 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
         JConvertSettingsProperties.setAppHeight(this.getHeight() + "");
         JConvertSettingsProperties.setAppX(this.getX() + "");
         JConvertSettingsProperties.setAppY(this.getY() + "");
-        JConvertSettingsProperties.setHiddenTabs("");
         recordCurrentTabInfo();
 
         JConvertSettingsProperties.setLocaleLanguage(Locale.getDefault().getLanguage());
@@ -179,6 +179,36 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
                 tabbedPane.addTab(Messages.getUnitTranslation(ctd.getTypeName()), panel);
             }
         }
+        //        CustomConversionDataInterface customAdapter = new CustomConversionDataInterface() {
+        //            public ConversionType getConversions() {
+        //                ConversionType ct = new ConversionType();
+        //                ct.setTypeName("Custom Test");
+        //                ct.addConversion(Conversion.createInstance("Test", "", "Test2", "", "2", 0.0));
+        //                ct.addConversion(Conversion.createInstance("Test", "", "Test3", "", "3", 0.0));
+        //                ct.addConversion(Conversion.createInstance("Test", "", "Test4", "", "4", 0.0));
+        //                ConversionGapBuilder.createOneToOneConversions(ct);
+        //                ConversionGapBuilder.createMissingConversions(ct);
+        //                return ct;
+        //            }
+        //
+        //            public Date getLastUpdated() {
+        //                return new Date();
+        //            }
+        //
+        //            public void addDataUpdatedListener(CustomDataUpdatedListener listener) {
+        //                //do nothing
+        //            }
+        //        };
+        //        CustomTabConversionPanel tab = new CustomTabConversionPanel(customAdapter);
+        //        tabbedPane.addTab("Custom Test", tab);
+        //
+        //        try {
+        //            customAdapter = new MSNCurrencyGetter();
+        //            tab = new CustomTabConversionPanel(customAdapter);
+        //            tabbedPane.addTab(customAdapter.getConversions().getTypeName(), tab);
+        //        } catch (Exception e) {
+        //            log.error("Failed to create custom tab.", e);
+        //        }
     }
 
     private List getHiddenTabs() {
@@ -203,6 +233,16 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
         JMenu fileMenu = new JMenu(Messages.getResource("fileMenu"));
         fileMenu.setMnemonic(getChar("fileMenuMnemonic"));
 
+        JMenuItem fileMenuSettings = new JMenuItem(Messages.getResource("fileMenuSettings"));
+        fileMenuSettings.setMnemonic(getChar("fileMenuSettingsMnemonic"));
+        fileMenuSettings.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                SettingsDlg dlg = new SettingsDlg(MainFrame.this, data);
+                dlg.addConversionsChangedListener(MainFrame.this);
+                dlg.show();
+            }
+        });
+
         JMenuItem fileMenuCustom = new JMenuItem(Messages.getResource("fileMenuCustom"));
         fileMenuCustom.setMnemonic(getChar("fileMenuCustomMnemonic"));
         fileMenuCustom.addActionListener(new ActionListener() {
@@ -221,6 +261,7 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
             }
         });
 
+        fileMenu.add(fileMenuSettings);
         fileMenu.add(fileMenuCustom);
         fileMenu.addSeparator();
         fileMenu.add(fileMenuExit);
@@ -262,9 +303,7 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
         Iterator iter = domainData.iterator();
         while (iter.hasNext()) {
             ConversionType type = (ConversionType) iter.next();
-            ConversionTypeData ctd = new ConversionTypeData();
-            // type.printDetails();
-            ctd.setType(type);
+            ConversionTypeData ctd = new ConversionTypeData(type);
             rv.add(ctd);
         }
 
@@ -278,6 +317,9 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
      */
     public void conversionsUpdated() {
         saveSettings();
+        Messages.resetBundle();
+        initFonts();
+        this.setJMenuBar(getMenu());
         setContent();
         loadSettings();
     }
@@ -302,7 +344,7 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
                 return;
             }
         }
-        
+
         log.error("Unable to determine a proper font for the language " + Locale.getDefault().getDisplayName() + ".");
         log.error("This will most likely result in poor rendering of JConvert.");
     }
