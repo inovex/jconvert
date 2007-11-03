@@ -1,60 +1,18 @@
 package com.edsdev.jconvert.logic;
 
 import java.util.HashMap;
-import java.util.Iterator;
 
 import com.edsdev.jconvert.domain.Conversion;
 import com.edsdev.jconvert.domain.ConversionType;
-import com.edsdev.jconvert.presentation.ConversionTypeData;
-import com.edsdev.jconvert.util.Logger;
 
+/**
+ * This class is responsible for generating missing conversions in a ConversionType list. The name is a bit misleading.
+ * 
+ * @author Ed Sarrazin Created on Nov 2, 2007 7:54:38 PM
+ */
 public class ConversionGapBuilder {
 
-    private static Logger log = Logger.getInstance(ConversionGapBuilder.class);
-
     private static HashMap ageMap;
-
-    /**
-     * @param args
-     */
-    public static void main(String[] args) {
-        Conversion c1 = Conversion.createInstance("minutes", "'", "hours", "hrs",
-            "0.016666666666666666666666666666667", 0);
-        Conversion c2 = Conversion.createInstance("hours", "hrs", "seconds", "''", "3600", 0);
-        Conversion c3 = Conversion.createInstance("minutes", "'", "day", "", "0.00069444444444444444444444444444444", 0);
-        Conversion c4 = Conversion.createInstance("year", "", "month", "", "12", 0);
-        Conversion c5 = Conversion.createInstance("year", "", "month (30 days)", "", "12.16666667", 0);
-        Conversion c6 = Conversion.createInstance("month (30 days)", "", "day", "", "30", 0);
-
-        ConversionType ct = new ConversionType();
-        ct.setTypeName("Time");
-
-        ct.addConversion(c1);
-        ct.addConversion(c2);
-        ct.addConversion(c3);
-        ct.addConversion(c4);
-        ct.addConversion(c5);
-        ct.addConversion(c6);
-
-        createMissingConversions(ct);
-        Iterator iter = ct.getConversions().iterator();
-        while (iter.hasNext()) {
-            Conversion c = (Conversion) iter.next();
-            log.debug("[Age=" + c.getGenerationAge() + "] Convert 50 in " + c.getFromUnit() + " to " + c.getToUnit()
-                    + " = " + c.convertValue(50.0, c.getFromUnit()));
-        }
-
-        ConversionTypeData ctd = new ConversionTypeData();
-        ctd.setType(ct);
-        log.debug(ctd.getAllFromUnits());
-        log.debug(ctd.getToUnits("day"));
-        log.debug(ctd.convert(50, "day", "year") + "");
-        log.debug(ctd.convert(50, "day", "seconds") + "");
-
-        // Celsius,Fahrenheit,1.8,32
-        // Fahrenheit,Kelvin,0.5555555555555555555,255.3722222222222222222222222223
-        // Celsius,Kelvin,2,273.15
-    }
 
     /**
      * This method is responsible for creating the one-to-one conversions. All these are are the conversions that
