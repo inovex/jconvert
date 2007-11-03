@@ -32,10 +32,6 @@ public class AboutDialog extends JDialog implements HyperlinkListener {
 
     private final String UNKNOWN = Messages.getResource("unknown");
 
-    public static void main(String[] args) {
-        new AboutDialog(null).setVisible(true);
-    }
-
     public AboutDialog(Frame parent) {
         super(parent);
         this.setTitle(Messages.getResource("aboutTitle"));
