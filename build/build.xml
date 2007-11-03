@@ -15,12 +15,13 @@
 
 	<target name="compile" depends="init" description="compile the source">
 		<!-- Compile the java code  -->
-		<javac srcdir="${src.dir}" destdir="${classes.dir}" debug="true" debuglevel="lines,vars,source" />
+		<javac srcdir="${src.dir}" destdir="${classes.dir}" debug="${debug.flag}" debuglevel="${debug.level}" />
 
 		<!-- Copy resources to build destination  -->
 		<copy todir="${classes.dir}">
 			<fileset dir="${resource.dir}">
 				<exclude name="convert_custom.dat" />
+				<exclude name="icon.bmp" />
 			</fileset>
 		</copy>
 
@@ -63,7 +64,7 @@
 			<!-- pattern="mm/dd/yyyy HH:MM:ss"/> -->
 		</propertyfile>
 		<copy todir="${classes.dir}">
-			<fileset dir="${resource.dir}" >
+			<fileset dir="${resource.dir}">
 				<include name="jconvert.properties" />
 			</fileset>
 		</copy>
@@ -96,10 +97,36 @@
 		<property file="resource/jconvert.properties" />
 		<zip destfile="${deploy.dir}/jconvert-${MajorVersion}.${MinorVersion}.${Revision}.zip">
 			<zipfileset dir="${jdocSrc.dir}" prefix="doc/javadoc" />
+			<zipfileset dir="${src.dir}" prefix="src" />
+			<zipfileset dir="${test.src.dir}" prefix="test" />
+			<zipfileset dir="${resource.dir}" prefix="resource" />
+			<zipfileset dir="${build.dir}" prefix="build" />
 			<zipfileset dir="${website.dir}" prefix="doc" />
 			<zipfileset dir="${deploy.dir}" includes="*.jar" />
 		</zip>
 	</target>
+	<target name="uploadJar" description="ftps jar to the sourceforge site">
+		<ftp server="upload.sourceforge.net" userid="anonymous" password="anonymous" remotedir="incoming" passive="Yes" action="put">
+			<fileset dir="${deploy.dir}">
+				<include name="*.jar" />
+			</fileset>
+		</ftp>
+	</target>
+	<target name="uploadWebsite" description="scps website data out to sourceforge">
+		<echo message="SCP upload herer" />
+		<scp todir="${sf.id}:${sf.pwd}@shell.sourceforge.net:/home/groups/j/jc/jconvert/htdocs" trust="true" verbose="true">
+			<fileset dir="${jdocSrc.dir}" />
+			<fileset dir="${website.dir}">
+				<exclude name="**/*.svn" />
+			</fileset>
+			<fileset dir="${resource.dir}">
+				<include name="jconvert.properties" />
+			</fileset>
+		</scp>
+		<sshexec username="${sf.id}" password="${sf.pwd}" host="shell.sourceforge.net" trust="true" command="chmod 705 -R /home/groups/j/jc/jconvert/htdocs/*">
+		</sshexec>
+	</target>
+
 	<target name="javadoc" description="creaates the javadoc for the project">
 		<delete dir="${jdocSrc.dir}" />
 		<javadoc destdir="${jdocSrc.dir}" author="true" version="true" use="true" windowtitle="Test API">
