@@ -184,7 +184,7 @@ public class DataLoader {
      *        missing conversion types.
      * @return List of ConversionTypes.
      */
-    private List loadData(String resourceName, boolean generateGaps, List existingConversionTypes) {
+    public List loadData(String resourceName, boolean generateGaps, List existingConversionTypes) {
         HashMap map = new HashMap();
         Date date1 = new Date();
 
@@ -247,11 +247,12 @@ public class DataLoader {
      * 
      * @param domainData List of ConversionTypes
      */
-    public void unloadData(List domainData) {
+    public void unloadData(List domainData, String outputFileName) {
         //iterate through conversiontypes and write out.
         Iterator iter = domainData.iterator();
         try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter("output.dat"));
+            String jarPath = ResourceManager.getJarPath();
+            BufferedWriter writer = new BufferedWriter(new FileWriter(jarPath + outputFileName));
             while (iter.hasNext()) {
                 ConversionType ct = (ConversionType) iter.next();
                 List lst = new ArrayList();
