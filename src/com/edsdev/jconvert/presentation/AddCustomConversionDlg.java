@@ -31,7 +31,7 @@ import com.edsdev.jconvert.util.Messages;
 import com.edsdev.jconvert.util.ResourceManager;
 
 /**
- * @author Ed S Created on Sep 13, 2007 5:14:10 PM
+ * @author Ed Sarrazin Created on Sep 13, 2007 5:14:10 PM
  */
 public class AddCustomConversionDlg extends JDialog {
 
@@ -70,11 +70,6 @@ public class AddCustomConversionDlg extends JDialog {
     private JScrollPane scrollData = new JScrollPane();
 
     private static final Logger log = Logger.getInstance(AddCustomConversionDlg.class);
-
-    public static void main(String[] args) {
-        AddCustomConversionDlg dlg = new AddCustomConversionDlg(null);
-        dlg.show();
-    }
 
     public AddCustomConversionDlg(Frame parent) {
         super(parent);
@@ -176,8 +171,8 @@ public class AddCustomConversionDlg extends JDialog {
             //throw away, we are just trying all the time.
         }
         lblExample.setText("10 " + txtFrom.getText() + " " + Messages.getResource("multiplySymbol") + " "
-                + txtFactor.getText() + " " + Messages.getResource("plusSign") + " " + txtOffset.getText()
-                + " " + Messages.getResource("equalsSign") + " " + result + " " + txtTo.getText());
+                + txtFactor.getText() + " " + Messages.getResource("plusSign") + " " + txtOffset.getText() + " "
+                + Messages.getResource("equalsSign") + " " + result + " " + txtTo.getText());
     }
 
     private String getFilePath() {
@@ -279,7 +274,7 @@ public class AddCustomConversionDlg extends JDialog {
         if (!validComponent(txtConversionType, Messages.getResource("conversionTypeLabel"))) {
             return;
         }
-        if (!validComponent(txtFrom,  Messages.getResource("fromUnitLabel"))) {
+        if (!validComponent(txtFrom, Messages.getResource("fromUnitLabel"))) {
             return;
         }
         if (!validComponent(txtTo, Messages.getResource("toUnitLabel"))) {
