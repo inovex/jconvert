@@ -39,6 +39,8 @@ public class JConvertSettingsProperties {
 
     public static final String LOCALE_VARIANT = "LocaleVariant";
 
+    public static final String CHECK_FOR_NEWER_VERSION = "CheckForNewerVersion";
+
     /** Static initializer - lets do this once */
     static {
         try {
@@ -165,6 +167,14 @@ public class JConvertSettingsProperties {
 
     public static void setLocaleVariant(String val) {
         props.setProperty(LOCALE_VARIANT, val);
+    }
+
+    public static String getCheckForNewerVersion() {
+        return props.getProperty(CHECK_FOR_NEWER_VERSION);
+    }
+
+    public static void setCheckForNewerVersion(String val) {
+        props.setProperty(CHECK_FOR_NEWER_VERSION, val);
     }
 
 }
