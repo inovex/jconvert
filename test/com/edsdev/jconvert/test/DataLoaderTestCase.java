@@ -82,8 +82,7 @@ public class DataLoaderTestCase extends TestCase {
         Iterator iter = domainData.iterator();
         while (iter.hasNext()) {
             ConversionType type = (ConversionType) iter.next();
-            ConversionTypeData ctd = new ConversionTypeData();
-            ctd.setType(type);
+            ConversionTypeData ctd = new ConversionTypeData(type);
 
             if (type.getTypeName().equals("Time")) {
                 checkTime(ctd);

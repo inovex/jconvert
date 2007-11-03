@@ -53,8 +53,7 @@ public class ConversionTestCase extends TestCase {
 
         ConversionGapBuilder.createOneToOneConversions(ct);
         ConversionGapBuilder.createMissingConversions(ct);
-        ConversionTypeData ctd = new ConversionTypeData();
-        ctd.setType(ct);
+        ConversionTypeData ctd = new ConversionTypeData(ct);
 
         assertTrue("Verify count of FromUnits", ctd.getAllFromUnits().size() == 4);
         assertTrue("Verify count of to units from b", ctd.getToUnits("b").size() == 4);
@@ -108,8 +107,7 @@ public class ConversionTestCase extends TestCase {
                     + c.getToUnit() + " = " + c.convertValue(50.0, c.getFromUnit()));
         }
 
-        ConversionTypeData ctd = new ConversionTypeData();
-        ctd.setType(ct);
+        ConversionTypeData ctd = new ConversionTypeData(ct);
 
         assertTrue("Verify count of FromUnits", ctd.getAllFromUnits().size() == 7);
         assertTrue("Verify count of to units from day", ctd.getToUnits("day").size() == 7);
