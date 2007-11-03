@@ -15,6 +15,10 @@ public class Messages {
         bundle = ResourceBundle.getBundle("jcMessages");
     }
 
+    public static void resetBundle() {
+        bundle = ResourceBundle.getBundle("jcMessages");
+    }
+
     /**
      * Gets the resource specific to the specified key
      * 
