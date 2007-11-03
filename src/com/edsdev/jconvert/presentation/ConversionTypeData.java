@@ -9,8 +9,18 @@ import java.util.List;
 import com.edsdev.jconvert.domain.Conversion;
 import com.edsdev.jconvert.domain.ConversionType;
 
+/**
+ * Presentation side representation of Conversion Data
+ * 
+ * @author Ed Sarrazin Created on Nov 2, 2007 8:02:09 PM
+ */
 public class ConversionTypeData implements Comparable {
     private ConversionType type;
+
+    public ConversionTypeData(ConversionType ct) {
+        super();
+        this.setType(ct);
+    }
 
     public String getTypeName() {
         return type.getTypeName();
