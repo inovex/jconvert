@@ -123,6 +123,9 @@
 				<include name="jconvert.properties" />
 			</fileset>
 		</scp>
+		<scp todir="${sf.id}:${sf.pwd}@shell.sourceforge.net:/home/groups/j/jc/jconvert/htdocs/javadoc" trust="true" verbose="true">
+			<fileset dir="${jdocSrc.dir}" />
+		</scp>
 		<sshexec username="${sf.id}" password="${sf.pwd}" host="shell.sourceforge.net" trust="true" command="chmod 705 -R /home/groups/j/jc/jconvert/htdocs/*">
 		</sshexec>
 	</target>
