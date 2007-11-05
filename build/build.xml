@@ -115,7 +115,6 @@
 	<target name="uploadWebsite" description="scps website data out to sourceforge">
 		<echo message="SCP upload herer" />
 		<scp todir="${sf.id}:${sf.pwd}@shell.sourceforge.net:/home/groups/j/jc/jconvert/htdocs" trust="true" verbose="true">
-			<fileset dir="${jdocSrc.dir}" />
 			<fileset dir="${website.dir}">
 				<exclude name="**/*.svn" />
 			</fileset>
