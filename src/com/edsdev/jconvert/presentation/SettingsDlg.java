@@ -29,7 +29,7 @@ import com.edsdev.jconvert.util.Logger;
 import com.edsdev.jconvert.util.Messages;
 
 /**
- * @author Ed S Created on Oct 22, 2007 5:33:10 PM
+ * @author Ed Sarrazin Created on Oct 22, 2007 5:33:10 PM
  */
 public class SettingsDlg extends JDialog {
 
