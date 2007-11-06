@@ -1,5 +1,11 @@
+-next (to come)
+-Created custom conversion for Currency that can automatically update currency exchange rates.  This will require connectivity to the internet.
+
 1.0.5
+-Started framework for user to create their own custom conversion plugin.
+-Added a user settings screen that allows the user to change the language and hide tabs.
 -Fixed superset numbers on Mac to render squared and cubed properly.
+-Updated the links in the help about dialog
 
 1.0.4
 -Updated the conversion data to have all league (Distance) conversions.
