@@ -124,7 +124,7 @@
         </p>
         <h1>Changing the language</h1>
         <p>
-        JConvert at this time does not allow you to <u>choose</u> your own language, it uses the Locale of your computer.  Based on 
+        By default, JConvert uses the Locale of your computer.  Based on 
         the locale of your computer, it will look for a resource file on your computer that matches your language and region.  
         For example you live in the US and speak english, then your computer's locale is set to english and US.  So JConvert will 
         look for the file jcMessages_en_US.properties.  If this file is not found, it will choose the default, which is english 
@@ -133,11 +133,29 @@
         , or update resources for me.  If you find a file that supports your language or create your own, you can place the 
         file in the same directory as the JConvert jar file and JConvert will find it.
         <P>
-        Note: there is one way to change your language in JConvert without changing the language of your computer.  After running JConvert
-        at least one time, there will be a file created in the directory with JConvert named, "jconvert_settings.properties."  You can 
-        modify the property "LocaleLanguage" to reflect the language of your choosing, for example "en" is english and "es" is spanish.
-        These are standard values and you can get a list of them by searching for Locales.
+        Note: You can change the language that JConvert uses by opening the Settings screen located under the file menu.
+        This enables you to change the language without changing the language of your computer.  There are three values that
+        makup your Locale.  This is the country, language, and variant.  Most of the time you do not use variant, but it can be
+        used for dialects amoung other things.
         </p>
+<!--        <h1>Replacing the currency conversions</h1>
+        <p>
+        Currency conversions was somewhat of a tricky matter.  All of the current conversions in JConvert are fixed.  Currency conversions
+        change dynamically throughout the day.  In order to provide conversions for currency, we must pull the data from somewhere on a
+        regular basis.  Currency data is tricky as well.  If you want it free, you are going to have to pull it from a site that gives it
+        away for free, but this usually means that the data is stale, like getting 20 minute delayed quotes for the stock market.  I have
+        implemented a solution for this that goes out to some public websites and pulls data from a web page.  If you are a business, then
+        you probably want more accurate data.  While I can consult on this, I have provided an architecture to allow you to develope your 
+        own.  All you have to do is implement the 
+        <a href="http://jconvert.sourceforge.net/javadoc/com/edsdev/jconvert/common/CustomConversionDataInterface.html">
+        com.edsdev.jconvert.common.CustomConversionDataInterface</a>.  There are examples of this if you look at the source
+        <a href="">com.edsdev.jconvert.common.CustomConversionCurrency</a>.  You can point your implementation at a paysite, an EJB, 
+        an RSS feed, or whatever you want.
+        </p><p>
+        For the geek at heart, this also provides a way for you update these custom classes if the websites change their format, or 
+        experiment with pointing at sites that have a more comprehensive selection of currencies.
+        </p>
+-->
         <h1>once more</h1>
 			<a href="http://sourceforge.net">
 			<img src="http://sflogo.sourceforge.net/sflogo.php?group_id=201265&amp;type=6"
