@@ -6,7 +6,7 @@ import java.util.Properties;
 /**
  * "Static" class that represents the settings of the application that could be configured by the user.
  * 
- * @author Ed S Created on Sep 19, 2007 4:27:45 PM
+ * @author Ed Sarrazin Created on Sep 19, 2007 4:27:45 PM
  */
 public class JConvertSettingsProperties {
     private static Properties props = null;
@@ -40,6 +40,10 @@ public class JConvertSettingsProperties {
     public static final String LOCALE_VARIANT = "LocaleVariant";
 
     public static final String CHECK_FOR_NEWER_VERSION = "CheckForNewerVersion";
+
+    public static final String CUSTOM_CONVERSION_CLASS = "CustomConversionClass";
+
+    public static final String CUSTOM_CONVERSION_JAR = "CustomConversionJar";
 
     /** Static initializer - lets do this once */
     static {
@@ -177,4 +181,19 @@ public class JConvertSettingsProperties {
         props.setProperty(CHECK_FOR_NEWER_VERSION, val);
     }
 
+    public static String getCustomConversionClass() {
+        return props.getProperty(CUSTOM_CONVERSION_CLASS);
+    }
+
+    public static void setCustomConversionClass(String val) {
+        props.setProperty(CUSTOM_CONVERSION_CLASS, val);
+    }
+
+    public static String getCustomConversionJar() {
+        return props.getProperty(CUSTOM_CONVERSION_JAR);
+    }
+
+    public static void setCustomConversionJar(String val) {
+        props.setProperty(CUSTOM_CONVERSION_JAR, val);
+    }
 }
