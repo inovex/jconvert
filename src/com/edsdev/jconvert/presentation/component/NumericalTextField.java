@@ -7,6 +7,9 @@ import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import javax.swing.text.PlainDocument;
 
+/**
+ * @author Ed Sarrazin
+ */
 public class NumericalTextField extends BaseTextField {
 
     private static final long serialVersionUID = 1L;

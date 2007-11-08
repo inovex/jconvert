@@ -10,6 +10,11 @@ import javax.swing.UIManager;
 
 import com.edsdev.jconvert.presentation.ConversionUnitData;
 
+/**
+ * This is responsible for rendering conversions in a list.
+ * 
+ * @author Ed Sarrazin
+ */
 public class ConvertListCellRenderer extends JLabel implements ListCellRenderer {
 
     public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected,

@@ -6,6 +6,9 @@ import java.util.List;
 import javax.swing.ListModel;
 import javax.swing.event.ListDataListener;
 
+/**
+ * @author Ed Sarrazin
+ */
 public class ConvertListModel implements ListModel {
 
 	List listeners = null;
