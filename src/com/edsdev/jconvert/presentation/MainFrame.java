@@ -30,6 +30,10 @@ import com.edsdev.jconvert.util.Logger;
 import com.edsdev.jconvert.util.Messages;
 import com.edsdev.jconvert.util.ResourceManager;
 
+/**
+ * @author Ed Sarrazin
+ * Created on Nov 6, 2007 7:02:50 AM
+ */
 public class MainFrame extends JFrame implements ConversionsChangedListener {
 
     private static final long serialVersionUID = 1L;

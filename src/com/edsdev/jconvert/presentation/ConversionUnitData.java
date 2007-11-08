@@ -5,7 +5,7 @@ import com.edsdev.jconvert.util.Messages;
 /**
  * This class is used for creating presentation views of the data.
  * 
- * @author Ed S Created on Aug 14, 2007 4:46:03 PM
+ * @author Ed Sarrazin Created on Aug 14, 2007 4:46:03 PM
  */
 public class ConversionUnitData implements Comparable {
     public String getTranslatedUnit() {

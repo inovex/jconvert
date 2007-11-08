@@ -22,7 +22,7 @@ import com.edsdev.jconvert.util.Logger;
 import com.edsdev.jconvert.util.Messages;
 
 /**
- * @author Ed S Created on Sep 10, 2007 8:34:25 PM
+ * @author Ed Sarrazin Created on Sep 10, 2007 8:34:25 PM
  */
 public class AboutDialog extends JDialog implements HyperlinkListener {
 
