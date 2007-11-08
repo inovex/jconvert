@@ -15,8 +15,10 @@ import java.util.Properties;
 import javax.swing.ImageIcon;
 
 /**
- * @author elsarrazin To change the template for this generated type comment go to Window - Preferences - Java - Code
- *         Generation - Code and Comments
+ * To change the template for this generated type comment go to Window - Preferences - Java - Code Generation - Code and
+ * Comments
+ * 
+ * @author Ed Sarrazin
  */
 public class ResourceManager {
     private static Logger log = Logger.getInstance(ResourceManager.class);
@@ -24,7 +26,7 @@ public class ResourceManager {
     /**
      * Loads and Image from the classpath as a resource
      * 
-     * @param imageRelativeURL
+     * @param imageRelativeURL relative url of the image you want to get
      * @return Image object
      */
     public static Image getImage(String imageRelativeURL) {
@@ -41,7 +43,7 @@ public class ResourceManager {
     /**
      * Loads a properties file from the classpath based on the name provided
      * 
-     * @param filename
+     * @param filename Name of the file you want to load
      * @return Properties object
      * @throws java.io.IOException
      */
@@ -52,8 +54,8 @@ public class ResourceManager {
     /**
      * Attempts to find a resource in the classpath and returns an InputStream to that resrouce
      * 
-     * @param resourceName
-     * @return
+     * @param resourceName name of the resource you want to get as a stream
+     * @return stream to the resource
      */
     public static InputStream getResourceAsStream(String resourceName) {
         InputStream is = null;
@@ -115,7 +117,7 @@ public class ResourceManager {
     /**
      * Loads properties from an InputStream into a Properties object
      * 
-     * @param Istream
+     * @param Istream stream from which to load the properties file
      * @return Properties object
      * @throws java.io.IOException
      */
@@ -142,8 +144,8 @@ public class ResourceManager {
     /**
      * Gets and ImageIcom from the classloader based on the image resource URL
      * 
-     * @param imageRelativeURL
-     * @return
+     * @param imageRelativeURL relative url to load the image icon from
+     * @return ImageIcon
      */
     public static ImageIcon getImageIcon(String imageRelativeURL) {
         ImageIcon icon = null;

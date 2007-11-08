@@ -122,7 +122,8 @@ public class Http {
     }
 
     /**
-     * @brief Retrieve data from HTTP in raw byte form.
+     * Retrieve data from HTTP in raw byte form.
+     * 
      * @param dataURL - The URL of the raw data to retrieve.
      * @param inCookie - Any cookie needed to be passed along.
      * @return - A result with raw data and the length.
@@ -149,7 +150,8 @@ public class Http {
     }
 
     /**
-     * @brief Retrieve raw data from an already existing URL connection.
+     * Retrieve raw data from an already existing URL connection.
+     * 
      * @param uc - The URLConnection to pull the data from.
      * @return - A structure containing the raw data and the length.
      */

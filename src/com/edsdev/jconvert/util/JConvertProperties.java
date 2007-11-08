@@ -6,7 +6,7 @@ import java.util.Properties;
  * "Static" class that represents the jconvert properties file. Will automatically load the file for you and has
  * convenience methods for the commonly used properties.
  * 
- * @author Ed S Created on Sep 18, 2007 6:55:41 AM
+ * @author Ed Sarrazin Created on Sep 18, 2007 6:55:41 AM
  */
 public class JConvertProperties {
     private static Properties props = null;

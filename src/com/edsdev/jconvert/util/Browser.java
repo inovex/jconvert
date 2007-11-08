@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 /**
  * This is a very lightweight browser support class. It only supports windows, mac, unix, and linux.
  * 
- * @author Ed S Created on Sep 10, 2007 9:02:07 PM
+ * @author Ed Sarrazin Created on Sep 10, 2007 9:02:07 PM
  */
 public class Browser {
     private static final String errMsg = "Error attempting to launch web browser";

@@ -6,7 +6,7 @@ import java.util.ResourceBundle;
 /**
  * This class is used to load String resources specific to the current Locale
  * 
- * @author Ed S Created on Sep 26, 2007 7:50:47 PM
+ * @author Ed Sarrazin Created on Sep 26, 2007 7:50:47 PM
  */
 public class Messages {
     private static ResourceBundle bundle = null;
@@ -22,8 +22,8 @@ public class Messages {
     /**
      * Gets the resource specific to the specified key
      * 
-     * @param key
-     * @return
+     * @param key String value key that you are looking up
+     * @return String result
      */
     public static String getResource(String key) {
         return bundle.getString(key);
@@ -32,9 +32,9 @@ public class Messages {
     /**
      * Gets the resource specific to the specified key
      * 
-     * @param key
+     * @param key String value key that you are looking up
      * @param replacementValue replaces the first parameter in the string result with this value
-     * @return
+     * @return String result
      */
     public static String getResource(String key, String replacementValue) {
         String rv = bundle.getString(key);
@@ -46,10 +46,10 @@ public class Messages {
      * Gets the resource specific to the specified key, replacing the parmeters in the string with the two passed in
      * values
      * 
-     * @param key
-     * @param value1
-     * @param value2
-     * @return
+     * @param key String value key that you are looking up
+     * @param value1 replaces the first parameter in the string result with this value
+     * @param value2 replaces the second parameter in the string result with this value
+     * @return String result
      */
     public static String getResource(String key, String value1, String value2) {
         String rv = bundle.getString(key);
@@ -60,10 +60,9 @@ public class Messages {
     /**
      * Gets the resource specific to the specified key, replacing the parmeters in the string with the values passed in
      * 
-     * @param key
-     * @param value1
-     * @param values
-     * @return
+     * @param key String value key that you are looking up
+     * @param values Object array of values to replace in the string result.
+     * @return String result
      */
     public static String getResource(String key, Object[] values) {
         String rv = bundle.getString(key);
@@ -76,8 +75,8 @@ public class Messages {
      * key is not found, then the key is returned. This basically handles translating the actual units and if there is
      * no translation found, it just uses the value in the convert file.
      * 
-     * @param key
-     * @return
+     * @param key String value key that you are looking up
+     * @return String result
      */
     public static String getUnitTranslation(String key) {
         String rv = key;
