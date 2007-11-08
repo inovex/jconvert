@@ -58,22 +58,26 @@
 		</junit>
 	</target>
 	<target name="updateBuildProperties" description="Updates the build properties with version and build info">
-		<propertyfile file="resource/jconvert.properties">
+		<!-- load properties file and update the revision and builddate  -->
+		<propertyfile file="resource/${properties.file}">
 			<entry key="Revision" type="int" operation="+" value="1" />
 			<entry key="BuildDate" type="date" default="now" value="now" />
 			<!-- pattern="mm/dd/yyyy HH:MM:ss"/> -->
 		</propertyfile>
+		<!-- Copy the updated properties file to the classes dir -->
 		<copy todir="${classes.dir}">
 			<fileset dir="${resource.dir}">
-				<include name="jconvert.properties" />
+				<include name="${properties.file}" />
 			</fileset>
 		</copy>
 	</target>
 	<target name="jar" depends="clean,compile,test,updateBuildProperties" description="creates the jar for the jconvert project">
-		<property file="resource/jconvert.properties" />
+		<property file="resource/${properties.file}" />
 		<jar basedir="${classes.dir}" destfile="${deploy.dir}/jconvert-${MajorVersion}.${MinorVersion}.${Revision}.jar">
+			<!-- Exclude test package from the jar -->
 			<exclude name="**/test/*" />
 			<exclude name="**/test/" />
+			<!-- Construct the manifest -->
 			<manifest>
 				<attribute name="Built-By" value="${user.name}" />
 				<attribute name="Main-class" value="com.edsdev.jconvert.presentation.MainFrame" />
@@ -94,7 +98,8 @@
 		</jar>
 	</target>
 	<target name="release" depends="jar,javadoc" description="creates a release">
-		<property file="resource/jconvert.properties" />
+		<!-- Get a handle to the properties file to customize naming of files -->
+		<property file="resource/${properties.file}" />
 		<zip destfile="${deploy.dir}/jconvert-${MajorVersion}.${MinorVersion}.${Revision}.zip">
 			<zipfileset dir="${jdocSrc.dir}" prefix="doc/javadoc" />
 			<zipfileset dir="${src.dir}" prefix="src" />
@@ -106,44 +111,40 @@
 		</zip>
 	</target>
 	<target name="uploadJar" description="ftps jar to the sourceforge site">
-		<ftp server="upload.sourceforge.net" userid="anonymous" password="anonymous" remotedir="incoming" passive="Yes" action="put">
+		<!-- Ftp the jar file up to sourceforge to create a file release -->
+		<ftp server="${sf.ftp}" userid="${sf.ftp.id}" password="${sf.ftp.pwd}" remotedir="incoming" passive="Yes" action="put">
 			<fileset dir="${deploy.dir}">
 				<include name="*.jar" />
 			</fileset>
 		</ftp>
 	</target>
 	<target name="uploadWebsite" description="scps website data out to sourceforge">
-		<echo message="SCP upload herer" />
-		<scp todir="${sf.id}:${sf.pwd}@shell.sourceforge.net:/home/groups/j/jc/jconvert/htdocs" trust="true" verbose="true">
+		<!-- scp the website and properties file to sourceforge -->
+		<scp todir="${sf.id}:${sf.pwd}@${sf.host}:${sf.path}" trust="true" verbose="true">
 			<fileset dir="${website.dir}">
 				<exclude name="**/*.svn" />
 			</fileset>
 			<fileset dir="${resource.dir}">
-				<include name="jconvert.properties" />
+				<include name="${properties.file}" />
 			</fileset>
 		</scp>
-		<scp todir="${sf.id}:${sf.pwd}@shell.sourceforge.net:/home/groups/j/jc/jconvert/htdocs/javadoc" trust="true" verbose="true">
+		<!-- scp the javadoc to sourceforge -->
+		<scp todir="${sf.id}:${sf.pwd}@${sf.host}:${sf.javadoc.path}" trust="true" verbose="true">
 			<fileset dir="${jdocSrc.dir}" />
 		</scp>
-		<sshexec username="${sf.id}" password="${sf.pwd}" host="shell.sourceforge.net" trust="true" command="chmod 705 -R /home/groups/j/jc/jconvert/htdocs/*">
-		</sshexec>
+		<!-- set the permissions on the scp'd files -->
+		<sshexec username="${sf.id}" password="${sf.pwd}" host="${sf.host}" trust="true" command="${ssh.writable.cmd}" />
 	</target>
 
-	<target name="javadoc" description="creaates the javadoc for the project">
+	<target name="javadoc" description="creates the javadoc for the project">
 		<delete dir="${jdocSrc.dir}" />
-		<javadoc destdir="${jdocSrc.dir}" author="true" version="true" use="true" windowtitle="Test API">
-
+		<javadoc destdir="${jdocSrc.dir}" author="true" version="true" use="true" windowtitle="${jdoc.windowTitle}">
 			<fileset dir="${src.dir}" defaultexcludes="yes">
 				<include name="com/**/*.java" />
 			</fileset>
-
-			<doctitle>
-				<![CDATA[<h1>JConvert</h1>]]>
-			</doctitle>
-		<bottom>
-			<![CDATA[<i>JConvert - opensource project by Ed Sarrazin</i>]]>
-			</bottom>
-</javadoc>
-</target>
+			<doctitle>${jdoc.docTitle}</doctitle>
+			<bottom>${jdoc.bottom}</bottom>
+		</javadoc>
+	</target>
 
 </project>
