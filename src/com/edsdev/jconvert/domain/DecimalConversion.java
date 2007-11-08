@@ -1,5 +1,11 @@
 package com.edsdev.jconvert.domain;
 
+/**
+ * This is the class that represents a decimal conversion in the application. By decimal conversion we mean 1.024 or
+ * some other decimal factor
+ * 
+ * @author Ed Sarrazin Created on Jul 14, 2007 10:10:14 AM
+ */
 public class DecimalConversion extends Conversion {
 
     private double fromToFactor = 1;
@@ -15,15 +21,10 @@ public class DecimalConversion extends Conversion {
     }
 
     /**
-     * @param value
-     *            double value you want to convert
-     * @param pFromUnit
-     *            Unit that you want to convert from
-     * @return answer
-     * 
-     * If the fromUnit does not match the classes from unit, then it is assumed that you are converting the other way
-     * ex. System.out.println(conversion.convertValue(17, conversion.getFromUnit()));
-     * 
+     * @param value double value you want to convert
+     * @param pFromUnit Unit that you want to convert from
+     * @return answer If the fromUnit does not match the classes from unit, then it is assumed that you are converting
+     *         the other way ex. System.out.println(conversion.convertValue(17, conversion.getFromUnit()));
      */
     public double convertValue(double value, String pFromUnit) {
         if (pFromUnit.equals(this.getFromUnit())) {
@@ -63,7 +64,9 @@ public class DecimalConversion extends Conversion {
         this.fromToFactor = fromToFactor;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.edsdev.jconvert.domain.Conversion#getFromToBottomFactor()
      */
     public long getFromToBottomFactor() {
@@ -71,7 +74,9 @@ public class DecimalConversion extends Conversion {
         throw new RuntimeException("Not Supported");
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.edsdev.jconvert.domain.Conversion#setFromToBottomFactor(long)
      */
     public void setFromToBottomFactor(long fromToBottomFactor) {
@@ -79,7 +84,9 @@ public class DecimalConversion extends Conversion {
         throw new RuntimeException("Not Supported");
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.edsdev.jconvert.domain.Conversion#getFromToTopFactor()
      */
     public long getFromToTopFactor() {
@@ -87,7 +94,9 @@ public class DecimalConversion extends Conversion {
         throw new RuntimeException("Not Supported");
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.edsdev.jconvert.domain.Conversion#setFromToTopFactor(long)
      */
     public void setFromToTopFactor(long fromToTopFactor) {
@@ -95,14 +104,18 @@ public class DecimalConversion extends Conversion {
         throw new RuntimeException("Not Supported");
     }
 
-   /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.edsdev.jconvert.domain.Conversion#setFromToFactorString(java.lang.String)
      */
     public void setFromToFactorString(String factor) {
         fromToFactor = Double.parseDouble(factor);
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.edsdev.jconvert.domain.Conversion#getFromToFactorString()
      */
     public String getFromToFactorString() {

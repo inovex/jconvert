@@ -2,12 +2,18 @@ package com.edsdev.jconvert.domain;
 
 import com.edsdev.jconvert.util.Logger;
 
+/**
+ * This is the class that represents a fraction conversion in the application. By fractional conversion we mean 1/34,
+ * 23/1 or some other fractional factor
+ * 
+ * @author Ed Sarrazin Created on Jul 14, 2007 10:10:14 AM
+ */
 public class FractionalConversion extends Conversion {
 
     private long fromToTopFactor = 1;
 
     private long fromToBottomFactor = 1;
-    
+
     private static Logger log = Logger.getInstance(FractionalConversion.class);
 
     public FractionalConversion(String fromUnit, String fromUnitAbbr, String toUnit, String toUnitAbbr,
@@ -17,15 +23,10 @@ public class FractionalConversion extends Conversion {
     }
 
     /**
-     * @param value
-     *            double value you want to convert
-     * @param pFromUnit
-     *            Unit that you want to convert from
-     * @return answer
-     * 
-     * If the fromUnit does not match the classes from unit, then it is assumed that you are converting the other way
-     * ex. System.out.println(conversion.convertValue(17, conversion.getFromUnit()));
-     * 
+     * @param value double value you want to convert
+     * @param pFromUnit Unit that you want to convert from
+     * @return answer If the fromUnit does not match the classes from unit, then it is assumed that you are converting
+     *         the other way ex. System.out.println(conversion.convertValue(17, conversion.getFromUnit()));
      */
     public double convertValue(double value, String pFromUnit) {
         if (pFromUnit.equals(this.getFromUnit())) {
@@ -54,7 +55,7 @@ public class FractionalConversion extends Conversion {
             rv = (this.getFromToTopFactor() * fc.getFromToBottomFactor()) + "/"
                     + (this.getFromToBottomFactor() * fc.getFromToTopFactor());
         } else {
-            rv = this.getFromToTopFactor() / (this.getFromToBottomFactor() * byConversion.getFromToFactor())  + "";
+            rv = this.getFromToTopFactor() / (this.getFromToBottomFactor() * byConversion.getFromToFactor()) + "";
         }
         return rv;
     }
@@ -75,7 +76,9 @@ public class FractionalConversion extends Conversion {
         this.fromToTopFactor = fromToTopFactor;
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.edsdev.jconvert.domain.Conversion#getFromToFactor()
      */
     public double getFromToFactor() {
@@ -83,7 +86,9 @@ public class FractionalConversion extends Conversion {
         throw new RuntimeException("Not Supported");
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.edsdev.jconvert.domain.Conversion#setFromToFactor(double)
      */
     public void setFromToFactor(double fromToFactor) {
@@ -91,14 +96,16 @@ public class FractionalConversion extends Conversion {
         throw new RuntimeException("Not Supported");
     }
 
-    /* (non-Javadoc)
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.edsdev.jconvert.domain.Conversion#setFromToFactorString(java.lang.String)
      */
     public void setFromToFactorString(String fromToFactor) {
         int pos = fromToFactor.indexOf("/");
         if (pos > 0) {
-//            fromToFactor = reduceFraction(fromToFactor);
-//            pos = fromToFactor.indexOf("/");
+            //            fromToFactor = reduceFraction(fromToFactor);
+            //            pos = fromToFactor.indexOf("/");
             String top = fromToFactor.substring(0, pos);
             String bottom = fromToFactor.substring(pos + 1);
             fromToTopFactor = getLong(top);
@@ -112,65 +119,68 @@ public class FractionalConversion extends Conversion {
             //TODO throw proper exception here
         }
     }
-	private static long getTop(String val) {
-		int pos = val.indexOf("/");
-		return Long.parseLong(val.substring(0, pos));
-	}
 
-	private static long getBottom(String val) {
-		int pos = val.indexOf("/");
-		return Long.parseLong(val.substring(pos + 1, val.length()));
-	}
+    private static long getTop(String val) {
+        int pos = val.indexOf("/");
+        return Long.parseLong(val.substring(0, pos));
+    }
 
-	private static String reduceFraction(String val) {
-		long top = getTop(val);
-		long bottom = getBottom(val);
+    private static long getBottom(String val) {
+        int pos = val.indexOf("/");
+        return Long.parseLong(val.substring(pos + 1, val.length()));
+    }
 
-		long largest = top;
-		if (largest < bottom) {
-			largest = bottom;
-		}
-		boolean reduction = true;
+    private static String reduceFraction(String val) {
+        long top = getTop(val);
+        long bottom = getBottom(val);
 
-		while (reduction) {
-			reduction = false;
+        long largest = top;
+        if (largest < bottom) {
+            largest = bottom;
+        }
+        boolean reduction = true;
 
-			for (double i = 2; i <= 100000; i++) {
-				double result = top / i;
-				if (result < i) {
-					break;
-				}
-				if (isInteger(result)) {
-					double result2 = bottom / i; 
-					if (isInteger(result2)) {
-						reduction = true;
-						top = Math.round(result);
-						bottom = Math.round(result2);
-						break;
-					}
-				}
-			}
-		}
-		return top + "/" + bottom;
+        while (reduction) {
+            reduction = false;
 
-	}
-	private static boolean isInteger(double val) {
-		String str = val + "";
-		boolean rv = true;
-		int pos = str.indexOf(".");
-		if (pos < 0) {
-			return rv;
-		}
-		for (int i = pos + 1; i < str.length();i++) {
-			if (!str.substring(i, i + 1).equals("0")) {
-				return false;
-			}
-		}
-		return rv;
-	}
+            for (double i = 2; i <= 100000; i++) {
+                double result = top / i;
+                if (result < i) {
+                    break;
+                }
+                if (isInteger(result)) {
+                    double result2 = bottom / i;
+                    if (isInteger(result2)) {
+                        reduction = true;
+                        top = Math.round(result);
+                        bottom = Math.round(result2);
+                        break;
+                    }
+                }
+            }
+        }
+        return top + "/" + bottom;
 
+    }
 
-    /* (non-Javadoc)
+    private static boolean isInteger(double val) {
+        String str = val + "";
+        boolean rv = true;
+        int pos = str.indexOf(".");
+        if (pos < 0) {
+            return rv;
+        }
+        for (int i = pos + 1; i < str.length(); i++) {
+            if (!str.substring(i, i + 1).equals("0")) {
+                return false;
+            }
+        }
+        return rv;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
      * @see com.edsdev.jconvert.domain.Conversion#getFromToFactorString()
      */
     public String getFromToFactorString() {
