@@ -171,7 +171,7 @@ public class DataLoader {
     }
 
     /**
-     * This method is responsible for loading data from a resource into a list. existing conversion types are passed
+     * This method is responsible for loading data from a resource into a list. Existing conversion types are passed
      * into this method to provide support for generating gaps. For example if you create a conversion of decades to
      * doubledecades and that is it. We will look at the existing conversions to also generate gaps such as
      * doubledecades to year, months, days, etc.
