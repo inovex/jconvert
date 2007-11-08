@@ -11,6 +11,9 @@ import com.edsdev.jconvert.domain.FractionalConversion;
 import com.edsdev.jconvert.logic.ConversionGapBuilder;
 import com.edsdev.jconvert.presentation.ConversionTypeData;
 
+/**
+ * @author Ed Sarrazin
+ */
 public class ConversionTestCase extends TestCase {
     public void testConversion() throws Exception {
         Conversion conversion = Conversion.createInstance("Celsius", "C", "Fahrenheit", "F", "9/5", 32);

@@ -9,6 +9,9 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 
+/**
+ * @author Ed Sarrazin
+ */
 public class TestList {
 
 	/**

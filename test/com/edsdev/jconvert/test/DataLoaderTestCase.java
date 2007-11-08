@@ -15,6 +15,9 @@ import com.edsdev.jconvert.persistence.DataLoader;
 import com.edsdev.jconvert.presentation.ConversionTypeData;
 import com.edsdev.jconvert.util.Logger;
 
+/**
+ * @author Ed Sarrazin
+ */
 public class DataLoaderTestCase extends TestCase {
 
     private final static Logger log = Logger.getInstance(DataLoaderTestCase.class);
