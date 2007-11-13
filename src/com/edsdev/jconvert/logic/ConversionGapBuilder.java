@@ -23,9 +23,6 @@ public class ConversionGapBuilder {
      * @param ct ConversionType that you want to create the one-to-one conversions in.
      */
     public static void createOneToOneConversions(ConversionType ct) {
-        if (ct.getConversions().size() <= 1) {
-            return;
-        }
         Object[] list = ct.getConversions().toArray();
         for (int i = 0; i < list.length; i++) {
             Conversion conv = (Conversion) list[i];
