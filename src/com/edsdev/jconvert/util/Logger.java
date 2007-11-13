@@ -79,9 +79,11 @@ public class Logger {
 
     private void printMessage(String type, Object message, Throwable t) {
         if (log4jLogger == null) {
-            System.out.println(new Date() + " - " + type.toUpperCase() + " - " + clazz.getName() + " - " + message);
-            if (t != null) {
-                t.printStackTrace();
+            if (shouldLog(type)) {
+                System.out.println(new Date() + " - " + type.toUpperCase() + " - " + clazz.getName() + " - " + message);
+                if (t != null) {
+                    t.printStackTrace();
+                }
             }
         } else {
             if (t == null) {
@@ -90,6 +92,26 @@ public class Logger {
                 invokeLoggerMethod(type, message, t);
             }
         }
+    }
+
+    private boolean shouldLog(String type) {
+        String logLevel = JConvertSettingsProperties.getLogLevel();
+        if (logLevel.equalsIgnoreCase(DEBUG)) {
+            return true;
+        }
+        if (logLevel.equalsIgnoreCase(INFO)) {
+            return !(type.equalsIgnoreCase(DEBUG));
+        }
+        if (logLevel.equalsIgnoreCase(WARN)) {
+            return !(type.equalsIgnoreCase(DEBUG) || type.equalsIgnoreCase(INFO));
+        }
+        if (logLevel.equalsIgnoreCase(ERROR)) {
+            return (type.equalsIgnoreCase(ERROR) || type.equalsIgnoreCase(FATAL));
+        }
+        if (logLevel.equalsIgnoreCase(FATAL)) {
+            return (type.equalsIgnoreCase(FATAL));
+        }
+        return false;
     }
 
     public void debug(Object message) {
