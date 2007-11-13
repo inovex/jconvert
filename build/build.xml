@@ -55,6 +55,7 @@
 			</classpath>
 			<test name="com.edsdev.jconvert.test.ConversionTestCase" />
 			<test name="com.edsdev.jconvert.test.DataLoaderTestCase" />
+			<test name="com.edsdev.jconvert.test.InternationalizeTestCase" />
 		</junit>
 	</target>
 	<target name="updateBuildProperties" description="Updates the build properties with version and build info">
