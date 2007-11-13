@@ -45,13 +45,29 @@ public class JConvertSettingsProperties {
 
     public static final String CUSTOM_CONVERSION_JAR = "CustomConversionJar";
 
+    public static final String LOG_LEVEL = "LogLevel";
+
     /** Static initializer - lets do this once */
     static {
         try {
             props = ResourceManager.loadProperties(FILE_NAME);
+            setDefaults();
         } catch (Exception e) {
-            log.warn("Cannot load settings: " + FILE_NAME + " not found.");
             props = new Properties();
+            setDefaults();
+            log.warn("Cannot load settings: " + FILE_NAME + " not found.");
+        }
+    }
+
+    private static void setDefaults() {
+        if (getCheckForNewerVersion() == null) {
+            setCheckForNewerVersion("true");
+        }
+        if (getCustomConversionClass() == null) {
+            setCustomConversionClass("com.edsdev.jconvert.common.CustomConversionCurrency");
+        }
+        if (getLogLevel() == null) {
+            setLogLevel("DEBUG");
         }
     }
 
@@ -195,5 +211,13 @@ public class JConvertSettingsProperties {
 
     public static void setCustomConversionJar(String val) {
         props.setProperty(CUSTOM_CONVERSION_JAR, val);
+    }
+
+    public static String getLogLevel() {
+        return props.getProperty(LOG_LEVEL);
+    }
+
+    public static void setLogLevel(String val) {
+        props.setProperty(LOG_LEVEL, val);
     }
 }
