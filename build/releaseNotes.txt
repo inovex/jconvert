@@ -1,5 +1,11 @@
--next (to come)
+1.0.6
 -Created custom conversion for Currency that can automatically update currency exchange rates.  This will require connectivity to the internet.
+-Added tie in for users to add their own custom conversion plugins just like the new default currency converter.
+-(Fixed) creating a custom conversion with only one conversion, does not result in all combinatorics rendered.
+-added setting to change log level for not log4j clients
+
+--Non-visible changes:
+-added new unit test cases for internationalization
 
 1.0.5
 -Started framework for user to create their own custom conversion plugin.

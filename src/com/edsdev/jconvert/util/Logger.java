@@ -95,7 +95,12 @@ public class Logger {
     }
 
     private boolean shouldLog(String type) {
-        String logLevel = JConvertSettingsProperties.getLogLevel();
+        String logLevel = "";
+        try {
+            logLevel = JConvertSettingsProperties.getLogLevel();
+        } catch (Exception e) {
+            return true;
+        }
         if (logLevel.equalsIgnoreCase(DEBUG)) {
             return true;
         }

@@ -23,16 +23,19 @@ import javax.swing.JTabbedPane;
 import javax.swing.UIManager;
 import javax.swing.plaf.FontUIResource;
 
+import com.edsdev.jconvert.common.CustomConversionDataInterface;
 import com.edsdev.jconvert.domain.ConversionType;
 import com.edsdev.jconvert.persistence.DataLoader;
+import com.edsdev.jconvert.presentation.component.CustomTabConversionPanel;
+import com.edsdev.jconvert.util.JCClassLoader;
+import com.edsdev.jconvert.util.JConvertProperties;
 import com.edsdev.jconvert.util.JConvertSettingsProperties;
 import com.edsdev.jconvert.util.Logger;
 import com.edsdev.jconvert.util.Messages;
 import com.edsdev.jconvert.util.ResourceManager;
 
 /**
- * @author Ed Sarrazin
- * Created on Nov 6, 2007 7:02:50 AM
+ * @author Ed Sarrazin Created on Nov 6, 2007 7:02:50 AM
  */
 public class MainFrame extends JFrame implements ConversionsChangedListener {
 
@@ -90,7 +93,7 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
     }
 
     private void init() {
-        this.setTitle("JConvert");
+        this.setTitle("JConvert (" + JConvertProperties.getBuidVersion() + ")");
         this.setJMenuBar(getMenu());
 
         setContent();
@@ -166,11 +169,6 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
         this.getContentPane().removeAll();
 
         tabbedPane = new JTabbedPane();
-        // tabbedPane.addChangeListener(new ChangeListener() {
-        // public void stateChanged(ChangeEvent e) {
-        // log.debug(e.getSource());
-        // }
-        // });
         this.getContentPane().add(tabbedPane);
         data = getData();
         Collections.sort(data);
@@ -183,36 +181,28 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
                 tabbedPane.addTab(Messages.getUnitTranslation(ctd.getTypeName()), panel);
             }
         }
-        //        CustomConversionDataInterface customAdapter = new CustomConversionDataInterface() {
-        //            public ConversionType getConversions() {
-        //                ConversionType ct = new ConversionType();
-        //                ct.setTypeName("Custom Test");
-        //                ct.addConversion(Conversion.createInstance("Test", "", "Test2", "", "2", 0.0));
-        //                ct.addConversion(Conversion.createInstance("Test", "", "Test3", "", "3", 0.0));
-        //                ct.addConversion(Conversion.createInstance("Test", "", "Test4", "", "4", 0.0));
-        //                ConversionGapBuilder.createOneToOneConversions(ct);
-        //                ConversionGapBuilder.createMissingConversions(ct);
-        //                return ct;
-        //            }
-        //
-        //            public Date getLastUpdated() {
-        //                return new Date();
-        //            }
-        //
-        //            public void addDataUpdatedListener(CustomDataUpdatedListener listener) {
-        //                //do nothing
-        //            }
-        //        };
-        //        CustomTabConversionPanel tab = new CustomTabConversionPanel(customAdapter);
-        //        tabbedPane.addTab("Custom Test", tab);
-        //
-        //        try {
-        //            customAdapter = new MSNCurrencyGetter();
-        //            tab = new CustomTabConversionPanel(customAdapter);
-        //            tabbedPane.addTab(customAdapter.getConversions().getTypeName(), tab);
-        //        } catch (Exception e) {
-        //            log.error("Failed to create custom tab.", e);
-        //        }
+        addCustomPanel(JConvertSettingsProperties.getCustomConversionClass(),
+            JConvertSettingsProperties.getCustomConversionJar());
+    }
+
+    private void addCustomPanel(String className, String jarName) {
+        if (className == null || className.trim().length() == 0) {
+            return;
+        }
+        try {
+            JCClassLoader classLoader = null;
+            if (jarName == null || jarName.trim().length() == 0) {
+                classLoader = new JCClassLoader(ResourceManager.getJarPath());
+            } else {
+                classLoader = new JCClassLoader(jarName);
+            }
+            CustomConversionDataInterface customAdapter = (CustomConversionDataInterface) classLoader.loadClass(
+                className).newInstance();
+            CustomTabConversionPanel tab = new CustomTabConversionPanel(customAdapter);
+            tabbedPane.addTab(customAdapter.getConversions().getTypeName(), tab);
+        } catch (Exception e) {
+            log.error("Failed to create custom tab.", e);
+        }
     }
 
     private List getHiddenTabs() {

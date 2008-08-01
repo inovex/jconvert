@@ -6,6 +6,7 @@ package com.edsdev.jconvert.util;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -48,7 +49,7 @@ public class ResourceManager {
      * @throws java.io.IOException
      */
     public static Properties loadProperties(String filename) throws java.io.IOException {
-        return loadProperties(filename, ResourceManager.class);
+        return loadProperties(getResourceAsStream(filename));
     }
 
     /**
@@ -70,6 +71,15 @@ public class ResourceManager {
         is = cl.getResourceAsStream(resourceName);
         if (is != null) {
             return is;
+        }
+
+        //backup - if you cannot find the resource, then look for it physically in the jar path. Althought the jar path
+        // should be in the classpath, this is a double check because depending on how you run this, it may not. Set
+        // getJarPath code for more detail.
+        try {
+            is = new FileInputStream(getJarPath() + resourceName);
+        } catch (Exception e) {
+            //do nothing here
         }
         return is;
     }
@@ -98,20 +108,13 @@ public class ResourceManager {
             log.error("Failed to get the path of the jar", e);
         }
 
-        return rv;
-    }
+        //may not find the jar, so we would still like to return some sort of consistent path, so we are going to
+        // return the user.home.
+        if (rv.equals("")) {
+            rv = System.getProperty("user.home") + System.getProperty("file.separator");
+        }
 
-    /**
-     * Loads a properties file
-     * 
-     * @param filename Name of the properties file
-     * @param loadClass class used when getting the classloader
-     * @return Properties object loaded with properties from the resource
-     * @throws java.io.IOException
-     */
-    public static Properties loadProperties(String filename, Class loadClass) throws java.io.IOException {
-        InputStream is = loadClass.getClassLoader().getResourceAsStream(filename);
-        return loadProperties(is);
+        return rv;
     }
 
     /**

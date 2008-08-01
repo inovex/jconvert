@@ -43,6 +43,10 @@ public class SettingsDlg extends JDialog {
 
     private JTextField txtVariant = new JTextField();
 
+    private JTextField customClassName = new JTextField();
+
+    private JTextField customClassJar = new JTextField();
+
     private JButton okButton = new JButton(Messages.getResource("okButton"));
 
     private JButton cancelButton = new JButton(Messages.getResource("cancelButton"));
@@ -85,22 +89,33 @@ public class SettingsDlg extends JDialog {
         this.getContentPane().setLayout(null);
         addLabel(Messages.getResource("country"), 5, 5, 100, 22);
         addComponent(cboCountry, 110, 5, 200, 22);
+        cboCountry.setToolTipText("Country this application is used in.");
 
         addLabel(Messages.getResource("language"), 5, 30, 100, 22);
         addComponent(cboLanguage, 110, 30, 200, 22);
+        cboLanguage.setToolTipText("Language this application is used in.");
 
         addLabel(Messages.getResource("variant"), 5, 55, 100, 22);
         addComponent(txtVariant, 110, 55, 200, 22);
+        txtVariant.setToolTipText("Language variant - 2 characters.");
 
-        addLabel(Messages.getResource("hiddenTabs"), 5, 80, 100, 22);
+        addLabel("Custom Conversion Class", 5, 80, 130, 22);
+        addComponent(customClassName, 140, 80, 230, 22);
+        customClassName.setToolTipText("Full name of custom conversion class used.  Place in JConvert directory.");
+
+        addLabel("Conversion Jar (optional)", 5, 105, 130, 22);
+        addComponent(customClassJar, 140, 105, 230, 22);
+        customClassJar.setToolTipText("Name of jar file that conversion class is contained in.  Place in JConvert directory.");
+
+        addLabel(Messages.getResource("hiddenTabs"), 5, 130, 100, 22);
         hiddenTabs = new JList(getTabs());
         scrollData.getViewport().add(hiddenTabs);
         hiddenTabs.setCellRenderer(new VisibleTabsListCellRenderer());
         scrollData.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        addComponent(scrollData, 5, 105, 380, 200);
+        addComponent(scrollData, 5, 155, 380, 200);
 
-        addComponent(okButton, 5, 310, 100, 25);
-        addComponent(cancelButton, 110, 310, 100, 25);
+        addComponent(okButton, 5, 360, 100, 25);
+        addComponent(cancelButton, 110, 360, 100, 25);
 
         okButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
@@ -144,6 +159,8 @@ public class SettingsDlg extends JDialog {
         }
 
         txtVariant.setText(JConvertSettingsProperties.getLocaleVariant());
+        customClassJar.setText(JConvertSettingsProperties.getCustomConversionJar());
+        customClassName.setText(JConvertSettingsProperties.getCustomConversionClass());
     }
 
     private void saveData() {
@@ -151,6 +168,9 @@ public class SettingsDlg extends JDialog {
         locale = new Locale(cboLanguage.getSelectedItem().toString().substring(0, 2),
             cboCountry.getSelectedItem().toString().substring(0, 2), txtVariant.getText());
         Locale.setDefault(locale);
+
+        JConvertSettingsProperties.setCustomConversionClass(customClassName.getText());
+        JConvertSettingsProperties.setCustomConversionJar(customClassJar.getText());
 
         String hidden = "";
         for (int i = 0; i < hiddenTabs.getModel().getSize(); i++) {

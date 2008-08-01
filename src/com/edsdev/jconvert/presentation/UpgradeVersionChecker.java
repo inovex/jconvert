@@ -43,6 +43,18 @@ public class UpgradeVersionChecker {
 
     private JDialog dlg = null;
 
+    private JTextArea messageLabel = null;
+
+    private JButton yesBtn = null;
+
+    private JButton noBtn = null;
+
+    private JButton dontAskBtn = null;
+
+    private ActionListener yesActionListener = null;
+
+    private ActionListener noActionListener = null;
+
     public void checkForUpdates(Frame parent) {
         if (isNewerVersionAvailable()) {
             log.debug("Newer version of JConvert found.");
@@ -52,16 +64,16 @@ public class UpgradeVersionChecker {
             dlg.setLocationRelativeTo(parent);
             dlg.getContentPane().setLayout(null);
 
-            JTextArea label = new JTextArea(Messages.getResource("newVersionMsg", webVersion, currentVersion));
-            label.setBounds(5, 5, 385, 60);
-            label.setEditable(false);
+            messageLabel = new JTextArea(Messages.getResource("newVersionMsg", webVersion, currentVersion));
+            messageLabel.setBounds(5, 5, 385, 60);
+            messageLabel.setEditable(false);
             JLabel temp = new JLabel("temp");
-            label.setBackground(temp.getBackground());
-            dlg.getContentPane().add(label);
+            messageLabel.setBackground(temp.getBackground());
+            dlg.getContentPane().add(messageLabel);
 
-            JButton yesBtn = new JButton(Messages.getResource("yesButton"));
+            yesBtn = new JButton(Messages.getResource("yesButton"));
             yesBtn.setBounds(5, 70, 100, 22);
-            yesBtn.addActionListener(new ActionListener() {
+            yesActionListener = new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     openLinkToWeb();
                     //TODO think about closing the application in some way...
@@ -70,19 +82,21 @@ public class UpgradeVersionChecker {
                     //what about trying to delete the old jar if new exists?
                     //what about some buttons to do this?
                 }
-            });
+            };
+            yesBtn.addActionListener(yesActionListener);
             dlg.getContentPane().add(yesBtn);
 
-            JButton noBtn = new JButton(Messages.getResource("noButton"));
+            noBtn = new JButton(Messages.getResource("noButton"));
             noBtn.setBounds(115, 70, 100, 22);
-            noBtn.addActionListener(new ActionListener() {
+            noActionListener = new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     close();
                 }
-            });
+            };
+            noBtn.addActionListener(noActionListener);
             dlg.getContentPane().add(noBtn);
 
-            JButton dontAskBtn = new JButton(Messages.getResource("dontAskButton"));
+            dontAskBtn = new JButton(Messages.getResource("dontAskButton"));
             dontAskBtn.setBounds(5, 100, 350, 22);
             dontAskBtn.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
@@ -108,6 +122,24 @@ public class UpgradeVersionChecker {
 
     private void openLinkToWeb() {
         Browser.openURL("http://sourceforge.net/project/platformdownload.php?group_id=201265");
+        messageLabel.setText("You have launched the browser to get the latest version, do you want to close this older version of JConvert?");
+        dontAskBtn.setVisible(false);
+        yesBtn.removeActionListener(yesActionListener);
+        noBtn.removeActionListener(noActionListener);
+        yesActionListener = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                close();
+                System.exit(0);
+            }
+        };
+        yesBtn.addActionListener(yesActionListener);
+
+        noActionListener = new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                close();
+            }
+        };
+        noBtn.addActionListener(noActionListener);
     }
 
     private boolean isNewerVersionAvailable() {
