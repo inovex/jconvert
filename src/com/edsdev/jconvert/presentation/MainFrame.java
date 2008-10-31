@@ -200,7 +200,7 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
                 className).newInstance();
             CustomTabConversionPanel tab = new CustomTabConversionPanel(customAdapter);
             tabbedPane.addTab(customAdapter.getConversions().getTypeName(), tab);
-        } catch (Exception e) {
+        } catch (Throwable e) {
             log.error("Failed to create custom tab.", e);
         }
     }

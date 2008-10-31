@@ -93,12 +93,12 @@ public class CustomConversionCurrency extends CustomConversionImpl implements Cu
         conversionUnits.add("US Dollar");
         factor.add("1");
 
-        String startLookingHere = "<th>Currency</th><th>In  US Dollar</th><th>Per  US Dollar</th>";
+        String startLookingHere = ">Per  US Dollar</th>";
         int start = loadedUpdate.indexOf(startLookingHere) + startLookingHere.length();
 
         String headerDivider = "</tr><tr><td>";
-        String colDivider = "</td><td>";
-        start = loadedUpdate.indexOf(headerDivider) + headerDivider.length();
+        String colDivider = " class=\"c2\">";
+        start = loadedUpdate.indexOf(headerDivider, start) + headerDivider.length();
         int lastStart = start;
         while (start > 0) {
             String data = getNextPlainData(loadedUpdate, start);
