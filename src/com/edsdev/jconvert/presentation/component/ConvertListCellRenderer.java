@@ -49,9 +49,10 @@ public class ConvertListCellRenderer extends JLabel implements ListCellRenderer 
         this.setEnabled(list.isEnabled());
         this.setFont(list.getFont());
 
-        if (cellHasFocus) {
-            this.setBorder(UIManager.getBorder("List.focusCellHighlightBorder"));
-        }
+// On java 1.5 this seems to cause a lot of cells to get a border around them other than the sellected/focused celll
+//        if (cellHasFocus) {
+//            this.setBorder(UIManager.getBorder("List.focusCellHighlightBorder"));
+//        }
 
         return this;
     }
