@@ -182,12 +182,12 @@ Time,nanosecond,,fortnight,,8.267195767E-16,0
 Time,nanosecond,,hour,,2.777777778E-13,0
 Time,nanosecond,,leap-year,,3.162315321E-17,0
 Time,nanosecond,,millennium,,3.170979198E-20,0
-Time,nanosecond,,millisecond,,0.000001,0
+Time,nanosecond,,millisecond,,1/1000000,0
 Time,nanosecond,,minute,',1.666666667E-11,0
 Time,nanosecond,,month (30 day),,3.858024691E-16,0
 Time,nanosecond,,month,,3/7884000000000000,0
 Time,nanosecond,,score,,1.585489599E-18,0
-Time,nanosecond,,second,''',0.000000001,0
+Time,nanosecond,,second,''',1/1000000000,0
 Time,nanosecond,,week,,1.653439153E-16,0
 Time,nanosecond,,year,,3.170979198E-17,0
 Time,score,,century,,1/5,0
@@ -247,7 +247,7 @@ Time,year,,minute,',525600,0
 Time,year,,month (30 day),,12.16666667,0
 Time,year,,month,,12,0
 Time,year,,nanosecond,,31536000000000000,0
-Time,year,,score,,0.05,0
+Time,year,,score,,1/20,0
 Time,year,,second,''',31536000,0
 Time,year,,week,,52.14285714,0
 
@@ -357,7 +357,7 @@ Angle,microradian,µrad,grad,g,0.000063661977236758,0
 Angle,microradian,µrad,milliradian,mrad,1/1000,0
 Angle,microradian,µrad,minute,',0.0034377467707849,0
 Angle,microradian,µrad,second,''',0.2062648062471,0
-Angle,microradian,µrad,radian,rad,0.000001,0
+Angle,microradian,µrad,radian,rad,1/1000000,0
 Angle,milliradian,mrad,revolution,r,0.0001591549430919,0
 Angle,milliradian,mrad,right angle,,0.00063661977236758,0
 Angle,milliradian,mrad,degree,°,0.057295779513082,0
@@ -376,7 +376,7 @@ Area,kilometer\u00B2,km\u00B2,foot\u00B2,,10763910.42,0
 Area,kilometer\u00B2,km\u00B2,inch\u00B2,,1550003100,0
 Area,kilometer\u00B2,km\u00B2,acre,,247.104393,0
 Area,kilometer\u00B2,km\u00B2,hectare,,100,0
-Area,meter\u00B2,,kilometer\u00B2,km\u00B2,0.000001,0
+Area,meter\u00B2,,kilometer\u00B2,km\u00B2,1/1000000,0
 Area,meter\u00B2,,centimeter\u00B2,,10000,0
 Area,meter\u00B2,,millimeter\u00B2,,1000000,0
 Area,meter\u00B2,,mile\u00B2,,0.0000003861021585,0
@@ -385,7 +385,7 @@ Area,meter\u00B2,,foot\u00B2,,10.76391042,0
 Area,meter\u00B2,,inch\u00B2,,1550.0031,0
 Area,meter\u00B2,,acre,,0.000247104393,0
 Area,meter\u00B2,,hectare,,1/10000,0
-Area,centimeter\u00B2,,kilometer\u00B2,km\u00B2,0.0000000001,0
+Area,centimeter\u00B2,,kilometer\u00B2,km\u00B2,1/10000000000,0
 Area,centimeter\u00B2,,meter\u00B2,,1/10000,0
 Area,centimeter\u00B2,,millimeter\u00B2,,100,0
 Area,centimeter\u00B2,,mile\u00B2,,3.861021585E-11,0
@@ -393,16 +393,16 @@ Area,centimeter\u00B2,,yard\u00B2,,0.0001195990046,0
 Area,centimeter\u00B2,,foot\u00B2,,0.001076391042,0
 Area,centimeter\u00B2,,inch\u00B2,,0.15500031,0
 Area,centimeter\u00B2,,acre,,0.0000000247104393,0
-Area,centimeter\u00B2,,hectare,,0.00000001,0
-Area,millimeter\u00B2,,kilometer\u00B2,km\u00B2,0.000000000001,0
-Area,millimeter\u00B2,,meter\u00B2,,0.000001,0
+Area,centimeter\u00B2,,hectare,,1/100000000,0
+Area,millimeter\u00B2,,kilometer\u00B2,km\u00B2,1/1000000000000,0
+Area,millimeter\u00B2,,meter\u00B2,,1/1000000,0
 Area,millimeter\u00B2,,centimeter\u00B2,,1/100,0
 Area,millimeter\u00B2,,mile\u00B2,,3.861021585E-13,0
 Area,millimeter\u00B2,,yard\u00B2,,0.000001195990046,0
 Area,millimeter\u00B2,,foot\u00B2,,0.00001076391042,0
 Area,millimeter\u00B2,,inch\u00B2,,0.0015500031,0
 Area,millimeter\u00B2,,acre,,0.000000000247104393,0
-Area,millimeter\u00B2,,hectare,,0.0000000001,0
+Area,millimeter\u00B2,,hectare,,1/10000000000,0
 Area,mile\u00B2,,kilometer\u00B2,km\u00B2,2.58998811,0
 Area,mile\u00B2,,meter\u00B2,,2589988.11,0
 Area,mile\u00B2,,centimeter\u00B2,,25899881100,0
@@ -548,7 +548,7 @@ Distance,centimeter,cm,lightyear,,1.057023456E-18,0
 Distance,centimeter,cm,league,,5/2414016,0
 Distance,centimeter,cm,nautical mile,M,0.000005399568035,0
 Distance,centimeter,cm,nanometer,nm,10000000,0
-Distance,millimeter,mm,kilometer,km,0.000001,0
+Distance,millimeter,mm,kilometer,km,1/1000000,0
 Distance,millimeter,mm,hectometer,hm,1/100000,0
 Distance,millimeter,mm,dekameter,dm,1/10000,0
 Distance,millimeter,mm,meter,m,1/1000,0
@@ -801,7 +801,7 @@ Volume Dry,pint,pt,bushel,,0.015625,0
 Volume Dry,quart,,barrel,,0.0095238981,0
 Volume Dry,quart,,liter,,1.101220996,0
 Volume Dry,quart,,pint,pt,2,0
-Volume Dry,quart,,peck,,0.125,0
+Volume Dry,quart,,peck,,1/8,0
 Volume Dry,quart,,bushel,,0.03125,0
 Volume Dry,peck,,barrel,,0.0761911848,0
 Volume Dry,peck,,liter,,8.809767971,0
@@ -1263,7 +1263,7 @@ Density,gram/centimeter\u00B3,,ounce/gallon,,133.5264712,0
 Density,gram/centimeter\u00B3,,pound/foot\u00B3,,62.42796058,0
 Density,gram/centimeter\u00B3,,pound/inch\u00B3,,0.036127292,0
 Density,gram/centimeter\u00B3,,ton/yard\u00B3,,1.441768762,0
-Density,gram/meter\u00B3,,gram/centimeter\u00B3,,0.000001,0
+Density,gram/meter\u00B3,,gram/centimeter\u00B3,,1/1000000,0
 Density,gram/meter\u00B3,,kilogram/meter\u00B3,,1/1000,0
 Density,gram/meter\u00B3,,milligram/meter\u00B3,,1000,0
 Density,gram/meter\u00B3,,ounce/gallon,,0.0001335264712,0
@@ -1277,9 +1277,9 @@ Density,kilogram/meter\u00B3,,ounce/gallon,,0.1335264712,0
 Density,kilogram/meter\u00B3,,pound/foot\u00B3,,0.06242796058,0
 Density,kilogram/meter\u00B3,,pound/inch\u00B3,,0.000036127292,0
 Density,kilogram/meter\u00B3,,ton/yard\u00B3,,0.00075247998,0
-Density,milligram/meter\u00B3,,gram/centimeter\u00B3,,0.000000001,0
+Density,milligram/meter\u00B3,,gram/centimeter\u00B3,,1/1000000000,0
 Density,milligram/meter\u00B3,,gram/meter\u00B3,,1/1000,0
-Density,milligram/meter\u00B3,,kilogram/meter\u00B3,,0.000001,0
+Density,milligram/meter\u00B3,,kilogram/meter\u00B3,,1/1000000,0
 Density,milligram/meter\u00B3,,ounce/gallon,,0.0000001335264712,0
 Density,milligram/meter\u00B3,,pound/foot\u00B3,,0.00000006242796058,0
 Density,milligram/meter\u00B3,,pound/inch\u00B3,,0.000000000036127292,0
@@ -1315,9 +1315,9 @@ Density,ton/yard\u00B3,,pound/inch\u00B3,,0.02505761878,0
 
 Energy,attojoule,,british thermal unit,btu,9.478171203E-22,0
 Energy,attojoule,,calorie,,2.388458966E-19,0
-Energy,attojoule,,dyne-centimeter,,0.00000000001,0
+Energy,attojoule,,dyne-centimeter,,1/100000000000,0
 Energy,attojoule,,electron volt,,6.241457006,0
-Energy,attojoule,,erg,,0.00000000001,0
+Energy,attojoule,,erg,,1/100000000000,0
 Energy,attojoule,,gigajoule,,1E-27,0
 Energy,attojoule,,gigawatt-hour,,2.777777778E-31,0
 Energy,attojoule,,gram force-centimeter,,1.019716213E-14,0
@@ -1330,9 +1330,9 @@ Energy,attojoule,,kilowatt-hour,kwh,2.777777778E-25,0
 Energy,attojoule,,megaelectron volt,,0.000006241457006,0
 Energy,attojoule,,megajoule,,1E-24,0
 Energy,attojoule,,megawatt-hour,,2.777777778E-28,0
-Energy,attojoule,,microjoule,,0.000000000001,0
+Energy,attojoule,,microjoule,,1/1000000000000,0
 Energy,attojoule,,millijoule,,0.000000000000001,0
-Energy,attojoule,,nanojoule,,0.000000001,0
+Energy,attojoule,,nanojoule,,1/1000000000,0
 Energy,attojoule,,newton-meter,,0.000000000000000001,0
 Energy,attojoule,,ounce force-inch,,7.375621493E-19,0
 Energy,attojoule,,pound force-foot,,1.416119327E-16,0
@@ -1406,25 +1406,25 @@ Energy,dyne-centimeter,,gigajoule,,0.0000000000000001,0
 Energy,dyne-centimeter,,gigawatt-hour,,2.777777778E-20,0
 Energy,dyne-centimeter,,gram force-centimeter,,0.001019716213,0
 Energy,dyne-centimeter,,horsepower-hour,,3.72506136E-14,0
-Energy,dyne-centimeter,,joule,,0.0000001,0
+Energy,dyne-centimeter,,joule,,1/10000000,0
 Energy,dyne-centimeter,,kilocalorie,,2.388458966E-11,0
 Energy,dyne-centimeter,,kiloelectron volt,,624145700.6,0
-Energy,dyne-centimeter,,kilojoule,,0.0000000001,0
+Energy,dyne-centimeter,,kilojoule,,1/10000000000,0
 Energy,dyne-centimeter,,kilowatt-hour,kwh,2.777777778E-14,0
 Energy,dyne-centimeter,,megaelectron volt,,624145.7006,0
-Energy,dyne-centimeter,,megajoule,,0.0000000000001,0
+Energy,dyne-centimeter,,megajoule,,1/10000000000000,0
 Energy,dyne-centimeter,,megawatt-hour,,2.777777778E-17,0
 Energy,dyne-centimeter,,microjoule,,1/10,0
 Energy,dyne-centimeter,,millijoule,,1/10000,0
 Energy,dyne-centimeter,,nanojoule,,100,0
-Energy,dyne-centimeter,,newton-meter,,0.0000001,0
+Energy,dyne-centimeter,,newton-meter,,1/10000000,0
 Energy,dyne-centimeter,,ounce force-inch,,0.00001416119327,0
 Energy,dyne-centimeter,,pound force-foot,,0.00000007375621493,0
 Energy,dyne-centimeter,,pound force-inch,,0.0000008850745791,0
 Energy,dyne-centimeter,,poundal-foot,,0.00000237303604,0
 Energy,dyne-centimeter,,therm,,9.478133945E-16,0
 Energy,dyne-centimeter,,watt-hour,,2.777777778E-11,0
-Energy,dyne-centimeter,,watt-second,,0.0000001,0
+Energy,dyne-centimeter,,watt-second,,1/10000000,0
 Energy,electron volt,,attojoule,,0.160219,0
 Energy,electron volt,,british thermal unit,btu,1.518583112e-022,0
 Energy,electron volt,,calorie,,3.826765071e-020,0
@@ -3409,7 +3409,7 @@ Mass,microgram,µg,stone,,1.574730444e-010,0
 Mass,microgram,µg,ton (long),,9.842065276e-013,0
 Mass,microgram,µg,ton (short),tn,1.102311311e-012,0
 Mass,microgram,µg,tonne (metric ton),t,1e-012,0
-Mass,milligram,mg,carat,,0.005,0
+Mass,milligram,mg,carat,,1/200,0
 Mass,milligram,mg,grain,gr,0.01543235835,0
 Mass,milligram,mg,gram,g,1/1000,0
 Mass,milligram,mg,kilogram,kg,1e-006,0
@@ -3482,7 +3482,7 @@ Mass,pound (advp),lb,pennyweight,,291.6666667,0
 Mass,pound (advp),lb,pound (troy),,1.215277848,0
 Mass,pound (advp),lb,stone,,0.07142857143,0
 Mass,pound (advp),lb,ton (long),,0.0004464285714,0
-Mass,pound (advp),lb,ton (short),tn,0.0005,0
+Mass,pound (advp),lb,ton (short),tn,1/2000,0
 Mass,pound (advp),lb,tonne (metric ton),t,0.00045359237,0
 Mass,pound (troy),,carat,,1866.2085,0
 Mass,pound (troy),,grain,gr,5759.999667,0
@@ -3512,7 +3512,7 @@ Mass,stone,,pennyweight,,4083.333333,0
 Mass,stone,,pound (advp),lb,14,0
 Mass,stone,,pound (troy),,17.01388987,0
 Mass,stone,,ton (long),,0.00625,0
-Mass,stone,,ton (short),tn,0.007,0
+Mass,stone,,ton (short),tn,7/1000,0
 Mass,stone,,tonne (metric ton),t,0.00635029318,0
 Mass,ton (long),,carat,,5080234.544,0
 Mass,ton (long),,grain,gr,15680000,0
@@ -3664,7 +3664,7 @@ Amt of Substance,mole,mol,kilomole,kmole,1/1000,0
 Amt of Substance,mole,mol,micromole,µmol,1000000,0
 Amt of Substance,mole,mol,millimole,mmol,1000,0
 
-Computer,bit,,byte,,0.125,0
+Computer,bit,,byte,,1/8,0
 Computer,bit,,exabyte,,1.084202172e-019,0
 Computer,bit,,gigabyte,gb,1.164153218e-010,0
 Computer,bit,,kilobit,,0.0009765625,0
@@ -3716,7 +3716,7 @@ Computer,kilobit,,bit,,1024,0
 Computer,kilobit,,byte,,128,0
 Computer,kilobit,,exabyte,,1.110223025e-016,0
 Computer,kilobit,,gigabyte,gb,1.192092896e-007,0
-Computer,kilobit,,kilobyte,kb,0.125,0
+Computer,kilobit,,kilobyte,kb,1/8,0
 Computer,kilobit,,megabit,,0.0009765625,0
 Computer,kilobit,,megabyte,mb,0.0001220703125,0
 Computer,kilobit,,nibble,,512,0
@@ -3742,7 +3742,7 @@ Computer,megabit,,exabyte,,1.136868377e-013,0
 Computer,megabit,,gigabyte,gb,0.0001220703125,0
 Computer,megabit,,kilobit,,1024,0
 Computer,megabit,,kilobyte,kb,128,0
-Computer,megabit,,megabyte,mb,0.125,0
+Computer,megabit,,megabyte,mb,1/8,0
 Computer,megabit,,nibble,,262144,0
 Computer,megabit,,petabyte,,1.164153218e-010,0
 Computer,megabit,,terabyte,,1.192092896e-007,0
@@ -4023,7 +4023,7 @@ Velocity,centimeter/minute,,kilometer/minute,,1e-005,0
 Velocity,centimeter/minute,,kilometer/second,,1.666666667e-007,0
 Velocity,centimeter/minute,,knot,,0.0003239740821,0
 Velocity,centimeter/minute,,mach,,5.028258815e-007,0
-Velocity,centimeter/minute,,meter/hour,,0.6,0
+Velocity,centimeter/minute,,meter/hour,,3/5,0
 Velocity,centimeter/minute,,meter/minute,,1/100,0
 Velocity,centimeter/minute,,meter/second,,0.0001666666667,0
 Velocity,centimeter/minute,,mile/hour,mph,0.0003728227153,0
@@ -4041,7 +4041,7 @@ Velocity,centimeter/second,,kilometer/second,,1e-005,0
 Velocity,centimeter/second,,knot,,0.01943844492,0
 Velocity,centimeter/second,,mach,,3.016955289e-005,0
 Velocity,centimeter/second,,meter/hour,,36,0
-Velocity,centimeter/second,,meter/minute,,0.6,0
+Velocity,centimeter/second,,meter/minute,,3/5,0
 Velocity,centimeter/second,,meter/second,,1/100,0
 Velocity,centimeter/second,,mile/hour,mph,0.02236936292,0
 Velocity,centimeter/second,,mile/minute,,0.0003728227153,0
@@ -4694,7 +4694,7 @@ Volume,ounce,oz,cubic foot,,0.00104437934,0
 Volume,ounce,oz,cubic inch,cui,1.8046875,0
 Volume,ounce,oz,cubic meter,,2.957352956e-005,0
 Volume,ounce,oz,cubic yard,,3.868071631e-005,0
-Volume,ounce,oz,cup,,0.125,0
+Volume,ounce,oz,cup,,1/8,0
 Volume,ounce,oz,dram,,7.999946006,0
 Volume,ounce,oz,drop,,456.0128846,0
 Volume,ounce,oz,gallon,gal,0.0078125,0
@@ -4735,7 +4735,7 @@ Volume,pint,pt,cubic yard,,0.0006188914609,0
 Volume,pint,pt,cup,,2,0
 Volume,pint,pt,dram,,127.9991334,0
 Volume,pint,pt,drop,,7296.206,0
-Volume,pint,pt,gallon,gal,0.125,0
+Volume,pint,pt,gallon,gal,1/8,0
 Volume,pint,pt,gallon (UK),,0.1040842273,0
 Volume,pint,pt,liter,,0.473176473,0
 Volume,pint,pt,milliliter,ml,473.176473,0
