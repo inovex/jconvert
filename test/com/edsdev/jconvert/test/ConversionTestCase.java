@@ -80,7 +80,15 @@ public class ConversionTestCase extends TestCase {
         assertTrue("Verify that fraction was created", founda);
         assertTrue("Verify that fraction was created", foundb);
 
+		//assertions for testing fractional conversions using fractions and resulting in fractions
+		FractionalConversion fc = (FractionalConversion)Conversion.createInstance("a", "", "b", "", "1/3", 2);
+		System.out.println(fc.convertValue(1, 2, "a") + " should = " + fc.convertValue(0.5, "a"));
+		System.out.println(fc.convertValue(1, 2, "b") + " should = " + fc.convertValue(0.5, "b"));
+		assertTrue("1/2 converted to a should be 13/6", fc.convertValue(1, 2, "a").equals("13/6"));
+		assertTrue("1/2 converted to b should be -9/2", fc.convertValue(1, 2, "b").equals("-9/2"));
     }
+    
+
 
     public void testGapBuilder() throws Exception {
         Conversion c1 = Conversion.createInstance("minutes", "'", "hours", "hrs", "1/60", 0);

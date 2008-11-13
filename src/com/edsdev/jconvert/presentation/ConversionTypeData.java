@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.edsdev.jconvert.domain.Conversion;
 import com.edsdev.jconvert.domain.ConversionType;
+import com.edsdev.jconvert.domain.FractionalConversion;
 
 /**
  * Presentation side representation of Conversion Data
@@ -57,7 +58,7 @@ public class ConversionTypeData implements Comparable {
         return rv;
     }
 
-    public double convert(double startValue, String fromUnit, String toUnit) {
+    public double convert(String startValue, String fromUnit, String toUnit) {
         float generation = 10000000;
         double finalValue = 0;
 
@@ -78,6 +79,19 @@ public class ConversionTypeData implements Comparable {
         }
         return finalValue;
     }
+	public String convertFraction(String startValue, String fromUnit, String toUnit) {
+		String rv = "";
+
+		Iterator iter = type.getConversions().iterator();
+		while (iter.hasNext()) {
+			Conversion conv = (Conversion) iter.next();
+			rv = conv.convertFraction(startValue, fromUnit, toUnit);				
+			if (rv != null) {
+				return rv;
+			}	
+		}
+		return rv;
+	}
 
     public ConversionType getType() {
         return type;

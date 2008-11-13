@@ -46,9 +46,13 @@ class NumericDocument extends PlainDocument {
         // iterate through each character in the string and validate it.
         for (int i = 0; i < text.length(); i++) {
             String ch = new Character(text.charAt(i)).toString();
-            if (!Character.isDigit(text.charAt(i)) && !ch.equals(".") && !ch.equals("-") && !ch.equals(",")) {
+            if (!Character.isDigit(text.charAt(i)) && !ch.equals(".") && !ch.equals("-") && !ch.equals(",") && !ch.equals("/")) {
                 Toolkit.getDefaultToolkit().beep();
                 return;
+            }
+            if (!ch.equals("/") && resultString.indexOf("/") > -1) {
+				Toolkit.getDefaultToolkit().beep();
+				return;
             }
             // if the character is a minus sign, it is ok, but lets remove it and count how many
             if (ch.equals("-")) {

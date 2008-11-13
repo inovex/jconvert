@@ -47,6 +47,8 @@ public class ConversionPanel extends JPanel {
 
     private JTextField txtTo;
 
+	private JTextField txtToFract;
+
     public void setConversionTypeData(ConversionTypeData newData) {
         ctd = newData;
 
@@ -138,15 +140,16 @@ public class ConversionPanel extends JPanel {
             fmt.setMaximumFractionDigits(30);
             if (reverse) {
                 if (txtTo.getText() != null && !txtTo.getText().trim().equals("")) {
-                    double startValue = new Double(txtTo.getText()).doubleValue();
-                    Double value = new Double(ctd.convert(startValue, toUnit, fromUnit));
+                    Double value = new Double(ctd.convert(txtTo.getText(), toUnit, fromUnit));
                     txtFrom.setText(fmt.format(value));
+                    txtToFract.setText("");
                 }
             } else {
                 if (txtFrom.getText() != null && !txtFrom.getText().trim().equals("")) {
-                    double startValue = new Double(txtFrom.getText()).doubleValue();
-                    Double value = new Double(ctd.convert(startValue, fromUnit, toUnit));
+                    Double value = new Double(ctd.convert(txtFrom.getText(), fromUnit, toUnit));
                     txtTo.setText(fmt.format(value));
+                    String fractVal = ctd.convertFraction(txtFrom.getText(), fromUnit, toUnit);
+                    txtToFract.setText(fractVal);
                 }
             }
         }
@@ -227,7 +230,7 @@ public class ConversionPanel extends JPanel {
         this.add(listPanel);
 
         JPanel conversionPanel = new JPanel();
-        Dimension panelSize = new Dimension(580, 55);
+        Dimension panelSize = new Dimension(580, 70);
         conversionPanel.setSize(panelSize);
         conversionPanel.setPreferredSize(panelSize);
 
@@ -235,6 +238,8 @@ public class ConversionPanel extends JPanel {
         labelFrom.setBounds(5, 5, 100, 22);
         JLabel labelTo = new JLabel(Messages.getResource("conversionToLabel"));
         labelTo.setBounds(5, 30, 100, 22);
+		JLabel labelToFract = new JLabel(Messages.getResource("conversionToFractLabel"));
+		labelToFract.setBounds(5, 55, 100, 22);
         labelFromUnit = new JLabel("xxx");
         labelFromUnit.setBounds(330, 5, 400, 22);
         labelToUnit = new JLabel("yyy");
@@ -258,19 +263,24 @@ public class ConversionPanel extends JPanel {
                 convert(true);
             }
         });
+		txtToFract = new JTextField();
+		txtToFract.setBounds(110, 55, 200, 22);
+		txtToFract.setEditable(false);
 
         conversionPanel.setLayout(null);
         conversionPanel.add(labelFrom);
         conversionPanel.add(labelTo);
+		conversionPanel.add(labelToFract);
         conversionPanel.add(labelFromUnit);
         conversionPanel.add(labelToUnit);
         conversionPanel.add(txtFrom);
         conversionPanel.add(txtTo);
+		conversionPanel.add(txtToFract);
 
-        Dimension dim = new Dimension(600, 57);
+        Dimension dim = new Dimension(600, 80);
         conversionPanel.setPreferredSize(dim);
         conversionPanel.setMinimumSize(dim);
-        conversionPanel.setMaximumSize(new Dimension(1200, 57));
+        conversionPanel.setMaximumSize(new Dimension(1200, 80));
 
         setDefaultSelections();
 

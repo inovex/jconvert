@@ -36,6 +36,23 @@ public class FractionalConversion extends Conversion {
         }
     }
 
+	public String convertValue(long numerator, long denominator, String pFromUnit) {
+		if (isWholeNumber(getFromToOffset() + "")) {
+			if (pFromUnit.equals(this.getFromUnit())) {
+				long newTop = numerator * fromToTopFactor;
+				long newBottom = denominator * fromToBottomFactor;
+				newTop += newBottom * getFromToOffset();
+				return reduceFraction(newTop + "/" + newBottom);
+			} else {
+				long newTop = numerator - (denominator * this.getLong(getFromToOffset()+ ""));
+				newTop = newTop * fromToBottomFactor;
+				long newBottom = denominator * fromToTopFactor;
+				return reduceFraction(newTop + "/" + newBottom);
+			}
+		} 
+		return "unknown";
+	}
+
     public String multiply(Conversion byConversion) {
         String rv = "1";
         if (byConversion instanceof FractionalConversion) {
@@ -129,39 +146,53 @@ public class FractionalConversion extends Conversion {
         int pos = val.indexOf("/");
         return Long.parseLong(val.substring(pos + 1, val.length()));
     }
+	public static String reduceFraction(String val) {
+		long top = getTop(val);
+		long bottom = getBottom(val);
 
-    private static String reduceFraction(String val) {
-        long top = getTop(val);
-        long bottom = getBottom(val);
+		double test;
 
-        long largest = top;
-        if (largest < bottom) {
-            largest = bottom;
-        }
-        boolean reduction = true;
+		long smallest;
+		if (top > bottom) {
+			smallest = bottom;
+			test = (top + 0.0) / bottom;
+			if (isInteger(test)) {
+				top = Math.round(test);
+				bottom = 1;
+				return top + "";
+			}
+		} else {
+			smallest = top;
+			test = bottom / (top + 0.0);
+			if (isInteger(test)) {
+				bottom = Math.round(test);
+				top = 1;
+			}
+		}
+		boolean reduction = true;
 
-        while (reduction) {
-            reduction = false;
+		while (reduction) {
+			reduction = false;
 
-            for (double i = 2; i <= 100000; i++) {
-                double result = top / i;
-                if (result < i) {
-                    break;
-                }
-                if (isInteger(result)) {
-                    double result2 = bottom / i;
-                    if (isInteger(result2)) {
-                        reduction = true;
-                        top = Math.round(result);
-                        bottom = Math.round(result2);
-                        break;
-                    }
-                }
-            }
-        }
-        return top + "/" + bottom;
+			for (double i = 2; i <= Math.sqrt(smallest); i++) {
+				double result = top / i;
+				if (result < i) {
+					break;
+				}
+				if (isInteger(result)) {
+					double result2 = bottom / i;
+					if (isInteger(result2)) {
+						reduction = true;
+						top = Math.round(result);
+						bottom = Math.round(result2);
+						break;
+					}
+				}
+			}
+		}
+		return top + "/" + bottom;
 
-    }
+	}
 
     private static boolean isInteger(double val) {
         String str = val + "";

@@ -193,6 +193,8 @@ public abstract class Conversion implements Comparable {
      */
     public abstract double convertValue(double value, String pFromUnit);
 
+	public abstract String convertValue(long numerator, long denominator, String pFromUnit);
+
     protected double getRoundedResult(double result) {
         return result;
         //		BigDecimal bigResult = new BigDecimal(result);
@@ -206,20 +208,79 @@ public abstract class Conversion implements Comparable {
     /**
      * Converts from one unit to another.
      * 
-     * @param value double value that you want to convert
+     * @param value String value that you want to convert
      * @param pFromUnit Unit you want to convert from
      * @param pTtoUnit Unit you want to convert to
      * @return Double value as a result. If it does not have the information to convert these units, then null is
      *         returned.
      */
-    public Double convertValue(double value, String pFromUnit, String pTtoUnit) {
-        if (this.getFromUnit().equals(pFromUnit) && this.getToUnit().equals(pTtoUnit)) {
-            return new Double(convertValue(value, pFromUnit));
-        }
-        if (this.getFromUnit().equals(pTtoUnit) && this.getToUnit().equals(pFromUnit)) {
-            return new Double(convertValue(value, pFromUnit));
-        }
-        return null;
+	public Double convertValue(String value, String pFromUnit, String pTtoUnit) {
+		double theValue = 0;
+		if (isFraction(value)) {
+			theValue = (getNumerator(value) * 1.0) / getDenominator(value); 
+		} else {
+			theValue = Double.parseDouble(value);
+		}
+		
+		if (this.getFromUnit().equals(pFromUnit) && this.getToUnit().equals(pTtoUnit)) {
+			return new Double(convertValue(theValue, pFromUnit));
+		}
+		if (this.getFromUnit().equals(pTtoUnit) && this.getToUnit().equals(pFromUnit)) {
+			return new Double(convertValue(theValue, pFromUnit));
+		}
+		return null;
+	}
+    
+    public String convertFraction(String value, String pFromUnit, String pToUnit) {
+    	if (!isFraction(value)) {
+    		return null;
+    	}
+		if (this.getFromUnit().equals(pFromUnit) && this.getToUnit().equals(pToUnit)) {
+			return convertValue(getNumerator(value), getDenominator(value), pFromUnit);
+		}
+		if (this.getFromUnit().equals(pToUnit) && this.getToUnit().equals(pFromUnit)) {
+			return convertValue(getNumerator(value), getDenominator(value), pFromUnit);
+		}
+		return null;
+    	
+    }
+    private long getNumerator(String value) {
+    	int pos = value.indexOf("/");
+    	if (pos > 0) {
+    		return getLong(value.substring(0, pos));
+    	}
+    	return getLong(value);
+    }
+    private long getDenominator(String value) {
+		int pos = value.indexOf("/");
+		if (pos > 0) {
+			if (value.length() == pos + 1) {
+				return 1;
+			}
+			return getLong(value.substring(pos + 1));
+		}
+		return 1;
+    }    	
+    
+    public boolean isFraction(String value) {
+		int pos = value.indexOf("/");
+		if (pos > 0) {
+			String top = value.substring(0, pos);
+			String bottom = value.substring(pos + 1);
+			if (bottom.equals("")) {
+				bottom = "1";
+			}
+			if (isWholeNumber(top) && isWholeNumber(bottom)) {
+				return true;
+			} else {
+				return false;
+			}
+		} else if (isWholeNumber(value)) {
+			return true;
+		} 
+		return false;
+
+    	
     }
 
     /**

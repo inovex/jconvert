@@ -33,6 +33,13 @@ public class DecimalConversion extends Conversion {
             return getRoundedResult((value - getFromToOffset()) / fromToFactor);
         }
     }
+    
+	/**
+	 * Method returns nothing since this is a Decimal conversion and it does not know how to handle fractions
+	 */
+	public String convertValue(long numerator, long denominator, String pFromUnit) {
+		return null;
+	}
 
     public String multiply(Conversion byConversion) {
         String rv = "1";
