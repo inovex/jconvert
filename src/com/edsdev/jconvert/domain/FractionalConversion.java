@@ -190,7 +190,10 @@ public class FractionalConversion extends Conversion {
 				}
 			}
 		}
-		return top + "/" + bottom;
+		if (bottom != 1) {
+			return top + "/" + bottom;
+		}
+		return top + "";
 
 	}
 
