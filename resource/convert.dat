@@ -193,13 +193,13 @@ Time,nanosecond,,year,,3.170979198E-17,0
 Time,score,,century,,1/5,0
 Time,score,,day,,7300,0
 Time,score,,decade,,2,0
-Time,score,,fortnight,,521.4285714,0
+Time,score,,fortnight,,3650/7,0
 Time,score,,hour,,175200,0
-Time,score,,leap-year,,19.945355192,0
-Time,score,,millennium,,0.02,0
+Time,score,,leap-year,,3650/183,0
+Time,score,,millennium,,1/50,0
 Time,score,,millisecond,,630720000000,0
 Time,score,,minute,',10512000,0
-Time,score,,month (30 day),,243.3333334,0
+Time,score,,month (30 day),,730/3,0
 Time,score,,month,,240,0
 Time,score,,nanosecond,,630720000000000000,0
 Time,score,,second,''',630720000,0
@@ -220,36 +220,36 @@ Time,second,''',nanosecond,,1000000000,0
 Time,second,''',score,,1/630720000,0
 Time,second,''',week,,1/604800,0
 Time,second,''',year,,1/31536000,0
-Time,week,,century,,0.0001917808219,0
+Time,week,,century,,7/36500,0
 Time,week,,day,,7,0
-Time,week,,decade,,0.001917808219,0
+Time,week,,decade,,7/3650,0
 Time,week,,fortnight,,1/2,0
 Time,week,,hour,,168,0
-Time,week,,leap-year,,0.01912568306,0
-Time,week,,millennium,,0.00001917808219,0
+Time,week,,leap-year,,7/366,0
+Time,week,,millennium,,7/365000,0
 Time,week,,millisecond,,604800000,0
 Time,week,,minute,',10080,0
-Time,week,,month (30 day),,0.2333333333,0
+Time,week,,month (30 day),,7/30,0
 Time,week,,month,,84/365,0
 Time,week,,nanosecond,,604800000000000,0
-Time,week,,score,,0.0009589041095,0
+Time,week,,score,,7/7300,0
 Time,week,,second,''',604800,0
-Time,week,,year,,0.01917808219,0
+Time,week,,year,,7/365,0
 Time,year,,century,,1/100,0
 Time,year,,day,,365,0
 Time,year,,decade,,1/10,0
-Time,year,,fortnight,,26.07142857,0
+Time,year,,fortnight,,365/14,0
 Time,year,,hour,,8760,0
-Time,year,,leap-year,,0.9972677596,0
+Time,year,,leap-year,,365/366,0
 Time,year,,millennium,,1/1000,0
 Time,year,,millisecond,,31536000000,0
 Time,year,,minute,',525600,0
-Time,year,,month (30 day),,12.16666667,0
+Time,year,,month (30 day),,365/30,0
 Time,year,,month,,12,0
 Time,year,,nanosecond,,31536000000000000,0
 Time,year,,score,,1/20,0
 Time,year,,second,''',31536000,0
-Time,year,,week,,52.14285714,0
+Time,year,,week,,365/7,0
 
 Acceleration,free fall,g,meter/sec\u00B2,m/s\u00B2,9.80665,0
 Acceleration,free fall,g,mile/hour second,mi/(h·s),21.936887,0
