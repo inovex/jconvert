@@ -573,7 +573,7 @@ Distance,micrometer,m,meter,m,1/1000000,0
 Distance,micrometer,m,decimeter,,1/100000,0
 Distance,micrometer,m,centimeter,cm,1/10000,0
 Distance,micrometer,m,millimeter,mm,1/1000,0
-Distance,micrometer,m,mile,mi,5/8046720000,0
+Distance,micrometer,m,mile,mi,1/1609344000,0
 Distance,micrometer,m,furlong,,0.00000000497097,0
 Distance,micrometer,m,yard,yd,5/4572000,0
 Distance,micrometer,m,foot,ft,5/1524000,0
@@ -797,12 +797,12 @@ Volume Dry,pint,pt,barrel,,0.00476194905,0
 Volume Dry,pint,pt,liter,,0.5506104982,0
 Volume Dry,pint,pt,quart,,1/2,0
 Volume Dry,pint,pt,peck,,1/16,0
-Volume Dry,pint,pt,bushel,,0.015625,0
+Volume Dry,pint,pt,bushel,,1/64,0
 Volume Dry,quart,,barrel,,0.0095238981,0
 Volume Dry,quart,,liter,,1.101220996,0
 Volume Dry,quart,,pint,pt,2,0
 Volume Dry,quart,,peck,,1/8,0
-Volume Dry,quart,,bushel,,0.03125,0
+Volume Dry,quart,,bushel,,1/32,0
 Volume Dry,peck,,barrel,,0.0761911848,0
 Volume Dry,peck,,liter,,8.809767971,0
 Volume Dry,peck,,pint,pt,16,0
@@ -3061,7 +3061,7 @@ Flow,ounce/hour,,gallon (UK)/hour,,0.006505264205,0
 Flow,ounce/hour,,gallon (UK)/minute,,0.0001084210701,0
 Flow,ounce/hour,,gallon (UK)/second,,1.807017835e-006,0
 Flow,ounce/hour,,gallon/day,,0.1875,0
-Flow,ounce/hour,,gallon/hour,,0.0078125,0
+Flow,ounce/hour,,gallon/hour,,1/128,0
 Flow,ounce/hour,,gallon/minute,,0.0001302083333,0
 Flow,ounce/hour,,gallon/second,,2.170138889e-006,0
 Flow,ounce/hour,,liter/day,,0.7097647095,0
@@ -3095,7 +3095,7 @@ Flow,ounce/minute,,gallon (UK)/minute,,0.006505264206,0
 Flow,ounce/minute,,gallon (UK)/second,,0.0001084210701,0
 Flow,ounce/minute,,gallon/day,,11.25,0
 Flow,ounce/minute,,gallon/hour,,0.46875,0
-Flow,ounce/minute,,gallon/minute,,0.0078125,0
+Flow,ounce/minute,,gallon/minute,,1/128,0
 Flow,ounce/minute,,gallon/second,,0.0001302083333,0
 Flow,ounce/minute,,liter/day,,42.58588257,0
 Flow,ounce/minute,,liter/hour,,1.774411774,0
@@ -3129,7 +3129,7 @@ Flow,ounce/second,,gallon (UK)/second,,0.006505264206,0
 Flow,ounce/second,,gallon/day,,675,0
 Flow,ounce/second,,gallon/hour,,28.125,0
 Flow,ounce/second,,gallon/minute,,0.46875,0
-Flow,ounce/second,,gallon/second,,0.0078125,0
+Flow,ounce/second,,gallon/second,,1/128,0
 Flow,ounce/second,,liter/day,,2555.152954,0
 Flow,ounce/second,,liter/hour,,106.4647064,0
 Flow,ounce/second,,liter/minute,,1.774411774,0
@@ -3667,8 +3667,8 @@ Amt of Substance,mole,mol,millimole,mmol,1000,0
 Computer,bit,,byte,,1/8,0
 Computer,bit,,exabyte,,1.084202172e-019,0
 Computer,bit,,gigabyte,gb,1.164153218e-010,0
-Computer,bit,,kilobit,,0.0009765625,0
-Computer,bit,,kilobyte,kb,0.0001220703125,0
+Computer,bit,,kilobit,,1/1024,0
+Computer,bit,,kilobyte,kb,1/8192,0
 Computer,bit,,megabit,,9.536743164e-007,0
 Computer,bit,,megabyte,mb,1.192092896e-007,0
 Computer,bit,,nibble,,1/4,0
@@ -3679,8 +3679,8 @@ Computer,bit,,zettabyte,,1.058791184e-022,0
 Computer,byte,,bit,,8,0
 Computer,byte,,exabyte,,8.67361738e-019,0
 Computer,byte,,gigabyte,gb,9.313225746e-010,0
-Computer,byte,,kilobit,,0.0078125,0
-Computer,byte,,kilobyte,kb,0.0009765625,0
+Computer,byte,,kilobit,,1/128,0
+Computer,byte,,kilobyte,kb,1/1024,0
 Computer,byte,,megabit,,7.629394531e-006,0
 Computer,byte,,megabyte,mb,9.536743164e-007,0
 Computer,byte,,nibble,,2,0
@@ -3699,7 +3699,7 @@ Computer,exabyte,,nibble,,2.305843009e+018,0
 Computer,exabyte,,petabyte,,1024,0
 Computer,exabyte,,terabyte,,1048576,0
 Computer,exabyte,,yottabyte,,9.536743164e-007,0
-Computer,exabyte,,zettabyte,,0.0009765625,0
+Computer,exabyte,,zettabyte,,1/1024,0
 Computer,gigabyte,gb,bit,,8589934592,0
 Computer,gigabyte,gb,byte,,1073741824,0
 Computer,gigabyte,gb,exabyte,,9.313225746e-010,0
@@ -3709,7 +3709,7 @@ Computer,gigabyte,gb,megabit,,8192,0
 Computer,gigabyte,gb,megabyte,mb,1024,0
 Computer,gigabyte,gb,nibble,,2147483648,0
 Computer,gigabyte,gb,petabyte,,9.536743164e-007,0
-Computer,gigabyte,gb,terabyte,,0.0009765625,0
+Computer,gigabyte,gb,terabyte,,1/1024,0
 Computer,gigabyte,gb,yottabyte,,8.881784197e-016,0
 Computer,gigabyte,gb,zettabyte,,9.094947018e-013,0
 Computer,kilobit,,bit,,1024,0
@@ -3717,7 +3717,7 @@ Computer,kilobit,,byte,,128,0
 Computer,kilobit,,exabyte,,1.110223025e-016,0
 Computer,kilobit,,gigabyte,gb,1.192092896e-007,0
 Computer,kilobit,,kilobyte,kb,1/8,0
-Computer,kilobit,,megabit,,0.0009765625,0
+Computer,kilobit,,megabit,,1/1024,0
 Computer,kilobit,,megabyte,mb,0.0001220703125,0
 Computer,kilobit,,nibble,,512,0
 Computer,kilobit,,petabyte,,1.136868377e-013,0
@@ -3729,8 +3729,8 @@ Computer,kilobyte,kb,byte,,1024,0
 Computer,kilobyte,kb,exabyte,,8.881784197e-016,0
 Computer,kilobyte,kb,gigabyte,gb,9.536743164e-007,0
 Computer,kilobyte,kb,kilobit,,8,0
-Computer,kilobyte,kb,megabit,,0.0078125,0
-Computer,kilobyte,kb,megabyte,mb,0.0009765625,0
+Computer,kilobyte,kb,megabit,,1/128,0
+Computer,kilobyte,kb,megabyte,mb,1/1024,0
 Computer,kilobyte,kb,nibble,,2048,0
 Computer,kilobyte,kb,petabyte,,9.094947018e-013,0
 Computer,kilobyte,kb,terabyte,,9.313225746e-010,0
@@ -3751,7 +3751,7 @@ Computer,megabit,,zettabyte,,1.110223025e-016,0
 Computer,megabyte,mb,bit,,8388608,0
 Computer,megabyte,mb,byte,,1048576,0
 Computer,megabyte,mb,exabyte,,9.094947018e-013,0
-Computer,megabyte,mb,gigabyte,gb,0.0009765625,0
+Computer,megabyte,mb,gigabyte,gb,1/1024,0
 Computer,megabyte,mb,kilobit,,8192,0
 Computer,megabyte,mb,kilobyte,kb,1024,0
 Computer,megabyte,mb,megabit,,8,0
@@ -3764,7 +3764,7 @@ Computer,nibble,,bit,,4,0
 Computer,nibble,,byte,,1/2,0
 Computer,nibble,,exabyte,,4.33680869e-019,0
 Computer,nibble,,gigabyte,gb,4.656612873e-010,0
-Computer,nibble,,kilobit,,0.00390625,0
+Computer,nibble,,kilobit,,1/256,0
 Computer,nibble,,kilobyte,kb,0.00048828125,0
 Computer,nibble,,megabit,,3.814697266e-006,0
 Computer,nibble,,megabyte,mb,4.768371582e-007,0
@@ -3774,7 +3774,7 @@ Computer,nibble,,yottabyte,,4.135903063e-025,0
 Computer,nibble,,zettabyte,,4.235164736e-022,0
 Computer,petabyte,,bit,,9.007199255e+015,0
 Computer,petabyte,,byte,,1.125899907e+015,0
-Computer,petabyte,,exabyte,,0.0009765625,0
+Computer,petabyte,,exabyte,,1/1024,0
 Computer,petabyte,,gigabyte,gb,1048576,0
 Computer,petabyte,,kilobit,,8.796093022e+012,0
 Computer,petabyte,,kilobyte,kb,1.099511628e+012,0
@@ -3793,7 +3793,7 @@ Computer,terabyte,,kilobyte,kb,1073741824,0
 Computer,terabyte,,megabit,,8388608,0
 Computer,terabyte,,megabyte,mb,1048576,0
 Computer,terabyte,,nibble,,2.199023256e+012,0
-Computer,terabyte,,petabyte,,0.0009765625,0
+Computer,terabyte,,petabyte,,1/1024,0
 Computer,terabyte,,yottabyte,,9.094947018e-013,0
 Computer,terabyte,,zettabyte,,9.313225746e-010,0
 Computer,yottabyte,,bit,,9.671406557e+024,0
@@ -3819,7 +3819,7 @@ Computer,zettabyte,,megabyte,mb,1.125899907e+015,0
 Computer,zettabyte,,nibble,,2.361183241e+021,0
 Computer,zettabyte,,petabyte,,1048576,0
 Computer,zettabyte,,terabyte,,1073741824,0
-Computer,zettabyte,,yottabyte,,0.0009765625,0
+Computer,zettabyte,,yottabyte,,1/1024,0
 
 Concentration,kilomole/meter\u00B3,kmol/m\u00B3,micromole/centimeter\u00B3,mol/cm\u00B3,1000,0
 Concentration,kilomole/meter\u00B3,kmol/m\u00B3,micomole/decimeter\u00B3,mol/dm\u00B3,1000000,0
@@ -4697,7 +4697,7 @@ Volume,ounce,oz,cubic yard,,3.868071631e-005,0
 Volume,ounce,oz,cup,,1/8,0
 Volume,ounce,oz,dram,,7.999946006,0
 Volume,ounce,oz,drop,,456.0128846,0
-Volume,ounce,oz,gallon,gal,0.0078125,0
+Volume,ounce,oz,gallon,gal,1/128,0
 Volume,ounce,oz,gallon (UK),,0.006505264206,0
 Volume,ounce,oz,liter,,0.02957352956,0
 Volume,ounce,oz,milliliter,ml,29.57352956,0
@@ -4705,7 +4705,7 @@ Volume,ounce,oz,minim (US),,480.0000065,0
 Volume,ounce,oz,ounce (UK),,1.040842273,0
 Volume,ounce,oz,pint,pt,1/16,0
 Volume,ounce,oz,pint (UK),,0.0520421602,0
-Volume,ounce,oz,quart,qt,0.03125,0
+Volume,ounce,oz,quart,qt,1/32,0
 Volume,ounce,oz,tablespoon,tbs,2,0
 Volume,ounce,oz,teaspoon,,6,0
 Volume,ounce (UK),,cubic centimeter,CC,28.413075,0
@@ -4716,7 +4716,7 @@ Volume,ounce (UK),,cubic yard,,3.716289904e-005,0
 Volume,ounce (UK),,cup,,0.1200950454,0
 Volume,ounce (UK),,dram,,7.686026858,0
 Volume,ounce (UK),,drop,,438.1188668,0
-Volume,ounce (UK),,gallon,gal,0.0078125,0
+Volume,ounce (UK),,gallon,gal,1/128,0
 Volume,ounce (UK),,gallon (UK),,0.00625,0
 Volume,ounce (UK),,liter,,0.028413075,0
 Volume,ounce (UK),,milliliter,ml,28.413075,0
@@ -4792,16 +4792,16 @@ Volume,tablespoon,tbs,cubic yard,,1.934035815e-005,0
 Volume,tablespoon,tbs,cup,,1/16,0
 Volume,tablespoon,tbs,dram,,3.999971651,0
 Volume,tablespoon,tbs,drop,,228.0063652,0
-Volume,tablespoon,tbs,gallon,gal,0.00390625,0
+Volume,tablespoon,tbs,gallon,gal,1/256,0
 Volume,tablespoon,tbs,gallon (UK),,0.003252632103,0
 Volume,tablespoon,tbs,liter,,0.01478676478,0
 Volume,tablespoon,tbs,milliliter,ml,14.78676478,0
 Volume,tablespoon,tbs,minim (US),,239.9999221,0
 Volume,tablespoon,tbs,ounce,oz,1/2,0
 Volume,tablespoon,tbs,ounce (UK),,0.5204211364,0
-Volume,tablespoon,tbs,pint,pt,0.03125,0
+Volume,tablespoon,tbs,pint,pt,1/32,0
 Volume,tablespoon,tbs,pint (UK),,0.0260210713,0
-Volume,tablespoon,tbs,quart,qt,0.015625,0
+Volume,tablespoon,tbs,quart,qt,1/64,0
 Volume,tablespoon,tbs,teaspoon,,3,0
 Volume,teaspoon,,cubic centimeter,CC,4.928921594,0
 Volume,teaspoon,,cubic foot,,0.0001740632234,0
