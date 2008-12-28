@@ -1,3 +1,15 @@
+1.0.8
+-Added ability to preserve fractions for users to see (when possible).
+-Fixed problem with lines showing up on the screen between each value on the conversion lists.
+-Fixed problem with initial conversion when the application first launches.
+
+--Non-visible changes:
+-added more conversions that originate in fractions
+-added more unit test cases.
+
+1.0.7
+-Emergency release.  JConvert would not launch anymore due to an error in the dynamic currency conversion tab.
+
 1.0.6
 -Created custom conversion for Currency that can automatically update currency exchange rates.  This will require connectivity to the internet.
 -Added tie in for users to add their own custom conversion plugins just like the new default currency converter.

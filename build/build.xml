@@ -113,12 +113,12 @@
 		</zip>
 	</target>
 	<target name="uploadJar" description="ftps jar to the sourceforge site">
-		<!-- Ftp the jar file up to sourceforge to create a file release -->
-		<ftp server="${sf.ftp}" userid="${sf.ftp.id}" password="${sf.ftp.pwd}" remotedir="incoming" passive="Yes" action="put">
-			<fileset dir="${deploy.dir}">
-				<include name="*.jar" />
-			</fileset>
-		</ftp>
+        <!-- sftp the jar file up to sourceforge to create a file release -->
+        <scp todir="${sf.id}:${sf.pwd}@${sf.ftp}:uploads" trust="true" verbose="true" sftp="true">
+            <fileset dir="${deploy.dir}">
+                <include name="*.jar" />
+            </fileset>
+        </scp>
 	</target>
 	<target name="uploadWebsite" description="scps website data out to sourceforge">
 		<!-- scp the website and properties file to sourceforge -->
