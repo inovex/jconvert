@@ -3,7 +3,7 @@
 	<description>
         JConvert build file
     </description>
-	<property resource="build.properties" />
+	<property file="build\build.properties" />
 
 	<target name="init" description="initializes build process">
 		<!-- Create the time stamp -->
@@ -56,6 +56,7 @@
 			<test name="com.edsdev.jconvert.test.ConversionTestCase" />
 			<test name="com.edsdev.jconvert.test.DataLoaderTestCase" />
 			<test name="com.edsdev.jconvert.test.InternationalizeTestCase" />
+			<test name="com.edsdev.jconvert.test.GuiTestCase" />
 		</junit>
 	</target>
 	<target name="updateBuildProperties" description="Updates the build properties with version and build info">
