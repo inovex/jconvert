@@ -20,8 +20,8 @@ public class ConversionTestCase extends TestCase {
 
         assertTrue("17 Celsius is 62.6 Fahrenheit", conversion.convertValue(17, conversion.getFromUnit()) == 62.6);
         assertTrue("62.6 Fahrenheit is 17.0 Celsius", conversion.convertValue(62.6, conversion.getToUnit()) == 17.0);
-        assertTrue("62.6 Fahrenheit is 17.0 Celsius",
-            conversion.convertValue(62.6, "Fahrenheit", "Celsius").doubleValue() == 17.0);
+        assertTrue("62.6 Fahrenheit is 17.0 Celsius", conversion.convertValue(62.6, "Fahrenheit", "Celsius")
+            .doubleValue() == 17.0);
     }
 
     public void testWholeNumbers() throws Exception {
@@ -80,15 +80,13 @@ public class ConversionTestCase extends TestCase {
         assertTrue("Verify that fraction was created", founda);
         assertTrue("Verify that fraction was created", foundb);
 
-		//assertions for testing fractional conversions using fractions and resulting in fractions
-		FractionalConversion fc = (FractionalConversion)Conversion.createInstance("a", "", "b", "", "1/3", 2);
-		System.out.println(fc.convertValue(1, 2, "a") + " should = " + fc.convertValue(0.5, "a"));
-		System.out.println(fc.convertValue(1, 2, "b") + " should = " + fc.convertValue(0.5, "b"));
-		assertTrue("1/2 converted to a should be 13/6", fc.convertValue(1, 2, "a").equals("13/6"));
-		assertTrue("1/2 converted to b should be -9/2", fc.convertValue(1, 2, "b").equals("-9/2"));
+        // assertions for testing fractional conversions using fractions and resulting in fractions
+        FractionalConversion fc = (FractionalConversion) Conversion.createInstance("a", "", "b", "", "1/3", 2);
+        System.out.println(fc.convertValue(1, 2, "a") + " should = " + fc.convertValue(0.5, "a"));
+        System.out.println(fc.convertValue(1, 2, "b") + " should = " + fc.convertValue(0.5, "b"));
+        assertTrue("1/2 converted to a should be 2 1/6", fc.convertValue(1, 2, "a").equals("2 1/6"));
+        assertTrue("1/2 converted to b should be -4 1/2", fc.convertValue(1, 2, "b").equals("-4 1/2"));
     }
-    
-
 
     public void testGapBuilder() throws Exception {
         Conversion c1 = Conversion.createInstance("minutes", "'", "hours", "hrs", "1/60", 0);
@@ -115,7 +113,7 @@ public class ConversionTestCase extends TestCase {
         while (iter.hasNext()) {
             Conversion c = (Conversion) iter.next();
             System.out.println("[Age=" + c.getGenerationAge() + "] Convert 50 in " + c.getFromUnit() + " to "
-                    + c.getToUnit() + " = " + c.convertValue(50.0, c.getFromUnit()));
+                + c.getToUnit() + " = " + c.convertValue(50.0, c.getFromUnit()));
         }
 
         ConversionTypeData ctd = new ConversionTypeData(ct);

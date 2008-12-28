@@ -42,18 +42,41 @@ class NumericDocument extends PlainDocument {
 
     public void replace(int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
         String resultString = "";
+        String parentText = parent.getText();
         int negativeCount = 0;
         // iterate through each character in the string and validate it.
         for (int i = 0; i < text.length(); i++) {
             String ch = new Character(text.charAt(i)).toString();
-            if (!Character.isDigit(text.charAt(i)) && !ch.equals(".") && !ch.equals("-") && !ch.equals(",") && !ch.equals("/")) {
+            if (!Character.isDigit(text.charAt(i)) && !ch.equals(".") && !ch.equals("-") && !ch.equals(",")
+                && !ch.equals("/") && !ch.equals(" ")) {
                 Toolkit.getDefaultToolkit().beep();
                 return;
             }
-            if (!ch.equals("/") && resultString.indexOf("/") > -1) {
-				Toolkit.getDefaultToolkit().beep();
-				return;
+            if (ch.equals("/") && parentText.indexOf("/") >= 0) {
+                Toolkit.getDefaultToolkit().beep();
+                return;
             }
+            if (ch.equals("/") && parentText.indexOf(".") >= 0) {
+                Toolkit.getDefaultToolkit().beep();
+                return;
+            }
+            if (ch.equals(" ") && parentText.indexOf(" ") >= 0) {
+                Toolkit.getDefaultToolkit().beep();
+                return;
+            }
+            if (ch.equals(" ") && parentText.indexOf(".") >= 0) {
+                Toolkit.getDefaultToolkit().beep();
+                return;
+            }
+            if (ch.equals(".") && parentText.indexOf(" ") >= 0) {
+                Toolkit.getDefaultToolkit().beep();
+                return;
+            }
+            if (ch.equals(".") && parentText.indexOf("/") >= 0) {
+                Toolkit.getDefaultToolkit().beep();
+                return;
+            }
+
             // if the character is a minus sign, it is ok, but lets remove it and count how many
             if (ch.equals("-")) {
                 negativeCount++;
@@ -66,7 +89,6 @@ class NumericDocument extends PlainDocument {
 
         // now handle the negatives (if odd number-two negatives make a positive) that you just pulled out.
         if (negativeCount != 0 && negativeCount % 2 == 1) {
-            String parentText = parent.getText();
             if (parentText == null || parentText.equals("")) {
                 parentText = "-";
             } else {

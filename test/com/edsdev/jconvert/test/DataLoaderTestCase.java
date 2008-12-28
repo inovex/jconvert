@@ -37,11 +37,11 @@ public class DataLoaderTestCase extends TestCase {
     protected void setUp() throws Exception {
         super.setUp();
 
-        //backup convert.dat and custom_convert.dat files in the resource folder
+        // backup convert.dat and custom_convert.dat files in the resource folder
         copyFile(new File(RESOURCE_DIR + CONVERT_DAT), new File(RESOURCE_DIR + CONVERT_DAT_BACKUP));
         copyFile(new File(RESOURCE_DIR + CONVERT_CUSTOM_DAT), new File(RESOURCE_DIR + CONVERT_CUSTOM_DAT_BACKUP));
 
-        //copy convert.dat and custom_convert.dat files to the resource folder
+        // copy convert.dat and custom_convert.dat files to the resource folder
         copyFile(new File(TEST_DIR + CONVERT_DAT), new File(RESOURCE_DIR + CONVERT_DAT));
         copyFile(new File(TEST_DIR + CONVERT_CUSTOM_DAT), new File(RESOURCE_DIR + CONVERT_CUSTOM_DAT));
     }
@@ -67,13 +67,13 @@ public class DataLoaderTestCase extends TestCase {
 
     protected void tearDown() throws Exception {
         super.tearDown();
-        //delete the test files convert.dat and custom_convert.dat files from the resource folder
+        // delete the test files convert.dat and custom_convert.dat files from the resource folder
         new File(RESOURCE_DIR + CONVERT_DAT).delete();
         new File(RESOURCE_DIR + CONVERT_CUSTOM_DAT).delete();
-        //restore the backup files from the resource folder
+        // restore the backup files from the resource folder
         copyFile(new File(RESOURCE_DIR + CONVERT_DAT_BACKUP), new File(RESOURCE_DIR + CONVERT_DAT));
         copyFile(new File(RESOURCE_DIR + CONVERT_CUSTOM_DAT_BACKUP), new File(RESOURCE_DIR + CONVERT_CUSTOM_DAT));
-        //delete the backups made
+        // delete the backups made
         new File(RESOURCE_DIR + CONVERT_DAT_BACKUP).delete();
         new File(RESOURCE_DIR + CONVERT_CUSTOM_DAT_BACKUP).delete();
 
@@ -103,27 +103,27 @@ public class DataLoaderTestCase extends TestCase {
     }
 
     private void checkPunishment(ConversionTypeData ctd) {
-        //verify that TestType has 25 entries
+        // verify that TestType has 25 entries
         log.debug("Punishment should have 25 entries. (" + ctd.getType().getConversions().size() + ")");
-        assertTrue("Punishment should have 25 entries. (" + ctd.getType().getConversions().size() + ")",
-            ctd.getType().getConversions().size() == 25);
+        assertTrue("Punishment should have 25 entries. (" + ctd.getType().getConversions().size() + ")", ctd.getType()
+            .getConversions().size() == 25);
     }
 
     private void checkTestType(ConversionTypeData ctd) {
-        //verify that TestType has 16 entries
+        // verify that TestType has 16 entries
         log.debug("TestType should have 16 entries. (" + ctd.getType().getConversions().size() + ")");
-        assertTrue("TestType should have 16 entries. (" + ctd.getType().getConversions().size() + ")",
-            ctd.getType().getConversions().size() == 16);
+        assertTrue("TestType should have 16 entries. (" + ctd.getType().getConversions().size() + ")", ctd.getType()
+            .getConversions().size() == 16);
     }
 
     private void checkTime(ConversionTypeData ctd) {
-        //verify that time has 256 entries
-        log.debug("Time should have 256 entries. (" + ctd.getType().getConversions().size() + ")");
-        //there are 16 entries in the base data and 1 in the custom = 17*17=289
-        //but the build does not copy the custom out (dont want it in the jar), so it is
-        //only 16 - 16 * 16 = 256 - running this test through eclipse can
-        //result in a differnt number if you have custom conversions for time
-        assertTrue("Time should have 256 entries. (" + ctd.getType().getConversions().size() + ")",
-            ctd.getType().getConversions().size() == 256);
+        // verify that time has 256 entries
+        log.debug("Time should have 289 entries. (" + ctd.getType().getConversions().size() + ")");
+        // there are 16 entries in the base data and 1 in the custom = 17*17=289
+        // but the build does not copy the custom out (dont want it in the jar), so it is
+        // only 16 - 16 * 16 = 256 - running this test through eclipse can
+        // result in a different number if you have custom conversions for time
+        assertTrue("Time should have 289 entries. (" + ctd.getType().getConversions().size() + ")", ctd.getType()
+            .getConversions().size() == 289);
     }
 }

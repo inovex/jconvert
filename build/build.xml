@@ -56,7 +56,7 @@
 			<test name="com.edsdev.jconvert.test.ConversionTestCase" />
 			<test name="com.edsdev.jconvert.test.DataLoaderTestCase" />
 			<test name="com.edsdev.jconvert.test.InternationalizeTestCase" />
-			<test name="com.edsdev.jconvert.test.GuiTestCase" />
+			<test name="com.edsdev.jconvert.test.FractionTestCase" />
 		</junit>
 	</target>
 	<target name="updateBuildProperties" description="Updates the build properties with version and build info">

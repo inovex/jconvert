@@ -34,14 +34,14 @@ public abstract class Conversion implements Comparable {
      * @param toUnit String:Unit that will be converted to.
      * @param toUnitAbbr String:Abbreviation of the unit that will be converted to.
      * @param fromToFactor String:Factor used to convert from the designated unit to the designated unit. This can
-     *        either be a decimal or fractional representation - assumes that the fraction uses "/" symbol i.e.1/3 not
-     *        1\3.
+     *            either be a decimal or fractional representation - assumes that the fraction uses "/" symbol i.e.1/3
+     *            not 1\3.
      * @param fromToOffset double value representing the offset to be applied in the conversion. Note that the factor
-     *        will be applied first and the offset later.
+     *            will be applied first and the offset later.
      * @return Conversion implementation representing the information that was passed in.
      */
     public static Conversion createInstance(String fromUnit, String fromUnitAbbr, String toUnit, String toUnitAbbr,
-            String fromToFactor, double fromToOffset) {
+        String fromToFactor, double fromToOffset) {
         Conversion conversion = null;
 
         int pos = fromToFactor.indexOf("/");
@@ -53,7 +53,7 @@ public abstract class Conversion implements Comparable {
                     fromToOffset);
             } else {
                 conversion = new DecimalConversion(fromUnit, fromUnitAbbr, toUnit, toUnitAbbr, Double.parseDouble(top)
-                        / Double.parseDouble(bottom) + "", fromToOffset);
+                    / Double.parseDouble(bottom) + "", fromToOffset);
             }
         } else if (isWholeNumber(fromToFactor)) {
             conversion = new FractionalConversion(fromUnit, fromUnitAbbr, toUnit, toUnitAbbr, fromToFactor,
@@ -81,7 +81,7 @@ public abstract class Conversion implements Comparable {
     }
 
     protected Conversion(String fromUnit, String fromUnitAbbr, String toUnit, String toUnitAbbr, String fromToFactor,
-            double fromToOffset) {
+        double fromToOffset) {
         this();
         this.fromUnit = fromUnit;
         this.fromUnitAbbr = fromUnitAbbr;
@@ -98,13 +98,13 @@ public abstract class Conversion implements Comparable {
      * @return true if is whole number(long) or false otherwise.
      */
     protected static boolean isWholeNumber(String value) {
-        //quick check - if longer than 19 chars long will not hold
+        // quick check - if longer than 19 chars long will not hold
         if (value.length() > 19) {
             return false;
         }
         int pos = value.indexOf(".");
 
-        //look after decimal for only zeors like 45.000
+        // look after decimal for only zeors like 45.000
         if (pos > 0) {
             for (int i = pos + 1; i < value.length(); i++) {
                 if (!"0".equals(value.subSequence(i, i + 1))) {
@@ -113,11 +113,11 @@ public abstract class Conversion implements Comparable {
             }
         }
 
-        //one last test since anything over 9,223,372,036,854,775,808 will
-        //succeed, but will not fit in a long
+        // one last test since anything over 9,223,372,036,854,775,808 will
+        // succeed, but will not fit in a long
         try {
             if (pos < 0) {
-                Long.parseLong(value);
+                Long.parseLong(value.trim());
             } else {
                 Long.parseLong(value.substring(0, pos));
             }
@@ -137,7 +137,7 @@ public abstract class Conversion implements Comparable {
     protected long getLong(String value) {
         int pos = value.indexOf(".");
         if (pos < 0) {
-            return Long.parseLong(value);
+            return Long.parseLong(value.trim());
         }
         return Long.parseLong(value.substring(0, pos));
     }
@@ -149,7 +149,7 @@ public abstract class Conversion implements Comparable {
     public String toString() {
         if (this instanceof FractionalConversion) {
             return this.hashCode() + ": " + fromUnit + ";" + toUnit + ";" + getFromToTopFactor() + "/"
-                    + getFromToBottomFactor() + ";" + fromToOffset;
+                + getFromToBottomFactor() + ";" + fromToOffset;
         } else {
             return this.hashCode() + ": " + fromUnit + ";" + toUnit + ";" + getFromToFactor() + ";" + fromToOffset;
         }
@@ -193,16 +193,25 @@ public abstract class Conversion implements Comparable {
      */
     public abstract double convertValue(double value, String pFromUnit);
 
-	public abstract String convertValue(long numerator, long denominator, String pFromUnit);
+    /**
+     * Converts a value represented by a numerator and denominator, returning a String representation of the result
+     * 
+     * @param numerator
+     * @param denominator
+     * @param pFromUnit
+     * @return
+     */
+    public abstract String convertValue(long numerator, long denominator, String pFromUnit);
 
     protected double getRoundedResult(double result) {
         return result;
-        //		BigDecimal bigResult = new BigDecimal(result);
-        //		String resultString = new Double(result).toString();
-        //		int scale = resultString.substring(resultString.indexOf(".") + 1).length() - ( 1 + this.getGenerationAge());
-        //		BigDecimal rv = bigResult.setScale(scale, BigDecimal.ROUND_HALF_UP);
+        // BigDecimal bigResult = new BigDecimal(result);
+        // String resultString = new Double(result).toString();
+        // int scale = resultString.substring(resultString.indexOf(".") +
+        // 1).length() - ( 1 + this.getGenerationAge());
+        // BigDecimal rv = bigResult.setScale(scale, BigDecimal.ROUND_HALF_UP);
         //
-        //		return rv.doubleValue();
+        // return rv.doubleValue();
     }
 
     /**
@@ -214,73 +223,124 @@ public abstract class Conversion implements Comparable {
      * @return Double value as a result. If it does not have the information to convert these units, then null is
      *         returned.
      */
-	public Double convertValue(String value, String pFromUnit, String pTtoUnit) {
-		double theValue = 0;
-		if (isFraction(value)) {
-			theValue = (getNumerator(value) * 1.0) / getDenominator(value); 
-		} else {
-			theValue = Double.parseDouble(value);
-		}
-		
-		if (this.getFromUnit().equals(pFromUnit) && this.getToUnit().equals(pTtoUnit)) {
-			return new Double(convertValue(theValue, pFromUnit));
-		}
-		if (this.getFromUnit().equals(pTtoUnit) && this.getToUnit().equals(pFromUnit)) {
-			return new Double(convertValue(theValue, pFromUnit));
-		}
-		return null;
-	}
-    
-    public String convertFraction(String value, String pFromUnit, String pToUnit) {
-    	if (!isFraction(value)) {
-    		return null;
-    	}
-		if (this.getFromUnit().equals(pFromUnit) && this.getToUnit().equals(pToUnit)) {
-			return convertValue(getNumerator(value), getDenominator(value), pFromUnit);
-		}
-		if (this.getFromUnit().equals(pToUnit) && this.getToUnit().equals(pFromUnit)) {
-			return convertValue(getNumerator(value), getDenominator(value), pFromUnit);
-		}
-		return null;
-    	
-    }
-    private long getNumerator(String value) {
-    	int pos = value.indexOf("/");
-    	if (pos > 0) {
-    		return getLong(value.substring(0, pos));
-    	}
-    	return getLong(value);
-    }
-    private long getDenominator(String value) {
-		int pos = value.indexOf("/");
-		if (pos > 0) {
-			if (value.length() == pos + 1) {
-				return 1;
-			}
-			return getLong(value.substring(pos + 1));
-		}
-		return 1;
-    }    	
-    
-    public boolean isFraction(String value) {
-		int pos = value.indexOf("/");
-		if (pos > 0) {
-			String top = value.substring(0, pos);
-			String bottom = value.substring(pos + 1);
-			if (bottom.equals("")) {
-				bottom = "1";
-			}
-			if (isWholeNumber(top) && isWholeNumber(bottom)) {
-				return true;
-			} else {
-				return false;
-			}
-		} else if (isWholeNumber(value)) {
-			return true;
-		} 
-		return false;
+    public Double convertValue(String value, String pFromUnit, String pTtoUnit) {
+        double theValue = 0;
+        if (isFraction(value)) {
+            theValue = (getNumerator(value) * 1.0) / getDenominator(value);
+            theValue = theValue + getWholeNum(value);
+        } else {
+            theValue = Double.parseDouble(value);
+        }
 
-    	
+        if (this.getFromUnit().equals(pFromUnit) && this.getToUnit().equals(pTtoUnit)) {
+            return new Double(convertValue(theValue, pFromUnit));
+        }
+        if (this.getFromUnit().equals(pTtoUnit) && this.getToUnit().equals(pFromUnit)) {
+            return new Double(convertValue(theValue, pFromUnit));
+        }
+        return null;
+    }
+
+    /**
+     * Converts from one unit to another.
+     * 
+     * @param value double value that you want to convert
+     * @param pFromUnit Unit you want to convert from
+     * @param pTtoUnit Unit you want to convert to
+     * @return Double value as a result. If it does not have the information to convert these units, then null is
+     *         returned.
+     */
+    public Double convertValue(double value, String pFromUnit, String pTtoUnit) {
+        if (this.getFromUnit().equals(pFromUnit) && this.getToUnit().equals(pTtoUnit)) {
+            return new Double(convertValue(value, pFromUnit));
+        }
+        if (this.getFromUnit().equals(pTtoUnit) && this.getToUnit().equals(pFromUnit)) {
+            return new Double(convertValue(value, pFromUnit));
+        }
+        return null;
+    }
+
+    /**
+     * Converts a fraction.
+     * 
+     * @param value String value representing the fraction. If the value is not a fraction, then null will be returned.
+     * @param pFromUnit
+     * @param pToUnit
+     * @return String representation of the result. Should also be a fraction.
+     */
+    public String convertFraction(String value, String pFromUnit, String pToUnit) {
+        if (!isFraction(value)) {
+            return null;
+        }
+        long numerator = getNumerator(value) + (getDenominator(value) * getWholeNum(value));
+
+        if (this.getFromUnit().equals(pFromUnit) && this.getToUnit().equals(pToUnit)) {
+            return convertValue(numerator, getDenominator(value), pFromUnit);
+        }
+        if (this.getFromUnit().equals(pToUnit) && this.getToUnit().equals(pFromUnit)) {
+            return convertValue(numerator, getDenominator(value), pFromUnit);
+        }
+        return null;
+
+    }
+
+    private long getNumerator(String value) {
+        int spacePos = value.indexOf(" ");
+        if (spacePos < 0) {
+            spacePos = 0;
+        }
+        int pos = value.indexOf("/");
+        if (pos > 0) {
+            return getLong(value.substring(spacePos, pos).trim());
+        }
+        return getLong(value);
+    }
+
+    private long getDenominator(String value) {
+        int pos = value.indexOf("/");
+        if (pos > 0) {
+            if (value.length() == pos + 1) {
+                return 1;
+            }
+            return getLong(value.substring(pos + 1));
+        }
+        return 1;
+    }
+
+    private long getWholeNum(String value) {
+        int spacePos = value.indexOf(" ");
+        if (spacePos < 0) {
+            return 0;
+        }
+        return getLong(value.substring(0, spacePos).trim());
+    }
+
+    public boolean isFraction(String value) {
+        int pos = value.indexOf("/");
+        if (pos > 0) {
+            int spacePos = value.indexOf(" ");
+            if (spacePos < 0) {
+                spacePos = 0;
+            }
+            String top = value.substring(spacePos, pos).trim();
+            String bottom = value.substring(pos + 1).trim();
+            String whole = value.substring(0, spacePos).trim();
+            if (whole.length() < 1) {
+                whole = "0";
+            }
+            if (bottom.equals("")) {
+                bottom = "1";
+            }
+            if (isWholeNumber(top) && isWholeNumber(bottom) && isWholeNumber(whole)) {
+                return true;
+            } else {
+                return false;
+            }
+        } else if (isWholeNumber(value)) {
+            return true;
+        }
+        return false;
+
     }
 
     /**
@@ -304,7 +364,7 @@ public abstract class Conversion implements Comparable {
      * then you will get a. Likewise if you pass in a, you will get b
      * 
      * @param unit String unit whose partner you are looking for. Do not pass in an abbreviation, this is still looking
-     *        to start with a unit
+     *            to start with a unit
      * @return String:partner abbreviation
      */
     public String getConversionPartnerAbbrev(String unit) {
@@ -343,7 +403,7 @@ public abstract class Conversion implements Comparable {
 
     /**
      * @param fromToFactor sets the double value of the fromToFactor - may not be applicable to all implementing
-     *        classes.
+     *            classes.
      */
     public abstract void setFromToFactor(double fromToFactor);
 

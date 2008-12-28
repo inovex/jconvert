@@ -8,7 +8,6 @@ import java.util.List;
 
 import com.edsdev.jconvert.domain.Conversion;
 import com.edsdev.jconvert.domain.ConversionType;
-import com.edsdev.jconvert.domain.FractionalConversion;
 
 /**
  * Presentation side representation of Conversion Data
@@ -58,7 +57,7 @@ public class ConversionTypeData implements Comparable {
         return rv;
     }
 
-    public double convert(String startValue, String fromUnit, String toUnit) {
+    public double convert(double startValue, String fromUnit, String toUnit) {
         float generation = 10000000;
         double finalValue = 0;
 
@@ -69,7 +68,8 @@ public class ConversionTypeData implements Comparable {
             if (temp != null) {
                 float tempGen = conv.getGenerationAge();
                 if (conv.getFromUnit().equals(fromUnit)) {
-                    tempGen = tempGen - 0.5f; // favor conversions that do not have to be inverted
+                    tempGen = tempGen - 0.5f; // favor conversions that do not
+                    // have to be inverted
                 }
                 if (generation > tempGen) {
                     finalValue = temp.doubleValue();
@@ -79,19 +79,67 @@ public class ConversionTypeData implements Comparable {
         }
         return finalValue;
     }
-	public String convertFraction(String startValue, String fromUnit, String toUnit) {
-		String rv = "";
 
-		Iterator iter = type.getConversions().iterator();
-		while (iter.hasNext()) {
-			Conversion conv = (Conversion) iter.next();
-			rv = conv.convertFraction(startValue, fromUnit, toUnit);				
-			if (rv != null) {
-				return rv;
-			}	
-		}
-		return rv;
-	}
+    public double convert(String startValue, String fromUnit, String toUnit) {
+        float generation = 10000000;
+        double finalValue = 0;
+
+        startValue = cleanStartValue(startValue);
+
+        Iterator iter = type.getConversions().iterator();
+        while (iter.hasNext()) {
+            Conversion conv = (Conversion) iter.next();
+            Double temp = conv.convertValue(startValue, fromUnit, toUnit);
+            if (temp != null) {
+                float tempGen = conv.getGenerationAge();
+                if (conv.getFromUnit().equals(fromUnit)) {
+                    tempGen = tempGen - 0.5f; // favor conversions that do not
+                    // have to be inverted
+                }
+                if (generation > tempGen) {
+                    finalValue = temp.doubleValue();
+                    generation = tempGen;
+                }
+            }
+        }
+        return finalValue;
+    }
+
+    /**
+     * This method simply cleans starting values like "12 1" when someone is starting to type a fraction, but has not
+     * yet completed it. This method will return 12 since 12 1 makes no sense.
+     * 
+     * @param startValue
+     * @return
+     */
+    private String cleanStartValue(String startValue) {
+        int spacePos = startValue.indexOf(" ");
+        int slashPos = startValue.indexOf("/");
+        if (slashPos > 0) {
+            return startValue;
+        }
+
+        if (spacePos < 0) {
+            return startValue;
+        }
+
+        return startValue.substring(0, spacePos);
+    }
+
+    public String convertFraction(String startValue, String fromUnit, String toUnit) {
+        String rv = "";
+
+        startValue = cleanStartValue(startValue);
+        Iterator iter = type.getConversions().iterator();
+        while (iter.hasNext()) {
+            Conversion conv = (Conversion) iter.next();
+            rv = conv.convertFraction(startValue, fromUnit, toUnit);
+            if (rv != null) {
+                return rv;
+            }
+        }
+        return rv;
+    }
 
     public ConversionType getType() {
         return type;
