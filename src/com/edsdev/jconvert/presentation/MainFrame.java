@@ -139,6 +139,7 @@ public class MainFrame extends JFrame implements ConversionsChangedListener {
                 panel.setFromUnit(JConvertSettingsProperties.getLastFrom());
                 panel.setToUnit(JConvertSettingsProperties.getLastTo());
                 panel.setFromValue(JConvertSettingsProperties.getLastValue());
+                panel.convert();
             }
         }
     }

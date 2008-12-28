@@ -104,7 +104,7 @@ public class ConversionPanel extends JPanel {
         return 0;
     }
 
-    private void convert() {
+    public void convert() {
         convert(false);
     }
 
