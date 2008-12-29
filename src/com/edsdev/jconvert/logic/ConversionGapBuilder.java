@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import com.edsdev.jconvert.domain.Conversion;
 import com.edsdev.jconvert.domain.ConversionType;
+import com.edsdev.jconvert.domain.FractionalConversion;
 
 /**
  * This class is responsible for generating missing conversions in a ConversionType list. The name is a bit misleading.
@@ -31,8 +32,8 @@ public class ConversionGapBuilder {
             if (!ct.getConversions().contains(newC)) {
                 ct.addConversion(newC);
             }
-            newC = Conversion.createInstance(conv.getToUnit(), conv.getToUnitAbbr(), conv.getToUnit(),
-                conv.getToUnitAbbr(), "1", 0);
+            newC = Conversion.createInstance(conv.getToUnit(), conv.getToUnitAbbr(), conv.getToUnit(), conv
+                .getToUnitAbbr(), "1", 0);
             if (!ct.getConversions().contains(newC)) {
                 ct.addConversion(newC);
             }
@@ -68,20 +69,20 @@ public class ConversionGapBuilder {
                     if (outer.getFromToOffset() == 0 && inner.getFromToOffset() == 0) {
                         if (outer.getToUnit().equals(inner.getFromUnit())) {
                             String newFactor = outer.multiply(inner);
-                            if (checkAdd(ct, outer.getFromUnit(), outer.getFromUnitAbbr(), inner.getToUnit(),
-                                inner.getToUnitAbbr(), outer.getGenerationAge(), inner.getGenerationAge(), newFactor)) {
+                            if (checkAdd(ct, outer.getFromUnit(), outer.getFromUnitAbbr(), inner.getToUnit(), inner
+                                .getToUnitAbbr(), outer.getGenerationAge(), inner.getGenerationAge(), newFactor)) {
                                 added = true;
                             }
                         } else if (outer.getToUnit().equals(inner.getToUnit())) {
                             String newFactor = outer.divide(inner);
-                            if (checkAdd(ct, outer.getFromUnit(), outer.getFromUnitAbbr(), inner.getFromUnit(),
-                                inner.getFromUnitAbbr(), outer.getGenerationAge(), inner.getGenerationAge(), newFactor)) {
+                            if (checkAdd(ct, outer.getFromUnit(), outer.getFromUnitAbbr(), inner.getFromUnit(), inner
+                                .getFromUnitAbbr(), outer.getGenerationAge(), inner.getGenerationAge(), newFactor)) {
                                 added = true;
                             }
                         } else if (outer.getFromUnit().equals(inner.getFromUnit())) {
                             String newFactor = inner.divide(outer);
-                            if (checkAdd(ct, outer.getToUnit(), outer.getToUnitAbbr(), inner.getToUnit(),
-                                inner.getToUnitAbbr(), outer.getGenerationAge(), inner.getGenerationAge(), newFactor)) {
+                            if (checkAdd(ct, outer.getToUnit(), outer.getToUnitAbbr(), inner.getToUnit(), inner
+                                .getToUnitAbbr(), outer.getGenerationAge(), inner.getGenerationAge(), newFactor)) {
                                 added = true;
                             }
                         }
@@ -93,19 +94,19 @@ public class ConversionGapBuilder {
     }
 
     private static boolean checkAdd(ConversionType ct, String from, String fromAbbr, String to, String toAbbr,
-            int fromAge, int toAge, String newFactor) {
-        //TODO - get a generation age for this new conversion. Add a helper method to compare which conversion
-        //is younger and use that instead of the if below. will also need to use this on all ifs below.
-
-        //below I have used the hashcode for the Conversion. Unfortunately, the hashcode
-        //was designed to handle... get back to this comment
+        int fromAge, int toAge, String newFactor) {
+        
+        //create dummy instance to check against age map and collection of conversions
         Conversion newC = Conversion.createEmptyInstance(from, fromAbbr, to, toAbbr);
         Object lastAge = ageMap.get(newC.getFromUnit() + newC.getToUnit());
         if (!ct.getConversions().contains(newC) || lastAge != null) {
-            //      if (!ct.getConversions().contains(newC)) {
+            //if we need to add this conversion, then let's really create it now.
             newC = Conversion.createInstance(from, fromAbbr, to, toAbbr, newFactor, 0);
             setFactorToOneIfUnitsEqual(newC);
-            newC.setGenerationAge(fromAge + toAge + 1);
+            // Fractional conversions have no loss of precision
+            if (!(newC instanceof FractionalConversion)) {
+                newC.setGenerationAge(fromAge + toAge + 1);
+            }
             if (lastAge == null || ((Integer) lastAge).intValue() > newC.getGenerationAge()) {
                 ct.getConversions().remove(newC);
                 ct.addConversion(newC);
@@ -118,7 +119,7 @@ public class ConversionGapBuilder {
     }
 
     /**
-     * Convienience method if you create a conversion that converts the same unit to itself, sometimes there are
+     * Convenience method if you create a conversion that converts the same unit to itself, sometimes there are
      * precision issues and it is not exactly one, this methods fixes that for you.
      * 
      * @param conversion
