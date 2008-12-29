@@ -160,30 +160,30 @@ Time,month (30 day),,score,,3/730,0
 Time,month (30 day),,second,''',2592000,0
 Time,month (30 day),,week,,30/7,0
 Time,month (30 day),,year,,6/73,0
-Time,month,,century,,0.000833333333333333,0
+Time,month,,century,,1/1200,0
 Time,month,,day,,356/12,0
-Time,month,,decade,,0.00833333333333333,0
+Time,month,,decade,,1/120,0
 Time,month,,fortnight,,365/168,0
 Time,month,,hour,,730,0
-Time,month,,leap-year,,0.0833333333333333,0
+Time,month,,leap-year,,1/12,0
 Time,month,,millisecond,,7884000000/3,0
-Time,month,,millennium,,0.0000833333333333333,0
+Time,month,,millennium,,1/12000,0
 Time,month,,minute,',131400/3,0
 Time,month,,month (30 day),,89/90,0
 Time,month,,nanosecond,,7884000000000000/3,0
-Time,month,,score,,0.00416666666666666,0
+Time,month,,score,,1/240,0
 Time,month,,second,''',7884000/3,0
 Time,month,,week,,365/84,0
-Time,month,,year,,0.0833333333333333,0
+Time,month,,year,,1/12,0
 Time,nanosecond,,century,,3.170979198E-19,0
 Time,nanosecond,,day,,1.157407407E-14,0
 Time,nanosecond,,decade,,3.170979198E-18,0
 Time,nanosecond,,fortnight,,8.267195767E-16,0
-Time,nanosecond,,hour,,2.777777778E-13,0
+Time,nanosecond,,hour,,1/3600000000000,0
 Time,nanosecond,,leap-year,,3.162315321E-17,0
 Time,nanosecond,,millennium,,3.170979198E-20,0
 Time,nanosecond,,millisecond,,1/1000000,0
-Time,nanosecond,,minute,',1.666666667E-11,0
+Time,nanosecond,,minute,',1/60000000000,0
 Time,nanosecond,,month (30 day),,3.858024691E-16,0
 Time,nanosecond,,month,,3/7884000000000000,0
 Time,nanosecond,,score,,1.585489599E-18,0
@@ -203,7 +203,7 @@ Time,score,,month (30 day),,730/3,0
 Time,score,,month,,240,0
 Time,score,,nanosecond,,630720000000000000,0
 Time,score,,second,''',630720000,0
-Time,score,,week,,1042.8571428,0
+Time,score,,week,,7300/7,0
 Time,score,,year,,20,0
 Time,second,''',century,,1/3153600000,0
 Time,second,''',day,,1/86400,0
@@ -1423,7 +1423,7 @@ Energy,dyne-centimeter,,pound force-foot,,0.00000007375621493,0
 Energy,dyne-centimeter,,pound force-inch,,0.0000008850745791,0
 Energy,dyne-centimeter,,poundal-foot,,0.00000237303604,0
 Energy,dyne-centimeter,,therm,,9.478133945E-16,0
-Energy,dyne-centimeter,,watt-hour,,2.777777778E-11,0
+Energy,dyne-centimeter,,watt-hour,,1/36000000000,0
 Energy,dyne-centimeter,,watt-second,,1/10000000,0
 Energy,electron volt,,attojoule,,0.160219,0
 Energy,electron volt,,british thermal unit,btu,1.518583112e-022,0
@@ -1487,17 +1487,17 @@ Energy,gigajoule,,calorie,,238845897,0
 Energy,gigajoule,,dyne-centimeter,,1e+016,0
 Energy,gigajoule,,electron volt,,6.24145701e+027,0
 Energy,gigajoule,,erg,,1e+016,0
-Energy,gigajoule,,gigawatt-hour,,0.000277777778,0
+Energy,gigajoule,,gigawatt-hour,,1/3600,0
 Energy,gigajoule,,gram force-centimeter,,1.01971621e+013,0
 Energy,gigajoule,,horsepower-hour,,372.506136,0
 Energy,gigajoule,,joule,,1000000000,0
 Energy,gigajoule,,kilocalorie,,238845.897,0
 Energy,gigajoule,,kiloelectron volt,,6.24145701e+024,0
 Energy,gigajoule,,kilojoule,,1000000,0
-Energy,gigajoule,,kilowatt-hour,kwh,277.777778,0
+Energy,gigajoule,,kilowatt-hour,kwh,2500/9,0
 Energy,gigajoule,,megaelectron volt,,6.24145701e+021,0
 Energy,gigajoule,,megajoule,,1000,0
-Energy,gigajoule,,megawatt-hour,,0.277777778,0
+Energy,gigajoule,,megawatt-hour,,5/18,0
 Energy,gigajoule,,microjoule,,1e+015,0
 Energy,gigajoule,,millijoule,,1e+012,0
 Energy,gigajoule,,nanojoule,,1e+018,0
@@ -1507,7 +1507,7 @@ Energy,gigajoule,,pound force-foot,,737562149,0
 Energy,gigajoule,,pound force-inch,,8850745790,0
 Energy,gigajoule,,poundal-foot,,2.37303604e+010,0
 Energy,gigajoule,,therm,,9.47813394,0
-Energy,gigajoule,,watt-hour,,277777.778,0
+Energy,gigajoule,,watt-hour,,2500000/9,0
 Energy,gigajoule,,watt-second,,1000000000,0
 Energy,gigawatt-hour,,attojoule,,3.6e+030,0
 Energy,gigawatt-hour,,british thermal unit,btu,3412141633,0
@@ -1600,16 +1600,16 @@ Energy,joule,,dyne-centimeter,,10000000,0
 Energy,joule,,electron volt,,6.241457006e+018,0
 Energy,joule,,erg,,10000000,0
 Energy,joule,,gigajoule,,1e-009,0
-Energy,joule,,gigawatt-hour,,2.777777778e-013,0
+Energy,joule,,gigawatt-hour,,1/3600000000000,0
 Energy,joule,,gram force-centimeter,,10197.16213,0
 Energy,joule,,horsepower-hour,,3.72506136e-007,0
 Energy,joule,,kilocalorie,,0.0002388458966,0
 Energy,joule,,kiloelectron volt,,6.241457006e+015,0
 Energy,joule,,kilojoule,,1/1000,0
-Energy,joule,,kilowatt-hour,kwh,2.777777778e-007,0
+Energy,joule,,kilowatt-hour,kwh,1/3600000,0
 Energy,joule,,megaelectron volt,,6.241457006e+012,0
 Energy,joule,,megajoule,,1e-006,0
-Energy,joule,,megawatt-hour,,2.777777778e-010,0
+Energy,joule,,megawatt-hour,,1/3600000000,0
 Energy,joule,,microjoule,,1000000,0
 Energy,joule,,millijoule,,1000,0
 Energy,joule,,nanojoule,,1000000000,0
@@ -1619,7 +1619,7 @@ Energy,joule,,pound force-foot,,0.7375621493,0
 Energy,joule,,pound force-inch,,8.850745791,0
 Energy,joule,,poundal-foot,,23.7303604,0
 Energy,joule,,therm,,9.478133945e-009,0
-Energy,joule,,watt-hour,,0.0002777777778,0
+Energy,joule,,watt-hour,,1/3600,0
 Energy,joule,,watt-second,,1,0
 Energy,kilocalorie,,attojoule,,4.1868e+021,0
 Energy,kilocalorie,,british thermal unit,btu,3.968320719,0
@@ -1684,16 +1684,16 @@ Energy,kilojoule,,dyne-centimeter,,1e+010,0
 Energy,kilojoule,,electron volt,,6.241457006e+021,0
 Energy,kilojoule,,erg,,1e+010,0
 Energy,kilojoule,,gigajoule,,1e-006,0
-Energy,kilojoule,,gigawatt-hour,,2.777777778e-010,0
+Energy,kilojoule,,gigawatt-hour,,1/3600000000,0
 Energy,kilojoule,,gram force-centimeter,,10197162.13,0
 Energy,kilojoule,,horsepower-hour,,0.000372506136,0
 Energy,kilojoule,,joule,,1000,0
 Energy,kilojoule,,kilocalorie,,0.2388458966,0
 Energy,kilojoule,,kiloelectron volt,,6.241457006e+018,0
-Energy,kilojoule,,kilowatt-hour,kwh,0.0002777777778,0
+Energy,kilojoule,,kilowatt-hour,kwh,1/3600,0
 Energy,kilojoule,,megaelectron volt,,6.241457006e+015,0
 Energy,kilojoule,,megajoule,,1/1000,0
-Energy,kilojoule,,megawatt-hour,,2.777777778e-007,0
+Energy,kilojoule,,megawatt-hour,,1/3600000,0
 Energy,kilojoule,,microjoule,,1000000000,0
 Energy,kilojoule,,millijoule,,1000000,0
 Energy,kilojoule,,nanojoule,,1e+012,0
@@ -1703,7 +1703,7 @@ Energy,kilojoule,,pound force-foot,,737.5621493,0
 Energy,kilojoule,,pound force-inch,,8850.745791,0
 Energy,kilojoule,,poundal-foot,,23730.3604,0
 Energy,kilojoule,,therm,,9.478133945e-006,0
-Energy,kilojoule,,watt-hour,,0.2777777778,0
+Energy,kilojoule,,watt-hour,,5/18,0
 Energy,kilojoule,,watt-second,,1000,0
 Energy,kilowatt-hour,kwh,attojoule,,3.6e+024,0
 Energy,kilowatt-hour,kwh,british thermal unit,btu,3412.141633,0
@@ -1768,16 +1768,16 @@ Energy,megajoule,,dyne-centimeter,,1e+013,0
 Energy,megajoule,,electron volt,,6.241457006e+024,0
 Energy,megajoule,,erg,,1e+013,0
 Energy,megajoule,,gigajoule,,1/1000,0
-Energy,megajoule,,gigawatt-hour,,2.777777778e-007,0
+Energy,megajoule,,gigawatt-hour,,1/3600000,0
 Energy,megajoule,,gram force-centimeter,,1.019716213e+010,0
 Energy,megajoule,,horsepower-hour,,0.372506136,0
 Energy,megajoule,,joule,,1000000,0
 Energy,megajoule,,kilocalorie,,238.8458966,0
 Energy,megajoule,,kiloelectron volt,,6.241457006e+021,0
 Energy,megajoule,,kilojoule,,1000,0
-Energy,megajoule,,kilowatt-hour,kwh,0.2777777778,0
+Energy,megajoule,,kilowatt-hour,kwh,5/18,0
 Energy,megajoule,,megaelectron volt,,6.241457006e+018,0
-Energy,megajoule,,megawatt-hour,,0.0002777777778,0
+Energy,megajoule,,megawatt-hour,,1/3600,0
 Energy,megajoule,,microjoule,,1e+012,0
 Energy,megajoule,,millijoule,,1000000000,0
 Energy,megajoule,,nanojoule,,1e+015,0
@@ -1787,7 +1787,7 @@ Energy,megajoule,,pound force-foot,,737562.1493,0
 Energy,megajoule,,pound force-inch,,8850745.791,0
 Energy,megajoule,,poundal-foot,,23730360.4,0
 Energy,megajoule,,therm,,0.009478133945,0
-Energy,megajoule,,watt-hour,,277.7777778,0
+Energy,megajoule,,watt-hour,,2500/9,0
 Energy,megajoule,,watt-second,,1000000,0
 Energy,megawatt-hour,,attojoule,,3.6e+027,0
 Energy,megawatt-hour,,british thermal unit,btu,3412141.633,0
@@ -1831,7 +1831,7 @@ Energy,microjoule,,joule,,1e-006,0
 Energy,microjoule,,kilocalorie,,2.388458966e-010,0
 Energy,microjoule,,kiloelectron volt,,6241457006,0
 Energy,microjoule,,kilojoule,,1e-009,0
-Energy,microjoule,,kilowatt-hour,kwh,2.777777778e-013,0
+Energy,microjoule,,kilowatt-hour,kwh,1/3600000000000,0
 Energy,microjoule,,megaelectron volt,,6241457.006,0
 Energy,microjoule,,megajoule,,1e-012,0
 Energy,microjoule,,megawatt-hour,,2.777777778e-016,0
@@ -1843,7 +1843,7 @@ Energy,microjoule,,pound force-foot,,7.375621493e-007,0
 Energy,microjoule,,pound force-inch,,8.850745791e-006,0
 Energy,microjoule,,poundal-foot,,2.37303604e-005,0
 Energy,microjoule,,therm,,9.478133945e-015,0
-Energy,microjoule,,watt-hour,,2.777777778e-010,0
+Energy,microjoule,,watt-hour,,1/3600000000,0
 Energy,microjoule,,watt-second,,1e-006,0
 Energy,millijoule,,attojoule,,1e+015,0
 Energy,millijoule,,british thermal unit,btu,9.478171203e-007,0
@@ -1859,10 +1859,10 @@ Energy,millijoule,,joule,,1/1000,0
 Energy,millijoule,,kilocalorie,,2.388458966e-007,0
 Energy,millijoule,,kiloelectron volt,,6.241457006e+012,0
 Energy,millijoule,,kilojoule,,1e-006,0
-Energy,millijoule,,kilowatt-hour,kwh,2.777777778e-010,0
+Energy,millijoule,,kilowatt-hour,kwh,1/3600000000,0
 Energy,millijoule,,megaelectron volt,,6241457006,0
 Energy,millijoule,,megajoule,,1e-009,0
-Energy,millijoule,,megawatt-hour,,2.777777778e-013,0
+Energy,millijoule,,megawatt-hour,,1/3600000000000,0
 Energy,millijoule,,microjoule,,1000,0
 Energy,millijoule,,nanojoule,,1000000,0
 Energy,millijoule,,newton-meter,,1/1000,0
@@ -1871,7 +1871,7 @@ Energy,millijoule,,pound force-foot,,0.0007375621493,0
 Energy,millijoule,,pound force-inch,,0.008850745791,0
 Energy,millijoule,,poundal-foot,,0.1416119327,0
 Energy,millijoule,,therm,,9.478133945e-012,0
-Energy,millijoule,,watt-hour,,2.777777778e-007,0
+Energy,millijoule,,watt-hour,,1/3600000,0
 Energy,millijoule,,watt-second,,1/1000,0
 Energy,nanojoule,,attojoule,,1000000000,0
 Energy,nanojoule,,british thermal unit,btu,9.478171203e-013,0
@@ -1899,7 +1899,7 @@ Energy,nanojoule,,pound force-foot,,7.375621493e-010,0
 Energy,nanojoule,,pound force-inch,,8.850745791e-009,0
 Energy,nanojoule,,poundal-foot,,2.37303604e-008,0
 Energy,nanojoule,,therm,,9.478133945e-018,0
-Energy,nanojoule,,watt-hour,,2.777777778e-013,0
+Energy,nanojoule,,watt-hour,,1/3600000000000,0
 Energy,nanojoule,,watt-second,,1e-009,0
 Energy,newton-meter,,attojoule,,1e+018,0
 Energy,newton-meter,,british thermal unit,btu,0.0009478171203,0
@@ -1908,17 +1908,17 @@ Energy,newton-meter,,dyne-centimeter,,10000000,0
 Energy,newton-meter,,electron volt,,6.241457006e+018,0
 Energy,newton-meter,,erg,,10000000,0
 Energy,newton-meter,,gigajoule,,1e-009,0
-Energy,newton-meter,,gigawatt-hour,,2.777777778e-013,0
+Energy,newton-meter,,gigawatt-hour,,1/3600000000000,0
 Energy,newton-meter,,gram force-centimeter,,10197.16213,0
 Energy,newton-meter,,horsepower-hour,,3.72506136e-007,0
 Energy,newton-meter,,joule,,1,0
 Energy,newton-meter,,kilocalorie,,0.0002388458966,0
 Energy,newton-meter,,kiloelectron volt,,6.241457006e+015,0
 Energy,newton-meter,,kilojoule,,1/1000,0
-Energy,newton-meter,,kilowatt-hour,kwh,2.777777778e-007,0
+Energy,newton-meter,,kilowatt-hour,kwh,1/3600000,0
 Energy,newton-meter,,megaelectron volt,,6.241457006e+012,0
 Energy,newton-meter,,megajoule,,1e-006,0
-Energy,newton-meter,,megawatt-hour,,2.777777778e-010,0
+Energy,newton-meter,,megawatt-hour,,1/3600000000,0
 Energy,newton-meter,,microjoule,,1000000,0
 Energy,newton-meter,,millijoule,,1000,0
 Energy,newton-meter,,nanojoule,,1000000000,0
@@ -1927,7 +1927,7 @@ Energy,newton-meter,,pound force-foot,,0.7375621493,0
 Energy,newton-meter,,pound force-inch,,8.850745791,0
 Energy,newton-meter,,poundal-foot,,23.7303604,0
 Energy,newton-meter,,therm,,9.478133945e-009,0
-Energy,newton-meter,,watt-hour,,0.0002777777778,0
+Energy,newton-meter,,watt-hour,,1/3600,0
 Energy,newton-meter,,watt-second,,1,0
 Energy,ounce force-inch,,attojoule,,7.061551814e+015,0
 Energy,ounce force-inch,,british thermal unit,btu,6.693059706e-006,0
@@ -2104,17 +2104,17 @@ Energy,watt-second,,dyne-centimeter,,10000000,0
 Energy,watt-second,,electron volt,,6.241457006e+018,0
 Energy,watt-second,,erg,,10000000,0
 Energy,watt-second,,gigajoule,,1e-009,0
-Energy,watt-second,,gigawatt-hour,,2.777777778e-013,0
+Energy,watt-second,,gigawatt-hour,,1/3600000000000,0
 Energy,watt-second,,gram force-centimeter,,10197.16213,0
 Energy,watt-second,,horsepower-hour,,3.72506136e-007,0
 Energy,watt-second,,joule,,1,0
 Energy,watt-second,,kilocalorie,,0.0002388458966,0
 Energy,watt-second,,kiloelectron volt,,6.241457006e+015,0
 Energy,watt-second,,kilojoule,,1/1000,0
-Energy,watt-second,,kilowatt-hour,kwh,2.777777778e-007,0
+Energy,watt-second,,kilowatt-hour,kwh,1/3600000,0
 Energy,watt-second,,megaelectron volt,,6.241457006e+012,0
 Energy,watt-second,,megajoule,,1e-006,0
-Energy,watt-second,,megawatt-hour,,2.777777778e-010,0
+Energy,watt-second,,megawatt-hour,,1/3600000000,0
 Energy,watt-second,,microjoule,,1000000,0
 Energy,watt-second,,millijoule,,1000,0
 Energy,watt-second,,nanojoule,,1000000000,0
@@ -2124,10 +2124,10 @@ Energy,watt-second,,pound force-foot,,0.7375621493,0
 Energy,watt-second,,pound force-inch,,8.850745791,0
 Energy,watt-second,,poundal-foot,,23.7303604,0
 Energy,watt-second,,therm,,9.478133945e-009,0
-Energy,watt-second,,watt-hour,,0.0002777777778,0
+Energy,watt-second,,watt-hour,,1/3600,0
 
-Flow,centimeter\u00B3/hour,,centimeter\u00B3/minute,,0.01666666667,0
-Flow,centimeter\u00B3/hour,,centimeter\u00B3/second,,0.0002777777778,0
+Flow,centimeter\u00B3/hour,,centimeter\u00B3/minute,,1/60,0
+Flow,centimeter\u00B3/hour,,centimeter\u00B3/second,,1/3600,0
 Flow,centimeter\u00B3/hour,,foot\u00B3/hour,,3.531466672e-005,0
 Flow,centimeter\u00B3/hour,,foot\u00B3/minute,,5.885777787e-007,0
 Flow,centimeter\u00B3/hour,,foot\u00B3/second,,9.809629645e-009,0
@@ -2141,15 +2141,15 @@ Flow,centimeter\u00B3/hour,,gallon/minute,,4.402867539e-006,0
 Flow,centimeter\u00B3/hour,,gallon/second,,7.338112566e-008,0
 Flow,centimeter\u00B3/hour,,liter/day,,0.024,0
 Flow,centimeter\u00B3/hour,,liter/hour,,1/1000,0
-Flow,centimeter\u00B3/hour,,liter/minute,,1.666666667e-005,0
-Flow,centimeter\u00B3/hour,,liter/second,,2.777777778e-007,0
+Flow,centimeter\u00B3/hour,,liter/minute,,1/60000,0
+Flow,centimeter\u00B3/hour,,liter/second,,1/3600000,0
 Flow,centimeter\u00B3/hour,,meter\u00B3/day,,2.4e-005,0
 Flow,centimeter\u00B3/hour,,meter\u00B3/hour,,1e-006,0
-Flow,centimeter\u00B3/hour,,meter\u00B3/minute,,1.666666667e-008,0
-Flow,centimeter\u00B3/hour,,meter\u00B3/second,,2.777777778e-010,0
+Flow,centimeter\u00B3/hour,,meter\u00B3/minute,,1/60000000,0
+Flow,centimeter\u00B3/hour,,meter\u00B3/second,,1/3600000000,0
 Flow,centimeter\u00B3/hour,,milliliter/hour,,1,0
-Flow,centimeter\u00B3/hour,,milliliter/minute,,0.01666666667,0
-Flow,centimeter\u00B3/hour,,milliliter/second,,0.0002777777778,0
+Flow,centimeter\u00B3/hour,,milliliter/minute,,1/60,0
+Flow,centimeter\u00B3/hour,,milliliter/second,,1/3600,0
 Flow,centimeter\u00B3/hour,,ounce (UK)/hour,,0.03519506424,0
 Flow,centimeter\u00B3/hour,,ounce (UK)/minute,,0.0005865844041,0
 Flow,centimeter\u00B3/hour,,ounce (UK)/second,,9.776406734e-006,0
@@ -2160,7 +2160,7 @@ Flow,centimeter\u00B3/hour,,yard\u00B3/hour,,1.307950619e-006,0
 Flow,centimeter\u00B3/hour,,yard\u00B3/minute,,2.179917699e-008,0
 Flow,centimeter\u00B3/hour,,yard\u00B3/second,,3.633196165e-010,0
 Flow,centimeter\u00B3/minute,,centimeter\u00B3/hour,,60,0
-Flow,centimeter\u00B3/minute,,centimeter\u00B3/second,,0.01666666667,0
+Flow,centimeter\u00B3/minute,,centimeter\u00B3/second,,1/60,0
 Flow,centimeter\u00B3/minute,,foot\u00B3/hour,,0.002118880003,0
 Flow,centimeter\u00B3/minute,,foot\u00B3/minute,,3.531466672e-005,0
 Flow,centimeter\u00B3/minute,,foot\u00B3/second,,5.885777787e-007,0
@@ -2175,14 +2175,14 @@ Flow,centimeter\u00B3/minute,,gallon/second,,4.402867539e-006,0
 Flow,centimeter\u00B3/minute,,liter/day,,1.44,0
 Flow,centimeter\u00B3/minute,,liter/hour,,0.06,0
 Flow,centimeter\u00B3/minute,,liter/minute,,1/1000,0
-Flow,centimeter\u00B3/minute,,liter/second,,1.666666667e-005,0
+Flow,centimeter\u00B3/minute,,liter/second,,1/60000,0
 Flow,centimeter\u00B3/minute,,meter\u00B3/day,,0.00144,0
 Flow,centimeter\u00B3/minute,,meter\u00B3/hour,,6e-005,0
 Flow,centimeter\u00B3/minute,,meter\u00B3/minute,,1e-006,0
-Flow,centimeter\u00B3/minute,,meter\u00B3/second,,1.666666667e-008,0
+Flow,centimeter\u00B3/minute,,meter\u00B3/second,,1/60000000,0
 Flow,centimeter\u00B3/minute,,milliliter/hour,,60,0
 Flow,centimeter\u00B3/minute,,milliliter/minute,,1,0
-Flow,centimeter\u00B3/minute,,milliliter/second,,0.01666666667,0
+Flow,centimeter\u00B3/minute,,milliliter/second,,1/60,0
 Flow,centimeter\u00B3/minute,,ounce (UK)/hour,,2.111703855,0
 Flow,centimeter\u00B3/minute,,ounce (UK)/minute,,0.03519506424,0
 Flow,centimeter\u00B3/minute,,ounce (UK)/second,,0.0005865844041,0
@@ -2228,8 +2228,8 @@ Flow,centimeter\u00B3/second,,yard\u00B3/second,,1.307950619e-006,0
 Flow,foot\u00B3/hour,,centimeter\u00B3/hour,,28316.84659,0
 Flow,foot\u00B3/hour,,centimeter\u00B3/minute,,471.9474432,0
 Flow,foot\u00B3/hour,,centimeter\u00B3/second,,7.86579072,0
-Flow,foot\u00B3/hour,,foot\u00B3/minute,,0.01666666667,0
-Flow,foot\u00B3/hour,,foot\u00B3/second,,0.0002777777778,0
+Flow,foot\u00B3/hour,,foot\u00B3/minute,,1/60,0
+Flow,foot\u00B3/hour,,foot\u00B3/second,,1/3600,0
 Flow,foot\u00B3/hour,,gallon (UK)/day,,149.4919853,0
 Flow,foot\u00B3/hour,,gallon (UK)/hour,,6.228832719,0
 Flow,foot\u00B3/hour,,gallon (UK)/minute,,0.1038138786,0
@@ -2262,7 +2262,7 @@ Flow,foot\u00B3/minute,,centimeter\u00B3/hour,,1699010.796,0
 Flow,foot\u00B3/minute,,centimeter\u00B3/minute,,28316.84659,0
 Flow,foot\u00B3/minute,,centimeter\u00B3/second,,471.9474432,0
 Flow,foot\u00B3/minute,,foot\u00B3/hour,,60,0
-Flow,foot\u00B3/minute,,foot\u00B3/second,,0.01666666667,0
+Flow,foot\u00B3/minute,,foot\u00B3/second,,1/60,0
 Flow,foot\u00B3/minute,,gallon (UK)/day,,8969.519115,0
 Flow,foot\u00B3/minute,,gallon (UK)/hour,,373.7299631,0
 Flow,foot\u00B3/minute,,gallon (UK)/minute,,6.228832719,0
@@ -2364,8 +2364,8 @@ Flow,gallon (UK)/hour,,foot\u00B3/hour,,0.1605437239,0
 Flow,gallon (UK)/hour,,foot\u00B3/minute,,0.002675728731,0
 Flow,gallon (UK)/hour,,foot\u00B3/second,,4.459547885e-005,0
 Flow,gallon (UK)/hour,,gallon (UK)/day,,24,0
-Flow,gallon (UK)/hour,,gallon (UK)/minute,,0.01666666667,0
-Flow,gallon (UK)/hour,,gallon (UK)/second,,0.0002777777778,0
+Flow,gallon (UK)/hour,,gallon (UK)/minute,,1/60,0
+Flow,gallon (UK)/hour,,gallon (UK)/second,,1/3600,0
 Flow,gallon (UK)/hour,,gallon/day,,28.82281089,0
 Flow,gallon (UK)/hour,,gallon/hour,,1.200950454,0
 Flow,gallon (UK)/hour,,gallon/minute,,0.0200158409,0
@@ -2398,7 +2398,7 @@ Flow,gallon (UK)/minute,,foot\u00B3/minute,,0.1605437239,0
 Flow,gallon (UK)/minute,,foot\u00B3/second,,0.002675728731,0
 Flow,gallon (UK)/minute,,gallon (UK)/day,,1440,0
 Flow,gallon (UK)/minute,,gallon (UK)/hour,,60,0
-Flow,gallon (UK)/minute,,gallon (UK)/second,,0.01666666667,0
+Flow,gallon (UK)/minute,,gallon (UK)/second,,1/60,0
 Flow,gallon (UK)/minute,,gallon/day,,1729.368654,0
 Flow,gallon (UK)/minute,,gallon/hour,,72.05702723,0
 Flow,gallon (UK)/minute,,gallon/minute,,1.200950454,0
@@ -2500,8 +2500,8 @@ Flow,gallon/hour,,gallon (UK)/hour,,0.8326738183,0
 Flow,gallon/hour,,gallon (UK)/minute,,0.01387789697,0
 Flow,gallon/hour,,gallon (UK)/second,,0.0002312982829,0
 Flow,gallon/hour,,gallon/day,,24,0
-Flow,gallon/hour,,gallon/minute,,0.01666666667,0
-Flow,gallon/hour,,gallon/second,,0.0002777777778,0
+Flow,gallon/hour,,gallon/minute,,1/60,0
+Flow,gallon/hour,,gallon/second,,1/3600,0
 Flow,gallon/hour,,liter/day,,90.84988282,0
 Flow,gallon/hour,,liter/hour,,3.785411784,0
 Flow,gallon/hour,,liter/minute,,0.0630901964,0
@@ -2534,7 +2534,7 @@ Flow,gallon/minute,,gallon (UK)/minute,,0.8326738183,0
 Flow,gallon/minute,,gallon (UK)/second,,0.01387789697,0
 Flow,gallon/minute,,gallon/day,,1440,0
 Flow,gallon/minute,,gallon/hour,,60,0
-Flow,gallon/minute,,gallon/second,,0.01666666667,0
+Flow,gallon/minute,,gallon/second,,1/60,0
 Flow,gallon/minute,,liter/day,,5450.992969,0
 Flow,gallon/minute,,liter/hour,,227.124707,0
 Flow,gallon/minute,,liter/minute,,3.785411784,0
@@ -2622,8 +2622,8 @@ Flow,liter/day,,yard\u00B3/hour,,5.449794247e-005,0
 Flow,liter/day,,yard\u00B3/minute,,9.082990412e-007,0
 Flow,liter/day,,yard\u00B3/second,,1.513831735e-008,0
 Flow,liter/hour,,centimeter\u00B3/hour,,1000,0
-Flow,liter/hour,,centimeter\u00B3/minute,,16.66666667,0
-Flow,liter/hour,,centimeter\u00B3/second,,0.2777777778,0
+Flow,liter/hour,,centimeter\u00B3/minute,,50/3,0
+Flow,liter/hour,,centimeter\u00B3/second,,5/18,0
 Flow,liter/hour,,foot\u00B3/hour,,0.03531466672,0
 Flow,liter/hour,,foot\u00B3/minute,,0.0005885777787,0
 Flow,liter/hour,,foot\u00B3/second,,9.809629645e-006,0
@@ -2636,15 +2636,15 @@ Flow,liter/hour,,gallon/hour,,0.2641720524,0
 Flow,liter/hour,,gallon/minute,,0.004402867539,0
 Flow,liter/hour,,gallon/second,,7.338112566e-005,0
 Flow,liter/hour,,liter/day,,24,0
-Flow,liter/hour,,liter/minute,,0.01666666667,0
-Flow,liter/hour,,liter/second,,0.0002777777778,0
+Flow,liter/hour,,liter/minute,,1/60,0
+Flow,liter/hour,,liter/second,,1/3600,0
 Flow,liter/hour,,meter\u00B3/day,,0.024,0
 Flow,liter/hour,,meter\u00B3/hour,,1/1000,0
-Flow,liter/hour,,meter\u00B3/minute,,1.666666667e-005,0
-Flow,liter/hour,,meter\u00B3/second,,2.777777778e-007,0
+Flow,liter/hour,,meter\u00B3/minute,,1/60000,0
+Flow,liter/hour,,meter\u00B3/second,,1/3600000,0
 Flow,liter/hour,,milliliter/hour,,1000,0
-Flow,liter/hour,,milliliter/minute,,16.66666667,0
-Flow,liter/hour,,milliliter/second,,0.2777777778,0
+Flow,liter/hour,,milliliter/minute,,50/3,0
+Flow,liter/hour,,milliliter/second,,5/18,0
 Flow,liter/hour,,ounce (UK)/hour,,35.19506424,0
 Flow,liter/hour,,ounce (UK)/minute,,0.5865844041,0
 Flow,liter/hour,,ounce (UK)/second,,0.009776406734,0
@@ -2656,7 +2656,7 @@ Flow,liter/hour,,yard\u00B3/minute,,2.179917699e-005,0
 Flow,liter/hour,,yard\u00B3/second,,3.633196165e-007,0
 Flow,liter/minute,,centimeter\u00B3/hour,,60000,0
 Flow,liter/minute,,centimeter\u00B3/minute,,1000,0
-Flow,liter/minute,,centimeter\u00B3/second,,16.66666667,0
+Flow,liter/minute,,centimeter\u00B3/second,,50/3,0
 Flow,liter/minute,,foot\u00B3/hour,,2.118880003,0
 Flow,liter/minute,,foot\u00B3/minute,,0.03531466672,0
 Flow,liter/minute,,foot\u00B3/second,,0.0005885777787,0
@@ -2670,14 +2670,14 @@ Flow,liter/minute,,gallon/minute,,0.2641720524,0
 Flow,liter/minute,,gallon/second,,0.004402867539,0
 Flow,liter/minute,,liter/day,,1440,0
 Flow,liter/minute,,liter/hour,,60,0
-Flow,liter/minute,,liter/second,,0.01666666667,0
+Flow,liter/minute,,liter/second,,1/60,0
 Flow,liter/minute,,meter\u00B3/day,,1.44,0
 Flow,liter/minute,,meter\u00B3/hour,,0.06,0
 Flow,liter/minute,,meter\u00B3/minute,,1/1000,0
-Flow,liter/minute,,meter\u00B3/second,,1.666666667e-005,0
+Flow,liter/minute,,meter\u00B3/second,,1/60000,0
 Flow,liter/minute,,milliliter/hour,,60000,0
 Flow,liter/minute,,milliliter/minute,,1000,0
-Flow,liter/minute,,milliliter/second,,16.66666667,0
+Flow,liter/minute,,milliliter/second,,50/3,0
 Flow,liter/minute,,ounce (UK)/hour,,2111.703855,0
 Flow,liter/minute,,ounce (UK)/minute,,35.19506424,0
 Flow,liter/minute,,ounce (UK)/second,,0.5865844041,0
@@ -2754,8 +2754,8 @@ Flow,meter\u00B3/day,,yard\u00B3/hour,,0.05449794247,0
 Flow,meter\u00B3/day,,yard\u00B3/minute,,0.0009082990412,0
 Flow,meter\u00B3/day,,yard\u00B3/second,,1.513831735e-005,0
 Flow,meter\u00B3/hour,,centimeter\u00B3/hour,,1000000,0
-Flow,meter\u00B3/hour,,centimeter\u00B3/minute,,16666.66667,0
-Flow,meter\u00B3/hour,,centimeter\u00B3/second,,277.7777778,0
+Flow,meter\u00B3/hour,,centimeter\u00B3/minute,,50000/3,0
+Flow,meter\u00B3/hour,,centimeter\u00B3/second,,2500/9,0
 Flow,meter\u00B3/hour,,foot\u00B3/hour,,35.31466672,0
 Flow,meter\u00B3/hour,,foot\u00B3/minute,,0.5885777787,0
 Flow,meter\u00B3/hour,,foot\u00B3/second,,0.009809629645,0
@@ -2769,14 +2769,14 @@ Flow,meter\u00B3/hour,,gallon/minute,,4.402867539,0
 Flow,meter\u00B3/hour,,gallon/second,,0.07338112566,0
 Flow,meter\u00B3/hour,,liter/day,,24000,0
 Flow,meter\u00B3/hour,,liter/hour,,1000,0
-Flow,meter\u00B3/hour,,liter/minute,,16.66666667,0
-Flow,meter\u00B3/hour,,liter/second,,0.2777777778,0
+Flow,meter\u00B3/hour,,liter/minute,,50/3,0
+Flow,meter\u00B3/hour,,liter/second,,5/18,0
 Flow,meter\u00B3/hour,,meter\u00B3/day,,24,0
-Flow,meter\u00B3/hour,,meter\u00B3/minute,,0.01666666667,0
-Flow,meter\u00B3/hour,,meter\u00B3/second,,0.0002777777778,0
+Flow,meter\u00B3/hour,,meter\u00B3/minute,,1/60,0
+Flow,meter\u00B3/hour,,meter\u00B3/second,,1/3600,0
 Flow,meter\u00B3/hour,,milliliter/hour,,1000000,0
 Flow,meter\u00B3/hour,,milliliter/minute,,16666.66667,0
-Flow,meter\u00B3/hour,,milliliter/second,,277.7777778,0
+Flow,meter\u00B3/hour,,milliliter/second,,2500/9,0
 Flow,meter\u00B3/hour,,ounce (UK)/hour,,35195.06424,0
 Flow,meter\u00B3/hour,,ounce (UK)/minute,,586.5844041,0
 Flow,meter\u00B3/hour,,ounce (UK)/second,,9.776406734,0
@@ -2803,10 +2803,10 @@ Flow,meter\u00B3/minute,,gallon/second,,4.402867539,0
 Flow,meter\u00B3/minute,,liter/day,,1440000,0
 Flow,meter\u00B3/minute,,liter/hour,,60000,0
 Flow,meter\u00B3/minute,,liter/minute,,1000,0
-Flow,meter\u00B3/minute,,liter/second,,16.66666667,0
+Flow,meter\u00B3/minute,,liter/second,,50/3,0
 Flow,meter\u00B3/minute,,meter\u00B3/day,,1440,0
 Flow,meter\u00B3/minute,,meter\u00B3/hour,,60,0
-Flow,meter\u00B3/minute,,meter\u00B3/second,,0.01666666667,0
+Flow,meter\u00B3/minute,,meter\u00B3/second,,1/60,0
 Flow,meter\u00B3/minute,,milliliter/hour,,60000000,0
 Flow,meter\u00B3/minute,,milliliter/minute,,1000000,0
 Flow,meter\u00B3/minute,,milliliter/second,,16666.66667,0
@@ -2853,8 +2853,8 @@ Flow,meter\u00B3/second,,yard\u00B3/hour,,4708.62223,0
 Flow,meter\u00B3/second,,yard\u00B3/minute,,78.47703716,0
 Flow,meter\u00B3/second,,yard\u00B3/second,,1.307950619,0
 Flow,milliliter/hour,,centimeter\u00B3/hour,,1,0
-Flow,milliliter/hour,,centimeter\u00B3/minute,,0.01666666667,0
-Flow,milliliter/hour,,centimeter\u00B3/second,,0.0002777777778,0
+Flow,milliliter/hour,,centimeter\u00B3/minute,,1/60,0
+Flow,milliliter/hour,,centimeter\u00B3/second,,1/3600,0
 Flow,milliliter/hour,,foot\u00B3/hour,,3.531466672e-005,0
 Flow,milliliter/hour,,foot\u00B3/minute,,5.885777787e-007,0
 Flow,milliliter/hour,,foot\u00B3/second,,9.809629645e-009,0
@@ -2868,14 +2868,14 @@ Flow,milliliter/hour,,gallon/minute,,4.402867539e-006,0
 Flow,milliliter/hour,,gallon/second,,7.338112566e-008,0
 Flow,milliliter/hour,,liter/day,,0.024,0
 Flow,milliliter/hour,,liter/hour,,1/1000,0
-Flow,milliliter/hour,,liter/minute,,1.666666667e-005,0
-Flow,milliliter/hour,,liter/second,,2.777777778e-007,0
+Flow,milliliter/hour,,liter/minute,,1/60000,0
+Flow,milliliter/hour,,liter/second,,1/3600000,0
 Flow,milliliter/hour,,meter\u00B3/day,,2.4e-005,0
 Flow,milliliter/hour,,meter\u00B3/hour,,1e-006,0
-Flow,milliliter/hour,,meter\u00B3/minute,,1.666666667e-008,0
-Flow,milliliter/hour,,meter\u00B3/second,,2.777777778e-010,0
-Flow,milliliter/hour,,milliliter/minute,,0.01666666667,0
-Flow,milliliter/hour,,milliliter/second,,0.0002777777778,0
+Flow,milliliter/hour,,meter\u00B3/minute,,1/60000000,0
+Flow,milliliter/hour,,meter\u00B3/second,,1/3600000000,0
+Flow,milliliter/hour,,milliliter/minute,,1/60,0
+Flow,milliliter/hour,,milliliter/second,,1/3600,0
 Flow,milliliter/hour,,ounce (UK)/hour,,0.03519506424,0
 Flow,milliliter/hour,,ounce (UK)/minute,,0.0005865844041,0
 Flow,milliliter/hour,,ounce (UK)/second,,9.776406734e-006,0
@@ -2887,7 +2887,7 @@ Flow,milliliter/hour,,yard\u00B3/minute,,2.179917699e-008,0
 Flow,milliliter/hour,,yard\u00B3/second,,3.633196165e-010,0
 Flow,milliliter/minute,,centimeter\u00B3/hour,,60,0
 Flow,milliliter/minute,,centimeter\u00B3/minute,,1,0
-Flow,milliliter/minute,,centimeter\u00B3/second,,0.01666666667,0
+Flow,milliliter/minute,,centimeter\u00B3/second,,1/60,0
 Flow,milliliter/minute,,foot\u00B3/hour,,0.002118880003,0
 Flow,milliliter/minute,,foot\u00B3/minute,,3.531466672e-005,0
 Flow,milliliter/minute,,foot\u00B3/second,,5.885777787e-007,0
@@ -2902,13 +2902,13 @@ Flow,milliliter/minute,,gallon/second,,4.402867539e-006,0
 Flow,milliliter/minute,,liter/day,,1.44,0
 Flow,milliliter/minute,,liter/hour,,0.06,0
 Flow,milliliter/minute,,liter/minute,,1/1000,0
-Flow,milliliter/minute,,liter/second,,1.666666667e-005,0
+Flow,milliliter/minute,,liter/second,,1/60000,0
 Flow,milliliter/minute,,meter\u00B3/day,,0.00144,0
 Flow,milliliter/minute,,meter\u00B3/hour,,6e-005,0
 Flow,milliliter/minute,,meter\u00B3/minute,,1e-006,0
-Flow,milliliter/minute,,meter\u00B3/second,,1.666666667e-008,0
+Flow,milliliter/minute,,meter\u00B3/second,,1/60000000,0
 Flow,milliliter/minute,,milliliter/hour,,60,0
-Flow,milliliter/minute,,milliliter/second,,0.01666666667,0
+Flow,milliliter/minute,,milliliter/second,,1/60,0
 Flow,milliliter/minute,,ounce (UK)/hour,,2.111703855,0
 Flow,milliliter/minute,,ounce (UK)/minute,,0.03519506424,0
 Flow,milliliter/minute,,ounce (UK)/second,,0.0005865844041,0
@@ -2976,8 +2976,8 @@ Flow,ounce (UK)/hour,,meter\u00B3/second,,7.892520833e-009,0
 Flow,ounce (UK)/hour,,milliliter/hour,,28.413075,0
 Flow,ounce (UK)/hour,,milliliter/minute,,0.47355125,0
 Flow,ounce (UK)/hour,,milliliter/second,,0.007892520833,0
-Flow,ounce (UK)/hour,,ounce (UK)/minute,,0.01666666667,0
-Flow,ounce (UK)/hour,,ounce (UK)/second,,0.0002777777778,0
+Flow,ounce (UK)/hour,,ounce (UK)/minute,,1/60,0
+Flow,ounce (UK)/hour,,ounce (UK)/second,,1/3600,0
 Flow,ounce (UK)/hour,,ounce/hour,,0.9607603631,0
 Flow,ounce (UK)/hour,,ounce/minute,,0.01601267272,0
 Flow,ounce (UK)/hour,,ounce/second,,0.0002668778786,0
@@ -3010,7 +3010,7 @@ Flow,ounce (UK)/minute,,milliliter/hour,,1704.7845,0
 Flow,ounce (UK)/minute,,milliliter/minute,,28.413075,0
 Flow,ounce (UK)/minute,,milliliter/second,,0.47355125,0
 Flow,ounce (UK)/minute,,ounce (UK)/hour,,60,0
-Flow,ounce (UK)/minute,,ounce (UK)/second,,0.01666666667,0
+Flow,ounce (UK)/minute,,ounce (UK)/second,,1/60,0
 Flow,ounce (UK)/minute,,ounce/hour,,57.64562179,0
 Flow,ounce (UK)/minute,,ounce/minute,,0.9607603631,0
 Flow,ounce (UK)/minute,,ounce/second,,0.01601267272,0
@@ -3078,8 +3078,8 @@ Flow,ounce/hour,,milliliter/second,,0.008214869323,0
 Flow,ounce/hour,,ounce (UK)/hour,,1.040842273,0
 Flow,ounce/hour,,ounce (UK)/minute,,0.01734737121,0
 Flow,ounce/hour,,ounce (UK)/second,,0.0002891228536,0
-Flow,ounce/hour,,ounce/minute,,0.01666666667,0
-Flow,ounce/hour,,ounce/second,,0.0002777777778,0
+Flow,ounce/hour,,ounce/minute,,1/60,0
+Flow,ounce/hour,,ounce/second,,1/3600,0
 Flow,ounce/hour,,yard\u00B3/hour,,3.868071631e-005,0
 Flow,ounce/hour,,yard\u00B3/minute,,6.446786051e-007,0
 Flow,ounce/hour,,yard\u00B3/second,,1.074464342e-008,0
@@ -3112,7 +3112,7 @@ Flow,ounce/minute,,ounce (UK)/hour,,62.45053637,0
 Flow,ounce/minute,,ounce (UK)/minute,,1.040842273,0
 Flow,ounce/minute,,ounce (UK)/second,,0.01734737121,0
 Flow,ounce/minute,,ounce/hour,,60,0
-Flow,ounce/minute,,ounce/second,,0.01666666667,0
+Flow,ounce/minute,,ounce/second,,1/60,0
 Flow,ounce/minute,,yard\u00B3/hour,,0.002320842978,0
 Flow,ounce/minute,,yard\u00B3/minute,,3.868071631e-005,0
 Flow,ounce/minute,,yard\u00B3/second,,6.446786051e-007,0
@@ -3180,8 +3180,8 @@ Flow,yard\u00B3/hour,,ounce (UK)/second,,7.474599262,0
 Flow,yard\u00B3/hour,,ounce/hour,,25852.67532,0
 Flow,yard\u00B3/hour,,ounce/minute,,430.8779221,0
 Flow,yard\u00B3/hour,,ounce/second,,7.181298701,0
-Flow,yard\u00B3/hour,,yard\u00B3/minute,,0.01666666667,0
-Flow,yard\u00B3/hour,,yard\u00B3/second,,0.0002777777778,0
+Flow,yard\u00B3/hour,,yard\u00B3/minute,,1/60,0
+Flow,yard\u00B3/hour,,yard\u00B3/second,,1/3600,0
 Flow,yard\u00B3/minute,,centimeter\u00B3/hour,,45873291.48,0
 Flow,yard\u00B3/minute,,centimeter\u00B3/minute,,764554.858,0
 Flow,yard\u00B3/minute,,centimeter\u00B3/second,,12742.58097,0
@@ -3214,7 +3214,7 @@ Flow,yard\u00B3/minute,,ounce/hour,,1551160.519,0
 Flow,yard\u00B3/minute,,ounce/minute,,25852.67532,0
 Flow,yard\u00B3/minute,,ounce/second,,430.8779221,0
 Flow,yard\u00B3/minute,,yard\u00B3/hour,,60,0
-Flow,yard\u00B3/minute,,yard\u00B3/second,,0.01666666667,0
+Flow,yard\u00B3/minute,,yard\u00B3/second,,1/60,0
 Flow,yard\u00B3/second,,centimeter\u00B3/hour,,2752397489,0
 Flow,yard\u00B3/second,,centimeter\u00B3/minute,,45873291.48,0
 Flow,yard\u00B3/second,,centimeter\u00B3/second,,764554.858,0
@@ -3560,8 +3560,8 @@ Mass,tonne (metric ton),t,stone,,157.4730444,0
 Mass,tonne (metric ton),t,ton (long),,0.9842065276,0
 Mass,tonne (metric ton),t,ton (short),tn,1.102311311,0
 
-Power,BTU/hour,,BTU/minute,,0.01666666667,0
-Power,BTU/hour,,BTU/second,,0.0002777777778,0
+Power,BTU/hour,,BTU/minute,,1/60,0
+Power,BTU/hour,,BTU/second,,1/3600,0
 Power,BTU/hour,,calorie/second,,0.06999882253,0
 Power,BTU/hour,,horsepower,,0.0003926652392,0
 Power,BTU/hour,,kilowatt,,0.0002928104185,0
@@ -3570,7 +3570,7 @@ Power,BTU/hour,,pound-feet/minute,,12.95795289,0
 Power,BTU/hour,,pound-feet/second,,0.2159658816,0
 Power,BTU/hour,,watt,,0.2928104185,0
 Power,BTU/minute,,BTU/hour,,60,0
-Power,BTU/minute,,BTU/second,,0.01666666667,0
+Power,BTU/minute,,BTU/second,,1/60,0
 Power,BTU/minute,,calorie/second,,4.199929352,0
 Power,BTU/minute,,horsepower,,0.02355991435,0
 Power,BTU/minute,,kilowatt,,0.01756862511,0
@@ -3630,7 +3630,7 @@ Power,pound-feet/minute,,calorie/second,,0.00540199699,0
 Power,pound-feet/minute,,horsepower,,3.03030303e-005,0
 Power,pound-feet/minute,,kilowatt,,2.259696581e-005,0
 Power,pound-feet/minute,,megawatt,,2.259696581e-008,0
-Power,pound-feet/minute,,pound-feet/second,,0.01666666667,0
+Power,pound-feet/minute,,pound-feet/second,,1/60,0
 Power,pound-feet/minute,,watt,,0.02259696581,0
 Power,pound-feet/second,,BTU/hour,,4.630361021,0
 Power,pound-feet/second,,BTU/minute,,0.07717268369,0
@@ -3996,36 +3996,36 @@ Velocity,speed of light,C,mile/hour,mph,670616629.4,0
 Velocity,speed of light,C,mile/minute,,11176943.82,0
 Velocity,speed of light,C,mile/second,,186282.3971,0
 Velocity,centimeter/hour,,speed of light,C,9.265669311e-015,0
-Velocity,centimeter/hour,,centimeter/minute,,0.01666666667,0
-Velocity,centimeter/hour,,centimeter/second,,0.0002777777778,0
+Velocity,centimeter/hour,,centimeter/minute,,1/60,0
+Velocity,centimeter/hour,,centimeter/second,,1/3600,0
 Velocity,centimeter/hour,,foot/hour,,0.03280839895,0
 Velocity,centimeter/hour,,foot/minute,,0.0005468066492,0
 Velocity,centimeter/hour,,foot/second,fps,9.113444153e-006,0
 Velocity,centimeter/hour,,kilometer/hour,kph,1e-005,0
-Velocity,centimeter/hour,,kilometer/minute,,1.666666667e-007,0
-Velocity,centimeter/hour,,kilometer/second,,2.777777778e-009,0
+Velocity,centimeter/hour,,kilometer/minute,,1/6000000,0
+Velocity,centimeter/hour,,kilometer/second,,1/360000000,0
 Velocity,centimeter/hour,,knot,,5.399568035e-006,0
 Velocity,centimeter/hour,,mach,,8.380431358e-009,0
 Velocity,centimeter/hour,,meter/hour,,1/100,0
-Velocity,centimeter/hour,,meter/minute,,0.0001666666667,0
-Velocity,centimeter/hour,,meter/second,,2.777777778e-006,0
+Velocity,centimeter/hour,,meter/minute,,1/6000,0
+Velocity,centimeter/hour,,meter/second,,1/360000,0
 Velocity,centimeter/hour,,mile/hour,mph,6.213711922e-006,0
 Velocity,centimeter/hour,,mile/minute,,1.035618654e-007,0
 Velocity,centimeter/hour,,mile/second,,1.72603109e-009,0
 Velocity,centimeter/minute,,speed of light,C,5.559401587e-013,0
 Velocity,centimeter/minute,,centimeter/hour,,60,0
-Velocity,centimeter/minute,,centimeter/second,,0.01666666667,0
+Velocity,centimeter/minute,,centimeter/second,,1/60,0
 Velocity,centimeter/minute,,foot/hour,,1.968503937,0
 Velocity,centimeter/minute,,foot/minute,,0.03280839895,0
 Velocity,centimeter/minute,,foot/second,fps,0.0005468066492,0
 Velocity,centimeter/minute,,kilometer/hour,kph,0.0006,0
 Velocity,centimeter/minute,,kilometer/minute,,1e-005,0
-Velocity,centimeter/minute,,kilometer/second,,1.666666667e-007,0
+Velocity,centimeter/minute,,kilometer/second,,1/6000000,0
 Velocity,centimeter/minute,,knot,,0.0003239740821,0
 Velocity,centimeter/minute,,mach,,5.028258815e-007,0
 Velocity,centimeter/minute,,meter/hour,,3/5,0
 Velocity,centimeter/minute,,meter/minute,,1/100,0
-Velocity,centimeter/minute,,meter/second,,0.0001666666667,0
+Velocity,centimeter/minute,,meter/second,,1/6000,0
 Velocity,centimeter/minute,,mile/hour,mph,0.0003728227153,0
 Velocity,centimeter/minute,,mile/minute,,6.213711922e-006,0
 Velocity,centimeter/minute,,mile/second,,1.035618654e-007,0
@@ -4050,8 +4050,8 @@ Velocity,foot/hour,,speed of light,C,2.824176006e-013,0
 Velocity,foot/hour,,centimeter/hour,,30.48,0
 Velocity,foot/hour,,centimeter/minute,,0.508,0
 Velocity,foot/hour,,centimeter/second,,0.008466666667,0
-Velocity,foot/hour,,foot/minute,,0.01666666667,0
-Velocity,foot/hour,,foot/second,fps,0.0002777777778,0
+Velocity,foot/hour,,foot/minute,,1/60,0
+Velocity,foot/hour,,foot/second,fps,1/3600,0
 Velocity,foot/hour,,kilometer/hour,kph,0.0003048,0
 Velocity,foot/hour,,kilometer/minute,,5.08e-006,0
 Velocity,foot/hour,,kilometer/second,,8.466666667e-008,0
@@ -4068,7 +4068,7 @@ Velocity,foot/minute,,centimeter/hour,,1828.8,0
 Velocity,foot/minute,,centimeter/minute,,30.48,0
 Velocity,foot/minute,,centimeter/second,,0.508,0
 Velocity,foot/minute,,foot/hour,,60,0
-Velocity,foot/minute,,foot/second,fps,0.01666666667,0
+Velocity,foot/minute,,foot/second,fps,1/60,0
 Velocity,foot/minute,,kilometer/hour,kph,0.018288,0
 Velocity,foot/minute,,kilometer/minute,,0.0003048,0
 Velocity,foot/minute,,kilometer/second,,5.08e-006,0
@@ -4099,35 +4099,35 @@ Velocity,foot/second,fps,mile/minute,,0.01136363636,0
 Velocity,foot/second,fps,mile/second,,0.0001893939394,0
 Velocity,kilometer/hour,kph,speed of light,C,9.265669311e-010,0
 Velocity,kilometer/hour,kph,centimeter/hour,,100000,0
-Velocity,kilometer/hour,kph,centimeter/minute,,1666.666667,0
-Velocity,kilometer/hour,kph,centimeter/second,,27.77777778,0
+Velocity,kilometer/hour,kph,centimeter/minute,,5000/3,0
+Velocity,kilometer/hour,kph,centimeter/second,,250/9,0
 Velocity,kilometer/hour,kph,foot/hour,,3280.839895,0
 Velocity,kilometer/hour,kph,foot/minute,,54.68066492,0
 Velocity,kilometer/hour,kph,foot/second,fps,0.9113444153,0
-Velocity,kilometer/hour,kph,kilometer/minute,,0.01666666667,0
-Velocity,kilometer/hour,kph,kilometer/second,,0.0002777777778,0
+Velocity,kilometer/hour,kph,kilometer/minute,,1/60,0
+Velocity,kilometer/hour,kph,kilometer/second,,1/3600,0
 Velocity,kilometer/hour,kph,knot,,0.5399568035,0
 Velocity,kilometer/hour,kph,mach,,0.0008380431358,0
 Velocity,kilometer/hour,kph,meter/hour,,1000,0
-Velocity,kilometer/hour,kph,meter/minute,,16.66666667,0
-Velocity,kilometer/hour,kph,meter/second,,0.2777777778,0
+Velocity,kilometer/hour,kph,meter/minute,,50/3,0
+Velocity,kilometer/hour,kph,meter/second,,5/18,0
 Velocity,kilometer/hour,kph,mile/hour,mph,0.6213711922,0
 Velocity,kilometer/hour,kph,mile/minute,,0.01035618654,0
 Velocity,kilometer/hour,kph,mile/second,,0.000172603109,0
 Velocity,kilometer/minute,,speed of light,C,5.559401587e-008,0
 Velocity,kilometer/minute,,centimeter/hour,,6000000,0
 Velocity,kilometer/minute,,centimeter/minute,,100000,0
-Velocity,kilometer/minute,,centimeter/second,,1666.666667,0
+Velocity,kilometer/minute,,centimeter/second,,5000/3,0
 Velocity,kilometer/minute,,foot/hour,,196850.3937,0
 Velocity,kilometer/minute,,foot/minute,,3280.839895,0
 Velocity,kilometer/minute,,foot/second,fps,54.68066492,0
 Velocity,kilometer/minute,,kilometer/hour,kph,60,0
-Velocity,kilometer/minute,,kilometer/second,,0.01666666667,0
+Velocity,kilometer/minute,,kilometer/second,,1/60,0
 Velocity,kilometer/minute,,knot,,32.39740821,0
 Velocity,kilometer/minute,,mach,,0.05028258815,0
 Velocity,kilometer/minute,,meter/hour,,60000,0
 Velocity,kilometer/minute,,meter/minute,,1000,0
-Velocity,kilometer/minute,,meter/second,,16.66666667,0
+Velocity,kilometer/minute,,meter/second,,50/3,0
 Velocity,kilometer/minute,,mile/hour,mph,37.28227153,0
 Velocity,kilometer/minute,,mile/minute,,0.6213711922,0
 Velocity,kilometer/minute,,mile/second,,0.01035618654,0
@@ -4184,35 +4184,35 @@ Velocity,mach,,mile/minute,,12.35758172,0
 Velocity,mach,,mile/second,,0.2059596954,0
 Velocity,meter/hour,,speed of light,C,9.265669311e-013,0
 Velocity,meter/hour,,centimeter/hour,,100,0
-Velocity,meter/hour,,centimeter/minute,,1.666666667,0
-Velocity,meter/hour,,centimeter/second,,0.02777777778,0
+Velocity,meter/hour,,centimeter/minute,,5/3,0
+Velocity,meter/hour,,centimeter/second,,1/36,0
 Velocity,meter/hour,,foot/hour,,3.280839895,0
 Velocity,meter/hour,,foot/minute,,0.05468066492,0
 Velocity,meter/hour,,foot/second,fps,0.0009113444153,0
 Velocity,meter/hour,,kilometer/hour,kph,1/1000,0
-Velocity,meter/hour,,kilometer/minute,,1.666666667e-005,0
-Velocity,meter/hour,,kilometer/second,,2.777777778e-007,0
+Velocity,meter/hour,,kilometer/minute,,1/60000,0
+Velocity,meter/hour,,kilometer/second,,1/3600000,0
 Velocity,meter/hour,,knot,,0.0005399568035,0
 Velocity,meter/hour,,mach,,8.380431358e-007,0
-Velocity,meter/hour,,meter/minute,,0.01666666667,0
-Velocity,meter/hour,,meter/second,,0.0002777777778,0
+Velocity,meter/hour,,meter/minute,,1/60,0
+Velocity,meter/hour,,meter/second,,1/3600,0
 Velocity,meter/hour,,mile/hour,mph,0.0006213711922,0
 Velocity,meter/hour,,mile/minute,,1.035618654e-005,0
 Velocity,meter/hour,,mile/second,,1.72603109e-007,0
 Velocity,meter/minute,,speed of light,C,5.559401587e-011,0
 Velocity,meter/minute,,centimeter/hour,,6000,0
 Velocity,meter/minute,,centimeter/minute,,100,0
-Velocity,meter/minute,,centimeter/second,,1.666666667,0
+Velocity,meter/minute,,centimeter/second,,5/3,0
 Velocity,meter/minute,,foot/hour,,196.8503937,0
 Velocity,meter/minute,,foot/minute,,3.280839895,0
 Velocity,meter/minute,,foot/second,fps,0.05468066492,0
 Velocity,meter/minute,,kilometer/hour,kph,0.06,0
 Velocity,meter/minute,,kilometer/minute,,1/1000,0
-Velocity,meter/minute,,kilometer/second,,1.666666667e-005,0
+Velocity,meter/minute,,kilometer/second,,1/60000,0
 Velocity,meter/minute,,knot,,0.03239740821,0
 Velocity,meter/minute,,mach,,5.028258815e-005,0
 Velocity,meter/minute,,meter/hour,,60,0
-Velocity,meter/minute,,meter/second,,0.01666666667,0
+Velocity,meter/minute,,meter/second,,1/60,0
 Velocity,meter/minute,,mile/hour,mph,0.03728227153,0
 Velocity,meter/minute,,mile/minute,,0.0006213711922,0
 Velocity,meter/minute,,mile/second,,1.035618654e-005,0
@@ -4248,8 +4248,8 @@ Velocity,mile/hour,mph,mach,,0.001348699692,0
 Velocity,mile/hour,mph,meter/hour,,1609.344,0
 Velocity,mile/hour,mph,meter/minute,,26.8224,0
 Velocity,mile/hour,mph,meter/second,,0.44704,0
-Velocity,mile/hour,mph,mile/minute,,0.01666666667,0
-Velocity,mile/hour,mph,mile/second,,0.0002777777778,0
+Velocity,mile/hour,mph,mile/minute,,1/60,0
+Velocity,mile/hour,mph,mile/second,,1/3600,0
 Velocity,mile/minute,,speed of light,C,8.946989587e-008,0
 Velocity,mile/minute,,centimeter/hour,,9656064,0
 Velocity,mile/minute,,centimeter/minute,,160934.4,0
@@ -4266,7 +4266,7 @@ Velocity,mile/minute,,meter/hour,,96560.64,0
 Velocity,mile/minute,,meter/minute,,1609.344,0
 Velocity,mile/minute,,meter/second,,26.8224,0
 Velocity,mile/minute,,mile/hour,mph,60,0
-Velocity,mile/minute,,mile/second,,0.01666666667,0
+Velocity,mile/minute,,mile/second,,1/60,0
 Velocity,mile/second,,speed of light,C,5.368193752e-006,0
 Velocity,mile/second,,centimeter/hour,,579363840,0
 Velocity,mile/second,,centimeter/minute,,9656064,0
@@ -4816,9 +4816,9 @@ Volume,teaspoon,,gallon (UK),,0.001084210701,0
 Volume,teaspoon,,liter,,0.004928921594,0
 Volume,teaspoon,,milliliter,ml,4.928921594,0
 Volume,teaspoon,,minim (US),,80.00000649,0
-Volume,teaspoon,,ounce,oz,0.1666666667,0
+Volume,teaspoon,,ounce,oz,1/6,0
 Volume,teaspoon,,ounce (UK),,0.1734737121,0
 Volume,teaspoon,,pint,pt,0.01041666667,0
 Volume,teaspoon,,pint (UK),,0.008673693954,0
 Volume,teaspoon,,quart,qt,0.005208333333,0
-Volume,teaspoon,,tablespoon,tbs,0.3333333333,0
+Volume,teaspoon,,tablespoon,tbs,1/3,0
