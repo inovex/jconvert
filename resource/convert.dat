@@ -2288,7 +2288,7 @@ Flow,foot\u00B3/minute,,ounce (UK)/second,,16.61022058,0
 Flow,foot\u00B3/minute,,ounce/hour,,57450.38961,0
 Flow,foot\u00B3/minute,,ounce/minute,,957.5064935,0
 Flow,foot\u00B3/minute,,ounce/second,,15.95844156,0
-Flow,foot\u00B3/minute,,yard\u00B3/hour,,2.222222222,0
+Flow,foot\u00B3/minute,,yard\u00B3/hour,,20/9,0
 Flow,foot\u00B3/minute,,yard\u00B3/minute,,0.03703703704,0
 Flow,foot\u00B3/minute,,yard\u00B3/second,,0.0006172839506,0
 Flow,foot\u00B3/second,,centimeter\u00B3/hour,,101940647.7,0
@@ -2321,8 +2321,8 @@ Flow,foot\u00B3/second,,ounce (UK)/second,,996.613235,0
 Flow,foot\u00B3/second,,ounce/hour,,3447023.377,0
 Flow,foot\u00B3/second,,ounce/minute,,57450.38961,0
 Flow,foot\u00B3/second,,ounce/second,,957.5064935,0
-Flow,foot\u00B3/second,,yard\u00B3/hour,,133.3333333,0
-Flow,foot\u00B3/second,,yard\u00B3/minute,,2.222222222,0
+Flow,foot\u00B3/second,,yard\u00B3/hour,,400/3,0
+Flow,foot\u00B3/second,,yard\u00B3/minute,,20/9,0
 Flow,foot\u00B3/second,,yard\u00B3/second,,0.03703703704,0
 Flow,gallon (UK)/day,,centimeter\u00B3/hour,,189.4205,0
 Flow,gallon (UK)/day,,centimeter\u00B3/minute,,3.157008333,0
@@ -2483,7 +2483,7 @@ Flow,gallon/day,,milliliter/second,,0.04381263639,0
 Flow,gallon/day,,ounce (UK)/hour,,5.551158789,0
 Flow,gallon/day,,ounce (UK)/minute,,0.09251931314,0
 Flow,gallon/day,,ounce (UK)/second,,0.001541988552,0
-Flow,gallon/day,,ounce/hour,,5.333333333,0
+Flow,gallon/day,,ounce/hour,,16/3,0
 Flow,gallon/day,,ounce/minute,,0.08888888889,0
 Flow,gallon/day,,ounce/second,,0.001481481481,0
 Flow,gallon/day,,yard\u00B3/hour,,0.0002062971536,0
@@ -2517,7 +2517,7 @@ Flow,gallon/hour,,ounce (UK)/hour,,133.2278109,0
 Flow,gallon/hour,,ounce (UK)/minute,,2.220463515,0
 Flow,gallon/hour,,ounce (UK)/second,,0.03700772526,0
 Flow,gallon/hour,,ounce/hour,,128,0
-Flow,gallon/hour,,ounce/minute,,2.133333333,0
+Flow,gallon/hour,,ounce/minute,,32/15,0
 Flow,gallon/hour,,ounce/second,,0.03555555556,0
 Flow,gallon/hour,,yard\u00B3/hour,,0.004951131687,0
 Flow,gallon/hour,,yard\u00B3/minute,,8.251886145e-005,0
@@ -2551,7 +2551,7 @@ Flow,gallon/minute,,ounce (UK)/minute,,133.2278109,0
 Flow,gallon/minute,,ounce (UK)/second,,2.220463515,0
 Flow,gallon/minute,,ounce/hour,,7680,0
 Flow,gallon/minute,,ounce/minute,,128,0
-Flow,gallon/minute,,ounce/second,,2.133333333,0
+Flow,gallon/minute,,ounce/second,,32/15,0
 Flow,gallon/minute,,yard\u00B3/hour,,0.2970679012,0
 Flow,gallon/minute,,yard\u00B3/minute,,0.004951131687,0
 Flow,gallon/minute,,yard\u00B3/second,,8.251886145e-005,0
@@ -3508,7 +3508,7 @@ Mass,stone,,microgram,g,6350293180,0
 Mass,stone,,milligram,mg,6350293.18,0
 Mass,stone,,ounce (avdp),oz,224,0
 Mass,stone,,ounce (troy),ozt,204.1666785,0
-Mass,stone,,pennyweight,,4083.333333,0
+Mass,stone,,pennyweight,,12250/3,0
 Mass,stone,,pound (advp),lb,14,0
 Mass,stone,,pound (troy),,17.01388987,0
 Mass,stone,,ton (long),,0.00625,0
@@ -3523,7 +3523,7 @@ Mass,ton (long),,microgram,g,1.016046909e+012,0
 Mass,ton (long),,milligram,mg,1016046909,0
 Mass,ton (long),,ounce (avdp),oz,35840,0
 Mass,ton (long),,ounce (troy),ozt,32666.66856,0
-Mass,ton (long),,pennyweight,,653333.3333,0
+Mass,ton (long),,pennyweight,,1960000/3,0
 Mass,ton (long),,pound (advp),lb,2240,0
 Mass,ton (long),,pound (troy),,2722.22238,0
 Mass,ton (long),,stone,,160,0
@@ -3538,7 +3538,7 @@ Mass,ton (short),tn,microgram,g,9.0718474e+011,0
 Mass,ton (short),tn,milligram,mg,907184740,0
 Mass,ton (short),tn,ounce (avdp),oz,32000,0
 Mass,ton (short),tn,ounce (troy),ozt,29166.66835,0
-Mass,ton (short),tn,pennyweight,,583333.3333,0
+Mass,ton (short),tn,pennyweight,,1750000/3,0
 Mass,ton (short),tn,pound (advp),lb,2000,0
 Mass,ton (short),tn,pound (troy),,2430.555696,0
 Mass,ton (short),tn,stone,,142.8571429,0
