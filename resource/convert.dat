@@ -2008,7 +2008,7 @@ Energy,pound force-inch,,millijoule,,112.984829,0
 Energy,pound force-inch,,nanojoule,,112984829,0
 Energy,pound force-inch,,newton-meter,,0.112984829,0
 Energy,pound force-inch,,ounce force-inch,,16,0
-Energy,pound force-inch,,pound force-foot,,0.08333333333,0
+Energy,pound force-inch,,pound force-foot,,1/12,0
 Energy,pound force-inch,,poundal-foot,,2.681170713,0
 Energy,pound force-inch,,therm,,1.070885343e-009,0
 Energy,pound force-inch,,watt-hour,,3.138467473e-005,0
@@ -3449,7 +3449,7 @@ Mass,ounce (troy),ozt,milligram,mg,31103.475,0
 Mass,ounce (troy),ozt,ounce (avdp),oz,1.097142794,0
 Mass,ounce (troy),ozt,pennyweight,,19.99999884,0
 Mass,ounce (troy),ozt,pound (advp),lb,0.0685714246,0
-Mass,ounce (troy),ozt,pound (troy),,0.08333333333,0
+Mass,ounce (troy),ozt,pound (troy),,1/12,0
 Mass,ounce (troy),ozt,stone,,0.0048979589,0
 Mass,ounce (troy),ozt,ton (long),,3.061224313e-005,0
 Mass,ounce (troy),ozt,ton (short),tn,3.42857123e-005,0
@@ -4414,7 +4414,7 @@ Torque,ounce-force inch,ozfin,meganewton meter,MNm,7.06155e-009,0
 Torque,ounce-force inch,ozfin,micronewton meter,Nm,7061.55,0
 Torque,ounce-force inch,ozfin,millinewton meter,mNm,7.06155,0
 Torque,ounce-force inch,ozfin,newton meter,Nm,0.00706155,0
-Torque,ounce-force inch,ozfin,ounce-force foot,ozfft,0.083333333,0
+Torque,ounce-force inch,ozfin,ounce-force foot,ozfft,1/12,0
 Torque,ounce-force inch,ozfin,pound-force foot,lbfft,0.005208322977,0
 Torque,ounce-force inch,ozfin,pound-force inch,lbfin,1/16,0
 Torque,pound-force foot,lbfft,dyne centimeter,dyncm,13558200,0
@@ -4438,13 +4438,13 @@ Torque,pound-force inch,lbfin,meganewton meter,MNm,1.12984775e-007,0
 Torque,pound-force inch,lbfin,micronewton meter,Nm,112984.7753,0
 Torque,pound-force inch,lbfin,millinewton meter,mNm,112.9847753,0
 Torque,pound-force inch,lbfin,newton meter,Nm,0.112984775,0
-Torque,pound-force inch,lbfin,ounce-force foot,ozfft,1.3333333,0
+Torque,pound-force inch,lbfin,ounce-force foot,ozfft,4/3,0
 Torque,pound-force inch,lbfin,ounce-force inch,ozfin,16,0
-Torque,pound-force inch,lbfin,pound-force foot,lbfft,0.083333333,0
+Torque,pound-force inch,lbfin,pound-force foot,lbfft,1/12,0
 
 Volume,cubic centimeter,CC,cubic foot,,3.531466672e-005,0
 Volume,cubic centimeter,CC,cubic inch,cui,0.06102374409,0
-Volume,cubic centimeter,CC,cubic meter,,1e-006,0
+Volume,cubic centimeter,CC,cubic meter,,1/1000000,0
 Volume,cubic centimeter,CC,cubic yard,,1.307950619e-006,0
 Volume,cubic centimeter,CC,cup,,0.004226752838,0
 Volume,cubic centimeter,CC,dram,,0.2705103519,0
@@ -4464,7 +4464,7 @@ Volume,cubic centimeter,CC,teaspoon,,0.2028841362,0
 Volume,cubic foot,,cubic centimeter,CC,28316.84659,0
 Volume,cubic foot,,cubic inch,cui,1728,0
 Volume,cubic foot,,cubic meter,,0.02831684659,0
-Volume,cubic foot,,cubic yard,,0.03703703704,0
+Volume,cubic foot,,cubic yard,,1/27,0
 Volume,cubic foot,,cup,,119.6883117,0
 Volume,cubic foot,,dram,,7660.000246,0
 Volume,cubic foot,,drop,,436635.298,0
@@ -4481,9 +4481,9 @@ Volume,cubic foot,,quart,qt,29.92207792,0
 Volume,cubic foot,,tablespoon,tbs,1915.012987,0
 Volume,cubic foot,,teaspoon,,5745.038961,0
 Volume,cubic inch,cui,cubic centimeter,CC,16.387064,0
-Volume,cubic inch,cui,cubic foot,,0.0005787037037,0
+Volume,cubic inch,cui,cubic foot,,1/1728,0
 Volume,cubic inch,cui,cubic meter,,1.6387064e-005,0
-Volume,cubic inch,cui,cubic yard,,2.143347051e-005,0
+Volume,cubic inch,cui,cubic yard,,1/46656,0
 Volume,cubic inch,cui,cup,,0.06926406926,0
 Volume,cubic inch,cui,dram,,4.432870449,0
 Volume,cubic inch,cui,drop,,252.6824605,0
@@ -4808,17 +4808,17 @@ Volume,teaspoon,,cubic foot,,0.0001740632234,0
 Volume,teaspoon,,cubic inch,cui,0.30078125,0
 Volume,teaspoon,,cubic meter,,4.928921594e-006,0
 Volume,teaspoon,,cubic yard,,6.446786051e-006,0
-Volume,teaspoon,,cup,,0.02083333333,0
+Volume,teaspoon,,cup,,1/48,0
 Volume,teaspoon,,dram,,1.333324425,0
 Volume,teaspoon,,drop,,76.00215258,0
-Volume,teaspoon,,gallon,gal,0.001302083333,0
+Volume,teaspoon,,gallon,gal,1/768,0
 Volume,teaspoon,,gallon (UK),,0.001084210701,0
 Volume,teaspoon,,liter,,0.004928921594,0
 Volume,teaspoon,,milliliter,ml,4.928921594,0
 Volume,teaspoon,,minim (US),,80.00000649,0
 Volume,teaspoon,,ounce,oz,1/6,0
 Volume,teaspoon,,ounce (UK),,0.1734737121,0
-Volume,teaspoon,,pint,pt,0.01041666667,0
+Volume,teaspoon,,pint,pt,1/96,0
 Volume,teaspoon,,pint (UK),,0.008673693954,0
-Volume,teaspoon,,quart,qt,0.005208333333,0
+Volume,teaspoon,,quart,qt,1/192,0
 Volume,teaspoon,,tablespoon,tbs,1/3,0
