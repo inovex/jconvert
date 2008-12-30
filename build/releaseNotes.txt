@@ -1,3 +1,7 @@
+1.0.9
+-added more conversions that originate in fractions
+-Fixed bug 1943304:Generated fractional conversions have no loss of precision-GUI no longer shows this
+
 1.0.8
 -Added ability to preserve fractions for users to see (when possible).
 -Fixed problem with lines showing up on the screen between each value on the conversion lists.
