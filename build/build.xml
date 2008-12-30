@@ -135,7 +135,7 @@
 			<fileset dir="${jdocSrc.dir}" />
 		</scp>
 		<!-- set the permissions on the scp'd files -->
-		<sshexec username="${sf.id}" password="${sf.pwd}" host="${sf.host}" trust="true" command="${ssh.writable.cmd}" />
+<!--		<sshexec username="${sf.id}" password="${sf.pwd}" host="${sf.host}" trust="true" command="${ssh.writable.cmd}" /> -->
 	</target>
 
 	<target name="javadoc" description="creates the javadoc for the project">
