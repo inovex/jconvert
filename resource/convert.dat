@@ -3467,7 +3467,7 @@ Mass,pennyweight,,pound (advp),lb,0.003428571429,0
 Mass,pennyweight,,pound (troy),,0.004166666908,0
 Mass,pennyweight,,stone,,0.0002448979592,0
 Mass,pennyweight,,ton (long),,1.530612245e-006,0
-Mass,pennyweight,,ton (short),tn,1.714285714e-006,0
+Mass,pennyweight,,ton (short),tn,3/1750000,0
 Mass,pennyweight,,tonne (metric ton),t,1.55517384e-006,0
 Mass,pound (advp),lb,carat,,2267.96185,0
 Mass,pound (advp),lb,grain,gr,7000,0
@@ -3480,7 +3480,7 @@ Mass,pound (advp),lb,ounce (avdp),oz,16,0
 Mass,pound (advp),lb,ounce (troy),ozt,14.58333418,0
 Mass,pound (advp),lb,pennyweight,,291.6666667,0
 Mass,pound (advp),lb,pound (troy),,1.215277848,0
-Mass,pound (advp),lb,stone,,0.07142857143,0
+Mass,pound (advp),lb,stone,,1/14,0
 Mass,pound (advp),lb,ton (long),,0.0004464285714,0
 Mass,pound (advp),lb,ton (short),tn,1/2000,0
 Mass,pound (advp),lb,tonne (metric ton),t,0.00045359237,0
