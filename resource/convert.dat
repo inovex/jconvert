@@ -1116,16 +1116,16 @@ Pressure,pound/foot\u00B2,,inches of mercury,,0.0141390685571,0
 Pressure,pound/foot\u00B2,,kilogram/centimeter\u00B2,,0.000488242763639,0
 Pressure,pound/foot\u00B2,,kilogram/meter\u00B2,,4.88242763639,0
 Pressure,pound/foot\u00B2,,kilopascal,,0.0478802589804,0
-Pressure,pound/foot\u00B2,,ksi,,6.944444444444E-06,0
+Pressure,pound/foot\u00B2,,ksi,,1/144000,0
 Pressure,pound/foot\u00B2,,megapascal,,4.78802589804E-05,0
 Pressure,pound/foot\u00B2,,microbar,,478.802589804,0
 Pressure,pound/foot\u00B2,,millibar,,0.478802589804,0
 Pressure,pound/foot\u00B2,,millimeters of mercury,,0.359132468613,0
 Pressure,pound/foot\u00B2,,pascal,,47.8802589804,0
 Pressure,pound/foot\u00B2,,pound/foot\u00B2,,1,0
-Pressure,pound/foot\u00B2,,pound/inch\u00B2,,0.00694444444444,0
+Pressure,pound/foot\u00B2,,pound/inch\u00B2,,1/144,0
 Pressure,pound/foot\u00B2,,poundal/foot\u00B2,,32.1740485565,0
-Pressure,pound/foot\u00B2,,PSI,,0.00694444444444,0
+Pressure,pound/foot\u00B2,,PSI,,1/144,0
 Pressure,pound/foot\u00B2,,ton/foot\u00B2,,1/2000,0
 Pressure,pound/foot\u00B2,,ton/inch\u00B2,,3.47222222223E-06,0
 Pressure,pound/foot\u00B2,,torr,,0.359131476191,0
@@ -1211,7 +1211,7 @@ Pressure,ton/foot\u00B2,,pound/inch\u00B2,,13.8888888889,0
 Pressure,ton/foot\u00B2,,poundal/foot\u00B2,,64348.0971129,0
 Pressure,ton/foot\u00B2,,PSI,,13.8888888889,0
 Pressure,ton/foot\u00B2,,ton/foot\u00B2,,1,0
-Pressure,ton/foot\u00B2,,ton/inch\u00B2,,0.00694444444444,0
+Pressure,ton/foot\u00B2,,ton/inch\u00B2,,1/144,0
 Pressure,ton/foot\u00B2,,torr,,718.262952382,0
 Pressure,ton/inch\u00B2,,atmosphere,,136.09192782,0
 Pressure,ton/inch\u00B2,,bar,,137.895145863,0
@@ -2331,7 +2331,7 @@ Flow,gallon (UK)/day,,foot\u00B3/hour,,0.006689321828,0
 Flow,gallon (UK)/day,,foot\u00B3/minute,,0.0001114886971,0
 Flow,gallon (UK)/day,,foot\u00B3/second,,1.858144952e-006,0
 Flow,gallon (UK)/day,,gallon (UK)/hour,,0.04166666667,0
-Flow,gallon (UK)/day,,gallon (UK)/minute,,0.0006944444444,0
+Flow,gallon (UK)/day,,gallon (UK)/minute,,1/1440,0
 Flow,gallon (UK)/day,,gallon (UK)/second,,1.157407407e-005,0
 Flow,gallon (UK)/day,,gallon/day,,1.200950454,0
 Flow,gallon (UK)/day,,gallon/hour,,0.05003960224,0
@@ -2383,7 +2383,7 @@ Flow,gallon (UK)/hour,,milliliter/minute,,75.7682,0
 Flow,gallon (UK)/hour,,milliliter/second,,1.262803333,0
 Flow,gallon (UK)/hour,,ounce (UK)/hour,,160,0
 Flow,gallon (UK)/hour,,ounce (UK)/minute,,2.666666667,0
-Flow,gallon (UK)/hour,,ounce (UK)/second,,0.04444444444,0
+Flow,gallon (UK)/hour,,ounce (UK)/second,,6/135,0
 Flow,gallon (UK)/hour,,ounce/hour,,153.7216581,0
 Flow,gallon (UK)/hour,,ounce/minute,,2.562027635,0
 Flow,gallon (UK)/hour,,ounce/second,,0.04270046058,0
@@ -2467,7 +2467,7 @@ Flow,gallon/day,,gallon (UK)/hour,,0.03469474243,0
 Flow,gallon/day,,gallon (UK)/minute,,0.0005782457072,0
 Flow,gallon/day,,gallon (UK)/second,,9.637428453e-006,0
 Flow,gallon/day,,gallon/hour,,0.04166666667,0
-Flow,gallon/day,,gallon/minute,,0.0006944444444,0
+Flow,gallon/day,,gallon/minute,,1/1440,0
 Flow,gallon/day,,gallon/second,,1.157407407e-005,0
 Flow,gallon/day,,liter/day,,3.785411784,0
 Flow,gallon/day,,liter/hour,,0.157725491,0
@@ -2589,7 +2589,7 @@ Flow,gallon/second,,yard\u00B3/hour,,17.82407407,0
 Flow,gallon/second,,yard\u00B3/minute,,0.2970679012,0
 Flow,gallon/second,,yard\u00B3/second,,0.004951131687,0
 Flow,liter/day,,centimeter\u00B3/hour,,41.66666667,0
-Flow,liter/day,,centimeter\u00B3/minute,,0.6944444444,0
+Flow,liter/day,,centimeter\u00B3/minute,,25/36,0
 Flow,liter/day,,centimeter\u00B3/second,,0.01157407407,0
 Flow,liter/day,,foot\u00B3/hour,,0.001471444447,0
 Flow,liter/day,,foot\u00B3/minute,,2.452407411e-005,0
@@ -2603,14 +2603,14 @@ Flow,liter/day,,gallon/hour,,0.01100716885,0
 Flow,liter/day,,gallon/minute,,0.0001834528141,0
 Flow,liter/day,,gallon/second,,3.057546902e-006,0
 Flow,liter/day,,liter/hour,,0.04166666667,0
-Flow,liter/day,,liter/minute,,0.0006944444444,0
+Flow,liter/day,,liter/minute,,1/1440,0
 Flow,liter/day,,liter/second,,1.157407407e-005,0
 Flow,liter/day,,meter\u00B3/day,,1/1000,0
 Flow,liter/day,,meter\u00B3/hour,,4.166666667e-005,0
-Flow,liter/day,,meter\u00B3/minute,,6.944444444e-007,0
+Flow,liter/day,,meter\u00B3/minute,,1/1440000,0
 Flow,liter/day,,meter\u00B3/second,,1.157407407e-008,0
 Flow,liter/day,,milliliter/hour,,41.66666667,0
-Flow,liter/day,,milliliter/minute,,0.6944444444,0
+Flow,liter/day,,milliliter/minute,,25/36,0
 Flow,liter/day,,milliliter/second,,0.01157407407,0
 Flow,liter/day,,ounce (UK)/hour,,1.46646101,0
 Flow,liter/day,,ounce (UK)/minute,,0.02444101684,0
@@ -2721,7 +2721,7 @@ Flow,liter/second,,yard\u00B3/hour,,4.70862223,0
 Flow,liter/second,,yard\u00B3/minute,,0.07847703716,0
 Flow,liter/second,,yard\u00B3/second,,0.001307950619,0
 Flow,meter\u00B3/day,,centimeter\u00B3/hour,,41666.66667,0
-Flow,meter\u00B3/day,,centimeter\u00B3/minute,,694.4444444,0
+Flow,meter\u00B3/day,,centimeter\u00B3/minute,,6250/9,0
 Flow,meter\u00B3/day,,centimeter\u00B3/second,,11.57407407,0
 Flow,meter\u00B3/day,,foot\u00B3/hour,,1.471444447,0
 Flow,meter\u00B3/day,,foot\u00B3/minute,,0.02452407411,0
@@ -2736,13 +2736,13 @@ Flow,meter\u00B3/day,,gallon/minute,,0.1834528141,0
 Flow,meter\u00B3/day,,gallon/second,,0.003057546902,0
 Flow,meter\u00B3/day,,liter/day,,1000,0
 Flow,meter\u00B3/day,,liter/hour,,41.66666667,0
-Flow,meter\u00B3/day,,liter/minute,,0.6944444444,0
+Flow,meter\u00B3/day,,liter/minute,,25/36,0
 Flow,meter\u00B3/day,,liter/second,,0.01157407407,0
 Flow,meter\u00B3/day,,meter\u00B3/hour,,0.04166666667,0
-Flow,meter\u00B3/day,,meter\u00B3/minute,,0.0006944444444,0
+Flow,meter\u00B3/day,,meter\u00B3/minute,,1/1440,0
 Flow,meter\u00B3/day,,meter\u00B3/second,,1.157407407e-005,0
 Flow,meter\u00B3/day,,milliliter/hour,,41666.66667,0
-Flow,meter\u00B3/day,,milliliter/minute,,694.4444444,0
+Flow,meter\u00B3/day,,milliliter/minute,,6250/9,0
 Flow,meter\u00B3/day,,milliliter/second,,11.57407407,0
 Flow,meter\u00B3/day,,ounce (UK)/hour,,1466.46101,0
 Flow,meter\u00B3/day,,ounce (UK)/minute,,24.44101684,0
@@ -4151,17 +4151,17 @@ Velocity,kilometer/second,,mile/second,,0.6213711922,0
 Velocity,knot,,speed of light,C,1.716001956e-009,0
 Velocity,knot,,centimeter/hour,,185200,0
 Velocity,knot,,centimeter/minute,,3086.666667,0
-Velocity,knot,,centimeter/second,,51.44444444,0
+Velocity,knot,,centimeter/second,,463/9,0
 Velocity,knot,,foot/hour,,6076.115486,0
 Velocity,knot,,foot/minute,,101.2685914,0
 Velocity,knot,,foot/second,fps,1.687809857,0
 Velocity,knot,,kilometer/hour,kph,1.852,0
 Velocity,knot,,kilometer/minute,,0.03086666667,0
-Velocity,knot,,kilometer/second,,0.0005144444444,0
+Velocity,knot,,kilometer/second,,463/900000,0
 Velocity,knot,,mach,,0.001552055888,0
 Velocity,knot,,meter/hour,,1852,0
 Velocity,knot,,meter/minute,,30.86666667,0
-Velocity,knot,,meter/second,,0.5144444444,0
+Velocity,knot,,meter/second,,463/900,0
 Velocity,knot,,mile/hour,mph,1.150779448,0
 Velocity,knot,,mile/minute,,0.01917965747,0
 Velocity,knot,,mile/second,,0.0003196609578,0
