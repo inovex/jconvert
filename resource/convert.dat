@@ -3321,8 +3321,8 @@ Light,meter-candles,,lux,,1,0
 
 Mass,carat,,grain,gr,3.086471671,0
 Mass,carat,,gram,g,1/5,0
-Mass,carat,,kilogram,kg,0.0002,0
-Mass,carat,,megagram,Mg,2e-007,0
+Mass,carat,,kilogram,kg,1/5000,0
+Mass,carat,,megagram,Mg,1/5000000,0
 Mass,carat,,microgram,g,200000,0
 Mass,carat,,milligram,mg,200,0
 Mass,carat,,ounce (avdp),oz,0.00705479239,0
@@ -3352,7 +3352,7 @@ Mass,grain,gr,tonne (metric ton),t,6.479891e-008,0
 Mass,gram,g,carat,,5,0
 Mass,gram,g,grain,gr,15.4324,0
 Mass,gram,g,kilogram,kg,1/1000,0
-Mass,gram,g,megagram,Mg,1e-006,0
+Mass,gram,g,megagram,Mg,1/1000000,0
 Mass,gram,g,microgram,g,1000000,0
 Mass,gram,g,milligram,mg,1000,0
 Mass,gram,g,ounce (avdp),oz,0.0352736,0
@@ -3383,7 +3383,7 @@ Mass,megagram,Mg,carat,,5000000,0
 Mass,megagram,Mg,grain,gr,15432358.35,0
 Mass,megagram,Mg,gram,g,1000000,0
 Mass,megagram,Mg,kilogram,kg,1000,0
-Mass,megagram,Mg,microgram,g,1e+012,0
+Mass,megagram,Mg,microgram,g,1/1000000000000,0
 Mass,megagram,Mg,milligram,mg,1000000000,0
 Mass,megagram,Mg,ounce (avdp),oz,35273.96195,0
 Mass,megagram,Mg,ounce (troy),ozt,32150.74843,0
@@ -3394,11 +3394,11 @@ Mass,megagram,Mg,stone,,157.4730444,0
 Mass,megagram,Mg,ton (long),,0.9842065276,0
 Mass,megagram,Mg,ton (short),tn,1.102311311,0
 Mass,megagram,Mg,tonne (metric ton),t,1,0
-Mass,microgram,g,carat,,5e-006,0
+Mass,microgram,g,carat,,1/200000,0
 Mass,microgram,g,grain,gr,1.543235835e-005,0
-Mass,microgram,g,gram,g,1e-006,0
-Mass,microgram,g,kilogram,kg,1e-009,0
-Mass,microgram,g,megagram,Mg,1e-012,0
+Mass,microgram,g,gram,g,1/1000000,0
+Mass,microgram,g,kilogram,kg,1/1000000000,0
+Mass,microgram,g,megagram,Mg,1/1000000000000,0
 Mass,microgram,g,milligram,mg,1/1000,0
 Mass,microgram,g,ounce (avdp),oz,3.527396195e-008,0
 Mass,microgram,g,ounce (troy),ozt,3.215074843e-008,0
@@ -3408,12 +3408,12 @@ Mass,microgram,g,pound (troy),,2.679229036e-009,0
 Mass,microgram,g,stone,,1.574730444e-010,0
 Mass,microgram,g,ton (long),,9.842065276e-013,0
 Mass,microgram,g,ton (short),tn,1.102311311e-012,0
-Mass,microgram,g,tonne (metric ton),t,1e-012,0
+Mass,microgram,g,tonne (metric ton),t,1/1000000000000,0
 Mass,milligram,mg,carat,,1/200,0
 Mass,milligram,mg,grain,gr,0.01543235835,0
 Mass,milligram,mg,gram,g,1/1000,0
-Mass,milligram,mg,kilogram,kg,1e-006,0
-Mass,milligram,mg,megagram,Mg,1e-009,0
+Mass,milligram,mg,kilogram,kg,1/1000000,0
+Mass,milligram,mg,megagram,Mg,1/1000000000,0
 Mass,milligram,mg,microgram,g,1000,0
 Mass,milligram,mg,ounce (avdp),oz,3.527396195e-005,0
 Mass,milligram,mg,ounce (troy),ozt,3.215074843e-005,0
