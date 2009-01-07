@@ -4717,7 +4717,7 @@ Volume,ounce (UK),,cup,,0.1200950454,0
 Volume,ounce (UK),,dram,,7.686026858,0
 Volume,ounce (UK),,drop,,438.1188668,0
 Volume,ounce (UK),,gallon,gal,0.00750594014,0
-Volume,ounce (UK),,gallon (UK),,0.00625,0
+Volume,ounce (UK),,gallon (UK),,1/160,0
 Volume,ounce (UK),,liter,,0.028413075,0
 Volume,ounce (UK),,milliliter,ml,28.413075,0
 Volume,ounce (UK),,minim (US),,461.1647302,0
