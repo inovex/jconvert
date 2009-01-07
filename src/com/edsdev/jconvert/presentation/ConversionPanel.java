@@ -140,15 +140,15 @@ public class ConversionPanel extends JPanel {
             fmt.setMaximumFractionDigits(30);
             if (reverse) {
                 if (txtTo.getText() != null && !txtTo.getText().trim().equals("")) {
-                    Double value = new Double(ctd.convert(txtTo.getText().trim(), toUnit, fromUnit));
+                    Double value = new Double(ctd.convert(txtTo.getText().trim().replaceAll(",", ""), toUnit, fromUnit));
                     txtFrom.setText(fmt.format(value));
                     txtToFract.setText("");
                 }
             } else {
                 if (txtFrom.getText() != null && !txtFrom.getText().trim().equals("")) {
-                    Double value = new Double(ctd.convert(txtFrom.getText().trim(), fromUnit, toUnit));
+                    Double value = new Double(ctd.convert(txtFrom.getText().trim().replaceAll(",", ""), fromUnit, toUnit));
                     txtTo.setText(fmt.format(value));
-                    String fractVal = ctd.convertFraction(txtFrom.getText().trim(), fromUnit, toUnit);
+                    String fractVal = ctd.convertFraction(txtFrom.getText().trim().replaceAll(",", ""), fromUnit, toUnit);
                     txtToFract.setText(fractVal);
                 }
             }

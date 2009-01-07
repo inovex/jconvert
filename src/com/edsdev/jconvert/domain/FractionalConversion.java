@@ -1,5 +1,7 @@
 package com.edsdev.jconvert.domain;
 
+import java.math.BigInteger;
+
 import com.edsdev.jconvert.util.Logger;
 
 /**
@@ -10,11 +12,11 @@ import com.edsdev.jconvert.util.Logger;
  */
 public class FractionalConversion extends Conversion {
 
-    private long fromToWholeNumber = 0;
+    private BigInteger fromToWholeNumber = BigInteger.ZERO;
 
-    private long fromToTopFactor = 1;
+    private BigInteger fromToTopFactor = BigInteger.ZERO;
 
-    private long fromToBottomFactor = 1;
+    private BigInteger fromToBottomFactor = BigInteger.ONE;
 
     private static Logger log = Logger.getInstance(FractionalConversion.class);
 
@@ -32,23 +34,27 @@ public class FractionalConversion extends Conversion {
      */
     public double convertValue(double value, String pFromUnit) {
         if (pFromUnit.equals(this.getFromUnit())) {
-            return getRoundedResult(((value * getEffectiveNumerator(this)) / fromToBottomFactor) + getFromToOffset());
+            return getRoundedResult(((value * getEffectiveNumerator(this).doubleValue()) / fromToBottomFactor
+                .doubleValue())
+                + getFromToOffset());
         } else {
-            return getRoundedResult(((value - getFromToOffset()) * fromToBottomFactor) / getEffectiveNumerator(this));
+            return getRoundedResult(((value - getFromToOffset()) * fromToBottomFactor.doubleValue())
+                / getEffectiveNumerator(this).doubleValue());
         }
     }
 
-    public String convertValue(long numerator, long denominator, String pFromUnit) {
+    public String convertValue(BigInteger numerator, BigInteger denominator, String pFromUnit) {
         if (isWholeNumber(getFromToOffset() + "")) {
             if (pFromUnit.equals(this.getFromUnit())) {
-                long newTop = numerator * getEffectiveNumerator(this);
-                long newBottom = denominator * fromToBottomFactor;
-                newTop += newBottom * getFromToOffset();
+                BigInteger newTop = numerator.multiply(getEffectiveNumerator(this));
+                BigInteger newBottom = denominator.multiply(fromToBottomFactor);
+                newTop = newTop.add(newBottom.multiply(getBigInteger(getFromToOffset() + "")));
                 return reduceFraction(newTop + "/" + newBottom);
             } else {
-                long newTop = numerator - (denominator * this.getLong(getFromToOffset() + ""));
-                newTop = newTop * fromToBottomFactor;
-                long newBottom = denominator * getEffectiveNumerator(this);
+                BigInteger newTop = numerator
+                    .subtract(denominator.multiply(this.getBigInteger(getFromToOffset() + "")));
+                newTop = newTop.multiply(fromToBottomFactor);
+                BigInteger newBottom = denominator.multiply(getEffectiveNumerator(this));
                 return reduceFraction(newTop + "/" + newBottom);
             }
         }
@@ -59,10 +65,13 @@ public class FractionalConversion extends Conversion {
         String rv = "1";
         if (byConversion instanceof FractionalConversion) {
             FractionalConversion fc = (FractionalConversion) byConversion;
-            long fcEn = getEffectiveNumerator(fc);
-            rv = (getEffectiveNumerator(this) * fcEn) + "/" + (this.getFromToBottomFactor() * fc.getFromToBottomFactor());
+            BigInteger fcEn = getEffectiveNumerator(fc);
+            rv = (getEffectiveNumerator(this).multiply(fcEn)) + "/"
+                + (this.getFromToBottomFactor().multiply(fc.getFromToBottomFactor()));
         } else {
-            rv = ((getEffectiveNumerator(this) * byConversion.getFromToFactor()) / this.getFromToBottomFactor()) + "";
+            rv = ((getEffectiveNumerator(this).doubleValue() * byConversion.getFromToFactor()) / this
+                .getFromToBottomFactor().doubleValue())
+                + "";
         }
         return rv;
     }
@@ -71,27 +80,29 @@ public class FractionalConversion extends Conversion {
         String rv = "1";
         if (byConversion instanceof FractionalConversion) {
             FractionalConversion fc = (FractionalConversion) byConversion;
-            long fcEn = getEffectiveNumerator(fc);
-            rv = (getEffectiveNumerator(this) * fc.getFromToBottomFactor()) + "/" + (this.getFromToBottomFactor() * fcEn);
+            BigInteger fcEn = getEffectiveNumerator(fc);
+            rv = (getEffectiveNumerator(this).multiply(fc.getFromToBottomFactor())) + "/"
+                + (this.getFromToBottomFactor().multiply(fcEn));
         } else {
-            rv = getEffectiveNumerator(this) / (this.getFromToBottomFactor() * byConversion.getFromToFactor()) + "";
+            rv = getEffectiveNumerator(this).doubleValue()
+                / (this.getFromToBottomFactor().doubleValue() * byConversion.getFromToFactor()) + "";
         }
         return rv;
     }
 
-    public long getFromToBottomFactor() {
+    public BigInteger getFromToBottomFactor() {
         return fromToBottomFactor;
     }
 
-    public void setFromToBottomFactor(long fromToBottomFactor) {
+    public void setFromToBottomFactor(BigInteger fromToBottomFactor) {
         this.fromToBottomFactor = fromToBottomFactor;
     }
 
-    public long getFromToTopFactor() {
+    public BigInteger getFromToTopFactor() {
         return fromToTopFactor;
     }
 
-    public void setFromToTopFactor(long fromToTopFactor) {
+    public void setFromToTopFactor(BigInteger fromToTopFactor) {
         this.fromToTopFactor = fromToTopFactor;
     }
 
@@ -131,43 +142,43 @@ public class FractionalConversion extends Conversion {
             String whole = fromToFactor.substring(0, spacePos).trim();
             String top = fromToFactor.substring(spacePos, pos).trim();
             String bottom = fromToFactor.substring(pos + 1).trim();
-            fromToTopFactor = getLong(top);
-            fromToBottomFactor = getLong(bottom);
+            fromToTopFactor = getBigInteger(top);
+            fromToBottomFactor = getBigInteger(bottom);
             if (whole.length() > 0) {
-                fromToWholeNumber = getLong(whole);
+                fromToWholeNumber = getBigInteger(whole);
             }
         } else if (isWholeNumber(fromToFactor)) {
             // representing a whole number like this helps preserve fractions -
             // bit of a trick
-            fromToWholeNumber = getLong(fromToFactor);
-            fromToTopFactor = 0;
-            fromToBottomFactor = 1;
+            fromToWholeNumber = getBigInteger(fromToFactor);
+            fromToTopFactor = BigInteger.ZERO;
+            fromToBottomFactor = BigInteger.ONE;
         } else {
             log.error("Tried to process decimal as fraction:" + fromToFactor);
             // TODO throw proper exception here
         }
     }
 
-    private static long getTop(String val) {
+    private static BigInteger getTop(String val) {
         int spacePos = val.indexOf(" ");
         if (spacePos < 0) {
             spacePos = 0;
         }
         int pos = val.indexOf("/");
-        return Long.parseLong(val.substring(spacePos, pos).trim());
+        return new BigInteger(val.substring(spacePos, pos).trim());
     }
 
-    private static long getBottom(String val) {
+    private static BigInteger getBottom(String val) {
         int pos = val.indexOf("/");
-        return Long.parseLong(val.substring(pos + 1, val.length()));
+        return new BigInteger(val.substring(pos + 1, val.length()));
     }
 
-    private static long getWholeNum(String val) {
+    private static BigInteger getWholeNum(String val) {
         int spacePos = val.indexOf(" ");
         if (spacePos < 0) {
-            return 0;
+            return BigInteger.ZERO;
         }
-        return Long.parseLong(val.substring(0, spacePos).trim());
+        return new BigInteger(val.substring(0, spacePos).trim());
     }
 
     /**
@@ -176,88 +187,47 @@ public class FractionalConversion extends Conversion {
      * @param fc FractionalConversion to evaluate
      * @return "effective numerator"
      */
-    private long getEffectiveNumerator(FractionalConversion fc) {
-        return fc.getFromToTopFactor() + (fc.getFromToWholeNumber() * fc.getFromToBottomFactor());
+    private BigInteger getEffectiveNumerator(FractionalConversion fc) {
+        return fc.getFromToTopFactor().add((fc.getFromToWholeNumber().multiply(fc.getFromToBottomFactor())));
     }
 
-    public long getFromToWholeNumber() {
+    public BigInteger getFromToWholeNumber() {
         return fromToWholeNumber;
     }
 
-    public void setFromToWholeNumber(long fromToWholeNumber) {
+    public void setFromToWholeNumber(BigInteger fromToWholeNumber) {
         this.fromToWholeNumber = fromToWholeNumber;
     }
 
     public static String reduceFraction(String val) {
-        long top = getTop(val);
-        long bottom = getBottom(val);
-        long whole = getWholeNum(val);
+        BigInteger top = getTop(val);
+        BigInteger bottom = getBottom(val);
+        BigInteger whole = getWholeNum(val);
 
-        double test;
-
-        if (Math.abs(top) > Math.abs(bottom)) {
-            double result = top / bottom;
-            long wholeNum = new Double(Math.floor(result)).longValue();
-            top = Math.abs(top - (wholeNum * bottom));
-            whole = whole + wholeNum;
+        if (top.abs().compareTo(bottom.abs()) == 1) {
+            BigInteger[] bis = top.divideAndRemainder(bottom);
+            BigInteger wholeNum = bis[0];
+            top = top.subtract(wholeNum.multiply(bottom)).abs();
+            whole = whole.add(wholeNum);
         }
 
-        if (top == 0) {
+        if (top.equals(BigInteger.ZERO)) {
             return whole + "";
         }
-        
-        //reduces to 1/x immediately if that is possible
-        test = bottom / (top + 0.0);
-        if (isInteger(test)) {
-            bottom = Math.round(test);
-            top = 1;
+
+        BigInteger gcd = top.gcd(bottom);
+        if (!gcd.equals(BigInteger.ONE)) {
+            top = top.divide(gcd);
+            bottom = bottom.divide(gcd);
         }
 
-        boolean reduction = true;
-
-        while (reduction) {
-            reduction = false;
-
-            for (double i = 2; i <= Math.sqrt(top); i++) {
-                double result = top / i;
-                if (result < i) {
-                    break;
-                }
-                if (isInteger(result)) {
-                    double result2 = bottom / i;
-                    if (isInteger(result2)) {
-                        reduction = true;
-                        top = Math.round(result);
-                        bottom = Math.round(result2);
-                        break;
-                    }
-                }
-            }
-        }
         String rv = "";
-        if (whole != 0) {
+        if (!whole.equals(BigInteger.ZERO)) {
             rv = whole + " ";
         }
-        if (top != 0) {
-            rv = rv + top + "/" + bottom;
-        }
+        rv += top + "/" + bottom;
         return rv.trim();
 
-    }
-
-    private static boolean isInteger(double val) {
-        String str = val + "";
-        boolean rv = true;
-        int pos = str.indexOf(".");
-        if (pos < 0) {
-            return rv;
-        }
-        for (int i = pos + 1; i < str.length(); i++) {
-            if (!str.substring(i, i + 1).equals("0")) {
-                return false;
-            }
-        }
-        return rv;
     }
 
     /*

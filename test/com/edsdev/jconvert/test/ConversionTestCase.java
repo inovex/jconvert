@@ -1,5 +1,6 @@
 package com.edsdev.jconvert.test;
 
+import java.math.BigInteger;
 import java.util.Iterator;
 
 import junit.framework.TestCase;
@@ -82,10 +83,14 @@ public class ConversionTestCase extends TestCase {
 
         // assertions for testing fractional conversions using fractions and resulting in fractions
         FractionalConversion fc = (FractionalConversion) Conversion.createInstance("a", "", "b", "", "1/3", 2);
-        System.out.println(fc.convertValue(1, 2, "a") + " should = " + fc.convertValue(0.5, "a"));
-        System.out.println(fc.convertValue(1, 2, "b") + " should = " + fc.convertValue(0.5, "b"));
-        assertTrue("1/2 converted to a should be 2 1/6", fc.convertValue(1, 2, "a").equals("2 1/6"));
-        assertTrue("1/2 converted to b should be -4 1/2", fc.convertValue(1, 2, "b").equals("-4 1/2"));
+        System.out.println(fc.convertValue(BigInteger.ONE, new BigInteger("2"), "a") + " should = "
+            + fc.convertValue(0.5, "a"));
+        System.out.println(fc.convertValue(BigInteger.ONE, new BigInteger("2"), "b") + " should = "
+            + fc.convertValue(0.5, "b"));
+        assertTrue("1/2 converted to a should be 2 1/6", fc.convertValue(BigInteger.ONE, new BigInteger("2"), "a")
+            .equals("2 1/6"));
+        assertTrue("1/2 converted to b should be -4 1/2", fc.convertValue(BigInteger.ONE, new BigInteger("2"), "b")
+            .equals("-4 1/2"));
     }
 
     public void testGapBuilder() throws Exception {

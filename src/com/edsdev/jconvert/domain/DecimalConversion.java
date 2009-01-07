@@ -1,5 +1,7 @@
 package com.edsdev.jconvert.domain;
 
+import java.math.BigInteger;
+
 /**
  * This is the class that represents a decimal conversion in the application. By decimal conversion we mean 1.024 or
  * some other decimal factor
@@ -15,7 +17,7 @@ public class DecimalConversion extends Conversion {
     }
 
     public DecimalConversion(String fromUnit, String fromUnitAbbr, String toUnit, String toUnitAbbr,
-            String fromToFactor, double fromToOffset) {
+        String fromToFactor, double fromToOffset) {
         super(fromUnit, fromUnitAbbr, toUnit, toUnitAbbr, fromToFactor, fromToOffset);
         setFromToFactorString(fromToFactor);
     }
@@ -33,19 +35,20 @@ public class DecimalConversion extends Conversion {
             return getRoundedResult((value - getFromToOffset()) / fromToFactor);
         }
     }
-    
-	/**
-	 * Method returns nothing since this is a Decimal conversion and it does not know how to handle fractions
-	 */
-	public String convertValue(long numerator, long denominator, String pFromUnit) {
-		return null;
-	}
+
+    /**
+     * Method returns nothing since this is a Decimal conversion and it does not know how to handle fractions
+     */
+    public String convertValue(BigInteger numerator, BigInteger denominator, String pFromUnit) {
+        return null;
+    }
 
     public String multiply(Conversion byConversion) {
         String rv = "1";
         if (byConversion instanceof FractionalConversion) {
             FractionalConversion fc = (FractionalConversion) byConversion;
-            rv = (this.getFromToFactor() * fc.getFromToTopFactor()) / fc.getFromToBottomFactor() + "";
+            rv = (this.getFromToFactor() * fc.getFromToTopFactor().doubleValue())
+                / fc.getFromToBottomFactor().doubleValue() + "";
         } else {
             rv = (this.getFromToFactor() * byConversion.getFromToFactor()) + "";
         }
@@ -56,7 +59,8 @@ public class DecimalConversion extends Conversion {
         String rv = "1";
         if (byConversion instanceof FractionalConversion) {
             FractionalConversion fc = (FractionalConversion) byConversion;
-            rv = (this.getFromToFactor() * fc.getFromToBottomFactor()) / fc.getFromToTopFactor() + "";
+            rv = (this.getFromToFactor() * fc.getFromToBottomFactor().doubleValue())
+                / fc.getFromToTopFactor().doubleValue() + "";
         } else {
             rv = (this.getFromToFactor() / byConversion.getFromToFactor()) + "";
         }
@@ -73,47 +77,42 @@ public class DecimalConversion extends Conversion {
 
     /*
      * (non-Javadoc)
-     * 
      * @see com.edsdev.jconvert.domain.Conversion#getFromToBottomFactor()
      */
-    public long getFromToBottomFactor() {
-        //TODO do appropriate exception handling here
+    public BigInteger getFromToBottomFactor() {
+        // TODO do appropriate exception handling here
         throw new RuntimeException("Not Supported");
     }
 
     /*
      * (non-Javadoc)
-     * 
      * @see com.edsdev.jconvert.domain.Conversion#setFromToBottomFactor(long)
      */
-    public void setFromToBottomFactor(long fromToBottomFactor) {
-        //TODO do appropriate exception handling here
+    public void setFromToBottomFactor(BigInteger fromToBottomFactor) {
+        // TODO do appropriate exception handling here
         throw new RuntimeException("Not Supported");
     }
 
     /*
      * (non-Javadoc)
-     * 
      * @see com.edsdev.jconvert.domain.Conversion#getFromToTopFactor()
      */
-    public long getFromToTopFactor() {
-        //TODO do appropriate exception handling here
+    public BigInteger getFromToTopFactor() {
+        // TODO do appropriate exception handling here
         throw new RuntimeException("Not Supported");
     }
 
     /*
      * (non-Javadoc)
-     * 
      * @see com.edsdev.jconvert.domain.Conversion#setFromToTopFactor(long)
      */
-    public void setFromToTopFactor(long fromToTopFactor) {
-        //TODO do appropriate exception handling here
+    public void setFromToTopFactor(BigInteger fromToTopFactor) {
+        // TODO do appropriate exception handling here
         throw new RuntimeException("Not Supported");
     }
 
     /*
      * (non-Javadoc)
-     * 
      * @see com.edsdev.jconvert.domain.Conversion#setFromToFactorString(java.lang.String)
      */
     public void setFromToFactorString(String factor) {
@@ -122,7 +121,6 @@ public class DecimalConversion extends Conversion {
 
     /*
      * (non-Javadoc)
-     * 
      * @see com.edsdev.jconvert.domain.Conversion#getFromToFactorString()
      */
     public String getFromToFactorString() {

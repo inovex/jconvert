@@ -1,5 +1,7 @@
 package com.edsdev.jconvert.domain;
 
+import java.math.BigInteger;
+
 /**
  * This is the abstract class that represents a conversion itself.
  * 
@@ -127,19 +129,34 @@ public abstract class Conversion implements Comparable {
         return true;
     }
 
+//    /**
+//     * Simply extracts long out of string, but also handles it when there is decimals - should use isWhole number to
+//     * make sure, because this will throw an exception if not perfect
+//     * 
+//     * @param value String representation of the long
+//     * @return long representation of the value passed in.
+//     */
+//    protected long getLong(String value) {
+//        int pos = value.indexOf(".");
+//        if (pos < 0) {
+//            return Long.parseLong(value.trim());
+//        }
+//        return Long.parseLong(value.substring(0, pos));
+//    }
+
     /**
-     * Simply extracts long out of string, but also handles it when there is decimals - should use isWhole number to
-     * make sure, because this will throw an exception if not prefect
+     * Simply extracts BigInteger out of string, but also handles it when there is decimals - should use isWhole number
+     * to make sure, because this will throw an exception if not perfect
      * 
      * @param value String representation of the long
-     * @return long representation of the value passed in.
+     * @return BigInteger representation of the value passed in.
      */
-    protected long getLong(String value) {
+    protected BigInteger getBigInteger(String value) {
         int pos = value.indexOf(".");
         if (pos < 0) {
-            return Long.parseLong(value.trim());
+            return new BigInteger(value.trim());
         }
-        return Long.parseLong(value.substring(0, pos));
+        return new BigInteger(value.substring(0, pos));
     }
 
     public int hashCode() {
@@ -201,7 +218,7 @@ public abstract class Conversion implements Comparable {
      * @param pFromUnit
      * @return
      */
-    public abstract String convertValue(long numerator, long denominator, String pFromUnit);
+    public abstract String convertValue(BigInteger numerator, BigInteger denominator, String pFromUnit);
 
     protected double getRoundedResult(double result) {
         return result;
@@ -226,8 +243,8 @@ public abstract class Conversion implements Comparable {
     public Double convertValue(String value, String pFromUnit, String pTtoUnit) {
         double theValue = 0;
         if (isFraction(value)) {
-            theValue = (getNumerator(value) * 1.0) / getDenominator(value);
-            theValue = theValue + getWholeNum(value);
+            theValue = (getNumerator(value).doubleValue() * 1.0) / getDenominator(value).doubleValue();
+            theValue = theValue + getWholeNum(value).doubleValue();
         } else {
             theValue = Double.parseDouble(value);
         }
@@ -272,7 +289,7 @@ public abstract class Conversion implements Comparable {
         if (!isFraction(value)) {
             return null;
         }
-        long numerator = getNumerator(value) + (getDenominator(value) * getWholeNum(value));
+        BigInteger numerator = getNumerator(value).add((getDenominator(value).multiply(getWholeNum(value))));
 
         if (this.getFromUnit().equals(pFromUnit) && this.getToUnit().equals(pToUnit)) {
             return convertValue(numerator, getDenominator(value), pFromUnit);
@@ -284,35 +301,35 @@ public abstract class Conversion implements Comparable {
 
     }
 
-    private long getNumerator(String value) {
+    private BigInteger getNumerator(String value) {
         int spacePos = value.indexOf(" ");
         if (spacePos < 0) {
             spacePos = 0;
         }
         int pos = value.indexOf("/");
         if (pos > 0) {
-            return getLong(value.substring(spacePos, pos).trim());
+            return getBigInteger(value.substring(spacePos, pos).trim());
         }
-        return getLong(value);
+        return getBigInteger(value);
     }
 
-    private long getDenominator(String value) {
+    private BigInteger getDenominator(String value) {
         int pos = value.indexOf("/");
         if (pos > 0) {
             if (value.length() == pos + 1) {
-                return 1;
+                return BigInteger.ONE;
             }
-            return getLong(value.substring(pos + 1));
+            return getBigInteger(value.substring(pos + 1));
         }
-        return 1;
+        return BigInteger.ONE;
     }
 
-    private long getWholeNum(String value) {
+    private BigInteger getWholeNum(String value) {
         int spacePos = value.indexOf(" ");
         if (spacePos < 0) {
-            return 0;
+            return BigInteger.ZERO;
         }
-        return getLong(value.substring(0, spacePos).trim());
+        return getBigInteger(value.substring(0, spacePos).trim());
     }
 
     public boolean isFraction(String value) {
@@ -506,13 +523,13 @@ public abstract class Conversion implements Comparable {
         return -1;
     }
 
-    public abstract long getFromToBottomFactor();
+    public abstract BigInteger getFromToBottomFactor();
 
-    public abstract void setFromToBottomFactor(long fromToBottomFactor);
+    public abstract void setFromToBottomFactor(BigInteger fromToBottomFactor);
 
-    public abstract long getFromToTopFactor();
+    public abstract BigInteger getFromToTopFactor();
 
-    public abstract void setFromToTopFactor(long fromToTopFactor);
+    public abstract void setFromToTopFactor(BigInteger fromToTopFactor);
 
     public abstract void setFromToFactorString(String factor);
 
