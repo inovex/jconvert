@@ -165,7 +165,7 @@ public abstract class Conversion implements Comparable {
 
     public String toString() {
         if (this instanceof FractionalConversion) {
-            return this.hashCode() + ": " + fromUnit + ";" + toUnit + ";" + getFromToTopFactor() + "/"
+            return this.hashCode() + ": " + fromUnit + ";" + toUnit + ";" + getFromToWholeNumber() + " " + getFromToTopFactor() + "/"
                 + getFromToBottomFactor() + ";" + fromToOffset;
         } else {
             return this.hashCode() + ": " + fromUnit + ";" + toUnit + ";" + getFromToFactor() + ";" + fromToOffset;
@@ -522,6 +522,10 @@ public abstract class Conversion implements Comparable {
         }
         return -1;
     }
+
+    public abstract BigInteger getFromToWholeNumber();
+
+    public abstract void setFromToWholeNumber(BigInteger fromToWholeNumber);
 
     public abstract BigInteger getFromToBottomFactor();
 

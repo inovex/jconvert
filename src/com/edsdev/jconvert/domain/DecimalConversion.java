@@ -127,4 +127,14 @@ public class DecimalConversion extends Conversion {
         return fromToFactor + "";
     }
 
+	public BigInteger getFromToWholeNumber() {
+        // TODO do appropriate exception handling here
+        throw new RuntimeException("Not Supported");
+	}
+
+	public void setFromToWholeNumber(BigInteger fromToWholeNumber) {
+        // TODO do appropriate exception handling here
+        throw new RuntimeException("Not Supported");
+	}
+
 }

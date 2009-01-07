@@ -235,7 +235,7 @@ public class FractionalConversion extends Conversion {
      * @see com.edsdev.jconvert.domain.Conversion#getFromToFactorString()
      */
     public String getFromToFactorString() {
-        return fromToTopFactor + "/" + fromToBottomFactor;
+        return fromToWholeNumber + " " +  fromToTopFactor + "/" + fromToBottomFactor;
     }
 
 }
