@@ -156,6 +156,41 @@
         experiment with pointing at sites that have a more comprehensive selection of currencies.
         </p>
 
+        <h1>Using JConvert to hold recipes</h1>
+        <p>
+        While tinkering with JConvert, I had the idea to use JConvert to hold recipes.  This may not seem like the best solution, 
+        especially if you have hundreds of recipes (If you have some ideas, please post it on the forums).  However, JConvert
+        does provide some pretty useful conversions when working with recipes.  For example, lets say that you have a recipe that
+        you want to make 3 1/2 batches of and there are 1/3 cups of butter per batch.  Well, if you have your recipe in JConvert
+        you can find out that is 1 1/6 cups of butter.  Or lets say that you only have 2 cups of butter.  How many batches can you
+        make?  How many cups of sugar will you need?  JConvert would tell you 6 batches and 3 cups of sugar.
+        </p>
+        <p>
+        Here is how to use JConvert to enter a recipe.  First, you may want to clean out all the tabs you do not want to see.
+        Do <i>File -> Settings</i> and in the <i>Hidden Tabs</i> section, check all boxes except for volume (since that may be handy).
+        Now create a custom conversion using the <i>File -> Add Custom Conversion</i> menu.  Paste the following information into
+        The box at the bottom (this is just to get my recipe)
+        
+        <code><br/>
+Mini Chip sugar cookies,Batch,,Cookies,,18,0<br/>
+Mini Chip sugar cookies,Batch,,cup softened butter,,1/3,0<br/>
+Mini Chip sugar cookies,Batch,,cup packed brn sugar,,1/2,0<br/>
+Mini Chip sugar cookies,Batch,,egg,,1,0<br/>
+Mini Chip sugar cookies,Batch,,cup white sugar,,3/4,0<br/>
+Mini Chip sugar cookies,Batch,,teaspoon vanilla,,1,0<br/>
+Mini Chip sugar cookies,Batch,,cup all-purp flower,,2,0<br/>
+Mini Chip sugar cookies,Batch,,teaspoon baking soda,,1,0<br/>
+Mini Chip sugar cookies,Batch,,teaspoon baking powder,,1/2,0<br/>
+Mini Chip sugar cookies,Batch,,teaspoon salt,,1/2,0<br/>
+Mini Chip sugar cookies,Batch,,cup buttermilk,,1/2,0<br/>
+Mini Chip sugar cookies,Batch,,cup mini semi sweet choc chips,,3/2,0<br/>
+        </code>
+        
+        Now press the <i>Close</i> button and play around to see what was talked about above.  Enter your own recipes by filling
+        in the fields in the <i>Add Custom Conversion</i> screen, mimicking the same Batch to ingreedient style as above.
+        </p>
+
+
         <h1>once more</h1>
 			<a href="http://sourceforge.net">
 			<img src="http://sflogo.sourceforge.net/sflogo.php?group_id=201265&amp;type=6"
