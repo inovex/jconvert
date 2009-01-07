@@ -4465,40 +4465,40 @@ Volume,cubic foot,,cubic centimeter,CC,28316.84659,0
 Volume,cubic foot,,cubic inch,cui,1728,0
 Volume,cubic foot,,cubic meter,,0.02831684659,0
 Volume,cubic foot,,cubic yard,,1/27,0
-Volume,cubic foot,,cup,,119.6883117,0
+Volume,cubic foot,,cup,,27648/231,0
 Volume,cubic foot,,dram,,7660.000246,0
 Volume,cubic foot,,drop,,436635.298,0
-Volume,cubic foot,,gallon,gal,7.480519481,0
+Volume,cubic foot,,gallon,gal,1728/231,0
 Volume,cubic foot,,gallon (UK),,6.228832719,0
 Volume,cubic foot,,liter,,28.31684659,0
 Volume,cubic foot,,milliliter,ml,28316.84659,0
 Volume,cubic foot,,minim (US),,459603.1229,0
-Volume,cubic foot,,ounce,oz,957.5064935,0
+Volume,cubic foot,,ounce,oz,221184/231,0
 Volume,cubic foot,,ounce (UK),,996.613235,0
-Volume,cubic foot,,pint,pt,59.84415584,0
+Volume,cubic foot,,pint,pt,13824/231,0
 Volume,cubic foot,,pint (UK),,49.83068367,0
-Volume,cubic foot,,quart,qt,29.92207792,0
-Volume,cubic foot,,tablespoon,tbs,1915.012987,0
-Volume,cubic foot,,teaspoon,,5745.038961,0
+Volume,cubic foot,,quart,qt,6912/231,0
+Volume,cubic foot,,tablespoon,tbs,442368/231,0
+Volume,cubic foot,,teaspoon,,1327104/231,0
 Volume,cubic inch,cui,cubic centimeter,CC,16.387064,0
 Volume,cubic inch,cui,cubic foot,,1/1728,0
 Volume,cubic inch,cui,cubic meter,,1.6387064e-005,0
 Volume,cubic inch,cui,cubic yard,,1/46656,0
-Volume,cubic inch,cui,cup,,0.06926406926,0
+Volume,cubic inch,cui,cup,,16/231,0
 Volume,cubic inch,cui,dram,,4.432870449,0
 Volume,cubic inch,cui,drop,,252.6824605,0
-Volume,cubic inch,cui,gallon,gal,0.004329004329,0
+Volume,cubic inch,cui,gallon,gal,1/231,0
 Volume,cubic inch,cui,gallon (UK),,0.003604648564,0
 Volume,cubic inch,cui,liter,,0.016387064,0
 Volume,cubic inch,cui,milliliter,ml,16.387064,0
 Volume,cubic inch,cui,minim (US),,265.9740256,0
-Volume,cubic inch,cui,ounce,oz,0.5541125541,0
+Volume,cubic inch,cui,ounce,oz,128/231,0
 Volume,cubic inch,cui,ounce (UK),,0.5767437703,0
-Volume,cubic inch,cui,pint,pt,0.03463203463,0
+Volume,cubic inch,cui,pint,pt,8/231,0
 Volume,cubic inch,cui,pint (UK),,0.0288372012,0
-Volume,cubic inch,cui,quart,qt,0.01731601732,0
-Volume,cubic inch,cui,tablespoon,tbs,1.108225108,0
-Volume,cubic inch,cui,teaspoon,,3.324675325,0
+Volume,cubic inch,cui,quart,qt,4/231,0
+Volume,cubic inch,cui,tablespoon,tbs,256/231,0
+Volume,cubic inch,cui,teaspoon,,768/231,0
 Volume,cubic meter,,cubic centimeter,CC,1000000,0
 Volume,cubic meter,,cubic foot,,35.31466672,0
 Volume,cubic meter,,cubic inch,cui,61023.74409,0
@@ -4522,26 +4522,26 @@ Volume,cubic yard,,cubic centimeter,CC,764554.858,0
 Volume,cubic yard,,cubic foot,,27,0
 Volume,cubic yard,,cubic inch,cui,46656,0
 Volume,cubic yard,,cubic meter,,0.764554858,0
-Volume,cubic yard,,cup,,3231.584416,0
+Volume,cubic yard,,cup,,746496/231,0
 Volume,cubic yard,,dram,,206820.0042,0
 Volume,cubic yard,,drop,,11789152.91,0
-Volume,cubic yard,,gallon,gal,201.974026,0
+Volume,cubic yard,,gallon,gal,46656/231,0
 Volume,cubic yard,,gallon (UK),,168.1784834,0
 Volume,cubic yard,,liter,,764.554858,0
 Volume,cubic yard,,milliliter,ml,764554.858,0
 Volume,cubic yard,,minim (US),,12409284.17,0
-Volume,cubic yard,,ounce,oz,25852.67532,0
+Volume,cubic yard,,ounce,oz,5971968/231,0
 Volume,cubic yard,,ounce (UK),,26908.55735,0
-Volume,cubic yard,,pint,pt,1615.792208,0
+Volume,cubic yard,,pint,pt,373248/231,0
 Volume,cubic yard,,pint (UK),,1345.429055,0
-Volume,cubic yard,,quart,qt,807.8961039,0
-Volume,cubic yard,,tablespoon,tbs,51705.35065,0
-Volume,cubic yard,,teaspoon,,155116.0519,0
+Volume,cubic yard,,quart,qt,186624/231,0
+Volume,cubic yard,,tablespoon,tbs,11943936/231,0
+Volume,cubic yard,,teaspoon,,35831808/231,0
 Volume,cup,,cubic centimeter,CC,236.5882365,0
-Volume,cup,,cubic foot,,0.008355034722,0
-Volume,cup,,cubic inch,cui,14.4375,0
+Volume,cup,,cubic foot,,231/27648,0
+Volume,cup,,cubic inch,cui,231/16,0
 Volume,cup,,cubic meter,,0.0002365882365,0
-Volume,cup,,cubic yard,,0.0003094457305,0
+Volume,cup,,cubic yard,,231/746496,0
 Volume,cup,,dram,,63.99956805,0
 Volume,cup,,drop,,3648.103077,0
 Volume,cup,,gallon,gal,1/16,0
@@ -4595,10 +4595,10 @@ Volume,drop,,quart,qt,6.852876614e-005,0
 Volume,drop,,tablespoon,tbs,0.00438584247,0
 Volume,drop,,teaspoon,,0.01315752207,0
 Volume,gallon,gal,cubic centimeter,CC,3785.411784,0
-Volume,gallon,gal,cubic foot,,0.1336805556,0
+Volume,gallon,gal,cubic foot,,231/1728,0
 Volume,gallon,gal,cubic inch,cui,231,0
 Volume,gallon,gal,cubic meter,,0.003785411784,0
-Volume,gallon,gal,cubic yard,,0.004951131687,0
+Volume,gallon,gal,cubic yard,,231/46656,0
 Volume,gallon,gal,cup,,16,0
 Volume,gallon,gal,dram,,1023.993078,0
 Volume,gallon,gal,drop,,58369.64862,0
@@ -4654,14 +4654,14 @@ Volume,liter,,teaspoon,,202.8841362,0
 Volume,milliliter,ml,cubic centimeter,CC,1,0
 Volume,milliliter,ml,cubic foot,,3.531466672e-005,0
 Volume,milliliter,ml,cubic inch,cui,0.06102374409,0
-Volume,milliliter,ml,cubic meter,,1e-006,0
+Volume,milliliter,ml,cubic meter,,1/1000000,0
 Volume,milliliter,ml,cubic yard,,1.307950619e-006,0
 Volume,milliliter,ml,cup,,0.004226752838,0
 Volume,milliliter,ml,dram,,0.2705103519,0
 Volume,milliliter,ml,drop,,15.41962981,0
 Volume,milliliter,ml,gallon,gal,0.0002641720524,0
 Volume,milliliter,ml,gallon (UK),,0.0002199691515,0
-Volume,milliliter,ml,liter,,0.0002199691515,0
+Volume,milliliter,ml,liter,,1/1000,0
 Volume,milliliter,ml,minim (US),,16.23073088,0
 Volume,milliliter,ml,ounce,oz,0.0338140227,0
 Volume,milliliter,ml,ounce (UK),,0.03519506424,0
@@ -4690,10 +4690,10 @@ Volume,minim (US),,quart,qt,6.510416647e-005,0
 Volume,minim (US),,tablespoon,tbs,0.004166668019,0
 Volume,minim (US),,teaspoon,,0.01249999899,0
 Volume,ounce,oz,cubic centimeter,CC,29.57352956,0
-Volume,ounce,oz,cubic foot,,0.00104437934,0
-Volume,ounce,oz,cubic inch,cui,1.8046875,0
+Volume,ounce,oz,cubic foot,,231/221184,0
+Volume,ounce,oz,cubic inch,cui,231/128,0
 Volume,ounce,oz,cubic meter,,2.957352956e-005,0
-Volume,ounce,oz,cubic yard,,3.868071631e-005,0
+Volume,ounce,oz,cubic yard,,231/5971968,0
 Volume,ounce,oz,cup,,1/8,0
 Volume,ounce,oz,dram,,7.999946006,0
 Volume,ounce,oz,drop,,456.0128846,0
@@ -4728,10 +4728,10 @@ Volume,ounce (UK),,quart,qt,0.03002376135,0
 Volume,ounce (UK),,tablespoon,tbs,1.921520726,0
 Volume,ounce (UK),,teaspoon,,5.764562178,0
 Volume,pint,pt,cubic centimeter,CC,473.176473,0
-Volume,pint,pt,cubic foot,,0.01671006944,0
-Volume,pint,pt,cubic inch,cui,28.875,0
+Volume,pint,pt,cubic foot,,231/13824,0
+Volume,pint,pt,cubic inch,cui,231/8,0
 Volume,pint,pt,cubic meter,,0.000473176473,0
-Volume,pint,pt,cubic yard,,0.0006188914609,0
+Volume,pint,pt,cubic yard,,231/373248,0
 Volume,pint,pt,cup,,2,0
 Volume,pint,pt,dram,,127.9991334,0
 Volume,pint,pt,drop,,7296.206,0
@@ -4766,10 +4766,10 @@ Volume,pint (UK),,quart,qt,0.600474696,0
 Volume,pint (UK),,tablespoon,tbs,38.43039314,0
 Volume,pint (UK),,teaspoon,,115.2911326,0
 Volume,quart,qt,cubic centimeter,CC,946.352946,0
-Volume,quart,qt,cubic foot,,0.03342013889,0
-Volume,quart,qt,cubic inch,cui,57.75,0
+Volume,quart,qt,cubic foot,,231/6912,0
+Volume,quart,qt,cubic inch,cui,231/4,0
 Volume,quart,qt,cubic meter,,0.000946352946,0
-Volume,quart,qt,cubic yard,,0.001237782922,0
+Volume,quart,qt,cubic yard,,231/186624,0
 Volume,quart,qt,cup,,4,0
 Volume,quart,qt,dram,,255.9982695,0
 Volume,quart,qt,drop,,14592.41215,0
@@ -4785,10 +4785,10 @@ Volume,quart,qt,pint (UK),,1.665348369,0
 Volume,quart,qt,tablespoon,tbs,64,0
 Volume,quart,qt,teaspoon,,192,0
 Volume,tablespoon,tbs,cubic centimeter,CC,14.78676478,0
-Volume,tablespoon,tbs,cubic foot,,0.0005221896701,0
-Volume,tablespoon,tbs,cubic inch,cui,0.90234375,0
+Volume,tablespoon,tbs,cubic foot,,231/442368,0
+Volume,tablespoon,tbs,cubic inch,cui,231/256,0
 Volume,tablespoon,tbs,cubic meter,,1.478676478e-005,0
-Volume,tablespoon,tbs,cubic yard,,1.934035815e-005,0
+Volume,tablespoon,tbs,cubic yard,,231/11943936,0
 Volume,tablespoon,tbs,cup,,1/16,0
 Volume,tablespoon,tbs,dram,,3.999971651,0
 Volume,tablespoon,tbs,drop,,228.0063652,0
@@ -4804,10 +4804,10 @@ Volume,tablespoon,tbs,pint (UK),,0.0260210713,0
 Volume,tablespoon,tbs,quart,qt,1/64,0
 Volume,tablespoon,tbs,teaspoon,,3,0
 Volume,teaspoon,,cubic centimeter,CC,4.928921594,0
-Volume,teaspoon,,cubic foot,,0.0001740632234,0
-Volume,teaspoon,,cubic inch,cui,0.30078125,0
+Volume,teaspoon,,cubic foot,,231/1327104,0
+Volume,teaspoon,,cubic inch,cui,231/768,0
 Volume,teaspoon,,cubic meter,,4.928921594e-006,0
-Volume,teaspoon,,cubic yard,,6.446786051e-006,0
+Volume,teaspoon,,cubic yard,,231/35831808,0
 Volume,teaspoon,,cup,,1/48,0
 Volume,teaspoon,,dram,,1.333324425,0
 Volume,teaspoon,,drop,,76.00215258,0
