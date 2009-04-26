@@ -68,11 +68,13 @@ public class FractionalConversion extends Conversion {
             BigInteger fcEn = getEffectiveNumerator(fc);
             rv = (getEffectiveNumerator(this).multiply(fcEn)) + "/"
                 + (this.getFromToBottomFactor().multiply(fc.getFromToBottomFactor()));
-        } else {
-            rv = ((getEffectiveNumerator(this).doubleValue() * byConversion.getFromToFactor()) / this
-                .getFromToBottomFactor().doubleValue())
-                + "";
+            if (!rv.equals("Infinity")) {
+                return rv;
+            }
         }
+        rv = ((getEffectiveNumerator(this).doubleValue() * byConversion.getFromToFactor()) / this
+            .getFromToBottomFactor().doubleValue())
+            + "";
         return rv;
     }
 
@@ -83,10 +85,13 @@ public class FractionalConversion extends Conversion {
             BigInteger fcEn = getEffectiveNumerator(fc);
             rv = (getEffectiveNumerator(this).multiply(fc.getFromToBottomFactor())) + "/"
                 + (this.getFromToBottomFactor().multiply(fcEn));
-        } else {
-            rv = getEffectiveNumerator(this).doubleValue()
-                / (this.getFromToBottomFactor().doubleValue() * byConversion.getFromToFactor()) + "";
+            if (!rv.equals("Infinity")) {
+                return rv;
+            }
         }
+        rv = getEffectiveNumerator(this).doubleValue()
+            / (this.getFromToBottomFactor().doubleValue() * byConversion.getFromToFactor()) + "";
+        
         return rv;
     }
 
@@ -187,7 +192,7 @@ public class FractionalConversion extends Conversion {
      * @param fc FractionalConversion to evaluate
      * @return "effective numerator"
      */
-    private BigInteger getEffectiveNumerator(FractionalConversion fc) {
+    public BigInteger getEffectiveNumerator(FractionalConversion fc) {
         return fc.getFromToTopFactor().add((fc.getFromToWholeNumber().multiply(fc.getFromToBottomFactor())));
     }
 

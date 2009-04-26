@@ -47,7 +47,7 @@ public class DecimalConversion extends Conversion {
         String rv = "1";
         if (byConversion instanceof FractionalConversion) {
             FractionalConversion fc = (FractionalConversion) byConversion;
-            rv = (this.getFromToFactor() * fc.getFromToTopFactor().doubleValue())
+            rv = (this.getFromToFactor() * fc.getEffectiveNumerator(fc).doubleValue())
                 / fc.getFromToBottomFactor().doubleValue() + "";
         } else {
             rv = (this.getFromToFactor() * byConversion.getFromToFactor()) + "";
@@ -60,7 +60,7 @@ public class DecimalConversion extends Conversion {
         if (byConversion instanceof FractionalConversion) {
             FractionalConversion fc = (FractionalConversion) byConversion;
             rv = (this.getFromToFactor() * fc.getFromToBottomFactor().doubleValue())
-                / fc.getFromToTopFactor().doubleValue() + "";
+                / fc.getEffectiveNumerator(fc).doubleValue() + "";
         } else {
             rv = (this.getFromToFactor() / byConversion.getFromToFactor()) + "";
         }
