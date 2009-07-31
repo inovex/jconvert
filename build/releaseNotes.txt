@@ -5,6 +5,7 @@
 -Fixed problem when converting backwards with commas.  Commas would cause problems, now they do not.
 -Increased number of digits that fractional conversions can handle.
 -Fixed problem (1943304) with generating gaps in custom conversions.
+-Fixed problems with receiving Infinity as an answer when numbers were still relatively small.
 
 1.0.8
 -Added ability to preserve fractions for users to see (when possible).
