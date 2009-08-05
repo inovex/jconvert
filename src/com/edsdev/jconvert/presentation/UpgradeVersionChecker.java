@@ -121,7 +121,7 @@ public class UpgradeVersionChecker {
     }
 
     private void openLinkToWeb() {
-        Browser.openURL("http://sourceforge.net/project/platformdownload.php?group_id=201265");
+        Browser.openURL("http://sourceforge.net/projects/jconvert/files/latest");
         messageLabel.setText(Messages.getResource("newVersionLaunchedMsg"));
         dontAskBtn.setVisible(false);
         yesBtn.removeActionListener(yesActionListener);
