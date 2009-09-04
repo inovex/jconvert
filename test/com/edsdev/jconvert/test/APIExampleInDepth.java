@@ -1,8 +1,10 @@
 package com.edsdev.jconvert.test;
 
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
+import com.edsdev.jconvert.domain.Conversion;
 import com.edsdev.jconvert.domain.ConversionType;
 import com.edsdev.jconvert.persistence.DataLoader;
 import com.edsdev.jconvert.presentation.ConversionTypeData;
@@ -35,6 +37,9 @@ public class APIExampleInDepth {
 		System.out.println("1 Sarah = " + ctd.convert(1, "Sarah", "Tom") + " Tom");
 		System.out.println("4000 Billy = " + ctd.convertFraction("4000", "Billy", "Sarah") + " Sarah");
 		System.out.println("4000 1/2 Billy = " + ctd.convertFraction("4000 1/2", "Billy", "Sarah") + " Sarah");
+		
+		System.out.println("Meter is in '" + findConversionTypeData("meter").getTypeName() + "' Conversion Type");
+		
 	}
 
 	/**
@@ -66,6 +71,21 @@ public class APIExampleInDepth {
 		}
 		System.out.println("------------------------------");
 
+	}
+	
+	private static ConversionType findConversionTypeData (String conversionUnit) {
+		Iterator iter = domainData.iterator();
+		while (iter.hasNext()) {
+			ConversionType type = (ConversionType) iter.next();
+			Iterator conIter = type.getConversions().iterator();
+			while (conIter.hasNext()) {
+				Conversion conv = (Conversion)conIter.next();
+				if (conv.getFromUnit().equals(conversionUnit) || conv.getToUnit().equals(conversionUnit)) {
+					return type;
+				}
+			}
+		}
+		return null;
 	}
 
 }
