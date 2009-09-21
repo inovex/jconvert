@@ -45,17 +45,23 @@ public abstract class Conversion implements Comparable {
     public static Conversion createInstance(String fromUnit, String fromUnitAbbr, String toUnit, String toUnitAbbr,
         String fromToFactor, double fromToOffset) {
         Conversion conversion = null;
+        fromToFactor = fromToFactor.trim();
 
         int pos = fromToFactor.indexOf("/");
         if (pos > 0) {
-            String top = fromToFactor.substring(0, pos);
+        	int spacePos = fromToFactor.indexOf(" ");
+        	String whole = "0";
+        	if (spacePos > 0) {
+        		whole = fromToFactor.substring(0, spacePos);
+        	} 
+            String top = fromToFactor.substring(spacePos + 1, pos);
             String bottom = fromToFactor.substring(pos + 1);
-            if (isWholeNumber(top) && isWholeNumber(bottom)) {
+            if (isWholeNumber(top) && isWholeNumber(bottom) && isWholeNumber(whole)) {
                 conversion = new FractionalConversion(fromUnit, fromUnitAbbr, toUnit, toUnitAbbr, fromToFactor,
                     fromToOffset);
             } else {
-                conversion = new DecimalConversion(fromUnit, fromUnitAbbr, toUnit, toUnitAbbr, Double.parseDouble(top)
-                    / Double.parseDouble(bottom) + "", fromToOffset);
+                conversion = new DecimalConversion(fromUnit, fromUnitAbbr, toUnit, toUnitAbbr, (Double.parseDouble(top)
+                    / Double.parseDouble(bottom)) + Double.parseDouble(whole) + "", fromToOffset);
             }
         } else if (isWholeNumber(fromToFactor)) {
             conversion = new FractionalConversion(fromUnit, fromUnitAbbr, toUnit, toUnitAbbr, fromToFactor,
