@@ -14,6 +14,7 @@ Time,century,,day,,36500,0
 Time,century,,decade,,10,0
 Time,century,,fortnight,,18250/7,0
 Time,century,,hour,,876000,0
+Time,century,,julian year,,99 1361/1461,0
 Time,century,,leap-year,,36500/366,0
 Time,century,,millennium,,1/10,0
 Time,century,,millisecond,,3153600000000,0
@@ -29,6 +30,7 @@ Time,day,,century,,1/36500,0
 Time,day,,decade,,1/3650,0
 Time,day,,fortnight,,1/14,0
 Time,day,,hour,,24,0
+Time,day,,julian year,,4/1461,0
 Time,day,,leap-year,,1/366,0
 Time,day,,millennium,,1/365000,0
 Time,day,,millisecond,,86400000,0
@@ -44,6 +46,7 @@ Time,decade,,century,,1/10,0
 Time,decade,,day,,3650,0
 Time,decade,,fortnight,,1825/7,0
 Time,decade,,hour,,87600,0
+Time,decade,,julian year,,9 1451/1461,0
 Time,decade,,leap-year,,3650/366,0
 Time,decade,,millennium,,1/100,0
 Time,decade,,millisecond,,315360000000,0
@@ -59,6 +62,7 @@ Time,fortnight,,century,,7/18250,0
 Time,fortnight,,day,,14,0
 Time,fortnight,,decade,,7/1825,0
 Time,fortnight,,hour,,336,0
+Time,fortnight,,julian year,,56/1461,0
 Time,fortnight,,leap-year,,7/183,0
 Time,fortnight,,millennium,,7/182500,0
 Time,fortnight,,millisecond,,1209600000,0
@@ -74,6 +78,7 @@ Time,hour,,century,,1/876000,0
 Time,hour,,day,,1/24,0
 Time,hour,,decade,,1/87600,0
 Time,hour,,fortnight,,1/336,0
+Time,hour,,julian year,,1/8766,0
 Time,hour,,leap-year,,1/8784,0
 Time,hour,,millennium,,1/8760000,0
 Time,hour,,millisecond,,3600000,0
@@ -85,11 +90,28 @@ Time,hour,,score,,1/175200,0
 Time,hour,,second,''',3600,0
 Time,hour,,week,,1/168,0
 Time,hour,,year,,1/8760,0
+Time,julian year,,century,,1461/146000,0
+Time,julian year,,day,,365 1/4,0
+Time,julian year,,decade,,1461/14600,0
+Time,julian year,,fortnight,,26 5/56,0
+Time,julian year,,hour,,8766,0
+Time,julian year,,leap-year,,487/488,0
+Time,julian year,,millennium,,1461/1460000,0
+Time,julian year,,millisecond,,31557600000,0
+Time,julian year,,minute,',525960,0
+Time,julian year,,month,,12 3/365,0
+Time,julian year,,month (30 day),,12 7/40,0
+Time,julian year,,nanosecond,,31557600000000000,0
+Time,julian year,,score,,1461/29200,0
+Time,julian year,,second,''',31557600,0
+Time,julian year,,week,,52 5/28,0
+Time,julian year,,year,,1 1/1460,0
 Time,leap-year,,century,,183/18250,0
 Time,leap-year,,day,,366,0
 Time,leap-year,,decade,,183/1825,0
 Time,leap-year,,fortnight,,366/14,0
 Time,leap-year,,hour,,8784,0
+Time,leap-year,,julian year,,1 1/487,0
 Time,leap-year,,millennium,,183/182500,0
 Time,leap-year,,millisecond,,31622400000,0
 Time,leap-year,,minute,',527040,0
@@ -105,6 +127,7 @@ Time,millennium,,day,,365000,0
 Time,millennium,,decade,,100,0
 Time,millennium,,fortnight,,182500/7,0
 Time,millennium,,hour,,8760000,0
+Time,millennium,,julian year,,999 461/1461,0
 Time,millennium,,leap-year,,182500/183,0
 Time,millennium,,millisecond,,31536000000000,0
 Time,millennium,,minute,',525600000,0
@@ -120,6 +143,7 @@ Time,millisecond,,day,,1/86400000,0
 Time,millisecond,,decade,,1/315360000000,0
 Time,millisecond,,fortnight,,1/1209600000,0
 Time,millisecond,,hour,,1/3600000,0
+Time,millisecond,,julian year,,1/31557600000,0
 Time,millisecond,,leap-year,,1/31622400000,0
 Time,millisecond,,millennium,,1/31536000000000,0
 Time,millisecond,,minute,',1/60000,0
@@ -135,6 +159,7 @@ Time,minute,',day,,1/1440,0
 Time,minute,',decade,,1/5256000,0
 Time,minute,',fortnight,,1/20160,0
 Time,minute,',hour,,1/60,0
+Time,minute,',julian year,,1/525960,0
 Time,minute,',leap-year,,1/527040,0
 Time,minute,',millennium,,1/525600000,0
 Time,minute,',millisecond,,60000,0
@@ -150,6 +175,7 @@ Time,month (30 day),,day,,30,0
 Time,month (30 day),,decade,,3/365,0
 Time,month (30 day),,fortnight,,15/7,0
 Time,month (30 day),,hour,,720,0
+Time,month (30 day),,julian year,,40/487,0
 Time,month (30 day),,leap-year,,5/61,0
 Time,month (30 day),,millennium,,3/36500,0
 Time,month (30 day),,millisecond,,2592000000,0
@@ -165,6 +191,7 @@ Time,month,,day,,356/12,0
 Time,month,,decade,,1/120,0
 Time,month,,fortnight,,365/168,0
 Time,month,,hour,,730,0
+Time,month,,julian year,,365/4383,0
 Time,month,,leap-year,,1/12,0
 Time,month,,millisecond,,7884000000/3,0
 Time,month,,millennium,,1/12000,0
@@ -175,26 +202,28 @@ Time,month,,score,,1/240,0
 Time,month,,second,''',7884000/3,0
 Time,month,,week,,365/84,0
 Time,month,,year,,1/12,0
-Time,nanosecond,,century,,3.170979198E-19,0
-Time,nanosecond,,day,,1.157407407E-14,0
-Time,nanosecond,,decade,,3.170979198E-18,0
-Time,nanosecond,,fortnight,,8.267195767E-16,0
+Time,nanosecond,,century,,1/3153600000000000000,0
+Time,nanosecond,,day,,1/86400000000000,0
+Time,nanosecond,,decade,,1/315360000000000000,0
+Time,nanosecond,,fortnight,,1/1209600000000000,0
 Time,nanosecond,,hour,,1/3600000000000,0
-Time,nanosecond,,leap-year,,3.162315321E-17,0
-Time,nanosecond,,millennium,,3.170979198E-20,0
+Time,nanosecond,,julian year,,3.168808781402895E-17,0
+Time,nanosecond,,leap-year,,3.1623153207852664E-17,0
+Time,nanosecond,,millennium,,3.1709791983764586E-20,0
 Time,nanosecond,,millisecond,,1/1000000,0
 Time,nanosecond,,minute,',1/60000000000,0
-Time,nanosecond,,month (30 day),,3.858024691E-16,0
+Time,nanosecond,,month (30 day),,1/2592000000000000,0
 Time,nanosecond,,month,,3/7884000000000000,0
-Time,nanosecond,,score,,1.585489599E-18,0
+Time,nanosecond,,score,,1/630720000000000000,0
 Time,nanosecond,,second,''',1/1000000000,0
-Time,nanosecond,,week,,1.653439153E-16,0
-Time,nanosecond,,year,,3.170979198E-17,0
+Time,nanosecond,,week,,1/604800000000000,0
+Time,nanosecond,,year,,1/31536000000000000,0
 Time,score,,century,,1/5,0
 Time,score,,day,,7300,0
 Time,score,,decade,,2,0
 Time,score,,fortnight,,3650/7,0
 Time,score,,hour,,175200,0
+Time,score,,julian year,,19 1441/1461,0
 Time,score,,leap-year,,3650/183,0
 Time,score,,millennium,,1/50,0
 Time,score,,millisecond,,630720000000,0
@@ -210,6 +239,7 @@ Time,second,''',day,,1/86400,0
 Time,second,''',decade,,1/315360000,0
 Time,second,''',fortnight,,1/1209600,0
 Time,second,''',hour,,1/3600,0
+Time,second,''',julian year,,1/31557600,0
 Time,second,''',leap-year,,1/31622400,0
 Time,second,''',millennium,,31536000000,0
 Time,second,''',millisecond,,1000,0
@@ -225,6 +255,7 @@ Time,week,,day,,7,0
 Time,week,,decade,,7/3650,0
 Time,week,,fortnight,,1/2,0
 Time,week,,hour,,168,0
+Time,week,,julian year,,28/1461,0
 Time,week,,leap-year,,7/366,0
 Time,week,,millennium,,7/365000,0
 Time,week,,millisecond,,604800000,0
@@ -240,6 +271,7 @@ Time,year,,day,,365,0
 Time,year,,decade,,1/10,0
 Time,year,,fortnight,,365/14,0
 Time,year,,hour,,8760,0
+Time,year,,julian year,,1460/1461,0
 Time,year,,leap-year,,365/366,0
 Time,year,,millennium,,1/1000,0
 Time,year,,millisecond,,31536000000,0
@@ -473,9 +505,10 @@ Distance,kilometer,km,inch,in,5000000/127,0
 Distance,kilometer,km,mil,mil,39369960,0
 Distance,kilometer,km,parsec,pc,3.240782847E-14,0
 Distance,kilometer,km,league,,15625/75438,0
-Distance,kilometer,km,lightyear,,1/9460528000000,0
-Distance,kilometer,km,nautical mile,M,0.539955464,0
+Distance,kilometer,km,lightyear,ly,5/47303652362904,0
+Distance,kilometer,km,nautical mile,M,250/463,0
 Distance,kilometer,km,nanometer,nm,1000000000000,0
+Distance,kilometer,km,survey foot,usFt,3280 5/6,0
 Distance,hectometer,hm,kilometer,km,1/10,0
 Distance,hectometer,hm,dekameter,dm,10,0
 Distance,hectometer,hm,meter,m,100,0
@@ -491,9 +524,29 @@ Distance,hectometer,hm,inch,in,500000/127,0
 Distance,hectometer,hm,mil,mil,3936996,0
 Distance,hectometer,hm,parsec,pc,3.240782847E-15,0
 Distance,hectometer,hm,league,,3125/150876,0
-Distance,hectometer,hm,lightyear,,5/473026420242259,0
+Distance,hectometer,hm,lightyear,ly,1/94607304725808,0
 Distance,hectometer,hm,nautical mile,M,25/463,0
 Distance,hectometer,hm,nanometer,nm,100000000000,0
+Distance,hectometer,hm,survey foot,usFt,328 1/12,0
+Distance,decimeter,,centimeter,cm,10,0
+Distance,decimeter,,dekameter,dm,1/100,0
+Distance,decimeter,,foot,ft,125/381,0
+Distance,decimeter,,furlong,,25/50292,0
+Distance,decimeter,,hectometer,hm,1/1000,0
+Distance,decimeter,,inch,in,3 119/127,0
+Distance,decimeter,,kilometer,km,1/10000,0
+Distance,decimeter,,league,,25/1207008,0
+Distance,decimeter,,lightyear,ly,1/94607304725808000,0
+Distance,decimeter,,meter,m,1/10,0
+Distance,decimeter,,micrometer,m,100000,0
+Distance,decimeter,,mil,mil,3936 249/250,0
+Distance,decimeter,,mile,mi,25/402336,0
+Distance,decimeter,,millimeter,mm,100,0
+Distance,decimeter,,nanometer,nm,100000000,0
+Distance,decimeter,,nautical mile,M,1/18520,0
+Distance,decimeter,,parsec,pc,3.240782846843141E-18,0
+Distance,decimeter,,survey foot,usFt,3937/12000,0
+Distance,decimeter,,yard,yd,125/1143,0
 Distance,dekameter,dm,kilometer,km,1/100,0
 Distance,dekameter,dm,hectometer,hm,1/10,0
 Distance,dekameter,dm,meter,m,10,0
@@ -507,11 +560,12 @@ Distance,dekameter,dm,furlong,,625/12573,0
 Distance,dekameter,dm,yard,yd,12500/1143,0
 Distance,dekameter,dm,foot,ft,12500/381,0
 Distance,dekameter,dm,inch,in,50000/127,0
-Distance,dekameter,dm,mil,mil,393699.6,0
+Distance,dekameter,dm,mil,mil,393700 100/127,0
 Distance,dekameter,dm,parsec,pc,3.240782847E-16,0
 Distance,dekameter,dm,league,,625/301752,0
-Distance,dekameter,dm,lightyear,,1/946052840500000,0
-Distance,dekameter,dm,nautical mile,M,0.005399554646,0
+Distance,dekameter,dm,lightyear,ly,1/946073047258080,0
+Distance,dekameter,dm,nautical mile,M,5/926,0
+Distance,dekameter,dm,survey foot,usFt,32 97/120,0
 Distance,meter,m,kilometer,km,1/1000,0
 Distance,meter,m,hectometer,hm,1/100,0
 Distance,meter,m,dekameter,dm,1/10,0
@@ -520,16 +574,17 @@ Distance,meter,m,centimeter,cm,100,0
 Distance,meter,m,millimeter,mm,1000,0
 Distance,meter,m,micrometer,m,1000000,0
 Distance,meter,m,mile,mi,125/201168,0
-Distance,meter,m,furlong,,0.004970969538,0
+Distance,meter,m,furlong,,125/25146,0
 Distance,meter,m,yard,yd,1250/1143,0
 Distance,meter,m,foot,ft,1250/381,0
 Distance,meter,m,inch,in,5000/127,0
-Distance,meter,m,mil,mil,39370.1,0
-Distance,meter,m,lightyear,,1/9460528000000000,0
+Distance,meter,m,mil,mil,5000000/127,0
+Distance,meter,m,lightyear,ly,1/9460730472580800,0
 Distance,meter,m,league,,125/603504,0
 Distance,meter,m,parsec,pc,3.240782847E-17,0
-Distance,meter,m,nautical mile,M,0.0005399568035,0
+Distance,meter,m,nautical mile,M,1/1852,0
 Distance,meter,m,nanometer,nm,1000000000,0
+Distance,meter,m,survey foot,usFt,3 337/1200,0
 Distance,centimeter,cm,kilometer,km,1/100000,0
 Distance,centimeter,cm,hectometer,hm,1/10000,0
 Distance,centimeter,cm,dekameter,dm,1/1000,0
@@ -538,16 +593,17 @@ Distance,centimeter,cm,decimeter,,1/10,0
 Distance,centimeter,cm,millimeter,mm,10,0
 Distance,centimeter,cm,micrometer,m,10000,0
 Distance,centimeter,cm,mile,mi,5/804672,0
-Distance,centimeter,cm,furlong,,0.0000497097,0
+Distance,centimeter,cm,furlong,,5/100584,0
 Distance,centimeter,cm,yard,yd,25/2286,0
 Distance,centimeter,cm,foot,ft,25/762,0
 Distance,centimeter,cm,inch,in,50/127,0
-Distance,centimeter,cm,mil,mil,393.701,0
+Distance,centimeter,cm,mil,mil,50000/127,0
 Distance,centimeter,cm,parsec,pc,3.240782847E-19,0
-Distance,centimeter,cm,lightyear,,1.057023456E-18,0
+Distance,centimeter,cm,lightyear,ly,1/946073047258080000,0
 Distance,centimeter,cm,league,,5/2414016,0
-Distance,centimeter,cm,nautical mile,M,0.000005399568035,0
+Distance,centimeter,cm,nautical mile,M,127/23520400,0
 Distance,centimeter,cm,nanometer,nm,10000000,0
+Distance,centimeter,cm,survey foot,usFt,3937/120000,0
 Distance,millimeter,mm,kilometer,km,1/1000000,0
 Distance,millimeter,mm,hectometer,hm,1/100000,0
 Distance,millimeter,mm,dekameter,dm,1/10000,0
@@ -556,16 +612,17 @@ Distance,millimeter,mm,decimeter,,1/100,0
 Distance,millimeter,mm,centimeter,cm,1/10,0
 Distance,millimeter,mm,micrometer,m,1000,0
 Distance,millimeter,mm,mile,mi,5/8046720,0
-Distance,millimeter,mm,furlong,,0.00000497097,0
+Distance,millimeter,mm,furlong,,1/201168,0
 Distance,millimeter,mm,yard,yd,5/4572,0
 Distance,millimeter,mm,foot,ft,5/1524,0
 Distance,millimeter,mm,inch,in,5/127,0
-Distance,millimeter,mm,mil,mil,39.3701,0
+Distance,millimeter,mm,mil,mil,39 47/127,0
 Distance,millimeter,mm,parsec,pc,3.240782847E-20,0
-Distance,millimeter,mm,lightyear,,1.057023456E-19,0
+Distance,millimeter,mm,lightyear,ly,1.0570008340246154E-19,0
 Distance,millimeter,mm,league,,1/4828032,0
-Distance,millimeter,mm,nautical mile,M,0.0000005399568035,0
+Distance,millimeter,mm,nautical mile,M,1/1852000,0
 Distance,millimeter,mm,nanometer,nm,1000000,0
+Distance,millimeter,mm,survey foot,usFt,3937/1200000,0
 Distance,micrometer,m,kilometer,km,1/1000000000,0
 Distance,micrometer,m,hectometer,hm,1/100000000,0
 Distance,micrometer,m,dekameter,dm,1/10000000,0
@@ -574,17 +631,18 @@ Distance,micrometer,m,decimeter,,1/100000,0
 Distance,micrometer,m,centimeter,cm,1/10000,0
 Distance,micrometer,m,millimeter,mm,1/1000,0
 Distance,micrometer,m,mile,mi,1/1609344000,0
-Distance,micrometer,m,furlong,,0.00000000497097,0
+Distance,micrometer,m,furlong,,1/201168000,0
 Distance,micrometer,m,yard,yd,5/4572000,0
 Distance,micrometer,m,foot,ft,5/1524000,0
 Distance,micrometer,m,inch,in,5/127000,0
-Distance,micrometer,m,mil,mil,0.039370078,0
+Distance,micrometer,m,mil,mil,5/127,0
 Distance,micrometer,m,parsec,pc,3.240782847E-23,0
-Distance,micrometer,m,lightyear,,1.057023456E-22,0
+Distance,micrometer,m,lightyear,ly,1.0570008340246155E-22,0
 Distance,micrometer,m,league,,1/4828032000,0
-Distance,micrometer,m,nautical mile,M,0.0000000005399568035,0
+Distance,micrometer,m,nautical mile,M,1/1852000000,0
 Distance,micrometer,m,nanometer,nm,1000,0
-Distance,mile,mi,kilometer,km25146/15625,0
+Distance,micrometer,m,survey foot,usFt,3937/1200000000,0
+Distance,mile,mi,kilometer,km,25146/15625,0
 Distance,mile,mi,hectometer,hm,50292/3125,0
 Distance,mile,mi,dekameter,dm,100584/625,0
 Distance,mile,mi,meter,m,201168/125,0
@@ -598,10 +656,11 @@ Distance,mile,mi,foot,ft,5280,0
 Distance,mile,mi,inch,in,63360,0
 Distance,mile,mi,mil,mil,63360000,0
 Distance,mile,mi,parsec,pc,5.21553443E-14,0
-Distance,mile,mi,lightyear,,1.7010779502325e-13,0
+Distance,mile,mi,lightyear,ly,1397/8212439646337500,0
 Distance,mile,mi,league,,1/3,0
-Distance,mile,mi,nautical mile,M,0.868974087,0
+Distance,mile,mi,nautical mile,M,50292/57875,0
 Distance,mile,mi,nanometer,nm,1609344000000,0
+Distance,mile,mi,survey foot,usFt,5279 3092/3125,0
 Distance,furlong,,kilometer,km,12573/62500,0
 Distance,furlong,,hectometer,hm,12573/6250,0
 Distance,furlong,,dekameter,dm,12573/625,0
@@ -616,10 +675,11 @@ Distance,furlong,,foot,ft,660,0
 Distance,furlong,,inch,in,7920,0
 Distance,furlong,,mil,mil,7920000,0
 Distance,furlong,,parsec,pc,6.519417432E-15,0
-Distance,furlong,,lightyear,,1/47028000870000,0
+Distance,furlong,,lightyear,ly,1397/65699517170700000,0
 Distance,furlong,,league,,1/24,0
-Distance,furlong,,nautical mile,M,0.10862176,0
+Distance,furlong,,nautical mile,M,12573/115750,0
 Distance,furlong,,nanometer,nm,201167981300,0
+Distance,furlong,,survey foot,usFt,659 24967/25000,0
 Distance,yard,yd,kilometer,km,1143/1250000,0
 Distance,yard,yd,hectometer,hm,1143/125000,0
 Distance,yard,yd,dekameter,dm,1143/12500,0
@@ -634,10 +694,11 @@ Distance,yard,yd,foot,ft,3,0
 Distance,yard,yd,inch,in,36,0
 Distance,yard,yd,mil,mil,36000,0
 Distance,yard,yd,parsec,pc,2.963380773E-17,0
-Distance,yard,yd,lightyear,,1/10346160190000000,0
+Distance,yard,yd,lightyear,ly,9.665215626321083E-17,0
 Distance,yard,yd,league,,1/5280,0
-Distance,yard,yd,nautical mile,M,0.0004937379902,0
+Distance,yard,yd,nautical mile,M,1143/2315000,0
 Distance,yard,yd,nanometer,nm,914400000,0
+Distance,yard,yd,survey foot,usFt,2 499997/500000,0
 Distance,foot,ft,kilometer,km,381/1250000,0
 Distance,foot,ft,hectometer,hm,381/125000,0
 Distance,foot,ft,dekameter,dm,381/12500,0
@@ -652,10 +713,11 @@ Distance,foot,ft,yard,yd,1/3,0
 Distance,foot,ft,inch,in,12,0
 Distance,foot,ft,mil,mil,12000,0
 Distance,foot,ft,parsec,pc,9.87793591E-18,0
-Distance,foot,ft,lightyear,,3.22181721E-17,0
+Distance,foot,ft,lightyear,ly,3.221738542107028E-17,0
 Distance,foot,ft,league,,1/15840,0
-Distance,foot,ft,nautical mile,M,0.0001645784256,0
+Distance,foot,ft,nautical mile,M,381/2315000,0
 Distance,foot,ft,nanometer,nm,304800000,0
+Distance,foot,ft,survey foot,usFt,499999/500000,0
 Distance,inch,in,kilometer,km,127/5000000,0
 Distance,inch,in,hectometer,hm,127/500000,0
 Distance,inch,in,dekameter,dm,127/50000,0
@@ -670,10 +732,11 @@ Distance,inch,in,yard,yd,1/36,0
 Distance,inch,in,foot,ft,1/12,0
 Distance,inch,in,mil,mil,1000,0
 Distance,inch,in,parsec,pc,8.231588432E-19,0
-Distance,inch,in,lightyear,,2.684839578E-18,0
+Distance,inch,in,lightyear,ly,2.684782118422523E-18,0
 Distance,inch,in,league,,1/190080,0
-Distance,inch,in,nautical mile,M,0.0000137148688,0
+Distance,inch,in,nautical mile,M,127/9260000,0
 Distance,inch,in,nanometer,nm,25400000,0
+Distance,inch,in,survey foot,usFt,499999/6000000,0
 Distance,mil,mil,kilometer,km,127/5000000000,0
 Distance,mil,mil,hectometer,hm,127/500000000,0
 Distance,mil,mil,dekameter,dm,127/50000000,0
@@ -688,10 +751,11 @@ Distance,mil,mil,yard,yd,1/36000,0
 Distance,mil,mil,foot,ft,1/12000,0
 Distance,mil,mil,inch,in,1/1000,0
 Distance,mil,mil,parsec,pc,8.231588432E-22,0
-Distance,mil,mil,lightyear,,2.684839578E-21,0
+Distance,mil,mil,lightyear,ly,2.684782118422523E-21,0
 Distance,mil,mil,league,,1/190080000,0
-Distance,mil,mil,nautical mile,M,0.00000001371490281,0
+Distance,mil,mil,nautical mile,M,127/9260000000,0
 Distance,mil,mil,nanometer,nm,25400,0
+Distance,mil,mil,survey foot,usFt,499999/6000000000,0
 Distance,parsec,pc,kilometer,km,30856741940000,0
 Distance,parsec,pc,hectometer,hm,308567818584785,0
 Distance,parsec,pc,dekameter,dm,3085678186000000,0
@@ -706,7 +770,7 @@ Distance,parsec,pc,yard,yd,33745241550000000,0
 Distance,parsec,pc,foot,ft,101235724700000000,0
 Distance,parsec,pc,inch,in,1214828696000000000,0
 Distance,parsec,pc,mil,mil,1.214828696E+21,0
-Distance,parsec,pc,lightyear,,3.26163,0
+Distance,parsec,pc,lightyear,ly,3.26163,0
 Distance,parsec,pc,league,,6.3911705251332e+12,0
 Distance,parsec,pc,nautical mile,M,16661307740000,0
 Distance,parsec,pc,nanometer,nm,3.085678186E+25,0
@@ -725,26 +789,29 @@ Distance,league,,foot,ft,15840,0
 Distance,league,,inch,in,190080,0
 Distance,league,,mil,mil,190080000,0
 Distance,league,,parsec,pc,1.5646586115446e-13,0
-Distance,league,,lightyear,,3/5878499563000,0
-Distance,league,,nautical mile,M,2.6069287257019,0
-Distance,league,,nanometer,nm,4.828032e+12,0
-Distance,lightyear,,kilometer,km,9460730472580,0
-Distance,lightyear,,hectometer,hm,94607304725800,0
-Distance,lightyear,,dekameter,dm,946073047258000,0
-Distance,lightyear,,meter,m,9460730472580000,0
-Distance,lightyear,,decimeter,,9.46073047258E+16,0
-Distance,lightyear,,centimeter,cm,9.46073047258E+17,0
-Distance,lightyear,,millimeter,mm,9.46073047258E+18,0
-Distance,lightyear,,micrometer,m,9.46073047258E+21,0
-Distance,lightyear,,mile,mi,5878625373183.61,0
-Distance,lightyear,,furlong,,47029002985468.88,0
-Distance,lightyear,,yard,yd,10346380656803153.6,0
-Distance,lightyear,,foot,ft,31038480580000000,0
-Distance,lightyear,,inch,in,372469703644913529.6,0
-Distance,lightyear,,mil,mil,372469703644913529600,0
-Distance,lightyear,,parsec,pc,0.30660139380653,0
-Distance,lightyear,,nautical mile,M,5108385784330.5,0
-Distance,lightyear,,nanometer,nm,9.46073047258E+24,0
+Distance,league,,lightyear,ly,1397/2737479882112500,0
+Distance,league,,nautical mile,M,2 3567830248/5878499563,0
+Distance,league,,nanometer,nm,4828032000000,0
+Distance,league,,survey foot,usFt,15839 3026/3125,0
+Distance,lightyear,ly,kilometer,km,47303652362904/5,0
+Distance,lightyear,ly,hectometer,hm,94607304725808,0
+Distance,lightyear,ly,dekameter,dm,946073047258080,0
+Distance,lightyear,ly,meter,m,9460730472580800,0
+Distance,lightyear,ly,decimeter,,9.4607304725808E16,0
+Distance,lightyear,ly,centimeter,cm,9.4607304725808E17,0
+Distance,lightyear,ly,millimeter,mm,9.4607304725808E18,0
+Distance,lightyear,ly,micrometer,m,9.4607304725808E21,0
+Distance,lightyear,ly,mile,mi,5878625373183 849/13971,0
+Distance,lightyear,ly,furlong,,47029002985468 1204/1397,0
+Distance,lightyear,ly,yard,yd,1.034638065680315E16,0
+Distance,lightyear,ly,foot,ft,3.1039141970409448E16,0
+Distance,lightyear,ly,inch,in,3.7246970364491334E17,0
+Distance,lightyear,ly,mil,mil,3.724697036449134E20,0
+Distance,lightyear,ly,parsec,pc,0.306601393806531,0
+Distance,lightyear,ly,nautical mile,M,5108385784330 410/463,0
+Distance,lightyear,ly,nanometer,nm,9.46073047258E+24,0
+Distance,lightyear,ly,league,,1959541791061 283/1397,0
+Distance,lightyear,ly,survey foot,usFt,31039079892125508,0
 Distance,nautical mile,M,kilometer,km,463/250,0
 Distance,nautical mile,M,hectometer,hm,463/25,0
 Distance,nautical mile,M,dekameter,dm,926/5,0
@@ -754,16 +821,17 @@ Distance,nautical mile,M,centimeter,cm,185200,0
 Distance,nautical mile,M,millimeter,mm,1852000,0
 Distance,nautical mile,M,micrometer,m,1852000000,0
 Distance,nautical mile,M,mile,mi,57875/50292,0
-Distance,nautical mile,M,furlong,,9.206258416,0
+Distance,nautical mile,M,furlong,,9 2593/12573,0
 Distance,nautical mile,M,yard,yd,2315000/1143,0
 Distance,nautical mile,M,foot,ft,2315000/381,0
 Distance,nautical mile,M,inch,in,9260000/127,0
-Distance,nautical mile,M,mil,mil,72913566.65,0
+Distance,nautical mile,M,mil,mil,72913385 105/127,0
 Distance,nautical mile,M,parsec,pc,6.001929833E-14,0
-Distance,nautical mile,M,lightyear,,1/5108276458000,0
-Distance,nautical mile,M,league,,0.38359314934118,0
+Distance,nautical mile,M,lightyear,ly,463/2365182618145200,0
+Distance,nautical mile,M,league,,57875/150876,0
 Distance,nautical mile,M,nanometer,nm,1852000000000,0
 Distance,nautical mile,M,league ,,1/3,0
+Distance,nautical mile,M,survey foot,usFt,6076 31/300,0
 Distance,nanometer,nm,kilometer,km,1/1000000000000,0
 Distance,nanometer,nm,hectometer,hm,1/100000000000,0
 Distance,nanometer,nm,dekameter,dm,1/10000000000,0
@@ -772,16 +840,35 @@ Distance,nanometer,nm,decimeter,,1/100000000,0
 Distance,nanometer,nm,centimeter,cm,1/10000000,0
 Distance,nanometer,nm,millimeter,mm,1/1000000,0
 Distance,nanometer,nm,micrometer,m,1/1000,0
-Distance,nanometer,nm,mile,mi,6.213711922E-13,0
-Distance,nanometer,nm,furlong,,4.970969538E-12,0
-Distance,nanometer,nm,yard,yd,0.000000001093613298,0
-Distance,nanometer,nm,foot,ft,0.000000003280839895,0
-Distance,nanometer,nm,inch,in,0.00000003937007874,0
-Distance,nanometer,nm,mil,mil,0.00003937007874,0
+Distance,nanometer,nm,mile,mi,1/1609344000000,0
+Distance,nanometer,nm,furlong,,1/201168000000,0
+Distance,nanometer,nm,yard,yd,1/914400000,0
+Distance,nanometer,nm,foot,ft,1/304800000,0
+Distance,nanometer,nm,inch,in,1/25400000,0
+Distance,nanometer,nm,mil,mil,1/25400,0
 Distance,nanometer,nm,parsec,pc,3.240782848E-26,0
-Distance,nanometer,nm,lightyear,,1.057023456E-25,0
-Distance,nanometer,nm,league,,2.0712373074578e-13,0
-Distance,nanometer,nm,nautical mile,M,5.399568035E-13,0
+Distance,nanometer,nm,lightyear,ly,1.0570008340246155E-25,0
+Distance,nanometer,nm,league,,1/4828032000000,0
+Distance,nanometer,nm,nautical mile,M,1/1852000000000,0
+Distance,nanometer,nm,survey foot,usFt,3937/1200000000000,0
+Distance,survey foot,usFt,centimeter,cm,30 1890/3937,0
+Distance,survey foot,usFt,decimeter,,3 189/3937,0
+Distance,survey foot,usFt,dekameter,dm,120/3937,0
+Distance,survey foot,usFt,foot,ft,1 1/499999,0
+Distance,survey foot,usFt,furlong,,25000/16499967,0
+Distance,survey foot,usFt,hectometer,hm,12/3937,0
+Distance,survey foot,usFt,inch,in,12 12/499999,0
+Distance,survey foot,usFt,kilometer,km,6/19685,0
+Distance,survey foot,usFt,league,,3125/49499901,0
+Distance,survey foot,usFt,lightyear,ly,1/31039079892125508,0
+Distance,survey foot,usFt,micrometer,m,304800 2400/3937,0
+Distance,survey foot,usFt,mil,mil,12000 12000/499999,0
+Distance,survey foot,usFt,mile,mi,3125/16499967,0
+Distance,survey foot,usFt,millimeter,mm,304 3152/3937,0
+Distance,survey foot,usFt,nanometer,nm,304800609 2367/3937,0
+Distance,survey foot,usFt,nautical mile,M,300/1822831,0
+Distance,survey foot,usFt,parsec,pc,9.877913094895217E-18,0
+Distance,survey foot,usFt,yard,yd,500000/1499997,0
 
 Volume Dry,barrel,,liter,,115.6271292,0
 Volume Dry,barrel,,pint,pt,209.9980469,0
