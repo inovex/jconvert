@@ -1,3 +1,11 @@
+1.1.0
+-allow complex fractions (wholeNumber numerator/denominator) to be used in conversion file
+-assurred all lightyear is using julian year
+-fixed problem with dekameter to mil
+-added explicit conversions from decimeter - were missing before, but calculated.
+-Increased overall accuracy by using more fractional conversions
+-added survey foot
+
 1.0.9
 -added more conversions that originate in fractions
 -Fixed bug 1943304:Generated fractional conversions have no loss of precision-GUI no longer shows this
