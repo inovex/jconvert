@@ -288,8 +288,10 @@ public class AddCustomConversionDlg extends JDialog {
         }
 
         StringBuffer buf = new StringBuffer();
-        buf.append("\n").append(txtConversionType.getText()).append(",").append(txtFrom.getText()).append(",").append(
-            txtFromAbbrev.getText()).append(",").append(txtTo.getText()).append(",").append(txtToAbbrev.getText()).append(
+        buf.append("\n").append(Messages.getReverseLookup(txtConversionType.getText())).append(",")
+        	.append(Messages.getReverseLookup(txtFrom.getText())).append(",").append(
+            txtFromAbbrev.getText()).append(",").append(Messages.getReverseLookup(txtTo.getText()))
+            .append(",").append(txtToAbbrev.getText()).append(
             ",").append(txtFactor.getText()).append(",").append(txtOffset.getText());
         txtData.setText(txtData.getText() + buf.toString());
 

@@ -1,6 +1,7 @@
 package com.edsdev.jconvert.util;
 
 import java.text.MessageFormat;
+import java.util.Enumeration;
 import java.util.ResourceBundle;
 
 /**
@@ -86,5 +87,30 @@ public class Messages {
             //do nothing
         }
         return rv;
+    }
+    
+    
+    /**
+     * Special method!!!  This is messed up, but we need to be able to lookup the original key
+     * from the resource bundle from the target resource.  For instance if someone types in something
+     * in their own language, we need to get the source value.  Returns the value if the key is not 
+     * found.
+     * 
+     * @param value Source Value in the bundle	
+     * @return Actual key of this value in the bundle
+     */
+    public static String getReverseLookup(String value) {
+    	Enumeration keys = bundle.getKeys();
+    	
+    	while (keys.hasMoreElements()) {
+    		String key = keys.nextElement().toString();
+    		String result = getResource(key);
+    		if (result.equalsIgnoreCase(value)) {
+    			return key;
+    		}
+    	}
+    	
+    	return value;
+    	
     }
 }
